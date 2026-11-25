@@ -1,11 +1,11 @@
 (function () {
   const navItems = [
-    { href: "index.html", label: "Home" },
-    { href: "stage1-foundations.html", label: "Stage 1: Physics" },
-    { href: "stage2-parallelism.html", label: "Stage 2: Parallel" },
-    { href: "stage3-ai-systems.html", label: "Stage 3: AI & Porting" },
-    { href: "stage4-asc-sprint.html", label: "Stage 4: ASC Sprint" },
-    { href: "past-problems.html", label: "Past Problems" }
+    { href: "index.html", label: "Home", subtitle: "Knowledge graph, 24-week roadmap, and ASC27 timeline" },
+    { href: "stage1-foundations.html", label: "Stage 1: Physics", subtitle: "Cache locality, Amdahl scaling, and Roofline model" },
+    { href: "stage2-parallelism.html", label: "Stage 2: Parallel", subtitle: "False sharing, MPI 2D halo, and CUDA GEMM tiling" },
+    { href: "stage3-ai-systems.html", label: "Stage 3: AI & Porting", subtitle: "VRAM budget, Ring All-Reduce, KV cache, and AMSS-NCKU" },
+    { href: "stage4-asc-sprint.html", label: "Stage 4: ASC Sprint", subtitle: "HPL tuning, power wall DVFS, and QiboTN qubit memory" },
+    { href: "past-problems.html", label: "Past Problems", subtitle: "10 past ASC problems (C01 to C10) mapped to labs" }
   ];
 
   const courseTree = [
@@ -131,6 +131,111 @@
     mainEl.parentNode.insertBefore(shell, mainEl);
     shell.appendChild(rail);
     shell.appendChild(mainEl);
+
+    // Live scroll-spy for section focus in the left course rail
+    const pageLinks = Array.from(rail.querySelectorAll(".rail-list a")).filter(
+      a => a.getAttribute("href").split("#")[0] === page && a.getAttribute("href").includes("#")
+    );
+    const sectionPairs = pageLinks
+      .map(a => ({ link: a, el: document.getElementById(a.getAttribute("href").split("#")[1]) }))
+      .filter(p => p.el);
+
+    if (sectionPairs.length) {
+      const setActiveSection = (activeEl) => {
+        sectionPairs.forEach(({ link, el }) => {
+          link.classList.toggle("is-current", el === activeEl);
+          el.classList.toggle("is-focused-lab", el === activeEl);
+        });
+      };
+      setActiveSection(sectionPairs[0].el);
+      if (typeof IntersectionObserver !== "undefined") {
+        const io = new IntersectionObserver((entries) => {
+          const visible = entries
+            .filter(e => e.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+          if (visible.length) setActiveSection(visible[0].target);
+        }, { rootMargin: "-18% 0px -52% 0px", threshold: [0.1, 0.35, 0.65] });
+        sectionPairs.forEach(({ el }) => io.observe(el));
+      }
+    }
+
+    // Contextual Prev / Next stage pager at the bottom of every page
+    const curIdx = navItems.findIndex(it => it.href === page);
+    if (curIdx !== -1 && !mainEl.querySelector(".stage-pager")) {
+      const prev = curIdx > 0 ? navItems[curIdx - 1] : null;
+      const next = curIdx < navItems.length - 1 ? navItems[curIdx + 1] : null;
+      const pager = document.createElement("nav");
+      pager.className = "stage-pager";
+      pager.setAttribute("aria-label", "Page progression");
+      pager.innerHTML = `
+        <div class="stage-pager-slot">
+          ${prev ? `
+            <a class="pager-card pager-prev" href="${prev.href}">
+              <span class="pager-dir">&larr; Previous</span>
+              <span class="pager-title">${prev.label}</span>
+              <span class="pager-sub">${prev.subtitle}</span>
+            </a>
+          ` : `
+            <div class="pager-card is-placeholder" aria-hidden="true">
+              <span class="pager-dir">Start of curriculum</span>
+              <span class="pager-title">Stage 0 · Overview</span>
+              <span class="pager-sub">Explore any node or follow Stage 1 next.</span>
+            </div>
+          `}
+        </div>
+        <div class="stage-pager-step">${curIdx + 1} / ${navItems.length}</div>
+        <div class="stage-pager-slot">
+          ${next ? `
+            <a class="pager-card pager-next" href="${next.href}">
+              <span class="pager-dir">Next &rarr;</span>
+              <span class="pager-title">${next.label}</span>
+              <span class="pager-sub">${next.subtitle}</span>
+            </a>
+          ` : `
+            <a class="pager-card pager-next" href="index.html">
+              <span class="pager-dir">Back to map &rarr;</span>
+              <span class="pager-title">Home Overview</span>
+              <span class="pager-sub">Return to the Knowledge Graph and 24-week roadmap</span>
+            </a>
+          `}
+        </div>
+      `;
+      const footerEl = document.getElementById("site-footer");
+      if (footerEl && footerEl.parentNode === mainEl) {
+        mainEl.insertBefore(pager, footerEl);
+      } else {
+        mainEl.appendChild(pager);
+      }
+
+      // Keyboard shortcuts: '[' for Previous page, ']' for Next page (when not typing in an input)
+      document.addEventListener("keydown", (ev) => {
+        const tag = (ev.target && ev.target.tagName) || "";
+        if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || ev.metaKey || ev.ctrlKey || ev.altKey) return;
+        if (ev.key === "[" && prev) window.location.href = prev.href;
+        if (ev.key === "]" && next) window.location.href = next.href;
+      });
+    }
+
+    // Add subtle interactive cue badges to lab headers and control groups
+    mainEl.querySelectorAll("section.lab-card").forEach((card) => {
+      const hasControls = card.querySelector("input[type='range'], button");
+      const header = card.querySelector(".lab-header");
+      if (hasControls && header && !header.querySelector(".cue-pill")) {
+        const pill = document.createElement("span");
+        pill.className = "cue-pill";
+        pill.innerHTML = `<span class="cue-dot" aria-hidden="true"></span><span>Interactive · try controls</span>`;
+        const badge = header.querySelector(".stage-badge");
+        if (badge) {
+          const wrap = document.createElement("div");
+          wrap.className = "lab-header-badges";
+          badge.parentNode.insertBefore(wrap, badge);
+          wrap.appendChild(pill);
+          wrap.appendChild(badge);
+        } else {
+          header.appendChild(pill);
+        }
+      }
+    });
   }
 
   const footer = document.getElementById("site-footer");
@@ -244,6 +349,7 @@
     container.className = "formula-box";
     container.innerHTML = `
       <div class="formula-stage">
+        ${symbols.length ? `<div class="formula-hint"><span class="formula-hint-dot" aria-hidden="true"></span>Hover or click any colored term to inspect</div>` : ""}
         <div class="formula-math"></div>
         ${symbols.length ? `
           <svg class="formula-arrows" aria-hidden="true"></svg>

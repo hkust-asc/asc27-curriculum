@@ -245,18 +245,20 @@
       // 4 GPUs, 4 chunks each. State values: 1 = local, 2..3 = partial sum, 4 = full sum
       const st = Array.from({ length: 4 }, () => [1, 1, 1, 1]);
       for (let s = 1; s <= Math.min(step, 3); s++) {
+        const prev = st.map(row => row.slice());
         for (let g = 0; g < 4; g++) {
           const recvFrom = (g + 3) % 4;
           const chunk = (recvFrom - (s - 1) + 4) % 4;
-          st[g][chunk] = Math.min(4, st[g][chunk] + 1);
+          st[g][chunk] = Math.min(4, prev[recvFrom][chunk] + 1);
         }
       }
       for (let s = 4; s <= Math.min(step, 6); s++) {
         const k = s - 4;
+        const prev = st.map(row => row.slice());
         for (let g = 0; g < 4; g++) {
           const recvFrom = (g + 3) % 4;
-          const chunk = (recvFrom - 2 - k + 16) % 4;
-          st[g][chunk] = 4;
+          const chunk = (recvFrom + 1 - k + 4) % 4;
+          st[g][chunk] = prev[recvFrom][chunk];
         }
       }
       return st;

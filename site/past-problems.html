@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Past ASC Problems (C01 to C10) | HKUST ASC27</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+  <main class="container">
+    <section class="hero">
+      <div class="eyebrow">Real Competition Archive · ASC22 to ASC26</div>
+      <h1>10 Past ASC Problems Mapped to Our Curriculum</h1>
+      <p class="lead">Filter by hardware rule or bottleneck type. Click any card to inspect its math, accuracy gate, and winning team speedup.</p>
+    </section>
+
+    <section class="lab-card">
+      <div class="lab-header">
+        <div>
+          <h2>Filter Problems</h2>
+          <p class="lab-subtitle">Each entry links directly to the Stage 1–4 interactive lab that teaches its core bottleneck.</p>
+        </div>
+        <div class="btn-group" id="pp-filters">
+          <button class="btn active" data-f="all">All (10)</button>
+          <button class="btn" data-f="gpu">GPU Allowed</button>
+          <button class="btn" data-f="cpu">CPU-Only</button>
+          <button class="btn" data-f="ai">AI / World Model</button>
+          <button class="btn" data-f="sci">Scientific PDE</button>
+        </div>
+      </div>
+
+      <div class="cards-grid" id="pp-grid"></div>
+    </section>
+
+    <section class="lab-card" id="pp-detail-card">
+      <div id="pp-detail"></div>
+    </section>
+
+    <footer id="site-footer"></footer>
+  </main>
+
+  <script src="assets/common.js"></script>
+  <script>
+    const problems = [
+      { id: "C01", year: "ASC22", name: "Yuan 4.7B LLM", tags: ["gpu", "ai"], cap: "3 kW",
+        what: "Pretrain a 4.7B Chinese Transformer on 1B tokens in PyTorch.",
+        math: "Dense GEMMs O(6*Params*Tokens); ~75 GB static state overflows 40 GB A100.",
+        gate: "Loss < 7.0 + full logs",
+        win: "Mixed precision + ZeRO/FSDP + checkpointing + backward All-Reduce overlap.",
+        stage: "Stage 3 (M09–M10)", lab: "stage3-ai-systems.html#vram" },
+      { id: "C02", year: "ASC22", name: "DeePMD-kit", tags: ["gpu", "sci"], cap: "3 kW",
+        what: "Train deep molecular dynamics potentials for Water, Cu, and Al-Cu-Mg.",
+        math: "Irregular neighbor-list descriptors + small MLP GEMMs; FP64 force sensitivity.",
+        gate: "dp test consistency; 3 JSON knobs",
+        win: "Enable type_one_side, verified mixed precision, fused CUDA descriptor ops.",
+        stage: "Stage 1–2 (M02, M07)", lab: "stage2-parallelism.html#cuda-tile" },
+      { id: "C03", year: "ASC24", name: "GoMars Atmosphere", tags: ["cpu", "sci"], cap: "3 kW",
+        what: "Simulate global Martian wind, temperature, and dust on a lat-lon grid.",
+        math: "Polar grid bunching shrinks dx ~ cos(phi), overloading polar MPI ranks.",
+        gate: "Physical consistency",
+        win: "SJTU Application Innovation: polar load balancing, halo overlap, hybrid MPI+OpenMP.",
+        stage: "Stage 2 (M06) & M03", lab: "stage2-parallelism.html#mpi-halo" },
+      { id: "C04", year: "ASC25", name: "AlphaFold3", tags: ["cpu", "ai"], cap: "4 kW CPU-only",
+        what: "Predict 3D biomolecular structures without GPUs in finals.",
+        math: "O(N^3) triangle attention and O(N^2) pair tensors thrashing CPU caches.",
+        gate: "BF16 >= 16-bit precision floor",
+        win: "SJTU e Prize: 30x+ CPU speedup via vector/BLAS tuning and memory layout changes.",
+        stage: "Stage 1–2 (M04, M05)", lab: "stage1-foundations.html#roofline" },
+      { id: "C05", year: "ASC25", name: "DeepSeek R1-Distill 32B", tags: ["cpu", "ai"], cap: "4 kW CPU-only",
+        what: "Run 32B LLM inference on CPUs with >= 4-bit weights.",
+        math: "Streams 16–18 GiB weights + KV cache per token (I ~ 1 FLOP/byte).",
+        gate: ">= 4-bit, no pruning, no cross-run KV",
+        win: "ZJU 14.9 tok/s single-thread via compact 4-bit layouts and fused SIMD GEMV.",
+        stage: "Stage 3 (M11) & M05", lab: "stage3-ai-systems.html#kv" },
+      { id: "C06", year: "ASC26", name: "UnifoLM-WMA-0", tags: ["gpu", "ai"], cap: "5 kW",
+        what: "Accelerate Unitree's embodied robot video world model.",
+        math: "Iterative UNet diffusion denoising + VAE decode + video I/O.",
+        gate: "PSNR >= 25 dB (prelim >= 16-bit)",
+        win: "PKU 26 s & BUPT 30 s (>20x) via resident serving, TeaCache, fusion, async FFmpeg.",
+        stage: "Stage 3 (M11) & M07", lab: "stage3-ai-systems.html#kv" },
+      { id: "C07", year: "ASC26", name: "AMSS-NCKU Black Holes", tags: ["gpu", "sci"], cap: "5 kW",
+        what: "Solve Einstein's equations on 9-level AMR grids for binary black holes.",
+        math: "RK4 3D stencils + 122 PCIe copies -> CPU waveform backpressure.",
+        gate: "Trajectory RMS < 1%, ADM < 2",
+        win: "Tsinghua 4.5s -> 0.85s (resident GPU + 2+62 split + 3-stage relay); ZJU 30x finals.",
+        stage: "Stage 3 (M12)", lab: "stage3-ai-systems.html#amss" },
+      { id: "C08", year: "ASC26", name: "QiboTN Quantum", tags: ["cpu", "sci"], cap: "5 kW CPU-only",
+        what: "Simulate QFT, QAOA, and Supremacy circuits via tensor networks.",
+        math: "State vector needs 16*2^n B (20q = 16 MiB, 40q = 16 TiB). Tensor contraction avoids 2^n.",
+        gate: "Exact mean expectation values; 0 pts if GPU used",
+        win: "Fudan rewrote core Python contraction loops into native C for tens-of-times speedup.",
+        stage: "Stage 4 (Qubit) & M05", lab: "stage4-asc-sprint.html#qubit" },
+      { id: "C09", year: "ASC26", name: "LeWorldModel (Mystery)", tags: ["gpu", "ai"], cap: "5 kW AMD W7900D",
+        what: "Run 200 PushT latent JEPA + CEM planning cases on AMD W7900D.",
+        math: "Small-batch iterative CEM loops make GPU launch-bound; video I/O stalls CPU.",
+        gate: "PushT success rate >= 90% on ROCm",
+        win: "BUPT 14 s, Tsinghua 16 s, PKU 17 s (>100x) via HIP graphs, BF16, early stop.",
+        stage: "Stage 3 (M11) & M16", lab: "stage3-ai-systems.html#kv" },
+      { id: "C10", year: "ASC26", name: "ICON Climate (Group)", tags: ["cpu", "sci"], cap: "5 kW CPU-only",
+        what: "5-university alliance optimizing Gordon Bell ICON climate model.",
+        math: "Uniform icosahedral mesh removes GoMars poles; CPU SIMD + halo sync dominate.",
+        gate: "CPU-only, independent cluster runs",
+        win: "QHU + SJTU + BUAA + BNU + EAFIT: OpenMP tuning, halo trim, explicit SIMD, -5% MPI.",
+        stage: "Stage 2 (M05–M06)", lab: "stage2-parallelism.html#mpi-halo" }
+    ];
+
+    let curFilter = "all";
+    let selectedId = "C07";
+    const grid = document.getElementById("pp-grid");
+    const detail = document.getElementById("pp-detail");
+
+    function renderList() {
+      const list = curFilter === "all" ? problems : problems.filter(p => p.tags.includes(curFilter));
+      grid.innerHTML = list.map(p => `
+        <div class="nav-card" style="cursor:pointer; border-color:${p.id === selectedId ? "#0B4F8A" : ""}; background:${p.id === selectedId ? "#F8FAFC" : ""}" data-id="${p.id}">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span class="pill ${p.tags.includes("cpu") ? "teal" : "violet"}">${p.id} · ${p.year}</span>
+            <span style="font-size:12px; color:#64748B; font-family:var(--mono);">${p.cap}</span>
+          </div>
+          <h3>${p.name}</h3>
+          <p>${p.what}</p>
+        </div>`).join("");
+
+      grid.querySelectorAll("[data-id]").forEach(el => {
+        el.onclick = () => { selectedId = el.dataset.id; renderList(); renderDetail(); };
+      });
+    }
+
+    function renderDetail() {
+      const p = problems.find(x => x.id === selectedId) || problems[0];
+      detail.innerHTML = `
+        <div class="lab-header" style="margin-bottom:10px;">
+          <div>
+            <span class="pill blue">${p.id} · ${p.year} · ${p.cap}</span>
+            <h2 style="margin-top:8px;">${p.name}</h2>
+          </div>
+          <a class="btn primary" href="${p.lab}">Open Related Interactive Lab (${p.stage}) &rarr;</a>
+        </div>
+        <div class="stat-strip">
+          <div class="stat"><div class="stat-k">What It Does</div><div style="font-size:14px; margin-top:4px;">${p.what}</div></div>
+          <div class="stat"><div class="stat-k">Math &amp; Bottleneck</div><div style="font-size:14px; margin-top:4px;">${p.math}</div></div>
+          <div class="stat"><div class="stat-k">Accuracy / Rule Gate</div><div style="font-size:14px; margin-top:4px; color:#C2410C; font-weight:600;">${p.gate}</div></div>
+        </div>
+        <div class="takeaway teal"><strong>Winning Team Method:</strong> ${p.win}</div>
+      `;
+    }
+
+    document.querySelectorAll("#pp-filters button").forEach(btn => {
+      btn.onclick = () => {
+        document.querySelectorAll("#pp-filters button").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        curFilter = btn.dataset.f;
+        renderList();
+      };
+    });
+
+    renderList();
+    renderDetail();
+  </script>
+</body>
+</html>

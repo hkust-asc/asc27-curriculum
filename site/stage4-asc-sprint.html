@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stage 4: HPL, HPCG &amp; Power Wall | HKUST ASC27</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+  <main class="container">
+    <section class="hero">
+      <div class="eyebrow">Stage 4 · Weeks 14 to 24 · Modules M13 to M16</div>
+      <h1>HPL Grids, the Power Wall, and Qubit Memory Scaling</h1>
+      <p class="lead">Balance matrix size, block size, and process grids in HPL, find the DVFS sweet spot under historical 3/4/5 kW caps, and check exact exponential qubit memory.</p>
+    </section>
+
+    <!-- LAB 1: HPL TUNER -->
+    <section class="lab-card" id="hpl">
+      <div class="lab-header">
+        <div>
+          <h2>1. HPL Parameter &amp; Process Grid Simulator</h2>
+          <p class="lab-subtitle">Adjust matrix order N, block size NB, and P×Q grid on 16 ranks (512 GB cluster RAM). Watch RAM usage, compute work, and estimated efficiency.</p>
+        </div>
+        <span class="pill blue">M13 · HPL Benchmark</span>
+      </div>
+
+      <div class="lab-grid">
+        <div class="controls">
+          <div class="control-row">
+            <div class="control-label"><span>Matrix Order (N)</span><span class="control-val" id="hpl-n-val">200,000</span></div>
+            <input type="range" id="hpl-n" min="40000" max="260000" step="10000" value="200000">
+          </div>
+          <div class="control-row">
+            <div class="control-label"><span>Block Size (NB)</span><span class="control-val" id="hpl-nb-val">256</span></div>
+            <input type="range" id="hpl-nb" min="32" max="512" step="32" value="256">
+          </div>
+          <div class="control-row">
+            <div class="control-label"><span>Process Grid (P × Q = 16)</span></div>
+            <div class="btn-group">
+              <button class="btn" data-pq="1x16">1×16</button>
+              <button class="btn" data-pq="2x8">2×8</button>
+              <button class="btn active" data-pq="4x4">4×4</button>
+              <button class="btn" data-pq="8x2">8×2</button>
+            </div>
+          </div>
+          <div class="stat-strip" style="margin:0;">
+            <div class="stat"><div class="stat-k">Matrix RAM</div><div class="stat-v blue" id="hpl-ram">320 GB</div></div>
+            <div class="stat"><div class="stat-k">FP64 Work</div><div class="stat-v violet" id="hpl-work">5.33 PFLOP</div></div>
+            <div class="stat"><div class="stat-k">Est. Efficiency</div><div class="stat-v teal" id="hpl-eff">84%</div></div>
+          </div>
+          <div class="takeaway" id="hpl-msg"></div>
+        </div>
+
+        <div class="viz-box">
+          <svg id="hpl-svg" viewBox="0 0 640 270" role="img" aria-label="HPL LU factorization and efficiency breakdown"></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAB 2: POWER WALL & DVFS -->
+    <section class="lab-card" id="power">
+      <div class="lab-header">
+        <div>
+          <h2>2. Power Wall &amp; DVFS Sweet-Spot Explorer</h2>
+          <p class="lab-subtitle">Dynamic power scales as V²·f (roughly f³). Pick a historical practice cap (ASC27 cap is TBD), add GPUs, and lower clocks to maximize legal TFLOP/s.</p>
+        </div>
+        <span class="pill coral">M15 · Power Wall &amp; DVFS</span>
+      </div>
+
+      <div class="lab-grid">
+        <div class="controls">
+          <div class="control-row">
+            <div class="control-label"><span>Practice Power Cap (ASC27 TBD)</span></div>
+            <div class="btn-group">
+              <button class="btn" data-cap="3000">3 kW (ASC22)</button>
+              <button class="btn" data-cap="4000">4 kW (ASC25)</button>
+              <button class="btn active" data-cap="5000">5 kW (ASC26)</button>
+            </div>
+          </div>
+          <div class="control-row">
+            <div class="control-label"><span>Active GPUs</span><span class="control-val" id="pw-g-val">6 GPUs</span></div>
+            <input type="range" id="pw-g" min="2" max="10" step="1" value="6">
+          </div>
+          <div class="control-row">
+            <div class="control-label"><span>GPU Clock Ratio (f / f_max)</span><span class="control-val" id="pw-f-val">0.85</span></div>
+            <input type="range" id="pw-f" min="0.50" max="1.00" step="0.05" value="0.85">
+          </div>
+          <div class="stat-strip" style="margin:0;">
+            <div class="stat"><div class="stat-k">Cluster Power</div><div class="stat-v teal" id="pw-w">4210 W</div></div>
+            <div class="stat"><div class="stat-k">Net FP64</div><div class="stat-v blue" id="pw-tf">153 TF/s</div></div>
+            <div class="stat"><div class="stat-k">Status</div><div class="stat-v teal" id="pw-st">VALID</div></div>
+          </div>
+          <div class="takeaway" id="pw-msg"></div>
+        </div>
+
+        <div class="viz-box">
+          <svg id="pw-svg" viewBox="0 0 640 290" role="img" aria-label="Power vs performance DVFS curve"></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAB 3: QUBIT MEMORY WALL -->
+    <section class="lab-card" id="qubit">
+      <div class="lab-header">
+        <div>
+          <h2>3. Exponential Memory Wall: State-Vector Qubits</h2>
+          <p class="lab-subtitle">Each extra qubit doubles `complex128` memory (16 × 2^n bytes). Slide n from 10 to 44 to see why QiboTN switches to tensor-network contraction.</p>
+        </div>
+        <span class="pill violet">A2 &amp; C08 · QiboTN Math</span>
+      </div>
+
+      <div class="lab-grid">
+        <div class="controls">
+          <div class="control-row">
+            <div class="control-label"><span>Qubit Count (n)</span><span class="control-val" id="qb-n-val">20 qubits</span></div>
+            <input type="range" id="qb-n" min="10" max="44" step="1" value="20">
+          </div>
+          <div class="btn-group">
+            <button class="btn active" data-q="20">20q = 16 MiB</button>
+            <button class="btn" data-q="30">30q = 16 GiB</button>
+            <button class="btn" data-q="40">40q = 16 TiB</button>
+          </div>
+          <div class="stat-strip" style="margin:0;">
+            <div class="stat"><div class="stat-k">Amplitudes (2^n)</div><div class="stat-v blue" id="qb-amp">1.05M</div></div>
+            <div class="stat"><div class="stat-k">Exact Memory</div><div class="stat-v violet" id="qb-mem">16.0 MiB</div></div>
+          </div>
+          <div class="takeaway" id="qb-msg">Exact math: 16 × 2^20 bytes = 16 MiB (correcting the 1024× unit typo on ASC26 slide p.20).</div>
+        </div>
+
+        <div class="viz-box">
+          <svg id="qb-svg" viewBox="0 0 640 240" role="img" aria-label="Log-scale state-vector memory wall"></svg>
+        </div>
+      </div>
+    </section>
+
+    <footer id="site-footer"></footer>
+  </main>
+
+  <script src="assets/common.js"></script>
+  <script>
+    // ---- LAB 1: HPL SIMULATOR ----
+    let pq = "4x4";
+    const hplN = document.getElementById("hpl-n");
+    const hplNB = document.getElementById("hpl-nb");
+    const hplSvg = document.getElementById("hpl-svg");
+
+    document.querySelectorAll("[data-pq]").forEach(btn => {
+      btn.onclick = () => {
+        document.querySelectorAll("[data-pq]").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        pq = btn.dataset.pq;
+        drawHPL();
+      };
+    });
+
+    function drawHPL() {
+      const N = parseInt(hplN.value, 10);
+      const NB = parseInt(hplNB.value, 10);
+      const [P, Q] = pq.split("x").map(Number);
+
+      const ramGB = (N * N * 8) / (1024 ** 3);
+      const clusterRAM = 512;
+      const ramPct = (ramGB / clusterRAM) * 100;
+      const pflops = ((2 / 3) * (N ** 3)) / 1e15;
+
+      // Simple physical efficiency model
+      const nFactor = Math.min(1.0, 0.55 + 0.45 * (N / 220000));
+      const nbPenalty = Math.abs(NB - 256) / 600; // sweet spot ~256
+      const gridPenalty = P > Q ? 0.14 : (P === 1 ? 0.18 : (P === 2 ? 0.05 : 0.0));
+      const swapPenalty = ramPct > 90 ? 0.55 : 0;
+      const eff = Math.max(12, Math.min(92, (0.90 * nFactor - nbPenalty - gridPenalty - swapPenalty) * 100));
+
+      document.getElementById("hpl-n-val").textContent = N.toLocaleString();
+      document.getElementById("hpl-nb-val").textContent = NB;
+      document.getElementById("hpl-ram").textContent = ramGB.toFixed(0) + " GB";
+      document.getElementById("hpl-ram").className = "stat-v " + (ramPct > 90 ? "coral" : "blue");
+      document.getElementById("hpl-work").textContent = pflops.toFixed(2) + " PFLOP";
+      document.getElementById("hpl-eff").textContent = eff.toFixed(0) + "%";
+      document.getElementById("hpl-eff").className = "stat-v " + (eff >= 75 ? "teal" : eff >= 55 ? "blue" : "coral");
+
+      const msg = document.getElementById("hpl-msg");
+      if (ramPct > 90) {
+        msg.className = "takeaway coral";
+        msg.textContent = `Matrix uses ${ramPct.toFixed(0)}% of 512 GB RAM. OS swapping crashes HPL throughput.`;
+      } else if (P > Q) {
+        msg.className = "takeaway coral";
+        msg.textContent = `P (${P}) > Q (${Q}) increases panel broadcast hops. Keep P <= Q and nearly square.`;
+      } else if (NB < 128) {
+        msg.className = "takeaway";
+        msg.textContent = "Small NB hurts trailing DGEMM efficiency. Raise NB toward 192–384.";
+      } else {
+        msg.className = "takeaway teal";
+        msg.textContent = `Balanced setup: ${ramPct.toFixed(0)}% RAM fill, square-ish ${P}×${Q} grid, and strong DGEMM block size.`;
+      }
+
+      // Draw LU trailing matrix + grid + RAM meter
+      const ramW = Math.min(280, (ramPct / 100) * 280);
+      hplSvg.innerHTML = `
+        <text x="24" y="28" font-size="13" font-weight="700" fill="#0F172A">Blocked LU Matrix State</text>
+        <rect x="24" y="42" width="170" height="170" rx="4" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5"/>
+        <rect x="24" y="42" width="52" height="170" fill="#E2E8F0"/>
+        <rect x="24" y="42" width="170" height="52" fill="#E2E8F0"/>
+        <rect x="76" y="94" width="20" height="118" fill="#C48A1A"/>
+        <rect x="96" y="94" width="98" height="118" fill="#0B4F8A" opacity="0.88"/>
+        <text x="50" y="72" text-anchor="middle" font-size="10" font-weight="700" fill="#475569">Done</text>
+        <text x="86" y="156" text-anchor="middle" font-size="9" font-weight="700" fill="#FFFFFF" transform="rotate(-90 86 156)">Panel NB=${NB}</text>
+        <text x="145" y="156" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">Trailing DGEMM</text>
+
+        <text x="234" y="48" font-size="13" font-weight="700" fill="#0F172A">Cluster Memory Fill (512 GB Node Pool)</text>
+        <rect x="234" y="60" width="280" height="24" rx="5" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <rect x="234" y="60" width="${ramW}" height="24" rx="5" fill="${ramPct > 90 ? "#C2410C" : "#0B4F8A"}"/>
+        <line x1="${234 + 280 * 0.9}" y1="54" x2="${234 + 280 * 0.9}" y2="90" stroke="#C2410C" stroke-dasharray="3 2" stroke-width="1.5"/>
+        <text x="${234 + 280 * 0.9}" y="104" text-anchor="middle" font-size="10" font-weight="700" fill="#C2410C">90% Swap Limit</text>
+
+        <text x="234" y="138" font-size="13" font-weight="700" fill="#0F172A">Process Grid ${P} × ${Q} (16 Ranks)</text>
+        <text x="234" y="160" font-size="12" fill="#334155">Panel broadcasts span P = ${P} rows.</text>
+        <text x="234" y="180" font-size="12" fill="#334155">Estimated sustained efficiency: <strong>${eff.toFixed(0)}% of R_peak</strong></text>
+        <text x="24" y="242" font-size="12" fill="#475569">Rule: Report R_max only when HPL's backward residual check prints PASSED.</text>
+      `;
+    }
+    hplN.oninput = drawHPL;
+    hplNB.oninput = drawHPL;
+    drawHPL();
+
+    // ---- LAB 2: POWER WALL & DVFS ----
+    let capW = 5000;
+    const pwG = document.getElementById("pw-g");
+    const pwF = document.getElementById("pw-f");
+    const pwSvg = document.getElementById("pw-svg");
+
+    document.querySelectorAll("[data-cap]").forEach(btn => {
+      btn.onclick = () => {
+        document.querySelectorAll("[data-cap]").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        capW = parseInt(btn.dataset.cap, 10);
+        drawPower();
+      };
+    });
+
+    function clusterStats(gpus, freq) {
+      const nodes = Math.max(3, Math.ceil(gpus / 2));
+      const baseW = nodes * 220 + 180; // CPUs, fans, switches
+      const gpuDynW = gpus * 520 * Math.pow(freq, 2.7);
+      const gpuIdleW = gpus * 70;
+      const watts = baseW + gpuDynW + gpuIdleW;
+      const tf = gpus * 30 * freq; // 30 TF/s FP64 per GPU at f=1.0
+      return { watts, tf, nodes };
+    }
+
+    function drawPower() {
+      const g = parseInt(pwG.value, 10);
+      const f = parseFloat(pwF.value);
+      const cur = clusterStats(g, f);
+      const valid = cur.watts <= capW;
+
+      document.getElementById("pw-g-val").textContent = `${g} GPUs (${cur.nodes} nodes)`;
+      document.getElementById("pw-f-val").textContent = f.toFixed(2) + "×";
+      document.getElementById("pw-w").textContent = Math.round(cur.watts) + " W";
+      document.getElementById("pw-w").className = "stat-v " + (valid ? "teal" : "coral");
+      document.getElementById("pw-tf").textContent = cur.tf.toFixed(0) + " TF/s";
+      const st = document.getElementById("pw-st");
+      st.textContent = valid ? "VALID" : "OVER CAP";
+      st.className = "stat-v " + (valid ? "teal" : "coral");
+
+      const msg = document.getElementById("pw-msg");
+      if (!valid) {
+        msg.className = "takeaway coral";
+        msg.textContent = `Exceeds ${capW} W by ${Math.round(cur.watts - capW)} W (disqualified!). Lower GPU clock via DVFS before removing GPUs.`;
+      } else {
+        msg.className = "takeaway teal";
+        msg.textContent = `Under ${capW} W cap (${Math.round(capW - cur.watts)} W margin). Efficiency: ${(cur.tf * 1000 / cur.watts).toFixed(1)} GFLOP/W.`;
+      }
+
+      const W = 640, H = 290, padL = 58, padR = 24, padT = 28, padB = 42;
+      const maxW = 6500, maxTF = 320;
+      const xMap = w => padL + (Math.min(w, maxW) / maxW) * (W - padL - padR);
+      const yMap = tf => H - padB - (Math.min(tf, maxTF) / maxTF) * (H - padT - padB);
+
+      let curve = "";
+      for (let fr = 0.5; fr <= 1.001; fr += 0.025) {
+        const s = clusterStats(g, fr);
+        curve += (fr === 0.5 ? "M" : "L") + `${xMap(s.watts).toFixed(1)},${yMap(s.tf).toFixed(1)} `;
+      }
+
+      let grid = "";
+      [1000, 2000, 3000, 4000, 5000, 6000].forEach(w => {
+        const x = xMap(w);
+        grid += `<line x1="${x}" y1="${padT}" x2="${x}" y2="${H - padB}" stroke="#E2E8F0"/>
+                 <text x="${x}" y="${H - 18}" text-anchor="middle" font-size="11" fill="#64748B">${w/1000} kW</text>`;
+      });
+      [0, 100, 200, 300].forEach(tf => {
+        const y = yMap(tf);
+        grid += `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#E2E8F0"/>
+                 <text x="${padL - 8}" y="${y + 4}" text-anchor="end" font-size="11" fill="#64748B">${tf}</text>`;
+      });
+
+      const cx = xMap(cur.watts), cy = yMap(cur.tf), capX = xMap(capW);
+      pwSvg.innerHTML = `
+        <rect x="${capX}" y="${padT}" width="${W - padR - capX}" height="${H - padT - padB}" fill="#FFF7ED" opacity="0.75"/>
+        ${grid}
+        <line x1="${capX}" y1="${padT}" x2="${capX}" y2="${H - padB}" stroke="#C2410C" stroke-width="2" stroke-dasharray="6 4"/>
+        <text x="${capX - 6}" y="${padT + 14}" text-anchor="end" font-size="11" font-weight="700" fill="#C2410C">${capW/1000} kW Cap</text>
+        <path d="${curve}" fill="none" stroke="#0B4F8A" stroke-width="3"/>
+        <circle cx="${cx}" cy="${cy}" r="7" fill="${valid ? "#0D9488" : "#C2410C"}" stroke="#FFFFFF" stroke-width="2"/>
+        <text x="${cx}" y="${cy - 12}" text-anchor="middle" font-size="11" font-weight="700" fill="${valid ? "#0F766E" : "#C2410C"}">${Math.round(cur.watts)}W, ${cur.tf.toFixed(0)} TF/s</text>
+        <text x="${W / 2}" y="${H - 3}" text-anchor="middle" font-size="12" font-weight="600" fill="#334155">Total Cluster Power (Watts)</text>
+        <text x="16" y="${H / 2}" text-anchor="middle" font-size="12" font-weight="600" fill="#334155" transform="rotate(-90 16 ${H / 2})">FP64 TFLOP/s</text>
+      `;
+    }
+    pwG.oninput = drawPower;
+    pwF.oninput = drawPower;
+    drawPower();
+
+    // ---- LAB 3: QUBIT MEMORY WALL ----
+    const qbN = document.getElementById("qb-n");
+    const qbSvg = document.getElementById("qb-svg");
+
+    function fmtBytes(bytes) {
+      const units = ["B", "KiB", "MiB", "GiB", "TiB", "PiB"];
+      let u = 0, v = bytes;
+      while (v >= 1024 && u < units.length - 1) { v /= 1024; u++; }
+      return v.toFixed(v < 10 ? 2 : 1) + " " + units[u];
+    }
+
+    document.querySelectorAll("[data-q]").forEach(btn => {
+      btn.onclick = () => {
+        document.querySelectorAll("[data-q]").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        qbN.value = btn.dataset.q;
+        drawQubit();
+      };
+    });
+
+    function drawQubit() {
+      const n = parseInt(qbN.value, 10);
+      const amps = Math.pow(2, n);
+      const bytes = 16 * amps;
+      document.getElementById("qb-n-val").textContent = n + " qubits";
+      document.getElementById("qb-amp").textContent = amps >= 1e9 ? (amps / 1e9).toFixed(2) + "B" : amps >= 1e6 ? (amps / 1e6).toFixed(2) + "M" : amps.toLocaleString();
+      document.getElementById("qb-mem").textContent = fmtBytes(bytes);
+
+      const msg = document.getElementById("qb-msg");
+      if (n <= 26) {
+        msg.className = "takeaway teal";
+        msg.textContent = `16 × 2^${n} = ${fmtBytes(bytes)}. Fits easily inside laptop RAM (20q = 16 MiB, not 16 GB).`;
+      } else if (n <= 35) {
+        msg.className = "takeaway";
+        msg.textContent = `16 × 2^${n} = ${fmtBytes(bytes)}. Requires a high-memory server or multi-node cluster.`;
+      } else {
+        msg.className = "takeaway coral";
+        msg.textContent = `16 × 2^${n} = ${fmtBytes(bytes)} (40q = 16 TiB). State-vector hits the memory wall; QiboTN uses tensor networks instead.`;
+      }
+
+      const W = 640, H = 240, padL = 62, padR = 24, padT = 24, padB = 38;
+      const xMap = q => padL + ((q - 10) / (44 - 10)) * (W - padL - padR);
+      const yMap = log2B => H - padB - ((log2B - 14) / (48 - 14)) * (H - padT - padB);
+
+      let line = "";
+      for (let q = 10; q <= 44; q++) {
+        line += (q === 10 ? "M" : "L") + `${xMap(q).toFixed(1)},${yMap(q + 4).toFixed(1)} `;
+      }
+      const refLines = [
+        { b: 34, label: "16 GiB (Laptop)" },
+        { b: 40, label: "1 TiB (Server)" },
+        { b: 44, label: "16 TiB (40q)" }
+      ];
+      let refs = refLines.map(r => {
+        const y = yMap(r.b);
+        return `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#CBD5E1" stroke-dasharray="4 3"/>
+                <text x="${W - padR - 4}" y="${y - 4}" text-anchor="end" font-size="10" fill="#64748B">${r.label}</text>`;
+      }).join("");
+
+      const cx = xMap(n), cy = yMap(n + 4);
+      qbSvg.innerHTML = `
+        ${refs}
+        <line x1="${padL}" y1="${H - padB}" x2="${W - padR}" y2="${H - padB}" stroke="#94A3B8"/>
+        <line x1="${padL}" y1="${padT}" x2="${padL}" y2="${H - padB}" stroke="#94A3B8"/>
+        <path d="${line}" fill="none" stroke="#6D28D9" stroke-width="3"/>
+        <circle cx="${cx}" cy="${cy}" r="6.5" fill="#6D28D9" stroke="#FFFFFF" stroke-width="2"/>
+        <text x="${cx}" y="${cy - 11}" text-anchor="middle" font-size="11" font-weight="700" fill="#6D28D9">${n}q = ${fmtBytes(bytes)}</text>
+        <text x="${W / 2}" y="${H - 6}" text-anchor="middle" font-size="12" font-weight="600" fill="#334155">Qubits (n)</text>
+        <text x="16" y="${H / 2}" text-anchor="middle" font-size="12" font-weight="600" fill="#334155" transform="rotate(-90 16 ${H / 2})">Memory (log2 bytes)</text>
+      `;
+    }
+    qbN.oninput = () => {
+      document.querySelectorAll("[data-q]").forEach(b => b.classList.remove("active"));
+      drawQubit();
+    };
+    drawQubit();
+  </script>
+</body>
+</html>

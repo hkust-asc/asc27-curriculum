@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stage 1: Hardware Physics &amp; Roofline | HKUST ASC27</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+  <main class="container">
+    <section class="hero">
+      <div class="eyebrow">Stage 1 · Weeks 1 to 3 · Modules M01 to M04</div>
+      <h1>Hardware Physics, Scaling Limits, and the Roofline Model</h1>
+      <p class="lead">Every speed limit comes from physics. Use the three simulators below to feel cache misses, strong scaling ceilings, and the Roofline ridge point.</p>
+    </section>
+
+    <!-- LAB 1: CACHE LOCALITY -->
+    <section class="lab-card" id="cache">
+      <div class="lab-header">
+        <div>
+          <h2>1. Cache Locality: Row-Major vs. Column-Major</h2>
+          <p class="lab-subtitle">Each cache miss fetches 4 contiguous numbers in one 64-byte line. Press Play to watch row walks reuse that line while column walks miss every time.</p>
+        </div>
+        <span class="pill blue">M02 · Memory Wall</span>
+      </div>
+
+      <div class="lab-grid">
+        <div class="controls">
+          <div class="control-row">
+            <div class="control-label"><span>Loop Order</span></div>
+            <div class="btn-group">
+              <button class="btn active" id="mode-row">Row-major (ikj)</button>
+              <button class="btn" id="mode-col">Column-major (ijk)</button>
+            </div>
+          </div>
+          <div class="control-row">
+            <div class="control-label"><span>Playback</span></div>
+            <div class="btn-group">
+              <button class="btn primary" id="cache-play">Play</button>
+              <button class="btn" id="cache-step">Step</button>
+              <button class="btn" id="cache-reset">Reset</button>
+            </div>
+          </div>
+          <div class="stat-strip" style="margin:0;">
+            <div class="stat"><div class="stat-k">Cache Hits</div><div class="stat-v teal" id="c-hits">0</div></div>
+            <div class="stat"><div class="stat-k">Cache Misses</div><div class="stat-v coral" id="c-misses">0</div></div>
+            <div class="stat"><div class="stat-k">Hit Rate</div><div class="stat-v blue" id="c-rate">0%</div></div>
+          </div>
+          <div class="takeaway" id="cache-msg">Row-major reads 4 neighbors from one 64-byte cache line (75% hit rate).</div>
+        </div>
+
+        <div class="viz-box">
+          <div style="display:flex; justify-content:space-between; font-size:12px; color:#475569; margin-bottom:8px;">
+            <span>8×8 Matrix in Row-Major Memory (4 elements = 1 cache line)</span>
+            <span><strong style="color:#0D9488;">Teal</strong> = Hit · <strong style="color:#C2410C;">Coral</strong> = Miss</span>
+          </div>
+          <div class="mem-grid" id="cache-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAB 2: AMDAHL & GUSTAFSON -->
+    <section class="lab-card" id="amdahl">
+      <div class="lab-header">
+        <div>
+          <h2>2. Amdahl's Law vs. Gustafson's Law</h2>
+          <p class="lab-subtitle">Slide the parallel fraction and core count. Notice how even a 5% serial section caps strong scaling at 20× forever.</p>
+        </div>
+        <span class="pill gold">M03 · Scaling Ceilings</span>
+      </div>
+
+      <div class="lab-grid">
+        <div class="controls">
+          <div class="control-row">
+            <div class="control-label"><span>Parallel Fraction (f)</span><span class="control-val" id="am-f-val">95%</span></div>
+            <input type="range" id="am-f" min="50" max="99.5" step="0.5" value="95">
+          </div>
+          <div class="control-row">
+            <div class="control-label"><span>Workers / Cores (k)</span><span class="control-val" id="am-k-val">16</span></div>
+            <input type="range" id="am-k" min="1" max="128" step="1" value="16">
+          </div>
+          <div class="stat-strip" style="margin:0;">
+            <div class="stat"><div class="stat-k">Amdahl S(k)</div><div class="stat-v blue" id="am-s">9.14x</div></div>
+            <div class="stat"><div class="stat-k">Hard Ceiling</div><div class="stat-v coral" id="am-max">20.0x</div></div>
+            <div class="stat"><div class="stat-k">Gustafson</div><div class="stat-v teal" id="am-g">15.25x</div></div>
+          </div>
+          <div class="takeaway" id="am-msg">At 16 cores, serial work takes 45.7% of total wall time.</div>
+        </div>
+
+        <div class="viz-box">
+          <svg id="am-svg" viewBox="0 0 640 310" role="img" aria-label="Amdahl and Gustafson scaling plot"></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAB 3: LIVE ROOFLINE -->
+    <section class="lab-card" id="roofline">
+      <div class="lab-header">
+        <div>
+          <h2>3. Interactive Roofline Explorer</h2>
+          <p class="lab-subtitle">Adjust hardware peak FLOP/s, memory bandwidth, and your kernel's arithmetic intensity. Click presets to see where real ASC workloads land.</p>
+        </div>
+        <span class="pill teal">M04 · Roofline Model</span>
+      </div>
+
+      <div class="lab-grid">
+        <div class="controls">
+          <div class="control-row">
+            <div class="control-label"><span>Workload Presets</span></div>
+            <div class="btn-group">
+              <button class="btn" data-i="0.25">HPCG SpMV (0.25)</button>
+              <button class="btn" data-i="1.0">LLM Decode (1.0)</button>
+              <button class="btn active" data-i="12">Tiled GEMM (12)</button>
+              <button class="btn" data-i="80">HPL DGEMM (80)</button>
+            </div>
+          </div>
+          <div class="control-row">
+            <div class="control-label"><span>Peak Compute (P_peak)</span><span class="control-val" id="rf-p-val">30 TFLOP/s</span></div>
+            <input type="range" id="rf-p" min="2" max="100" step="1" value="30">
+          </div>
+          <div class="control-row">
+            <div class="control-label"><span>Bandwidth (B)</span><span class="control-val" id="rf-b-val">2.0 TB/s</span></div>
+            <input type="range" id="rf-b" min="0.2" max="5.0" step="0.1" value="2.0">
+          </div>
+          <div class="control-row">
+            <div class="control-label"><span>Kernel Intensity (I)</span><span class="control-val" id="rf-i-val">12.0 FLOP/B</span></div>
+            <input type="range" id="rf-i" min="-1" max="2.2" step="0.02" value="1.08">
+          </div>
+          <div class="stat-strip" style="margin:0;">
+            <div class="stat"><div class="stat-k">Ridge Point I_b</div><div class="stat-v blue" id="rf-ib">15.0</div></div>
+            <div class="stat"><div class="stat-k">Max Speed R</div><div class="stat-v teal" id="rf-r">24.0 TF/s</div></div>
+            <div class="stat"><div class="stat-k">Regime</div><div class="stat-v coral" id="rf-reg">Memory</div></div>
+          </div>
+          <div class="takeaway" id="rf-msg"></div>
+        </div>
+
+        <div class="viz-box">
+          <svg id="rf-svg" viewBox="0 0 640 330" role="img" aria-label="Log-log Roofline chart"></svg>
+        </div>
+      </div>
+    </section>
+
+    <footer id="site-footer"></footer>
+  </main>
+
+  <script src="assets/common.js"></script>
+  <script>
+    // ---- LAB 1: CACHE LOCALITY ----
+    const gridEl = document.getElementById("cache-grid");
+    const cells = [];
+    for (let i = 0; i < 64; i++) {
+      const d = document.createElement("div");
+      d.className = "mem-cell";
+      d.textContent = i;
+      gridEl.appendChild(d);
+      cells.push(d);
+    }
+    let cacheMode = "row", stepIdx = 0, hits = 0, misses = 0, timer = null;
+    let cacheLines = []; // tiny 2-line LRU cache (4 elements per line)
+
+    function getOrder() {
+      const seq = [];
+      for (let r = 0; r < 8; r++) {
+        for (let c = 0; c < 8; c++) {
+          seq.push(cacheMode === "row" ? r * 8 + c : c * 8 + r);
+        }
+      }
+      return seq;
+    }
+
+    function resetCache() {
+      clearInterval(timer); timer = null;
+      document.getElementById("cache-play").textContent = "Play";
+      stepIdx = 0; hits = 0; misses = 0; cacheLines = [];
+      cells.forEach(c => c.className = "mem-cell");
+      updateCacheStats();
+    }
+
+    function updateCacheStats() {
+      const tot = hits + misses;
+      document.getElementById("c-hits").textContent = hits;
+      document.getElementById("c-misses").textContent = misses;
+      document.getElementById("c-rate").textContent = tot ? Math.round((hits / tot) * 100) + "%" : "0%";
+      const msg = document.getElementById("cache-msg");
+      if (cacheMode === "row") {
+        msg.className = "takeaway teal";
+        msg.textContent = "Row-major reads 4 neighbors from each 64-byte cache line (75% hit rate).";
+      } else {
+        msg.className = "takeaway coral";
+        msg.textContent = "Column-major jumps 8 slots every step, evicting lines before reuse (0% hit rate).";
+      }
+    }
+
+    function stepCache() {
+      const seq = getOrder();
+      if (stepIdx >= seq.length) {
+        clearInterval(timer); timer = null;
+        document.getElementById("cache-play").textContent = "Play";
+        return;
+      }
+      cells.forEach(c => c.classList.remove("active"));
+      const addr = seq[stepIdx++];
+      const line = Math.floor(addr / 4);
+      const isHit = cacheLines.includes(line);
+      if (isHit) {
+        hits++;
+        cells[addr].className = "mem-cell hit active";
+      } else {
+        misses++;
+        cacheLines.push(line);
+        if (cacheLines.length > 2) cacheLines.shift();
+        cells[addr].className = "mem-cell miss active";
+      }
+      updateCacheStats();
+    }
+
+    document.getElementById("mode-row").onclick = () => {
+      cacheMode = "row";
+      document.getElementById("mode-row").classList.add("active");
+      document.getElementById("mode-col").classList.remove("active");
+      resetCache();
+    };
+    document.getElementById("mode-col").onclick = () => {
+      cacheMode = "col";
+      document.getElementById("mode-col").classList.add("active");
+      document.getElementById("mode-row").classList.remove("active");
+      resetCache();
+    };
+    document.getElementById("cache-step").onclick = stepCache;
+    document.getElementById("cache-reset").onclick = resetCache;
+    document.getElementById("cache-play").onclick = () => {
+      if (timer) {
+        clearInterval(timer); timer = null;
+        document.getElementById("cache-play").textContent = "Play";
+      } else {
+        if (stepIdx >= 64) resetCache();
+        document.getElementById("cache-play").textContent = "Pause";
+        timer = setInterval(stepCache, 110);
+      }
+    };
+    resetCache();
+
+    // ---- LAB 2: AMDAHL & GUSTAFSON ----
+    const amF = document.getElementById("am-f");
+    const amK = document.getElementById("am-k");
+    const amSvg = document.getElementById("am-svg");
+
+    function drawAmdahl() {
+      const f = parseFloat(amF.value) / 100;
+      const k = parseInt(amK.value, 10);
+      const sAmdahl = 1 / ((1 - f) + f / k);
+      const sMax = 1 / (1 - f);
+      const sGust = (1 - f) + f * k;
+      const serialShare = ((1 - f) / ((1 - f) + f / k)) * 100;
+
+      document.getElementById("am-f-val").textContent = (f * 100).toFixed(1) + "%";
+      document.getElementById("am-k-val").textContent = k;
+      document.getElementById("am-s").textContent = sAmdahl.toFixed(2) + "x";
+      document.getElementById("am-max").textContent = sMax.toFixed(1) + "x";
+      document.getElementById("am-g").textContent = sGust.toFixed(1) + "x";
+      document.getElementById("am-msg").textContent =
+        `At ${k} cores, the serial section takes ${serialShare.toFixed(1)}% of total wall time. Strong scaling cannot pass ${sMax.toFixed(1)}x.`;
+
+      const W = 640, H = 310, padL = 56, padR = 24, padT = 24, padB = 42;
+      const maxK = 128, maxY = Math.max(32, Math.min(130, sMax * 1.15));
+      const xMap = v => padL + ((v - 1) / (maxK - 1)) * (W - padL - padR);
+      const yMap = v => H - padB - (Math.min(v, maxY) / maxY) * (H - padT - padB);
+
+      let pathA = "", pathG = "";
+      for (let x = 1; x <= maxK; x += 1) {
+        const yA = 1 / ((1 - f) + f / x);
+        const yG = (1 - f) + f * x;
+        pathA += (x === 1 ? "M" : "L") + `${xMap(x).toFixed(1)},${yMap(yA).toFixed(1)} `;
+        if (yG <= maxY) pathG += (pathG === "" ? "M" : "L") + `${xMap(x).toFixed(1)},${yMap(yG).toFixed(1)} `;
+      }
+
+      let grid = "";
+      [1, 32, 64, 96, 128].forEach(tick => {
+        const x = xMap(tick);
+        grid += `<line x1="${x}" y1="${padT}" x2="${x}" y2="${H - padB}" stroke="#E2E8F0"/>
+                 <text x="${x}" y="${H - 18}" text-anchor="middle" font-size="11" fill="#64748B">${tick}</text>`;
+      });
+      for (let i = 0; i <= 4; i++) {
+        const val = (maxY / 4) * i;
+        const y = yMap(val);
+        grid += `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#E2E8F0"/>
+                 <text x="${padL - 8}" y="${y + 4}" text-anchor="end" font-size="11" fill="#64748B">${val.toFixed(0)}x</text>`;
+      }
+
+      const ceilY = yMap(sMax);
+      amSvg.innerHTML = `
+        ${grid}
+        <line x1="${padL}" y1="${H - padB}" x2="${W - padR}" y2="${H - padB}" stroke="#94A3B8"/>
+        <line x1="${padL}" y1="${padT}" x2="${padL}" y2="${H - padB}" stroke="#94A3B8"/>
+        <line x1="${padL}" y1="${ceilY}" x2="${W - padR}" y2="${ceilY}" stroke="#C2410C" stroke-dasharray="6 4" stroke-width="1.5"/>
+        <text x="${W - padR - 4}" y="${ceilY - 6}" text-anchor="end" font-size="11" font-weight="700" fill="#C2410C">Ceiling 1/(1-f) = ${sMax.toFixed(1)}x</text>
+        <path d="${pathG}" fill="none" stroke="#0D9488" stroke-width="2.2" stroke-dasharray="4 3"/>
+        <path d="${pathA}" fill="none" stroke="#0B4F8A" stroke-width="3"/>
+        <circle cx="${xMap(k)}" cy="${yMap(sAmdahl)}" r="6" fill="#0B4F8A" stroke="#FFFFFF" stroke-width="2"/>
+        <text x="${W / 2}" y="${H - 3}" text-anchor="middle" font-size="12" font-weight="600" fill="#334155">Number of Cores (k)</text>
+        <text x="16" y="${H / 2}" text-anchor="middle" font-size="12" font-weight="600" fill="#334155" transform="rotate(-90 16 ${H / 2})">Speedup</text>
+        <rect x="${padL + 10}" y="${padT + 4}" width="12" height="3" fill="#0B4F8A"/>
+        <text x="${padL + 28}" y="${padT + 9}" font-size="11" fill="#334155">Amdahl (Strong)</text>
+        <rect x="${padL + 140}" y="${padT + 4}" width="12" height="3" fill="#0D9488"/>
+        <text x="${padL + 158}" y="${padT + 9}" font-size="11" fill="#334155">Gustafson (Weak)</text>
+      `;
+    }
+    amF.oninput = drawAmdahl;
+    amK.oninput = drawAmdahl;
+    drawAmdahl();
+
+    // ---- LAB 3: LIVE ROOFLINE ----
+    const rfP = document.getElementById("rf-p");
+    const rfB = document.getElementById("rf-b");
+    const rfI = document.getElementById("rf-i");
+    const rfSvg = document.getElementById("rf-svg");
+
+    document.querySelectorAll("[data-i]").forEach(btn => {
+      btn.onclick = () => {
+        document.querySelectorAll("[data-i]").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        rfI.value = Math.log10(parseFloat(btn.dataset.i)).toFixed(2);
+        drawRoofline();
+      };
+    });
+
+    function drawRoofline() {
+      const P = parseFloat(rfP.value); // TFLOP/s
+      const B = parseFloat(rfB.value); // TB/s
+      const I = Math.pow(10, parseFloat(rfI.value)); // FLOP/Byte
+      const Ib = P / B;
+      const R = Math.min(P, B * I);
+      const isMem = I < Ib;
+
+      document.getElementById("rf-p-val").textContent = P.toFixed(0) + " TFLOP/s";
+      document.getElementById("rf-b-val").textContent = B.toFixed(1) + " TB/s";
+      document.getElementById("rf-i-val").textContent = I.toFixed(2) + " FLOP/B";
+      document.getElementById("rf-ib").textContent = Ib.toFixed(1) + " F/B";
+      document.getElementById("rf-r").textContent = R.toFixed(2) + " TF/s";
+      const regEl = document.getElementById("rf-reg");
+      regEl.textContent = isMem ? "Memory" : "Compute";
+      regEl.className = "stat-v " + (isMem ? "coral" : "teal");
+
+      const msg = document.getElementById("rf-msg");
+      if (isMem) {
+        msg.className = "takeaway coral";
+        msg.textContent = `Memory-bound (I < ${Ib.toFixed(1)}). Cut DRAM/HBM traffic via cache tiling or fusion before tuning math instructions.`;
+      } else {
+        msg.className = "takeaway teal";
+        msg.textContent = `Compute-bound (I >= ${Ib.toFixed(1)}). Use SIMD, Tensor Cores, or lower FLOP count to beat ${P.toFixed(0)} TFLOP/s.`;
+      }
+
+      const W = 640, H = 330, padL = 62, padR = 24, padT = 26, padB = 46;
+      const minLogI = -1.2, maxLogI = 2.4;
+      const minLogR = -1.0, maxLogR = 2.2;
+      const xMap = val => padL + ((Math.log10(val) - minLogI) / (maxLogI - minLogI)) * (W - padL - padR);
+      const yMap = val => H - padB - ((Math.log10(Math.max(val, 0.1)) - minLogR) / (maxLogR - minLogR)) * (H - padT - padB);
+
+      let grid = "";
+      [0.1, 1, 10, 100].forEach(v => {
+        const x = xMap(v);
+        grid += `<line x1="${x}" y1="${padT}" x2="${x}" y2="${H - padB}" stroke="#E2E8F0"/>
+                 <text x="${x}" y="${H - 20}" text-anchor="middle" font-size="11" fill="#64748B">${v}</text>`;
+      });
+      [0.1, 1, 10, 100].forEach(v => {
+        const y = yMap(v);
+        grid += `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#E2E8F0"/>
+                 <text x="${padL - 8}" y="${y + 4}" text-anchor="end" font-size="11" fill="#64748B">${v}</text>`;
+      });
+
+      const x0 = Math.pow(10, minLogI), xEnd = Math.pow(10, maxLogI);
+      const slopeStartI = Math.max(x0, 0.1 / B);
+      const roofPath = `M ${xMap(slopeStartI).toFixed(1)},${yMap(B * slopeStartI).toFixed(1)} L ${xMap(Ib).toFixed(1)},${yMap(P).toFixed(1)} L ${xMap(xEnd).toFixed(1)},${yMap(P).toFixed(1)}`;
+      const kx = xMap(I), ky = yMap(R);
+
+      rfSvg.innerHTML = `
+        <rect x="${padL}" y="${padT}" width="${Math.max(0, xMap(Ib) - padL)}" height="${H - padT - padB}" fill="#FFF7ED" opacity="0.65"/>
+        <rect x="${xMap(Ib)}" y="${padT}" width="${Math.max(0, W - padR - xMap(Ib))}" height="${H - padT - padB}" fill="#F0FDFA" opacity="0.65"/>
+        ${grid}
+        <line x1="${xMap(Ib)}" y1="${padT}" x2="${xMap(Ib)}" y2="${H - padB}" stroke="#94A3B8" stroke-dasharray="5 4"/>
+        <text x="${xMap(Ib)}" y="${padT + 14}" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Ridge I_b = ${Ib.toFixed(1)}</text>
+        <path d="${roofPath}" fill="none" stroke="#0B4F8A" stroke-width="3.2"/>
+        <line x1="${kx}" y1="${ky}" x2="${kx}" y2="${H - padB}" stroke="${isMem ? "#C2410C" : "#0D9488"}" stroke-dasharray="3 3"/>
+        <circle cx="${kx}" cy="${ky}" r="7" fill="${isMem ? "#C2410C" : "#0D9488"}" stroke="#FFFFFF" stroke-width="2"/>
+        <text x="${kx}" y="${ky - 12}" text-anchor="middle" font-size="12" font-weight="700" fill="${isMem ? "#C2410C" : "#0D9488"}">(${I.toFixed(2)}, ${R.toFixed(1)} TF/s)</text>
+        <text x="${W / 2}" y="${H - 4}" text-anchor="middle" font-size="12" font-weight="600" fill="#334155">Arithmetic Intensity I (FLOP / Byte, log scale)</text>
+        <text x="16" y="${H / 2}" text-anchor="middle" font-size="12" font-weight="600" fill="#334155" transform="rotate(-90 16 ${H / 2})">Throughput (TFLOP/s, log)</text>
+      `;
+    }
+    rfP.oninput = drawRoofline;
+    rfB.oninput = drawRoofline;
+    rfI.oninput = () => {
+      document.querySelectorAll("[data-i]").forEach(b => b.classList.remove("active"));
+      drawRoofline();
+    };
+    drawRoofline();
+  </script>
+</body>
+</html>

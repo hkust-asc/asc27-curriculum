@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HKUST ASC27 Interactive HPC &amp; AI Lab</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+  <main class="container">
+    <section class="hero">
+      <div class="eyebrow">HKUST ASC Team · 24-Week Training Curriculum</div>
+      <h1>Learn HPC and AI Systems by Playing With the Physics</h1>
+      <p class="lead">Move sliders, step through animations, and test real hardware limits. Click any node in the five-layer graph below to see what bottleneck it solves and jump straight to its interactive lab.</p>
+    </section>
+
+    <section class="lab-card">
+      <div class="lab-header">
+        <div>
+          <h2>Interactive 5-Layer Knowledge Graph</h2>
+          <p class="lab-subtitle">Click a node to inspect its bottleneck, math formula, and live simulator. Dashed lines show direct links to ASC finals tasks.</p>
+        </div>
+        <span class="pill blue">Click any node</span>
+      </div>
+
+      <div class="kg-wrap">
+        <div class="viz-box">
+          <svg id="kg-svg" viewBox="0 0 680 430" role="img" aria-label="Five-layer interactive knowledge graph"></svg>
+        </div>
+        <aside class="detail-panel" id="kg-detail"></aside>
+      </div>
+    </section>
+
+    <section class="lab-card">
+      <div class="lab-header">
+        <div>
+          <h2>Four Training Stages</h2>
+          <p class="lab-subtitle">24 weeks from 2026-11-25 to 2027-05-11. Official ASC27 registration closes 2027-01-10. Prelims run 2027-01-11 to 2027-02-28 (midnight UTC+8).</p>
+        </div>
+        <span class="pill gold">4 Interactive Modules</span>
+      </div>
+      <div class="cards-grid">
+        <a class="nav-card" href="stage1-foundations.html">
+          <span class="pill blue">Stage 1 · Weeks 1–3</span>
+          <h3>Hardware Physics &amp; Roofline</h3>
+          <p>Watch cache lines load on row vs. column loops, slide Amdahl's serial fraction, and move kernels on a live Roofline.</p>
+        </a>
+        <a class="nav-card" href="stage2-parallelism.html">
+          <span class="pill teal">Stage 2 · Weeks 4–8</span>
+          <h3>SIMD, MPI &amp; GPU Tiling</h3>
+          <p>Trigger false sharing on a 64-byte cache line, animate MPI halo swaps, and tune CUDA shared-memory tiles.</p>
+        </a>
+        <a class="nav-card" href="stage3-ai-systems.html">
+          <span class="pill violet">Stage 3 · Weeks 9–13</span>
+          <h3>AI Systems &amp; GPU Porting</h3>
+          <p>Pack a Transformer into GPU VRAM, animate Ring All-Reduce, watch KV cache grow, and step through AMSS-NCKU porting.</p>
+        </a>
+        <a class="nav-card" href="stage4-asc-sprint.html">
+          <span class="pill coral">Stage 4 · Weeks 14–24</span>
+          <h3>HPL, HPCG &amp; Power Wall</h3>
+          <p>Tune HPL N/NB/P×Q grids, find the DVFS efficiency knee under 3/4/5 kW caps, and compare 10 past ASC problems.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="lab-card">
+      <div class="lab-header">
+        <div>
+          <h2>ASC27 Official Schedule</h2>
+          <p class="lab-subtitle">Confirmed dates from the 2027 ASC Call for Participation. Power cap, hardware list, and scoring weights are still TBD.</p>
+        </div>
+        <span class="pill">UTC+8 Midnight Deadlines</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Milestone</th><th>Dates</th><th>Scope</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Online Registration</strong></td><td>2026-11-19 to 2027-01-10</td><td>5 undergraduates + 1 faculty advisor; max 1 finalist team per university.</td></tr>
+            <tr><td><strong>Preliminary Round</strong></td><td>2027-01-11 to 2027-02-28</td><td>English proposal graded on academic merit and technical quality.</td></tr>
+            <tr><td><strong>Internal Rehearsal Cutoff</strong></td><td>2027-05-11</td><td>Full 48-hour mock finals before exact May dates are announced.</td></tr>
+            <tr><td><strong>ASC27 Finals</strong></td><td>May 2027 (dates TBD)</td><td>On-site cluster build, HPL, HPCG, AI &amp; scientific apps, poster, defense.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer id="site-footer"></footer>
+  </main>
+
+  <script src="assets/common.js"></script>
+  <script>
+    const nodes = [
+      { id: "A1", layer: "L1", col: 0, row: 0, color: "#0B4F8A", title: "Work & Precision", full: "A1: Workload, Dependencies & Precision",
+        bottleneck: "Loop dependencies serialize execution. Low bit width runs faster, but rounding drift breaks accuracy checks.",
+        formula: "W_GEMM = 2n^3,  P_eff = W / T_wall,  u = 2^-(m+1)",
+        link: "stage1-foundations.html#roofline", linkText: "Open Stage 1 Labs" },
+      { id: "A2", layer: "L1", col: 1, row: 0, color: "#0B4F8A", title: "Memory Wall", full: "A2: Cache, DRAM, HBM & I/O Wall",
+        bottleneck: "Cores finish math faster than RAM delivers bytes. Cache misses and PCIe copies stall execution.",
+        formula: "T(m) = alpha + m / B,   M_qubit(n) = 16 * 2^n bytes",
+        link: "stage1-foundations.html#cache", linkText: "Play Cache Locality Demo" },
+      { id: "A3", layer: "L1", col: 2, row: 0, color: "#0B4F8A", title: "Power Wall", full: "A3: Power Wall & DVFS",
+        bottleneck: "Dynamic power scales with V^2 * f. Exceeding the rack power meter invalidates the active ASC run.",
+        formula: "P_dyn ~ C_eff * V^2 * f,   Efficiency = W / E (FLOP/J)",
+        link: "stage4-asc-sprint.html#power", linkText: "Play Power Wall & DVFS Lab" },
+
+      { id: "B1", layer: "L2", col: 0, row: 1, color: "#0D9488", title: "SIMD & OpenMP", full: "B1: CPU SIMD, OpenMP & NUMA",
+        bottleneck: "Scalar loops waste vector lanes. Unpadded shared arrays trigger 64-byte cache-line false sharing.",
+        formula: "Speedup <= v * p  (when local NUMA & zero false sharing)",
+        link: "stage2-parallelism.html#false-sharing", linkText: "Play False Sharing Lab" },
+      { id: "B2", layer: "L2", col: 1, row: 1, color: "#0D9488", title: "MPI & RDMA", full: "B2: MPI Halos & Network Topology",
+        bottleneck: "Small messages stall on latency alpha. Large collectives saturate link bandwidth B.",
+        formula: "T_ring(G) = 2(p-1)alpha + 2((p-1)/p) * G / B",
+        link: "stage2-parallelism.html#mpi-halo", linkText: "Play MPI Halo Lab" },
+      { id: "B3", layer: "L2", col: 2, row: 1, color: "#0D9488", title: "GPU SIMT", full: "B3: CUDA / HIP & Shared-Memory Tiling",
+        bottleneck: "Naive GPU kernels read HBM repeatedly and stall. Shared-memory tiles reuse loaded blocks.",
+        formula: "Tiled HBM reads: O(b^2) vs Naive: O(b^3) -> b/2x intensity",
+        link: "stage2-parallelism.html#cuda-tile", linkText: "Play CUDA Tiling Lab" },
+
+      { id: "C1", layer: "L3", col: 0, row: 2, color: "#C48A1A", title: "Amdahl / Gustafson", full: "C1: Strong & Weak Scaling Limits",
+        bottleneck: "Serial code, I/O, and barrier wait cap strong scaling no matter how many cores you add.",
+        formula: "S_strong(k) = 1 / ((1 - f) + f / k)  <=  1 / (1 - f)",
+        link: "stage1-foundations.html#amdahl", linkText: "Play Amdahl Scaling Lab" },
+      { id: "C2", layer: "L3", col: 1, row: 2, color: "#C48A1A", title: "Roofline & Profilers", full: "C2: Roofline Model & Profiler Traces",
+        bottleneck: "Tuning math on a memory-bound kernel wastes time. Measure (I, R) first.",
+        formula: "R <= min(P_peak, B * I),   Ridge I_b = P_peak / B",
+        link: "stage1-foundations.html#roofline", linkText: "Play Live Roofline" },
+      { id: "C3", layer: "L3", col: 2, row: 2, color: "#C48A1A", title: "200-Step Checks", full: "C3: Reference Tests & Reproducibility",
+        bottleneck: "Short 50-step checks miss stale-copy bugs that explode >60x at 200 steps.",
+        formula: "RMS = ||x - r||_2 / ||r||_2   (AMSS-NCKU gate: < 1%)",
+        link: "stage3-ai-systems.html#amss", linkText: "See AMSS-NCKU Case Study" },
+
+      { id: "D1", layer: "L4", col: 0, row: 3, color: "#6D28D9", title: "VRAM & Precision", full: "D1: Mixed Precision & VRAM Budget",
+        bottleneck: "Gradients, FP32 optimizer states, and activations overflow single-GPU HBM.",
+        formula: "M_static ~ 16 * Params bytes (BF16 weights/grads + FP32 Adam)",
+        link: "stage3-ai-systems.html#vram", linkText: "Play VRAM Calculator" },
+      { id: "D2", layer: "L4", col: 1, row: 3, color: "#6D28D9", title: "DDP / FSDP / TP", full: "D2: Distributed AI & Ring All-Reduce",
+        bottleneck: "Scaling across GPUs adds collective sync cost over NVLink, PCIe, or InfiniBand.",
+        formula: "V_ring = 2((p-1)/p) * G,   PP bubble = (p-1)/(m+p-1)",
+        link: "stage3-ai-systems.html#ring", linkText: "Play Ring All-Reduce" },
+      { id: "D3", layer: "L4", col: 2, row: 3, color: "#6D28D9", title: "LLM & Diffusion", full: "D3: Prefill/Decode, KV Cache & Denoising",
+        bottleneck: "Decode streams weights and growing KV cache every token (I ~ 1 FLOP/byte).",
+        formula: "M_KV = 2 * L * batch * n_kv * d_h * seq * bytes",
+        link: "stage3-ai-systems.html#kv", linkText: "Play KV Cache Simulator" },
+
+      { id: "E1", layer: "L5", col: 0, row: 4, color: "#C2410C", title: "HPL & HPCG", full: "E1: Power-Capped HPL & HPCG",
+        bottleneck: "HPL tests peak FP64 compute; HPCG tests memory bandwidth. Both share one power cap.",
+        formula: "R_max = (2/3 * N^3 + 2N^2) / T_wall",
+        link: "stage4-asc-sprint.html#hpl", linkText: "Play HPL Grid Simulator" },
+      { id: "E2", layer: "L5", col: 1, row: 4, color: "#C2410C", title: "Porting & Mystery", full: "E2: Scientific Porting & Mystery Apps",
+        bottleneck: "GPU porting shifts bottlenecks from compute to PCIe copies to CPU post-processing.",
+        formula: "T_step = T_GPU + N_copy * T_PCIe + T_analysis",
+        link: "past-problems.html", linkText: "Explore 10 Past Problems" },
+      { id: "E3", layer: "L5", col: 2, row: 4, color: "#C2410C", title: "Proposal & Q&A", full: "E3: Evidence Chain & Defense",
+        bottleneck: "Speedups score zero without reproducible commands, power logs, and accuracy diffs.",
+        formula: "Evidence = commit + flags + profile + 200-step diff + power",
+        link: "past-problems.html", linkText: "Inspect Past Benchmarks" }
+    ];
+
+    const bridges = [
+      { from: "A3", to: "E1", label: "Power -> HPL/HPCG" },
+      { from: "B2", to: "D2", label: "RDMA -> Collectives" },
+      { from: "C2", to: "E2", label: "Roofline -> Apps" },
+      { from: "C3", to: "E3", label: "Proof -> Defense" }
+    ];
+
+    const layerLabels = ["L1 Physics", "L2 Parallel", "L3 Profiling", "L4 AI Sys", "L5 ASC"];
+    const svg = document.getElementById("kg-svg");
+    const detail = document.getElementById("kg-detail");
+
+    function pos(node) {
+      return { x: 108 + node.col * 188, y: 18 + node.row * 82, w: 164, h: 56 };
+    }
+
+    function renderKG(selectedId) {
+      let html = `<defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 1 L 9 5 L 0 9 z" fill="#94A3B8"/>
+        </marker>
+        <marker id="arr-dash" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 1 L 9 5 L 0 9 z" fill="#C2410C"/>
+        </marker>
+      </defs>`;
+
+      // Layer badges
+      layerLabels.forEach((lbl, idx) => {
+        const y = 18 + idx * 82;
+        html += `<rect x="8" y="${y + 10}" width="84" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+                 <text x="50" y="${y + 33}" text-anchor="middle" font-size="12" font-weight="700" fill="#334155">${lbl}</text>`;
+      });
+
+      // Vertical layer progression arrows
+      for (let r = 0; r < 4; r++) {
+        for (let c = 0; c < 3; c++) {
+          const x = 108 + c * 188 + 82;
+          const y1 = 18 + r * 82 + 56;
+          const y2 = 18 + (r + 1) * 82 - 2;
+          html += `<line x1="${x}" y1="${y1}" x2="${x}" y2="${y2}" stroke="#CBD5E1" stroke-width="1.5" marker-end="url(#arr)"/>`;
+        }
+      }
+
+      // Dashed cross-layer bridges
+      const bridgePaths = [
+        "M 648 46 C 674 120, 674 340, 272 374", // A3 -> E1
+        "M 378 156 C 392 200, 392 240, 378 264", // B2 -> D2
+        "M 378 238 C 362 290, 362 320, 378 346", // C2 -> E2
+        "M 566 238 C 600 290, 600 320, 566 346"  // C3 -> E3
+      ];
+      bridges.forEach((b, i) => {
+        const active = selectedId === b.from || selectedId === b.to;
+        html += `<path d="${bridgePaths[i]}" fill="none" stroke="#C2410C" stroke-width="${active ? 2.5 : 1.5}" stroke-dasharray="5 4" opacity="${active ? 1 : 0.45}" marker-end="url(#arr-dash)"/>`;
+      });
+
+      // Nodes
+      nodes.forEach(n => {
+        const p = pos(n);
+        const isSel = n.id === selectedId;
+        html += `<g class="kg-node ${isSel ? "selected" : ""}" data-id="${n.id}">
+          <rect x="${p.x}" y="${p.y}" width="${p.w}" height="${p.h}" rx="8" fill="#FFFFFF" stroke="${n.color}" stroke-width="${isSel ? 3 : 1.8}"/>
+          <text x="${p.x + 12}" y="${p.y + 22}" font-size="11" font-weight="700" fill="${n.color}">${n.id}</text>
+          <text x="${p.x + 12}" y="${p.y + 42}" font-size="13" font-weight="600" fill="#0F172A">${n.title}</text>
+        </g>`;
+      });
+
+      svg.innerHTML = html;
+      svg.querySelectorAll(".kg-node").forEach(el => {
+        el.addEventListener("click", () => selectNode(el.dataset.id));
+      });
+    }
+
+    function selectNode(id) {
+      const n = nodes.find(x => x.id === id) || nodes[0];
+      renderKG(n.id);
+      const relatedBridges = bridges.filter(b => b.from === n.id || b.to === n.id);
+      detail.innerHTML = `
+        <span class="pill blue">${n.layer} · ${n.id}</span>
+        <h3 style="margin-top:8px;">${n.full}</h3>
+        <p style="font-size:14px; color:#334155; margin:8px 0;"><strong>Bottleneck:</strong> ${n.bottleneck}</p>
+        <div class="formula">${n.formula}</div>
+        ${relatedBridges.length ? `<p style="font-size:13px; color:#C2410C; margin:8px 0;"><strong>ASC Bridge:</strong> ${relatedBridges.map(b => b.label).join(", ")}</p>` : ""}
+        <a class="btn primary" style="display:inline-block; margin-top:8px;" href="${n.link}">${n.linkText} &rarr;</a>
+      `;
+    }
+
+    selectNode("A2");
+  </script>
+</body>
+</html>

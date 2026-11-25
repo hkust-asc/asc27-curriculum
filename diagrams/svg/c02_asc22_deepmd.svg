@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="660" viewBox="0 0 960 660">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#475569"/></marker>
+    <marker id="arr_blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0B4F8A"/></marker>
+    <marker id="arr_teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0D9488"/></marker>
+    <marker id="arr_coral" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C2410C"/></marker>
+    <marker id="arr_gold" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C48A1A"/></marker>
+    <marker id="arr_violet" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#6D28D9"/></marker>
+    <marker id="arr_muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#64748B"/></marker>
+  </defs>
+  <rect width="960" height="660" fill="#FAFBFD"/>
+  <rect x="28.0" y="22.0" width="6.0" height="36.0" rx="2.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
+  <text x="44.0" y="44.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#0F172A" text-anchor="start">ASC22 DeePMD-kit: Compute Pipeline &amp; Bottlenecks</text>
+  <text x="44.0" y="66.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="start">Systems: water / Cu / Al-Cu-Mg · Gate: dp test consistency · Historical 3 kW finals cap</text>
+  <rect x="28.0" y="92.0" width="904.0" height="274.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
+  <rect x="28.0" y="92.0" width="904.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="28.0" y="118.0" width="904.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
+  <line x1="28.0" y1="126.0" x2="932.0" y2="126.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="40.0" y="101.0" width="4.0" height="16.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
+  <text x="52.0" y="115.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">End-to-End Potential Energy Surface Pipeline (Bottleneck Profile)</text>
+  <rect x="48.0" y="148.0" width="162.0" height="148.0" rx="8.0" fill="#F1F5F9" stroke="#475569" stroke-width="1.6"/>
+  <text x="129.0" y="176.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="16.0" font-weight="bold" fill="#0F172A" text-anchor="middle">1. Coordinates</text>
+  <text x="129.0" y="200.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13.5" font-weight="normal" fill="#0B4F8A" text-anchor="middle">R = {r1, ..., rN}</text>
+  <text x="129.0" y="224.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="normal" fill="#334155" text-anchor="middle">Atom types + PBC</text>
+  <rect x="64.0" y="246.0" width="130.0" height="32.0" rx="16.0" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="129.0" y="267.1" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13.5" font-weight="bold" fill="#334155" text-anchor="middle">water/Cu/Alloy</text>
+  <line x1="210.0" y1="222.0" x2="238.0" y2="222.0" stroke="#475569" stroke-width="2.2" marker-end="url(#arr)"/>
+  <rect x="242.0" y="148.0" width="228.0" height="148.0" rx="8.0" fill="#FFF7ED" stroke="#C2410C" stroke-width="2.0"/>
+  <rect x="242.0" y="148.0" width="228.0" height="30.0" rx="6.0" fill="#C2410C" stroke="none" stroke-width="1.5"/>
+  <rect x="242.0" y="170.0" width="228.0" height="8.0" rx="0.0" fill="#C2410C" stroke="none" stroke-width="1.5"/>
+  <text x="356.0" y="169.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Memory-Bound Hotspot</text>
+  <text x="356.0" y="204.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="middle">2. Neighbor &amp; Descriptor</text>
+  <text x="356.0" y="230.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#334155" text-anchor="middle">Env matrix R_i &amp; cutoff s(r)</text>
+  <text x="356.0" y="251.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#334155" text-anchor="middle">Irregular gather &amp; random reads</text>
+  <text x="356.0" y="272.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#334155" text-anchor="middle">Small-kernel &amp; Python overhead</text>
+  <line x1="470.0" y1="222.0" x2="498.0" y2="222.0" stroke="#C2410C" stroke-width="2.2" marker-end="url(#arr_coral)"/>
+  <rect x="502.0" y="148.0" width="218.0" height="148.0" rx="8.0" fill="#F0FDFA" stroke="#0D9488" stroke-width="2.0"/>
+  <rect x="502.0" y="148.0" width="218.0" height="30.0" rx="6.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
+  <rect x="502.0" y="170.0" width="218.0" height="8.0" rx="0.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
+  <text x="611.0" y="169.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Compute-Bound Core</text>
+  <text x="611.0" y="204.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="middle">3. Embed &amp; Fitting MLP</text>
+  <text x="611.0" y="230.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#334155" text-anchor="middle">Embedding Net (local sym.)</text>
+  <text x="611.0" y="251.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#334155" text-anchor="middle">Fitting Net (residual MLP)</text>
+  <text x="611.0" y="272.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#334155" text-anchor="middle">Batched dense GEMM kernels</text>
+  <line x1="720.0" y1="222.0" x2="748.0" y2="222.0" stroke="#0D9488" stroke-width="2.2" marker-end="url(#arr_teal)"/>
+  <rect x="752.0" y="148.0" width="162.0" height="148.0" rx="8.0" fill="#EFF6FF" stroke="#0B4F8A" stroke-width="1.6"/>
+  <text x="833.0" y="176.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0B4F8A" text-anchor="middle">4. Energy &amp; Forces</text>
+  <text x="833.0" y="206.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="middle">E = Σ E_i</text>
+  <text x="833.0" y="236.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="15.0" font-weight="bold" fill="#0B4F8A" text-anchor="middle">F_i = -∇_ri E</text>
+  <text x="833.0" y="266.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">Autodiff backward pass</text>
+  <text x="833.0" y="286.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">+ Virial stress tensor</text>
+  <rect x="48.0" y="314.0" width="866.0" height="36.0" rx="6.0" fill="#FEFCE8" stroke="#C48A1A" stroke-width="1.2"/>
+  <text x="481.0" y="338.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="bold" fill="#0F172A" text-anchor="middle">Allowed knobs only: descriptor/precision, fitting_net/precision, type_one_side (other hyperparams locked)</text>
+  <rect x="28.0" y="386.0" width="520.0" height="244.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
+  <rect x="28.0" y="386.0" width="520.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="28.0" y="412.0" width="520.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
+  <line x1="28.0" y1="420.0" x2="548.0" y2="420.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="40.0" y="395.0" width="4.0" height="16.0" rx="2.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
+  <text x="52.0" y="409.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">Core Optimizations: Tabulation &amp; Kernel Fusion</text>
+  <rect x="48.0" y="438.0" width="232.0" height="172.0" rx="6.0" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.4"/>
+  <text x="64.0" y="466.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.8" font-weight="bold" fill="#0D9488" text-anchor="start">Model Tabulation</text>
+  <text x="64.0" y="494.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#334155" text-anchor="start">• Discretize Embedding Net</text>
+  <text x="64.0" y="520.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#334155" text-anchor="start">• 5th-order spline lookup tables</text>
+  <text x="64.0" y="546.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#334155" text-anchor="start">• Cuts descriptor FLOPs &amp; I/O</text>
+  <text x="64.0" y="572.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#334155" text-anchor="start">• Fits frequent local env calls</text>
+  <rect x="296.0" y="438.0" width="232.0" height="172.0" rx="6.0" fill="#EFF6FF" stroke="#0B4F8A" stroke-width="1.4"/>
+  <text x="312.0" y="466.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0B4F8A" text-anchor="start">Kernel Fusion &amp; Precision</text>
+  <text x="312.0" y="494.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#334155" text-anchor="start">• Fuse neighbor, s(r), &amp; gather</text>
+  <text x="312.0" y="520.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#334155" text-anchor="start">• Reduce intermediate HBM I/O</text>
+  <text x="312.0" y="546.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#334155" text-anchor="start">• Mixed precision on key layers</text>
+  <text x="312.0" y="572.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#334155" text-anchor="start">• Pair with type_one_side flag</text>
+  <rect x="568.0" y="386.0" width="364.0" height="244.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
+  <rect x="568.0" y="386.0" width="364.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="568.0" y="412.0" width="364.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
+  <line x1="568.0" y1="420.0" x2="932.0" y2="420.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="580.0" y="395.0" width="4.0" height="16.0" rx="2.0" fill="#C2410C" stroke="none" stroke-width="1.5"/>
+  <text x="592.0" y="409.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">Accuracy Gate: dp test</text>
+  <rect x="588.0" y="438.0" width="324.0" height="52.0" rx="6.0" fill="#0F172A" stroke="none" stroke-width="1.5"/>
+  <text x="750.0" y="461.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">dp test -m frozen_model.pb</text>
+  <text x="750.0" y="481.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="normal" fill="#93C5FD" text-anchor="middle">-s data_system</text>
+  <text x="588.0" y="518.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.0" font-weight="normal" fill="#334155" text-anchor="start">• Must match official branch outputs</text>
+  <text x="588.0" y="544.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.0" font-weight="normal" fill="#334155" text-anchor="start">• Covers water, Cu, and Al-Cu-Mg</text>
+  <text x="588.0" y="570.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.0" font-weight="normal" fill="#334155" text-anchor="start">• Check energy &amp; forces, not loss alone</text>
+  <text x="588.0" y="596.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.0" font-weight="normal" fill="#334155" text-anchor="start">• Guard against low-precision drift</text>
+</svg>

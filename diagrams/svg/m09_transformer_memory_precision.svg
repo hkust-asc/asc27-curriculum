@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="660" viewBox="0 0 960 660">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#475569"/></marker>
+    <marker id="arr_blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0B4F8A"/></marker>
+    <marker id="arr_teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0D9488"/></marker>
+    <marker id="arr_coral" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C2410C"/></marker>
+    <marker id="arr_gold" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C48A1A"/></marker>
+    <marker id="arr_violet" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#6D28D9"/></marker>
+    <marker id="arr_muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#64748B"/></marker>
+  </defs>
+  <rect width="960" height="660" fill="#FAFBFD"/>
+  <rect x="28.0" y="22.0" width="6.0" height="36.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
+  <text x="44.0" y="44.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#0F172A" text-anchor="start">Transformer Training Memory &amp; Floating-Point Formats</text>
+  <text x="44.0" y="66.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="start">7B mixed-precision AdamW memory (16 Phi = 112 GB) + activations vs. IEEE / AI bit layouts</text>
+  <rect x="28.0" y="86.0" width="452.0" height="546.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
+  <rect x="28.0" y="86.0" width="452.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="28.0" y="112.0" width="452.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
+  <line x1="28.0" y1="120.0" x2="480.0" y2="120.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="40.0" y="95.0" width="4.0" height="16.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
+  <text x="52.0" y="109.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">7B Mixed-Precision AdamW Memory (GB)</text>
+  <rect x="98.0" y="144.0" width="358.0" height="346.0" rx="0.0" fill="#FFFFFF" stroke="none" stroke-width="1.5"/>
+  <line x1="98.0" y1="490.0" x2="456.0" y2="490.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <line x1="93.0" y1="490.0" x2="98.0" y2="490.0" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="88.0" y="495.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">0</text>
+  <line x1="98.0" y1="420.8" x2="456.0" y2="420.8" stroke="#E2E8F0" stroke-width="1.0"/>
+  <line x1="93.0" y1="420.8" x2="98.0" y2="420.8" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="88.0" y="425.8" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">40</text>
+  <line x1="98.0" y1="351.6" x2="456.0" y2="351.6" stroke="#E2E8F0" stroke-width="1.0"/>
+  <line x1="93.0" y1="351.6" x2="98.0" y2="351.6" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="88.0" y="356.6" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">80</text>
+  <line x1="98.0" y1="282.4" x2="456.0" y2="282.4" stroke="#E2E8F0" stroke-width="1.0"/>
+  <line x1="93.0" y1="282.4" x2="98.0" y2="282.4" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="88.0" y="287.4" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">120</text>
+  <line x1="98.0" y1="213.2" x2="456.0" y2="213.2" stroke="#E2E8F0" stroke-width="1.0"/>
+  <line x1="93.0" y1="213.2" x2="98.0" y2="213.2" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="88.0" y="218.2" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">160</text>
+  <line x1="98.0" y1="144.0" x2="456.0" y2="144.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <line x1="93.0" y1="144.0" x2="98.0" y2="144.0" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="88.0" y="149.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">200</text>
+  <line x1="98.0" y1="490.0" x2="456.0" y2="490.0" stroke="#475569" stroke-width="1.8"/>
+  <line x1="98.0" y1="144.0" x2="98.0" y2="490.0" stroke="#475569" stroke-width="1.8"/>
+  <text x="44.0" y="317.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#334155" text-anchor="middle" transform="rotate(-90.0 44.0 317.0)">GPU Memory (GB)</text>
+  <line x1="98.0" y1="351.6" x2="456.0" y2="351.6" stroke="#C2410C" stroke-width="1.8" stroke-dasharray="6,4"/>
+  <rect x="102.0" y="327.6" width="168.0" height="20.0" rx="3.0" fill="#FFF7ED" stroke="#C2410C" stroke-width="1.0"/>
+  <text x="186.0" y="342.6" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C2410C" text-anchor="middle">80 GB GPU Limit</text>
+  <line x1="98.0" y1="296.2" x2="129.5" y2="296.2" stroke="#475569" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <line x1="420.9" y1="296.2" x2="456.0" y2="296.2" stroke="#475569" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <text x="104.0" y="288.2" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#475569" text-anchor="start">Static 16 Phi = 112 GB</text>
+  <rect x="135.5" y="465.8" width="104.0" height="24.2" rx="0.0" fill="#0B4F8A" stroke="#FFFFFF" stroke-width="1.0"/>
+  <text x="187.5" y="482.9" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">W 14</text>
+  <rect x="135.5" y="441.6" width="104.0" height="24.2" rx="0.0" fill="#3B82F6" stroke="#FFFFFF" stroke-width="1.0"/>
+  <text x="187.5" y="458.7" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">G 14</text>
+  <rect x="135.5" y="393.1" width="104.0" height="48.4" rx="0.0" fill="#6D28D9" stroke="#FFFFFF" stroke-width="1.0"/>
+  <text x="187.5" y="422.3" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">FP32 28</text>
+  <rect x="135.5" y="296.2" width="104.0" height="96.9" rx="0.0" fill="#C48A1A" stroke="#FFFFFF" stroke-width="1.0"/>
+  <text x="187.5" y="349.7" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Adam m,v 56 GB</text>
+  <rect x="135.5" y="175.1" width="104.0" height="121.1" rx="0.0" fill="#C2410C" stroke="#FFFFFF" stroke-width="1.0"/>
+  <text x="187.5" y="240.7" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Act ~70 GB</text>
+  <text x="187.5" y="166.1" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#C2410C" text-anchor="middle">~182 GB</text>
+  <text x="187.5" y="514.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="middle">No Checkpointing</text>
+  <rect x="310.9" y="465.8" width="104.0" height="24.2" rx="0.0" fill="#0B4F8A" stroke="#FFFFFF" stroke-width="1.0"/>
+  <text x="362.9" y="482.9" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">W 14</text>
+  <rect x="310.9" y="441.6" width="104.0" height="24.2" rx="0.0" fill="#3B82F6" stroke="#FFFFFF" stroke-width="1.0"/>
+  <text x="362.9" y="458.7" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">G 14</text>
+  <rect x="310.9" y="393.1" width="104.0" height="48.4" rx="0.0" fill="#6D28D9" stroke="#FFFFFF" stroke-width="1.0"/>
+  <text x="362.9" y="422.3" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">FP32 28</text>
+  <rect x="310.9" y="296.2" width="104.0" height="96.9" rx="0.0" fill="#C48A1A" stroke="#FFFFFF" stroke-width="1.0"/>
+  <text x="362.9" y="349.7" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Adam m,v 56 GB</text>
+  <rect x="310.9" y="272.0" width="104.0" height="24.2" rx="0.0" fill="#0D9488" stroke="#FFFFFF" stroke-width="1.0"/>
+  <text x="362.9" y="289.1" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Act 14</text>
+  <text x="362.9" y="263.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0D9488" text-anchor="middle">~126 GB</text>
+  <text x="362.9" y="514.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="middle">With Checkpointing</text>
+  <text x="362.9" y="223.6" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">Act -80%</text>
+  <text x="362.9" y="244.3" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="middle">(+33% recompute)</text>
+  <rect x="46.0" y="535.0" width="13.0" height="13.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
+  <text x="65.0" y="546.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">BF16 Weights (2Φ = 14 GB)</text>
+  <rect x="264.0" y="535.0" width="13.0" height="13.0" rx="2.0" fill="#3B82F6" stroke="none" stroke-width="1.5"/>
+  <text x="283.0" y="546.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">BF16 Grads (2Φ = 14 GB)</text>
+  <rect x="46.0" y="563.0" width="13.0" height="13.0" rx="2.0" fill="#6D28D9" stroke="none" stroke-width="1.5"/>
+  <text x="65.0" y="574.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">FP32 Master (4Φ = 28 GB)</text>
+  <rect x="264.0" y="563.0" width="13.0" height="13.0" rx="2.0" fill="#C48A1A" stroke="none" stroke-width="1.5"/>
+  <text x="283.0" y="574.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Adam m,v FP32 (8Φ = 56 GB)</text>
+  <rect x="46.0" y="591.0" width="13.0" height="13.0" rx="2.0" fill="#C2410C" stroke="none" stroke-width="1.5"/>
+  <text x="65.0" y="602.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Activations (No Ckpt / With Ckpt)</text>
+  <rect x="496.0" y="86.0" width="436.0" height="546.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
+  <rect x="496.0" y="86.0" width="436.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="496.0" y="112.0" width="436.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
+  <line x1="496.0" y1="120.0" x2="932.0" y2="120.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="508.0" y="95.0" width="4.0" height="16.0" rx="2.0" fill="#6D28D9" stroke="none" stroke-width="1.5"/>
+  <text x="520.0" y="109.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">Floating-Point Bit Layouts (Sign / Exp / Mant)</text>
+  <rect x="518.0" y="134.0" width="14.0" height="14.0" rx="2.0" fill="#C2410C" stroke="none" stroke-width="1.5"/>
+  <text x="537.0" y="146.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#334155" text-anchor="start">Sign</text>
+  <rect x="592.0" y="134.0" width="14.0" height="14.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
+  <text x="611.0" y="146.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#334155" text-anchor="start">Exponent (Range)</text>
+  <rect x="752.0" y="134.0" width="14.0" height="14.0" rx="2.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
+  <text x="771.0" y="146.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#334155" text-anchor="start">Mantissa (Precision)</text>
+  <text x="518.0" y="176.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">FP64 (64b)</text>
+  <text x="634.0" y="176.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="start">1 + 11 + 52</text>
+  <rect x="518.0" y="184.0" width="26.0" height="28.0" rx="2.0" fill="#C2410C" stroke="#FFFFFF" stroke-width="1.2"/>
+  <text x="531.0" y="203.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">1</text>
+  <rect x="544.0" y="184.0" width="98.0" height="28.0" rx="2.0" fill="#0B4F8A" stroke="#FFFFFF" stroke-width="1.2"/>
+  <text x="593.0" y="203.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">11b</text>
+  <rect x="642.0" y="184.0" width="266.0" height="28.0" rx="2.0" fill="#0D9488" stroke="#FFFFFF" stroke-width="1.2"/>
+  <text x="775.0" y="203.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">52b</text>
+  <text x="518.0" y="230.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Range +-10^308 · HPC double precision (HPL / HPCG)</text>
+  <text x="518.0" y="254.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">FP32 (32b)</text>
+  <text x="634.0" y="254.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="start">1 + 8 + 23</text>
+  <rect x="518.0" y="262.0" width="26.0" height="28.0" rx="2.0" fill="#C2410C" stroke="#FFFFFF" stroke-width="1.2"/>
+  <text x="531.0" y="281.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">1</text>
+  <rect x="544.0" y="262.0" width="82.0" height="28.0" rx="2.0" fill="#0B4F8A" stroke="#FFFFFF" stroke-width="1.2"/>
+  <text x="585.0" y="281.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">8b</text>
+  <rect x="626.0" y="262.0" width="198.0" height="28.0" rx="2.0" fill="#0D9488" stroke="#FFFFFF" stroke-width="1.2"/>
+  <text x="725.0" y="281.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">23b</text>
+  <line x1="544.0" y1="290.0" x2="544.0" y2="340.0" stroke="#C48A1A" stroke-width="1.8" stroke-dasharray="3,2"/>
+  <line x1="626.0" y1="290.0" x2="626.0" y2="340.0" stroke="#C48A1A" stroke-width="1.8" stroke-dasharray="3,2"/>
+  <text x="518.0" y="308.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Range +-10^38 · Master weights &amp; Adam optimizer states</text>
+  <text x="518.0" y="332.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">BF16 (16b)</text>
+  <text x="634.0" y="332.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="start">1 + 8 + 7</text>
+  <rect x="518.0" y="340.0" width="26.0" height="28.0" rx="2.0" fill="#C2410C" stroke="#FFFFFF" stroke-width="1.2"/>
+  <text x="531.0" y="359.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">1</text>
+  <rect x="544.0" y="340.0" width="82.0" height="28.0" rx="2.0" fill="#0B4F8A" stroke="#FFFFFF" stroke-width="1.2"/>
+  <text x="585.0" y="359.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">8b</text>
+  <rect x="626.0" y="340.0" width="108.0" height="28.0" rx="2.0" fill="#0D9488" stroke="#FFFFFF" stroke-width="1.2"/>
+  <text x="680.0" y="359.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">7b</text>
+  <rect x="746.0" y="342.0" width="152.0" height="24.0" rx="4.0" fill="#FEFCE8" stroke="#C48A1A" stroke-width="1.2"/>
+  <text x="822.0" y="358.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C48A1A" text-anchor="middle">Matches FP32 Exp</text>
+  <text x="518.0" y="386.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Same 8-bit exponent as FP32 · no loss scaling needed</text>
+  <text x="518.0" y="410.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">FP16 (16b)</text>
+  <text x="634.0" y="410.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="start">1 + 5 + 10</text>
+  <rect x="518.0" y="418.0" width="26.0" height="28.0" rx="2.0" fill="#C2410C" stroke="#FFFFFF" stroke-width="1.2"/>
+  <text x="531.0" y="437.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">1</text>
+  <rect x="544.0" y="418.0" width="58.0" height="28.0" rx="2.0" fill="#0B4F8A" stroke="#FFFFFF" stroke-width="1.2"/>
+  <text x="573.0" y="437.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">5b</text>
+  <rect x="602.0" y="418.0" width="132.0" height="28.0" rx="2.0" fill="#0D9488" stroke="#FFFFFF" stroke-width="1.2"/>
+  <text x="668.0" y="437.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">10b</text>
+  <text x="518.0" y="464.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Range +-6.5e4 overflows easily · requires GradScaler</text>
+  <text x="518.0" y="488.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">FP8 E4M3</text>
+  <text x="634.0" y="488.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="start">1 + 4 + 3</text>
+  <rect x="518.0" y="496.0" width="26.0" height="28.0" rx="2.0" fill="#C2410C" stroke="#FFFFFF" stroke-width="1.2"/>
+  <text x="531.0" y="515.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">1</text>
+  <rect x="544.0" y="496.0" width="52.0" height="28.0" rx="2.0" fill="#0B4F8A" stroke="#FFFFFF" stroke-width="1.2"/>
+  <text x="570.0" y="515.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">4b</text>
+  <rect x="596.0" y="496.0" width="68.0" height="28.0" rx="2.0" fill="#0D9488" stroke="#FFFFFF" stroke-width="1.2"/>
+  <text x="630.0" y="515.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">3b</text>
+  <text x="518.0" y="542.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">H100 / B200 Tensor Core inference &amp; FP8 training</text>
+  <rect x="516.0" y="560.0" width="396.0" height="58.0" rx="6.0" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.4"/>
+  <text x="530.0" y="583.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#0F172A" text-anchor="start">Static Memory = (2 + 2 + 4 + 8)Φ = 16Φ  (7B -&gt; 112 GB)</text>
+  <text x="530.0" y="605.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#0F172A" text-anchor="start">Practice: BF16 fwd/bwd + FP32 accumulation + FSDP sharding</text>
+</svg>

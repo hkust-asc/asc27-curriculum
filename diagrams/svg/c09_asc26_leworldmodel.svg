@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="660" viewBox="0 0 960 660">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#475569"/></marker>
+    <marker id="arr_blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0B4F8A"/></marker>
+    <marker id="arr_teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0D9488"/></marker>
+    <marker id="arr_coral" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C2410C"/></marker>
+    <marker id="arr_gold" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C48A1A"/></marker>
+    <marker id="arr_violet" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#6D28D9"/></marker>
+    <marker id="arr_muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#64748B"/></marker>
+  </defs>
+  <rect width="960" height="660" fill="#FAFBFD"/>
+  <rect x="28.0" y="22.0" width="6.0" height="36.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
+  <text x="44.0" y="44.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#0F172A" text-anchor="start">ASC26 Mystery App LeWorldModel (JEPA): &gt;100× Speedup</text>
+  <text x="44.0" y="66.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="start">Mandatory AMD W7900D (ROCm) · Finals 5 kW · 200 PushT cases · Hard gate: success ≥ 90%</text>
+  <rect x="28.0" y="92.0" width="904.0" height="212.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
+  <rect x="28.0" y="92.0" width="904.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="28.0" y="118.0" width="904.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
+  <line x1="28.0" y1="126.0" x2="932.0" y2="126.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="40.0" y="101.0" width="4.0" height="16.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
+  <text x="52.0" y="115.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">JEPA Latent Predictor &amp; CEM Planning Loop (No Pixel Decoding)</text>
+  <rect x="48.0" y="146.0" width="150.0" height="74.0" rx="6.0" fill="#F1F5F9" stroke="#475569" stroke-width="1.6"/>
+  <rect x="48.0" y="146.0" width="5.0" height="74.0" rx="2.0" fill="#475569" stroke="none" stroke-width="1.5"/>
+  <text x="123.0" y="177.8" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="middle">Observation o(t)</text>
+  <text x="123.0" y="202.2" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">Current PushT state</text>
+  <line x1="198.0" y1="183.0" x2="224.0" y2="183.0" stroke="#475569" stroke-width="2.0" marker-end="url(#arr)"/>
+  <rect x="228.0" y="146.0" width="148.0" height="74.0" rx="6.0" fill="#EFF6FF" stroke="#0B4F8A" stroke-width="1.6"/>
+  <rect x="228.0" y="146.0" width="5.0" height="74.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
+  <text x="302.0" y="177.8" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="middle">Encoder</text>
+  <text x="302.0" y="202.2" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">Map to latent s(t)</text>
+  <line x1="376.0" y1="183.0" x2="404.0" y2="183.0" stroke="#0B4F8A" stroke-width="2.0" marker-end="url(#arr_blue)"/>
+  <rect x="408.0" y="146.0" width="198.0" height="74.0" rx="6.0" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.6"/>
+  <rect x="408.0" y="146.0" width="5.0" height="74.0" rx="2.0" fill="#6D28D9" stroke="none" stroke-width="1.5"/>
+  <text x="507.0" y="177.8" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="middle">JEPA Predictor</text>
+  <text x="507.0" y="202.2" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">Rollout s(t+k) = f(s(t), a)</text>
+  <line x1="606.0" y1="183.0" x2="634.0" y2="183.0" stroke="#6D28D9" stroke-width="2.0" marker-end="url(#arr_violet)"/>
+  <rect x="638.0" y="146.0" width="150.0" height="74.0" rx="6.0" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.6"/>
+  <rect x="638.0" y="146.0" width="5.0" height="74.0" rx="2.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
+  <text x="713.0" y="177.8" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="middle">CEM Scorer</text>
+  <text x="713.0" y="202.2" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">Rank action samples</text>
+  <line x1="788.0" y1="183.0" x2="814.0" y2="183.0" stroke="#0D9488" stroke-width="2.0" marker-end="url(#arr_teal)"/>
+  <rect x="818.0" y="146.0" width="94.0" height="74.0" rx="8.0" fill="#FEFCE8" stroke="#C48A1A" stroke-width="1.8"/>
+  <text x="865.0" y="178.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="bold" fill="#C48A1A" text-anchor="middle">Best Action</text>
+  <text x="865.0" y="200.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.0" font-weight="bold" fill="#0F172A" text-anchor="middle">a* → step</text>
+  <path d="M 713 220 L 713 254 L 507 254 L 507 224" fill="none" stroke="#0D9488" stroke-width="2.0" stroke-dasharray="6,4" marker-end="url(#arr_teal)"/>
+  <text x="610.0" y="274.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0D9488" text-anchor="middle">Iterative CEM sampling (hotspot: tiny forwards + launch overhead)</text>
+  <text x="138.0" y="266.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="bold" fill="#0B4F8A" text-anchor="middle">Cached goal s_goal</text>
+  <path d="M 218 262 L 302 262 L 302 224" fill="none" stroke="#0B4F8A" stroke-width="1.6" stroke-dasharray="4,3" marker-end="url(#arr_blue)"/>
+  <rect x="28.0" y="322.0" width="434.0" height="310.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
+  <rect x="28.0" y="322.0" width="434.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="28.0" y="348.0" width="434.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
+  <line x1="28.0" y1="356.0" x2="462.0" y2="356.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="40.0" y="331.0" width="4.0" height="16.0" rx="2.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
+  <text x="52.0" y="345.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">ASC26 Finals Wall Time (200 Cases · All &gt;100×)</text>
+  <rect x="98.0" y="384.0" width="338.0" height="184.0" rx="0.0" fill="#FFFFFF" stroke="none" stroke-width="1.5"/>
+  <line x1="98.0" y1="568.0" x2="436.0" y2="568.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <line x1="93.0" y1="568.0" x2="98.0" y2="568.0" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="88.0" y="573.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">0s</text>
+  <line x1="98.0" y1="526.2" x2="436.0" y2="526.2" stroke="#E2E8F0" stroke-width="1.0"/>
+  <line x1="93.0" y1="526.2" x2="98.0" y2="526.2" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="88.0" y="531.2" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">5s</text>
+  <line x1="98.0" y1="484.4" x2="436.0" y2="484.4" stroke="#E2E8F0" stroke-width="1.0"/>
+  <line x1="93.0" y1="484.4" x2="98.0" y2="484.4" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="88.0" y="489.4" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">10s</text>
+  <line x1="98.0" y1="442.5" x2="436.0" y2="442.5" stroke="#E2E8F0" stroke-width="1.0"/>
+  <line x1="93.0" y1="442.5" x2="98.0" y2="442.5" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="88.0" y="447.5" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">15s</text>
+  <line x1="98.0" y1="400.7" x2="436.0" y2="400.7" stroke="#E2E8F0" stroke-width="1.0"/>
+  <line x1="93.0" y1="400.7" x2="98.0" y2="400.7" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="88.0" y="405.7" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">20s</text>
+  <line x1="98.0" y1="568.0" x2="436.0" y2="568.0" stroke="#475569" stroke-width="1.8"/>
+  <line x1="98.0" y1="384.0" x2="98.0" y2="568.0" stroke="#475569" stroke-width="1.8"/>
+  <text x="44.0" y="476.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#334155" text-anchor="middle" transform="rotate(-90.0 44.0 476.0)">Total Wall Time, 200 Cases (s)</text>
+  <rect x="122.3" y="450.9" width="64.0" height="117.1" rx="5.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
+  <text x="154.3" y="438.9" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="17" font-weight="bold" fill="#0D9488" text-anchor="middle">14 s</text>
+  <text x="154.3" y="592.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0F172A" text-anchor="middle">BUPT</text>
+  <rect x="235.0" y="434.2" width="64.0" height="133.8" rx="5.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
+  <text x="267.0" y="456.2" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">16 s</text>
+  <text x="267.0" y="592.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0F172A" text-anchor="middle">THU</text>
+  <rect x="347.7" y="425.8" width="64.0" height="142.2" rx="5.0" fill="#6D28D9" stroke="none" stroke-width="1.5"/>
+  <text x="379.7" y="447.8" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">17 s</text>
+  <text x="379.7" y="592.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0F172A" text-anchor="middle">PKU</text>
+  <rect x="244.0" y="394.0" width="178.0" height="26.0" rx="13.0" fill="#FEFCE8" stroke="#C48A1A" stroke-width="1.4"/>
+  <text x="333.0" y="411.2" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.2" font-weight="bold" fill="#C48A1A" text-anchor="middle">Top 3 all exceed 100×</text>
+  <text x="245.0" y="616.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.2" font-weight="normal" fill="#64748B" text-anchor="middle">All runs meet PushT success ≥ 90% (ASC26 overview talk)</text>
+  <rect x="482.0" y="322.0" width="450.0" height="310.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
+  <rect x="482.0" y="322.0" width="450.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="482.0" y="348.0" width="450.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
+  <line x1="482.0" y1="356.0" x2="932.0" y2="356.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="494.0" y="331.0" width="4.0" height="16.0" rx="2.0" fill="#6D28D9" stroke="none" stroke-width="1.5"/>
+  <text x="506.0" y="345.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">Key Optimization Stack (ROCm Ecosystem)</text>
+  <rect x="500.0" y="374.0" width="414.0" height="50.0" rx="6.0" fill="#EFF6FF" stroke="#0B4F8A" stroke-width="1.3"/>
+  <rect x="500.0" y="374.0" width="5.0" height="50.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
+  <text x="516.0" y="395.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.8" font-weight="bold" fill="#0B4F8A" text-anchor="start">BF16 Mixed Precision &amp; Feature Caching</text>
+  <text x="516.0" y="415.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.2" font-weight="normal" fill="#334155" text-anchor="start">Cut latent forward latency; reuse static goal embeddings</text>
+  <rect x="500.0" y="434.0" width="414.0" height="50.0" rx="6.0" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.3"/>
+  <rect x="500.0" y="434.0" width="5.0" height="50.0" rx="2.0" fill="#6D28D9" stroke="none" stroke-width="1.5"/>
+  <text x="516.0" y="455.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.8" font-weight="bold" fill="#6D28D9" text-anchor="start">HIP Graph Capture</text>
+  <text x="516.0" y="475.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.2" font-weight="normal" fill="#334155" text-anchor="start">Eliminate dense ROCm kernel launch overhead in CEM loop</text>
+  <rect x="500.0" y="494.0" width="414.0" height="50.0" rx="6.0" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.3"/>
+  <rect x="500.0" y="494.0" width="5.0" height="50.0" rx="2.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
+  <text x="516.0" y="515.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.8" font-weight="bold" fill="#0D9488" text-anchor="start">Early-Exit on Solved Episodes</text>
+  <text x="516.0" y="535.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.2" font-weight="normal" fill="#334155" text-anchor="start">Mask completed PushT rollouts to skip wasted CEM steps</text>
+  <rect x="500.0" y="554.0" width="414.0" height="50.0" rx="6.0" fill="#FEFCE8" stroke="#C48A1A" stroke-width="1.3"/>
+  <rect x="500.0" y="554.0" width="5.0" height="50.0" rx="2.0" fill="#C48A1A" stroke="none" stroke-width="1.5"/>
+  <text x="516.0" y="575.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.8" font-weight="bold" fill="#C48A1A" text-anchor="start">Async Video I/O &amp; Multi-Node Pools</text>
+  <text x="516.0" y="595.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.2" font-weight="normal" fill="#334155" text-anchor="start">Remove CPU-GPU sync stalls; NUMA pin + async encoding</text>
+</svg>

@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="660" viewBox="0 0 960 660">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#475569"/></marker>
+    <marker id="arr_blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0B4F8A"/></marker>
+    <marker id="arr_teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0D9488"/></marker>
+    <marker id="arr_coral" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C2410C"/></marker>
+    <marker id="arr_gold" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C48A1A"/></marker>
+    <marker id="arr_violet" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#6D28D9"/></marker>
+    <marker id="arr_muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#64748B"/></marker>
+  </defs>
+  <rect width="960" height="660" fill="#FAFBFD"/>
+  <rect x="28.0" y="22.0" width="6.0" height="36.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
+  <text x="44.0" y="44.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#0F172A" text-anchor="start">ASC26 AMSS-NCKU Numerical Relativity: AMR &amp; Speedups</text>
+  <text x="44.0" y="66.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="start">Binary black hole merger (GW150914) · Gates: trajectory RMS &lt; 1%, ADM &lt; 2 · Finals 5 kW</text>
+  <rect x="28.0" y="92.0" width="434.0" height="536.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
+  <rect x="28.0" y="92.0" width="434.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="28.0" y="118.0" width="434.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
+  <line x1="28.0" y1="126.0" x2="462.0" y2="126.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="40.0" y="101.0" width="4.0" height="16.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
+  <text x="52.0" y="115.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">9-Level Nested AMR Grid &amp; Wave Sphere</text>
+  <circle cx="245.0" cy="312.0" r="168.0" fill="#F5F3FF" stroke="#6D28D9" stroke-width="2.0" opacity="0.45"/>
+  <circle cx="245.0" cy="312.0" r="168.0" fill="none" stroke="#6D28D9" stroke-width="2.0"/>
+  <circle cx="245.0" cy="312.0" r="146.0" fill="none" stroke="#6D28D9" stroke-width="1.2" opacity="0.55"/>
+  <rect x="123.0" y="190.0" width="244.0" height="244.0" rx="3.0" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="129.0" y="206.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="bold" fill="#94A3B8" text-anchor="start">L0 coarse (Δt)</text>
+  <rect x="154.0" y="221.0" width="182.0" height="182.0" rx="3.0" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="160.0" y="237.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="bold" fill="#3B82F6" text-anchor="start">L3 (8×)</text>
+  <rect x="183.0" y="250.0" width="124.0" height="124.0" rx="3.0" fill="#DBEAFE" stroke="#0B4F8A" stroke-width="1.5"/>
+  <text x="189.0" y="266.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="bold" fill="#0B4F8A" text-anchor="start">L6 (16×)</text>
+  <ellipse cx="245.0" cy="312.0" rx="34.0" ry="18.0" fill="none" stroke="#C2410C" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <rect x="193.0" y="296.0" width="48.0" height="48.0" rx="2.0" fill="#FFF7ED" stroke="#C2410C" stroke-width="1.8"/>
+  <line x1="209.0" y1="296.0" x2="209.0" y2="344.0" stroke="#C2410C" stroke-width="0.7"/>
+  <line x1="225.0" y1="296.0" x2="225.0" y2="344.0" stroke="#C2410C" stroke-width="0.7"/>
+  <line x1="193.0" y1="312.0" x2="241.0" y2="312.0" stroke="#C2410C" stroke-width="0.7"/>
+  <line x1="193.0" y1="328.0" x2="241.0" y2="328.0" stroke="#C2410C" stroke-width="0.7"/>
+  <circle cx="217.0" cy="320.0" r="7.5" fill="#0F172A" stroke="none" stroke-width="1.5"/>
+  <rect x="249.0" y="280.0" width="48.0" height="48.0" rx="2.0" fill="#FFF7ED" stroke="#C2410C" stroke-width="1.8"/>
+  <line x1="265.0" y1="280.0" x2="265.0" y2="328.0" stroke="#C2410C" stroke-width="0.7"/>
+  <line x1="281.0" y1="280.0" x2="281.0" y2="328.0" stroke="#C2410C" stroke-width="0.7"/>
+  <line x1="249.0" y1="296.0" x2="297.0" y2="296.0" stroke="#C2410C" stroke-width="0.7"/>
+  <line x1="249.0" y1="312.0" x2="297.0" y2="312.0" stroke="#C2410C" stroke-width="0.7"/>
+  <circle cx="273.0" cy="304.0" r="7.5" fill="#0F172A" stroke="none" stroke-width="1.5"/>
+  <text x="245.0" y="136.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="bold" fill="#6D28D9" text-anchor="middle">Outer GW extraction sphere Ψ₄ (GW150914)</text>
+  <line x1="297.0" y1="284.0" x2="351.0" y2="220.0" stroke="#C2410C" stroke-width="1.5"/>
+  <text x="355.0" y="216.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="bold" fill="#C2410C" text-anchor="start">L8 finest</text>
+  <text x="355.0" y="234.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="12.8" font-weight="normal" fill="#C2410C" text-anchor="start">32× subcycle</text>
+  <rect x="48.0" y="498.0" width="394.0" height="112.0" rx="6.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.2"/>
+  <text x="64.0" y="522.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.6" font-weight="normal" fill="#334155" text-anchor="start">• 24 vars/cell; RK4 runs four 3D stencil RHS/step</text>
+  <text x="64.0" y="546.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.6" font-weight="normal" fill="#334155" text-anchor="start">• Fine subcycling + inter-level interp &amp; halo comms</text>
+  <text x="64.0" y="570.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.6" font-weight="normal" fill="#334155" text-anchor="start">• Finals cases: GW150914, triple BH, full merger</text>
+  <text x="64.0" y="594.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.6" font-weight="normal" fill="#334155" text-anchor="start">• Physics gates: RMS &lt; 1%, ADM &lt; 2 (math equiv.)</text>
+  <rect x="482.0" y="92.0" width="450.0" height="536.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
+  <rect x="482.0" y="92.0" width="450.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="482.0" y="118.0" width="450.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
+  <line x1="482.0" y1="126.0" x2="932.0" y2="126.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="494.0" y="101.0" width="4.0" height="16.0" rx="2.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
+  <text x="506.0" y="115.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">Verified ASC26 Team Speedups (By Source)</text>
+  <rect x="502.0" y="144.0" width="410.0" height="142.0" rx="8.0" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.6"/>
+  <text x="518.0" y="170.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0D9488" text-anchor="start">Zhejiang Univ. (ZJU · ASC26 Talk)</text>
+  <text x="518.0" y="194.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#334155" text-anchor="start">Full-kernel GPU offload + register/SMEM tuning</text>
+  <text x="518.0" y="222.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13.2" font-weight="normal" fill="#0F172A" text-anchor="start">Prelim 44,425→2,376s</text>
+  <rect x="718.0" y="208.0" width="114.0" height="18.0" rx="4.0" fill="#3B82F6" stroke="none" stroke-width="0"/>
+  <text x="840.0" y="222.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="15.5" font-weight="bold" fill="#0B4F8A" text-anchor="start">18.6×</text>
+  <text x="518.0" y="254.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="bold" fill="#0F172A" text-anchor="start">Finals peak end-to-end</text>
+  <rect x="718.0" y="240.0" width="178.0" height="18.0" rx="4.0" fill="#0D9488" stroke="none" stroke-width="0"/>
+  <text x="896.0" y="276.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="15.0" font-weight="bold" fill="#0D9488" text-anchor="end">Up to ~30×</text>
+  <rect x="502.0" y="302.0" width="410.0" height="184.0" rx="8.0" fill="#EFF6FF" stroke="#0B4F8A" stroke-width="1.6"/>
+  <text x="518.0" y="328.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.8" font-weight="bold" fill="#0B4F8A" text-anchor="start">Tsinghua (THU · Prep step-time progression)</text>
+  <text x="672.0" y="359.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.2" font-weight="normal" fill="#334155" text-anchor="end">CPU baseline</text>
+  <rect x="682.0" y="347.0" width="144.0" height="16.0" rx="3.0" fill="#94A3B8" stroke="none" stroke-width="0"/>
+  <text x="834.0" y="360.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13.6" font-weight="bold" fill="#475569" text-anchor="start">4.5s</text>
+  <text x="672.0" y="386.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.2" font-weight="normal" fill="#334155" text-anchor="end">Init GPU (122 H2D/D2H)</text>
+  <rect x="682.0" y="374.0" width="150.4" height="16.0" rx="3.0" fill="#C2410C" stroke="none" stroke-width="0"/>
+  <text x="840.4" y="387.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13.6" font-weight="bold" fill="#C2410C" text-anchor="start">4.7s</text>
+  <text x="672.0" y="413.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.2" font-weight="normal" fill="#334155" text-anchor="end">GPU-resident state</text>
+  <rect x="682.0" y="401.0" width="44.8" height="16.0" rx="3.0" fill="#C48A1A" stroke="none" stroke-width="0"/>
+  <text x="734.8" y="414.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13.6" font-weight="bold" fill="#C48A1A" text-anchor="start">1.4s</text>
+  <text x="672.0" y="440.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.2" font-weight="normal" fill="#334155" text-anchor="end">2c GPU + 62c analysis</text>
+  <rect x="682.0" y="428.0" width="32.0" height="16.0" rx="3.0" fill="#3B82F6" stroke="none" stroke-width="0"/>
+  <text x="722.0" y="441.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13.6" font-weight="bold" fill="#3B82F6" text-anchor="start">1.0s</text>
+  <text x="672.0" y="467.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.2" font-weight="normal" fill="#334155" text-anchor="end">3-stage pipeline</text>
+  <rect x="682.0" y="455.0" width="27.2" height="16.0" rx="3.0" fill="#0D9488" stroke="none" stroke-width="0"/>
+  <text x="717.2" y="468.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13.6" font-weight="bold" fill="#0D9488" text-anchor="start">0.85s</text>
+  <rect x="502.0" y="502.0" width="410.0" height="108.0" rx="8.0" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.6"/>
+  <text x="518.0" y="528.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#6D28D9" text-anchor="start">Peking Univ. (PKU · ASC26 Talk Prelim)</text>
+  <text x="518.0" y="556.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="bold" fill="#0F172A" text-anchor="start">End-to-end 5.50× (TwoPunctures 64c OMP 5.46×)</text>
+  <rect x="518.0" y="568.0" width="314.0" height="30.0" rx="15.0" fill="#FFFFFF" stroke="#6D28D9" stroke-width="1.4"/>
+  <text x="675.0" y="587.8" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13.6" font-weight="bold" fill="#6D28D9" text-anchor="middle">Verified trajectory RMS = 1.9 × 10⁻⁹</text>
+</svg>

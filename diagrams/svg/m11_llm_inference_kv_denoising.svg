@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="660" viewBox="0 0 960 660">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#475569"/></marker>
+    <marker id="arr_blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0B4F8A"/></marker>
+    <marker id="arr_teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0D9488"/></marker>
+    <marker id="arr_coral" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C2410C"/></marker>
+    <marker id="arr_gold" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C48A1A"/></marker>
+    <marker id="arr_violet" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#6D28D9"/></marker>
+    <marker id="arr_muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#64748B"/></marker>
+  </defs>
+  <rect width="960" height="660" fill="#FAFBFD"/>
+  <rect x="28.0" y="22.0" width="6.0" height="36.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
+  <text x="44.0" y="44.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#0F172A" text-anchor="start">LLM Inference Regimes &amp; Diffusion Denoising Acceleration</text>
+  <text x="44.0" y="66.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="start">Prefill (Compute-bound GEMM) vs. Decode (BW-bound GEMV + KV Cache), TeaCache &amp; ParaStep</text>
+  <rect x="28.0" y="86.0" width="452.0" height="546.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
+  <rect x="28.0" y="86.0" width="452.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="28.0" y="112.0" width="452.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
+  <line x1="28.0" y1="120.0" x2="480.0" y2="120.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="40.0" y="95.0" width="4.0" height="16.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
+  <text x="52.0" y="109.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">LLM Inference: Prefill vs. Decode Regimes</text>
+  <rect x="98.0" y="138.0" width="358.0" height="188.0" rx="0.0" fill="#FFFFFF" stroke="none" stroke-width="1.5"/>
+  <line x1="130.6" y1="138.0" x2="130.6" y2="326.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <line x1="130.6" y1="326.0" x2="130.6" y2="331.0" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="130.6" y="348.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">1</text>
+  <line x1="239.1" y1="138.0" x2="239.1" y2="326.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <line x1="239.1" y1="326.0" x2="239.1" y2="331.0" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="239.1" y="348.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">10</text>
+  <line x1="347.5" y1="138.0" x2="347.5" y2="326.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <line x1="347.5" y1="326.0" x2="347.5" y2="331.0" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="347.5" y="348.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">100</text>
+  <line x1="456.0" y1="138.0" x2="456.0" y2="326.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <line x1="456.0" y1="326.0" x2="456.0" y2="331.0" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="456.0" y="348.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">1000</text>
+  <line x1="98.0" y1="326.0" x2="456.0" y2="326.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <line x1="93.0" y1="326.0" x2="98.0" y2="326.0" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="88.0" y="331.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">1</text>
+  <line x1="98.0" y1="269.0" x2="456.0" y2="269.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <line x1="93.0" y1="269.0" x2="98.0" y2="269.0" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="88.0" y="274.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">10</text>
+  <line x1="98.0" y1="212.1" x2="456.0" y2="212.1" stroke="#E2E8F0" stroke-width="1.0"/>
+  <line x1="93.0" y1="212.1" x2="98.0" y2="212.1" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="88.0" y="217.1" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">100</text>
+  <line x1="98.0" y1="155.1" x2="456.0" y2="155.1" stroke="#E2E8F0" stroke-width="1.0"/>
+  <line x1="93.0" y1="155.1" x2="98.0" y2="155.1" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="88.0" y="160.1" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">1k</text>
+  <line x1="98.0" y1="326.0" x2="456.0" y2="326.0" stroke="#475569" stroke-width="1.8"/>
+  <line x1="98.0" y1="138.0" x2="98.0" y2="326.0" stroke="#475569" stroke-width="1.8"/>
+  <text x="277.0" y="372.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#334155" text-anchor="middle">Arithmetic Intensity I (FLOP / Byte)</text>
+  <text x="44.0" y="232.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#334155" text-anchor="middle" transform="rotate(-90.0 44.0 232.0)">Perf (TFLOP/s)</text>
+  <polyline points="98.0,313.2 100.3,312.1 102.5,310.9 104.8,309.7 107.0,308.5 109.3,307.3 111.5,306.1 113.8,305.0 116.0,303.8 118.3,302.6 120.5,301.4 122.8,300.2 125.0,299.1 127.3,297.9 129.5,296.7 131.8,295.5 134.0,294.3 136.3,293.1 138.5,292.0 140.8,290.8 143.0,289.6 145.3,288.4 147.5,287.2 149.8,286.0 152.0,284.9 154.3,283.7 156.5,282.5 158.8,281.3 161.0,280.1 163.3,279.0 165.5,277.8 167.8,276.6 170.1,275.4 172.3,274.2 174.6,273.0 176.8,271.9 179.1,270.7 181.3,269.5 183.6,268.3 185.8,267.1 188.1,265.9 190.3,264.8 192.6,263.6 194.8,262.4 197.1,261.2 199.3,260.0 201.6,258.9 203.8,257.7 206.1,256.5 208.3,255.3 210.6,254.1 212.8,252.9 215.1,251.8 217.3,250.6 219.6,249.4 221.8,248.2 224.1,247.0 226.3,245.8 228.6,244.7 230.8,243.5 233.1,242.3 235.3,241.1 237.6,239.9 239.8,238.8 242.1,237.6 244.4,236.4 246.6,235.2 248.9,234.0 251.1,232.8 253.4,231.7 255.6,230.5 257.9,229.3 260.1,228.1 262.4,226.9 264.6,225.7 266.9,224.6 269.1,223.4 271.4,222.2 273.6,221.0 275.9,219.8 278.1,218.7 280.4,217.5 282.6,216.3 284.9,215.1 287.1,213.9 289.4,212.7 291.6,211.6 293.9,210.4 296.1,209.2 298.4,208.0 300.6,206.8 302.9,205.6 305.1,204.5 307.4,203.3 309.6,202.1 311.9,200.9 314.2,199.7 316.4,198.6 318.7,197.4 320.9,196.2 323.2,195.0 325.4,193.8 327.7,192.6 329.9,191.5 332.2,190.3 334.4,189.1 336.7,187.9 338.9,186.7 341.2,185.5 343.4,184.4 345.7,183.2 347.9,182.0 350.2,180.8 352.4,179.6 354.7,178.4 356.9,177.3 359.2,176.1 361.4,174.9 363.7,173.7 365.9,172.5 368.2,171.4 370.4,170.2 372.7,169.0 374.9,167.8 377.2,166.6 379.4,165.4 381.7,164.3 383.9,163.1 386.2,161.9 388.5,160.7 390.7,159.5 393.0,158.3 395.2,157.2 397.5,156.0 399.7,155.4 402.0,155.4 404.2,155.4 406.5,155.4 408.7,155.4 411.0,155.4 413.2,155.4 415.5,155.4 417.7,155.4 420.0,155.4 422.2,155.4 424.5,155.4 426.7,155.4 429.0,155.4 431.2,155.4 433.5,155.4 435.7,155.4 438.0,155.4 440.2,155.4 442.5,155.4 444.7,155.4 447.0,155.4 449.2,155.4 451.5,155.4 453.7,155.4 456.0,155.4" fill="none" stroke="#475569" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+  <line x1="398.5" y1="138.0" x2="398.5" y2="326.0" stroke="#64748B" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <text x="392.5" y="156.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="end">I* ~ 295</text>
+  <circle cx="149.7" cy="287.2" r="6.5" fill="#C2410C" stroke="#FFFFFF" stroke-width="1.5"/>
+  <rect x="161.7" y="261.2" width="160.0" height="38.0" rx="4.0" fill="#FFF7ED" stroke="#C2410C" stroke-width="1.2"/>
+  <text x="241.7" y="277.2" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C2410C" text-anchor="middle">Decode (I ~ 1-2)</text>
+  <text x="241.7" y="293.2" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="middle">Memory-BW GEMV</text>
+  <circle cx="415.1" cy="158.3" r="6.5" fill="#0D9488" stroke="#FFFFFF" stroke-width="1.5"/>
+  <rect x="255.1" y="174.3" width="158.0" height="38.0" rx="4.0" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.2"/>
+  <text x="334.1" y="190.3" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">Prefill (High I)</text>
+  <text x="334.1" y="206.3" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="middle">Compute-Bound GEMM</text>
+  <rect x="46.0" y="386.0" width="202.0" height="134.0" rx="6.0" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.4"/>
+  <text x="147.0" y="408.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0D9488" text-anchor="middle">Prefill Phase</text>
+  <text x="58.0" y="432.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Kernel: Matrix GEMM</text>
+  <text x="58.0" y="454.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Bound: Tensor Core FLOPs</text>
+  <text x="58.0" y="476.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Metric: TTFT latency</text>
+  <text x="58.0" y="498.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Opt: FlashAttention</text>
+  <rect x="260.0" y="386.0" width="202.0" height="134.0" rx="6.0" fill="#FFF7ED" stroke="#C2410C" stroke-width="1.4"/>
+  <text x="361.0" y="408.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#C2410C" text-anchor="middle">Decode Phase</text>
+  <text x="272.0" y="432.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Kernel: Matrix-Vec GEMV</text>
+  <text x="272.0" y="454.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Bound: HBM BW &amp; capacity</text>
+  <text x="272.0" y="476.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Metric: TPOT latency</text>
+  <text x="272.0" y="498.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Opt: GQA + PagedAttn</text>
+  <rect x="46.0" y="534.0" width="416.0" height="84.0" rx="6.0" fill="#FEFCE8" stroke="#C48A1A" stroke-width="1.5"/>
+  <text x="60.0" y="556.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">KV Cache Footprint (Scales Linearly with S and B)</text>
+  <text x="60.0" y="583.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#C48A1A" text-anchor="start">M_KV = 2 · L · n_kv · d_h · S · B · b   (Bytes)</text>
+  <text x="60.0" y="606.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">L layers, n_kv KV heads, head dim d_h, seq len S, batch B, bytes b</text>
+  <rect x="496.0" y="86.0" width="436.0" height="546.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
+  <rect x="496.0" y="86.0" width="436.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="496.0" y="112.0" width="436.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
+  <line x1="496.0" y1="120.0" x2="932.0" y2="120.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="508.0" y="95.0" width="4.0" height="16.0" rx="2.0" fill="#6D28D9" stroke="none" stroke-width="1.5"/>
+  <text x="520.0" y="109.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">Diffusion / World Model Pipeline (TeaCache + ParaStep)</text>
+  <text x="516.0" y="146.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0F172A" text-anchor="start">1. Iterative Denoising (t_T -&gt; t_0) &amp; TeaCache Skip</text>
+  <rect x="520.0" y="204.0" width="62.0" height="48.0" rx="6.0" fill="#FFFFFF" stroke="#475569" stroke-width="1.6"/>
+  <text x="551.0" y="226.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#475569" text-anchor="middle">t_T</text>
+  <text x="551.0" y="244.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="middle">Noise</text>
+  <line x1="583.0" y1="228.0" x2="598.0" y2="228.0" stroke="#475569" stroke-width="1.6" marker-end="url(#arr)"/>
+  <rect x="600.0" y="204.0" width="62.0" height="48.0" rx="6.0" fill="#FFFFFF" stroke="#6D28D9" stroke-width="1.6"/>
+  <text x="631.0" y="226.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#6D28D9" text-anchor="middle">t_3</text>
+  <text x="631.0" y="244.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="middle">DiT</text>
+  <line x1="663.0" y1="228.0" x2="678.0" y2="228.0" stroke="#475569" stroke-width="1.6" marker-end="url(#arr)"/>
+  <rect x="680.0" y="204.0" width="62.0" height="48.0" rx="6.0" fill="#F1F5F9" stroke="#64748B" stroke-width="1.6" stroke-dasharray="4,3"/>
+  <text x="711.0" y="226.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#64748B" text-anchor="middle">t_2</text>
+  <text x="711.0" y="244.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="middle">Skip</text>
+  <line x1="743.0" y1="228.0" x2="758.0" y2="228.0" stroke="#475569" stroke-width="1.6" marker-end="url(#arr)"/>
+  <rect x="760.0" y="204.0" width="62.0" height="48.0" rx="6.0" fill="#FFFFFF" stroke="#6D28D9" stroke-width="1.6"/>
+  <text x="791.0" y="226.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#6D28D9" text-anchor="middle">t_1</text>
+  <text x="791.0" y="244.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="middle">DiT</text>
+  <line x1="823.0" y1="228.0" x2="838.0" y2="228.0" stroke="#475569" stroke-width="1.6" marker-end="url(#arr)"/>
+  <rect x="840.0" y="204.0" width="62.0" height="48.0" rx="6.0" fill="#FFFFFF" stroke="#0D9488" stroke-width="1.6"/>
+  <text x="871.0" y="226.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">t_0</text>
+  <text x="871.0" y="244.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="middle">Output</text>
+  <path d="M 631.0 202 Q 711.0 152 791.0 202" fill="none" stroke="#0D9488" stroke-width="2.4" marker-end="url(#arr_teal)"/>
+  <rect x="608.0" y="156.0" width="208.0" height="24.0" rx="4.0" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.1"/>
+  <text x="712.0" y="173.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">TeaCache Reuse (delta &lt; eps)</text>
+  <text x="714.0" y="272.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="middle">Reuse prior DiT residual when input delta &lt; eps (-30 to 50% steps)</text>
+  <line x1="514.0" y1="290.0" x2="914.0" y2="290.0" stroke="#E2E8F0" stroke-width="1.4"/>
+  <text x="516.0" y="316.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0F172A" text-anchor="start">2. ParaStep 2-GPU Speculative Step Overlap</text>
+  <text x="516.0" y="354.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#64748B" text-anchor="start">1-GPU</text>
+  <rect x="582.0" y="336.0" width="73.0" height="28.0" rx="4.0" fill="#F1F5F9" stroke="#475569" stroke-width="1.3"/>
+  <text x="618.5" y="355.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#334155" text-anchor="middle">Step 0</text>
+  <rect x="661.0" y="336.0" width="73.0" height="28.0" rx="4.0" fill="#F1F5F9" stroke="#475569" stroke-width="1.3"/>
+  <text x="697.5" y="355.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#334155" text-anchor="middle">Step 1</text>
+  <rect x="740.0" y="336.0" width="73.0" height="28.0" rx="4.0" fill="#F1F5F9" stroke="#475569" stroke-width="1.3"/>
+  <text x="776.5" y="355.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#334155" text-anchor="middle">Step 2</text>
+  <rect x="819.0" y="336.0" width="73.0" height="28.0" rx="4.0" fill="#F1F5F9" stroke="#475569" stroke-width="1.3"/>
+  <text x="855.5" y="355.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#334155" text-anchor="middle">Step 3</text>
+  <line x1="892.0" y1="332.0" x2="892.0" y2="480.0" stroke="#C2410C" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="892.0" y="326.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C2410C" text-anchor="middle">4T</text>
+  <text x="516.0" y="412.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0B4F8A" text-anchor="start">GPU 0</text>
+  <text x="516.0" y="456.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#6D28D9" text-anchor="start">GPU 1</text>
+  <rect x="582.0" y="392.0" width="76.0" height="30.0" rx="4.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
+  <text x="620.0" y="412.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Step 0</text>
+  <rect x="668.0" y="392.0" width="76.0" height="30.0" rx="4.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
+  <text x="706.0" y="412.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Step 2</text>
+  <rect x="614.0" y="436.0" width="78.0" height="30.0" rx="4.0" fill="#6D28D9" stroke="none" stroke-width="1.5"/>
+  <text x="653.0" y="456.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Step 1*</text>
+  <rect x="700.0" y="436.0" width="78.0" height="30.0" rx="4.0" fill="#6D28D9" stroke="none" stroke-width="1.5"/>
+  <text x="739.0" y="456.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Step 3*</text>
+  <line x1="632.0" y1="422.0" x2="646.0" y2="434.0" stroke="#C48A1A" stroke-width="2.0" marker-end="url(#arr_gold)"/>
+  <line x1="680.0" y1="436.0" x2="692.0" y2="424.0" stroke="#C48A1A" stroke-width="2.0" marker-end="url(#arr_gold)"/>
+  <line x1="718.0" y1="422.0" x2="732.0" y2="434.0" stroke="#C48A1A" stroke-width="2.0" marker-end="url(#arr_gold)"/>
+  <line x1="780.0" y1="386.0" x2="780.0" y2="480.0" stroke="#0D9488" stroke-width="2.0" stroke-dasharray="4,3"/>
+  <line x1="784.0" y1="426.0" x2="888.0" y2="426.0" stroke="#0D9488" stroke-width="2.2" marker-start="url(#arr_teal)" marker-end="url(#arr_teal)"/>
+  <rect x="790.0" y="392.0" width="118.0" height="28.0" rx="4.0" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.2"/>
+  <text x="849.0" y="411.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">~1.7-1.9x</text>
+  <text x="714.0" y="500.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="middle">*GPU 1 predicts latent state early and syncs correction via NVLink</text>
+  <rect x="514.0" y="534.0" width="400.0" height="84.0" rx="6.0" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.5"/>
+  <text x="528.0" y="558.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#6D28D9" text-anchor="start">ASC26 UnifoLM / LeWM Optimization Playbook</text>
+  <text x="528.0" y="582.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">1. Trim redundant steps with TeaCache, then overlap with ParaStep</text>
+  <text x="528.0" y="603.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">2. Validate every shortcut against full-trajectory quality gates</text>
+</svg>

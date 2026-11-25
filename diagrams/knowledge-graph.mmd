@@ -1,0 +1,78 @@
+%% ASC27 First-Principles Knowledge Graph (5-Layer Dependency Tree)
+%% Palette and styling match DESIGN_SPEC.md; node bottlenecks & math live in docs/knowledge-graph.md
+graph TD
+    L1["L1 Architecture & Physical Limits"]
+    A1["A1 Workload, Dependencies & Numeric Precision"]
+    A2["A2 Cache / DRAM / HBM & I/O Memory Wall"]
+    A3["A3 Power Wall, Thermals & Energy Efficiency"]
+
+    L2["L2 Parallel Computing Models"]
+    B1["B1 CPU SIMD / OpenMP / NUMA"]
+    B2["B2 MPI / Halo Exchange / RDMA & Network Topology"]
+    B3["B3 GPU SIMT / CUDA / HIP"]
+
+    L3["L3 Performance Analysis & Tuning"]
+    C1["C1 Amdahl & Gustafson Strong/Weak Scaling"]
+    C2["C2 Roofline Model & Profiler Diagnostics"]
+    C3["C3 Reference Solution, Long-Run Regression & Reproducibility"]
+
+    L4["L4 AI Systems & Distributed Training"]
+    D1["D1 Mixed Precision & VRAM Budget Modeling"]
+    D2["D2 DP / FSDP / TP / PP & NCCL / RCCL"]
+    D3["D3 LLM & World-Model Inference Optimization"]
+
+    L5["L5 ASC Competition Specialization"]
+    E1["E1 Power-Constrained HPL & HPCG Tuning"]
+    E2["E2 Scientific Porting, CPU-Only & Mystery Apps"]
+    E3["E3 English Proposal, Poster Defense & Cross-University Group Work"]
+
+    L1 --> A1
+    L1 --> A2
+    L1 --> A3
+    A1 --> L2
+    A2 --> L2
+    A3 --> L2
+
+    L2 --> B1
+    L2 --> B2
+    L2 --> B3
+    B1 --> L3
+    B2 --> L3
+    B3 --> L3
+
+    L3 --> C1
+    L3 --> C2
+    L3 --> C3
+    C1 --> L4
+    C2 --> L4
+    C3 --> L4
+
+    L4 --> D1
+    L4 --> D2
+    L4 --> D3
+    D1 --> L5
+    D2 --> L5
+    D3 --> L5
+
+    L5 --> E1
+    L5 --> E2
+    L5 --> E3
+
+    A3 -.-> E1
+    B2 -.-> D2
+    C2 -.-> E2
+    C3 -.-> E3
+
+    classDef layer fill:#F1F5F9,stroke:#0B4F8A,stroke-width:2px,color:#0F172A
+    classDef phys fill:#FFFFFF,stroke:#0B4F8A,stroke-width:1.5px,color:#0F172A
+    classDef par fill:#FFFFFF,stroke:#0D9488,stroke-width:1.5px,color:#0F172A
+    classDef perf fill:#FFFFFF,stroke:#C48A1A,stroke-width:1.5px,color:#0F172A
+    classDef ai fill:#FFFFFF,stroke:#6D28D9,stroke-width:1.5px,color:#0F172A
+    classDef asc fill:#FFFFFF,stroke:#C2410C,stroke-width:1.5px,color:#0F172A
+
+    class L1,L2,L3,L4,L5 layer
+    class A1,A2,A3 phys
+    class B1,B2,B3 par
+    class C1,C2,C3 perf
+    class D1,D2,D3 ai
+    class E1,E2,E3 asc

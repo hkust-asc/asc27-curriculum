@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="660" viewBox="0 0 960 660">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#475569"/></marker>
+    <marker id="arr_blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0B4F8A"/></marker>
+    <marker id="arr_teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0D9488"/></marker>
+    <marker id="arr_coral" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C2410C"/></marker>
+    <marker id="arr_gold" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C48A1A"/></marker>
+    <marker id="arr_violet" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#6D28D9"/></marker>
+    <marker id="arr_muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#64748B"/></marker>
+  </defs>
+  <rect width="960" height="660" fill="#FAFBFD"/>
+  <rect x="28.0" y="22.0" width="6.0" height="36.0" rx="2.0" fill="#6D28D9" stroke="none" stroke-width="1.5"/>
+  <text x="44.0" y="44.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#0F172A" text-anchor="start">HPCG Sparse Computation &amp; HPL Efficiency Gap</text>
+  <text x="44.0" y="66.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="start">27-point 3D stencil &amp; Multigrid V-Cycle (SymGS) inside PCG vs. ~1.5-4% peak efficiency</text>
+  <rect x="28.0" y="86.0" width="452.0" height="546.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
+  <rect x="28.0" y="86.0" width="452.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="28.0" y="112.0" width="452.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
+  <line x1="28.0" y1="120.0" x2="480.0" y2="120.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="40.0" y="95.0" width="4.0" height="16.0" rx="2.0" fill="#6D28D9" stroke="none" stroke-width="1.5"/>
+  <text x="52.0" y="109.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">27-Point 3D Stencil &amp; PCG Multigrid V-Cycle</text>
+  <line x1="142.0" y1="231.0" x2="210.0" y2="255.0" stroke="#E2E8F0" stroke-width="1.4"/>
+  <line x1="86.0" y1="261.0" x2="154.0" y2="285.0" stroke="#E2E8F0" stroke-width="1.4"/>
+  <line x1="142.0" y1="163.0" x2="210.0" y2="187.0" stroke="#E2E8F0" stroke-width="1.4"/>
+  <line x1="86.0" y1="193.0" x2="154.0" y2="217.0" stroke="#E2E8F0" stroke-width="1.4"/>
+  <line x1="142.0" y1="231.0" x2="86.0" y2="261.0" stroke="#E2E8F0" stroke-width="1.4"/>
+  <line x1="210.0" y1="255.0" x2="154.0" y2="285.0" stroke="#E2E8F0" stroke-width="1.4"/>
+  <line x1="142.0" y1="163.0" x2="86.0" y2="193.0" stroke="#E2E8F0" stroke-width="1.4"/>
+  <line x1="210.0" y1="187.0" x2="154.0" y2="217.0" stroke="#E2E8F0" stroke-width="1.4"/>
+  <line x1="142.0" y1="231.0" x2="142.0" y2="163.0" stroke="#E2E8F0" stroke-width="1.4"/>
+  <line x1="210.0" y1="255.0" x2="210.0" y2="187.0" stroke="#E2E8F0" stroke-width="1.4"/>
+  <line x1="86.0" y1="261.0" x2="86.0" y2="193.0" stroke="#E2E8F0" stroke-width="1.4"/>
+  <line x1="154.0" y1="285.0" x2="154.0" y2="217.0" stroke="#E2E8F0" stroke-width="1.4"/>
+  <line x1="148.0" y1="224.0" x2="182.0" y2="236.0" stroke="#3B82F6" stroke-width="2.0"/>
+  <line x1="148.0" y1="224.0" x2="114.0" y2="212.0" stroke="#3B82F6" stroke-width="2.0"/>
+  <line x1="148.0" y1="224.0" x2="120.0" y2="239.0" stroke="#3B82F6" stroke-width="2.0"/>
+  <line x1="148.0" y1="224.0" x2="176.0" y2="209.0" stroke="#3B82F6" stroke-width="2.0"/>
+  <line x1="148.0" y1="224.0" x2="148.0" y2="190.0" stroke="#3B82F6" stroke-width="2.0"/>
+  <line x1="148.0" y1="224.0" x2="148.0" y2="258.0" stroke="#3B82F6" stroke-width="2.0"/>
+  <circle cx="142.0" cy="163.0" r="3.8" fill="#0D9488" stroke="#FFFFFF" stroke-width="0.9" opacity="0.85"/>
+  <circle cx="142.0" cy="197.0" r="3.8" fill="#0D9488" stroke="#FFFFFF" stroke-width="0.9" opacity="0.85"/>
+  <circle cx="114.0" cy="178.0" r="3.8" fill="#0D9488" stroke="#FFFFFF" stroke-width="0.9" opacity="0.85"/>
+  <circle cx="176.0" cy="175.0" r="3.8" fill="#0D9488" stroke="#FFFFFF" stroke-width="0.9" opacity="0.85"/>
+  <circle cx="142.0" cy="231.0" r="3.8" fill="#0D9488" stroke="#FFFFFF" stroke-width="0.9" opacity="0.85"/>
+  <circle cx="114.0" cy="212.0" r="5.2" fill="#0B4F8A" stroke="#FFFFFF" stroke-width="1.2"/>
+  <circle cx="86.0" cy="193.0" r="3.8" fill="#0D9488" stroke="#FFFFFF" stroke-width="0.9" opacity="0.85"/>
+  <circle cx="176.0" cy="209.0" r="5.2" fill="#0B4F8A" stroke="#FFFFFF" stroke-width="1.2"/>
+  <circle cx="148.0" cy="190.0" r="5.2" fill="#0B4F8A" stroke="#FFFFFF" stroke-width="1.2"/>
+  <circle cx="210.0" cy="187.0" r="3.8" fill="#0D9488" stroke="#FFFFFF" stroke-width="0.9" opacity="0.85"/>
+  <circle cx="114.0" cy="246.0" r="3.8" fill="#0D9488" stroke="#FFFFFF" stroke-width="0.9" opacity="0.85"/>
+  <circle cx="86.0" cy="227.0" r="3.8" fill="#0D9488" stroke="#FFFFFF" stroke-width="0.9" opacity="0.85"/>
+  <circle cx="176.0" cy="243.0" r="3.8" fill="#0D9488" stroke="#FFFFFF" stroke-width="0.9" opacity="0.85"/>
+  <circle cx="148.0" cy="224.0" r="7.0" fill="#C2410C" stroke="#FFFFFF" stroke-width="1.6"/>
+  <circle cx="120.0" cy="205.0" r="3.8" fill="#0D9488" stroke="#FFFFFF" stroke-width="0.9" opacity="0.85"/>
+  <circle cx="210.0" cy="221.0" r="3.8" fill="#0D9488" stroke="#FFFFFF" stroke-width="0.9" opacity="0.85"/>
+  <circle cx="182.0" cy="202.0" r="3.8" fill="#0D9488" stroke="#FFFFFF" stroke-width="0.9" opacity="0.85"/>
+  <circle cx="86.0" cy="261.0" r="3.8" fill="#0D9488" stroke="#FFFFFF" stroke-width="0.9" opacity="0.85"/>
+  <circle cx="148.0" cy="258.0" r="5.2" fill="#0B4F8A" stroke="#FFFFFF" stroke-width="1.2"/>
+  <circle cx="120.0" cy="239.0" r="5.2" fill="#0B4F8A" stroke="#FFFFFF" stroke-width="1.2"/>
+  <circle cx="210.0" cy="255.0" r="3.8" fill="#0D9488" stroke="#FFFFFF" stroke-width="0.9" opacity="0.85"/>
+  <circle cx="182.0" cy="236.0" r="5.2" fill="#0B4F8A" stroke="#FFFFFF" stroke-width="1.2"/>
+  <circle cx="154.0" cy="217.0" r="3.8" fill="#0D9488" stroke="#FFFFFF" stroke-width="0.9" opacity="0.85"/>
+  <circle cx="120.0" cy="273.0" r="3.8" fill="#0D9488" stroke="#FFFFFF" stroke-width="0.9" opacity="0.85"/>
+  <circle cx="182.0" cy="270.0" r="3.8" fill="#0D9488" stroke="#FFFFFF" stroke-width="0.9" opacity="0.85"/>
+  <circle cx="154.0" cy="251.0" r="3.8" fill="#0D9488" stroke="#FFFFFF" stroke-width="0.9" opacity="0.85"/>
+  <circle cx="154.0" cy="285.0" r="3.8" fill="#0D9488" stroke="#FFFFFF" stroke-width="0.9" opacity="0.85"/>
+  <text x="244.0" y="156.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">27-Point 3D Stencil</text>
+  <text x="244.0" y="182.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Center (red) + 26 neighbors</text>
+  <text x="244.0" y="204.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">27 nonzeros per sparse row</text>
+  <text x="244.0" y="226.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">CSR indirect memory gather:</text>
+  <text x="244.0" y="248.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">y[i] += val[j] * x[col[j]]</text>
+  <text x="244.0" y="270.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Strided access breaks reuse</text>
+  <line x1="46.0" y1="326.0" x2="462.0" y2="326.0" stroke="#E2E8F0" stroke-width="1.4"/>
+  <text x="48.0" y="352.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.8" font-weight="bold" fill="#6D28D9" text-anchor="start">Outer PCG Loop + Multigrid (MG) V-Cycle Preconditioner</text>
+  <rect x="56.0" y="366.0" width="396.0" height="28.0" rx="5.0" fill="#EFF6FF" stroke="#0B4F8A" stroke-width="1.3"/>
+  <text x="254.0" y="385.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0B4F8A" text-anchor="middle">PCG Outer: SpMV + WAXPBY + MPI_Allreduce (DDOT)</text>
+  <line x1="108.0" y1="394.0" x2="108.0" y2="412.0" stroke="#0B4F8A" stroke-width="1.8" marker-end="url(#arr_blue)"/>
+  <line x1="400.0" y1="412.0" x2="400.0" y2="394.0" stroke="#0D9488" stroke-width="1.8" marker-end="url(#arr_teal)"/>
+  <line x1="128.0" y1="456.0" x2="154.0" y2="479.0" stroke="#C2410C" stroke-width="2.2" marker-end="url(#arr_coral)"/>
+  <line x1="192.0" y1="521.0" x2="226.0" y2="543.0" stroke="#C2410C" stroke-width="2.2" marker-end="url(#arr_coral)"/>
+  <line x1="282.0" y1="543.0" x2="316.0" y2="521.0" stroke="#0D9488" stroke-width="2.2" marker-end="url(#arr_teal)"/>
+  <line x1="354.0" y1="479.0" x2="380.0" y2="456.0" stroke="#0D9488" stroke-width="2.2" marker-end="url(#arr_teal)"/>
+  <text x="84.0" y="514.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C2410C" text-anchor="middle">Restrict</text>
+  <text x="84.0" y="531.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="middle">(downsample)</text>
+  <text x="422.0" y="514.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">Prolong</text>
+  <text x="422.0" y="531.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="middle">(interpolate)</text>
+  <rect x="64.0" y="413.0" width="88.0" height="42.0" rx="6.0" fill="#EFF6FF" stroke="#0B4F8A" stroke-width="1.6"/>
+  <text x="108.0" y="432.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0B4F8A" text-anchor="middle">Fine (h)</text>
+  <text x="108.0" y="449.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="middle">Pre-SymGS</text>
+  <rect x="126.0" y="479.0" width="88.0" height="42.0" rx="6.0" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.6"/>
+  <text x="170.0" y="498.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#3B82F6" text-anchor="middle">Mid (2h)</text>
+  <text x="170.0" y="515.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="middle">SymGS</text>
+  <rect x="202.0" y="543.0" width="104.0" height="42.0" rx="6.0" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.6"/>
+  <text x="254.0" y="562.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#6D28D9" text-anchor="middle">Coarse (4h)</text>
+  <text x="254.0" y="579.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="middle">Coarse Solve</text>
+  <rect x="294.0" y="479.0" width="88.0" height="42.0" rx="6.0" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.6"/>
+  <text x="338.0" y="498.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#3B82F6" text-anchor="middle">Mid (2h)</text>
+  <text x="338.0" y="515.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="middle">SymGS</text>
+  <rect x="356.0" y="413.0" width="88.0" height="42.0" rx="6.0" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.6"/>
+  <text x="400.0" y="432.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">Fine (h)</text>
+  <text x="400.0" y="449.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="middle">Post-SymGS</text>
+  <text x="254.0" y="616.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="middle">SymGS has loop-carried dependencies; needs multi-coloring for GPU</text>
+  <rect x="496.0" y="86.0" width="436.0" height="546.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
+  <rect x="496.0" y="86.0" width="436.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="496.0" y="112.0" width="436.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
+  <line x1="496.0" y1="120.0" x2="932.0" y2="120.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="508.0" y="95.0" width="4.0" height="16.0" rx="2.0" fill="#C2410C" stroke="none" stroke-width="1.5"/>
+  <text x="520.0" y="109.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">Achieved Peak Efficiency: HPL vs. HPCG</text>
+  <rect x="572.0" y="142.0" width="338.0" height="192.0" rx="0.0" fill="#FFFFFF" stroke="none" stroke-width="1.5"/>
+  <line x1="582.3" y1="142.0" x2="582.3" y2="334.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <line x1="582.3" y1="334.0" x2="582.3" y2="339.0" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="582.3" y="356.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">0.1</text>
+  <line x1="688.7" y1="142.0" x2="688.7" y2="334.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <line x1="688.7" y1="334.0" x2="688.7" y2="339.0" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="688.7" y="356.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">1</text>
+  <line x1="795.2" y1="142.0" x2="795.2" y2="334.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <line x1="795.2" y1="334.0" x2="795.2" y2="339.0" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="795.2" y="356.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">10</text>
+  <line x1="901.6" y1="142.0" x2="901.6" y2="334.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <line x1="901.6" y1="334.0" x2="901.6" y2="339.0" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="901.6" y="356.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">100</text>
+  <line x1="572.0" y1="316.0" x2="910.0" y2="316.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <line x1="567.0" y1="316.0" x2="572.0" y2="316.0" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="562.0" y="321.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">1%</text>
+  <line x1="572.0" y1="234.9" x2="910.0" y2="234.9" stroke="#E2E8F0" stroke-width="1.0"/>
+  <line x1="567.0" y1="234.9" x2="572.0" y2="234.9" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="562.0" y="239.9" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">10%</text>
+  <line x1="572.0" y1="153.8" x2="910.0" y2="153.8" stroke="#E2E8F0" stroke-width="1.0"/>
+  <line x1="567.0" y1="153.8" x2="572.0" y2="153.8" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="562.0" y="158.8" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">100%</text>
+  <line x1="572.0" y1="334.0" x2="910.0" y2="334.0" stroke="#475569" stroke-width="1.8"/>
+  <line x1="572.0" y1="142.0" x2="572.0" y2="334.0" stroke="#475569" stroke-width="1.8"/>
+  <text x="741.0" y="380.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#334155" text-anchor="middle">Arithmetic Intensity I (FLOP / Byte)</text>
+  <text x="518.0" y="238.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#334155" text-anchor="middle" transform="rotate(-90.0 518.0 238.0)">% FP64 Peak</text>
+  <polyline points="574.1,314.4 576.3,312.8 578.4,311.2 580.5,309.5 582.6,307.9 584.8,306.3 586.9,304.7 589.0,303.1 591.1,301.4 593.3,299.8 595.4,298.2 597.5,296.6 599.6,295.0 601.8,293.3 603.9,291.7 606.0,290.1 608.1,288.5 610.3,286.9 612.4,285.2 614.5,283.6 616.6,282.0 618.8,280.4 620.9,278.8 623.0,277.1 625.1,275.5 627.3,273.9 629.4,272.3 631.5,270.7 633.6,269.0 635.8,267.4 637.9,265.8 640.0,264.2 642.2,262.6 644.3,260.9 646.4,259.3 648.5,257.7 650.7,256.1 652.8,254.5 654.9,252.8 657.0,251.2 659.2,249.6 661.3,248.0 663.4,246.4 665.5,244.7 667.7,243.1 669.8,241.5 671.9,239.9 674.0,238.3 676.2,236.6 678.3,235.0 680.4,233.4 682.5,231.8 684.7,230.2 686.8,228.6 688.9,226.9 691.0,225.3 693.2,223.7 695.3,222.1 697.4,220.5 699.5,218.8 701.7,217.2 703.8,215.6 705.9,214.0 708.1,212.4 710.2,210.7 712.3,209.1 714.4,207.5 716.6,205.9 718.7,204.3 720.8,202.6 722.9,201.0 725.1,199.4 727.2,197.8 729.3,196.2 731.4,194.5 733.6,192.9 735.7,191.3 737.8,189.7 739.9,188.1 742.1,186.4 744.2,184.8 746.3,183.2 748.4,181.6 750.6,180.0 752.7,178.3 754.8,176.7 756.9,175.1 759.1,173.5 761.2,171.9 763.3,170.2 765.4,168.6 767.6,167.0 769.7,165.4 771.8,163.8 773.9,162.1 776.1,160.5 778.2,158.9 780.3,157.3 782.5,155.7 784.6,154.0 786.7,153.8 788.8,153.8 791.0,153.8 793.1,153.8 795.2,153.8 797.3,153.8 799.5,153.8 801.6,153.8 803.7,153.8 805.8,153.8 808.0,153.8 810.1,153.8 812.2,153.8 814.3,153.8 816.5,153.8 818.6,153.8 820.7,153.8 822.8,153.8 825.0,153.8 827.1,153.8 829.2,153.8 831.3,153.8 833.5,153.8 835.6,153.8 837.7,153.8 839.8,153.8 842.0,153.8 844.1,153.8 846.2,153.8 848.4,153.8 850.5,153.8 852.6,153.8 854.7,153.8 856.9,153.8 859.0,153.8 861.1,153.8 863.2,153.8 865.4,153.8 867.5,153.8 869.6,153.8 871.7,153.8 873.9,153.8 876.0,153.8 878.1,153.8 880.2,153.8 882.4,153.8 884.5,153.8 886.6,153.8 888.7,153.8 890.9,153.8 893.0,153.8 895.1,153.8 897.2,153.8 899.4,153.8 901.5,153.8 903.6,153.8 905.7,153.8 907.9,153.8 910.0,153.8" fill="none" stroke="#475569" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <line x1="784.8" y1="142.0" x2="784.8" y2="334.0" stroke="#64748B" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <text x="790.8" y="162.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="start">I* ~ 8</text>
+  <circle cx="864.7" cy="161.7" r="6.5" fill="#0D9488" stroke="#FFFFFF" stroke-width="1.5"/>
+  <rect x="730.7" y="175.7" width="140.0" height="36.0" rx="4.0" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.2"/>
+  <text x="800.7" y="190.7" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">HPL ~75-85%</text>
+  <text x="800.7" y="205.7" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="middle">Dense DGEMM</text>
+  <circle cx="624.7" cy="285.2" r="6.5" fill="#C2410C" stroke="#FFFFFF" stroke-width="1.5"/>
+  <rect x="636.7" y="257.2" width="156.0" height="36.0" rx="4.0" fill="#FFF7ED" stroke="#C2410C" stroke-width="1.2"/>
+  <text x="714.7" y="273.2" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C2410C" text-anchor="middle">HPCG ~1.5-4%</text>
+  <text x="714.7" y="288.2" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="middle">I ~ 0.25 FLOP/B</text>
+  <text x="516.0" y="404.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.8" font-weight="bold" fill="#0F172A" text-anchor="start">Linear-Scale Gap (25-40x Lower Peak Fraction)</text>
+  <text x="574.0" y="434.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="end">HPL</text>
+  <rect x="584.0" y="416.0" width="212.0" height="24.0" rx="3.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="584.0" y="416.0" width="169.6" height="24.0" rx="3.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
+  <text x="806.0" y="433.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="start">75-85% peak</text>
+  <text x="574.0" y="468.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C2410C" text-anchor="end">HPCG</text>
+  <rect x="584.0" y="450.0" width="212.0" height="24.0" rx="3.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
+  <rect x="584.0" y="450.0" width="8.0" height="24.0" rx="2.0" fill="#C2410C" stroke="none" stroke-width="1.5"/>
+  <text x="806.0" y="467.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C2410C" text-anchor="start">1.5-4% peak</text>
+  <rect x="514.0" y="492.0" width="400.0" height="126.0" rx="6.0" fill="#FFF7ED" stroke="#C2410C" stroke-width="1.5"/>
+  <text x="528.0" y="516.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#C2410C" text-anchor="start">Three Root Causes of HPCG Efficiency Ceiling</text>
+  <text x="528.0" y="542.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">1. Tiny arithmetic intensity: I ~ 0.25 FLOP/B (BW-bound)</text>
+  <text x="528.0" y="566.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">2. Indirect CSR indexing (x[col[j]]) hurts cache locality</text>
+  <text x="528.0" y="590.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">3. Global MPI_Allreduce barrier on every DDOT inner product</text>
+</svg>

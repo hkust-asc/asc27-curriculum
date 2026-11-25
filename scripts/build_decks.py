@@ -46,51 +46,6 @@ def build_deck_00() -> ODPDeck:
     )
     d.add_slide(
         SlideSpec(
-            kind="table",
-            section_tag="00 · OVERVIEW · RULES & SOURCES",
-            title="ASC27 Official Milestones and Reference Boundaries",
-            subtitle="Keep confirmed ASC27 rules separate from past power caps and team case studies",
-            table_headers=["Source Document", "Classification", "Key Constraints & Knowledge Graph Mapping"],
-            table_col_widths_cm=[7.4, 5.6, 17.85],
-            table_rows=[
-                [
-                    "ASC27 Call for Participation",
-                    "Official ASC27 Rules",
-                    "Reg Nov 19 to Jan 10; Prelim Jan 11 to Feb 28; Finals May 2027. 5 undergrads + 1 advisor; deadlines 24:00 UTC+8 (E1, E3)",
-                ],
-                [
-                    "ASC22 Prelim & Final Notifications",
-                    "Historical Baseline (3 kW)",
-                    "HPL, HPCG, Yuan 4.7B (loss below 7.0), and DeePMD-kit under a 3 kW power cap (D1, D2, E1, E2)",
-                ],
-                [
-                    "ASC26 Optimization Intro (Committee)",
-                    "Historical Summary (5 kW)",
-                    "5 kW cluster cap, ≤ 2 kW/node, ≥ 3 nodes. 6 tasks: HPL/HPCG, UnifoLM, AMSS-NCKU, QiboTN, LeWM, ICON (A3, D3, E1–E3)",
-                ],
-                [
-                    "ASC26 AMSS-NCKU Talk (Tsinghua)",
-                    "Team Engineering Case Study",
-                    "CPU 4.5 s → GPU v1 4.7 s → Resident 1.4 s → 3-stage relay 0.85 s. Shows bottleneck shift and 200-step checks (A2, B3, C2, C3)",
-                ],
-                [
-                    "Kwan Wing-keung Roadshow & Map of HPC",
-                    "Macro Landscape",
-                    "Five walls (Memory, Power, Communication, Programmability, Fault Tolerance) across HPC and AI (L1 to L5)",
-                ],
-            ],
-            callout="Rule boundary: ASC27 power cap, hardware list, and weights are not yet released. 3, 4, and 5 kW are past presets only.",
-            footnote="Compiled from official ASC27 Call for Participation, ASC22 notices, ASC26 committee slides, and Tsinghua team talk",
-            speaker_notes=(
-                "Speaker guidance:\n"
-                "1. Establish epistemic discipline on slide 2: never confuse past-year rules or team talks with binding ASC27 regulations.\n"
-                "2. All ASC27 submission deadlines fall at midnight (24:00) UTC+8, matching Hong Kong local time (HKT).\n"
-                "3. Connect the five walls in the Map of HPC directly to the five layers of our curriculum."
-            ),
-        )
-    )
-    d.add_slide(
-        SlideSpec(
             kind="two_col",
             section_tag="00 · PRELIMINARY ROUND & ONBOARDING",
             title="ASC Preliminary Round Format and How to Join",

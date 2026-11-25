@@ -91,6 +91,38 @@ def build_deck_00() -> ODPDeck:
     )
     d.add_slide(
         SlideSpec(
+            kind="two_col",
+            section_tag="00 · PRELIMINARY ROUND & ONBOARDING",
+            title="ASC Preliminary Round Format and How to Join",
+            subtitle="Two-month remote engineering sprint that selects global finalists from written technical proposals",
+            left_title="What Happens in the Preliminary Round",
+            left_bullets=[
+                "No on-site cluster yet: teams run benchmarks and apps on our own servers.",
+                "Deliverable: one English technical proposal covering design, tuning, and results.",
+                "Typical tasks: cluster design under power cap, HPL/HPCG, AI, and science apps.",
+                "Judges score correctness, speedup evidence, methodology, and power analysis.",
+                "Top teams worldwide advance to the May 2027 on-site finals.",
+            ],
+            right_title="How to Join HKUST ASC27 Today",
+            right_bullets=[
+                "No prior HPC background required; curiosity and Linux comfort are enough.",
+                "Attend Wednesday evening sessions (18:30 to 20:00) and complete Stage 1 labs.",
+                "Teams of 5 undergrads form before the Jan 10 registration deadline.",
+                "Start tonight: explore the interactive labs and pick one starter benchmark.",
+                "Repo & labs: hkust-asc.github.io/asc27-curriculum",
+            ],
+            callout="Timeline check: register by Jan 10, 2027; Preliminary Round runs Jan 11 to Feb 28, 2027 (24:00 UTC+8).",
+            footnote="HKUST ASC Team · Open to all HKUST undergraduates",
+            speaker_notes=(
+                "Onboarding notes:\n"
+                "1. Reassure beginners: everyone starts from Stage 1 together; you do not need prior MPI or CUDA experience to join.\n"
+                "2. Clarify that Prelim is a remote 7-week engineering & writing sprint (Jan 11 to Feb 28), not an exam.\n"
+                "3. Point attendees to the interactive web curriculum and team sign-up channel right after Q&A."
+            ),
+        )
+    )
+    d.add_slide(
+        SlideSpec(
             kind="full_visual",
             section_tag="00 · KNOWLEDGE GRAPH",
             title="Five-Layer First-Principles Knowledge Graph (L1 to L5)",

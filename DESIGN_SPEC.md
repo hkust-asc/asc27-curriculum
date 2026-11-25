@@ -8,6 +8,7 @@
   - Represent time and deadlines as a proportional **Timeline** (Nov 2026 to May 2027).
   - Represent the 24-week curriculum as a visual **Roadmap Track** with clickable stage spans and milestones.
   - Represent formulas in **LaTeX** (KaTeX in `site/`, `pdflatex` PNGs in `slides/`) with explicit **symbol definitions** (hover/click chips on web, inline symbol legend in slides).
+  - **Color-Coded Annotated Formulas**: Wrap every explained symbol (including repeated occurrences of the same variable) in a rounded pill box using the 5-color cycle (`#2563EB` blue, `#16A34A` green, `#7C3AED` violet, `#EA580C` orange, `#0D9488` teal), paired with color-matched legend cards underneath and curved upward arrows pointing to the term. On the web, hovering or clicking any term pill or legend card highlights all matching occurrences and reveals a detailed explanation popover.
 
 ## Language and Style (ASD-STE100)
 - Write all documentation, diagrams, slides, and web pages in plain English.

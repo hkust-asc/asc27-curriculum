@@ -36,12 +36,23 @@ Never default to a flat HTML or slide table when the underlying structure has ge
 
 ## 3. LaTeX Formulas & Mandatory Symbol Clarity
 
-- **Webapp (`site/`)**:
-  - Render every formula with vendored KaTeX (`site/assets/vendor/katex/`) via the shared helper in `site/assets/common.js`. Never leave raw ASCII math (`^`, `<=`, `->`, `*`) in visible formula blocks.
-  - Every formula block MUST include interactive **symbol annotations**: clickable/hoverable symbol chips below or linked to the formula (`.sym-chip` with tooltip + active highlight) so a complete beginner immediately knows what every letter (`N`, `I`, `B`, `f`, `k`, `alpha`, `Phi`, `G`) means and its units.
+Use the **Color-Coded Annotated Formula** pattern across both the interactive webapp and slide decks so a complete beginner can visually map every variable to its physical meaning at a glance:
+
+- **Shared Visual Spec (Web + Slides)**:
+  - **5-color semantic cycle**:
+    1. Blue (`#2563EB` stroke / `#EFF6FF` fill)
+    2. Green (`#16A34A` stroke / `#F0FDF4` fill)
+    3. Violet (`#7C3AED` stroke / `#F5F3FF` fill)
+    4. Orange (`#EA580C` stroke / `#FFF7ED` fill)
+    5. Teal (`#0D9488` stroke / `#F0FDFA` fill)
+  - **Consistent multi-occurrence coloring**: If a variable appears more than once in the same equation (for example, `P_peak` and `B` in Roofline, or `p` and `G` in Ring All-Reduce), wrap **every occurrence** in the same color-coded rounded pill box.
+  - **Curved upward callout arrows**: Draw a color-matched curved arrow from each legend card underneath up to its primary term pill in the formula (routing around fraction bars for numerator terms so arrows never cross denominators).
+- **Webapp (`site/assets/common.js`, `site/assets/style.css`)**:
+  - Render every formula with vendored KaTeX (`site/assets/vendor/katex/`) via `window.ASC27.renderFormulaBox(container, { tex, symbols })`. Never leave raw ASCII math (`^`, `<=`, `->`, `*`) in visible formula blocks.
+  - `renderFormulaBox` wraps every matched variable occurrence in `.ft-pill.ft-c{0..4}` via KaTeX `\htmlClass` + `\htmlData`, renders `.sym-card` boxes below, draws curved SVG arrows in `.formula-arrows`, and shows a color-matched `.sym-popover` on hover, focus, or click while highlighting all occurrences of that variable and dimming others.
 - **Slides (`scripts/build_decks.py`, `scripts/odp_builder.py`, `scripts/formula_render.py`)**:
-  - Render every `formula_tex` with local `pdflatex` to a cropped PNG cached in `slides/.formula-cache/`.
-  - Every slide with a `formula_tex` MUST populate `formula_symbols` (list of `(symbol, meaning)` pairs) so no symbol appears undefined on a slide.
+  - Every slide with a `formula_tex` MUST populate `formula_symbols` (list of `(symbol, meaning)` pairs).
+  - `odp_builder.py` calls `render_annotated_formula_png(formula_tex, formula_symbols)` which compiles a 2-pass TikZ + `pdflatex` annotated diagram cached in `slides/.formula-cache/`.
 
 ## 4. Beginner Pedagogy & Writing Rules
 

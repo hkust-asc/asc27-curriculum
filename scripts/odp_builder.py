@@ -18,7 +18,7 @@ from xml.sax.saxutils import escape as xml_escape
 
 from PIL import Image
 
-from formula_render import render_formula_png
+from formula_render import render_annotated_formula_png, render_formula_png
 
 
 # Minimalist Editorial Palette (Anatomy x Designed-to-Scale)
@@ -316,31 +316,12 @@ class ODPDeck:
         els.append(self._rect(x, y, w, h, PALETTE["surface"], PALETTE["border"], "0.025cm"))
         els.append(self._rect(x, y, 0.14, h, accent))
         if formula_tex:
-            image = render_formula_png(formula_tex)
             sym_list = formula_symbols or []
             if sym_list:
-                legend_text = "  ·  ".join(f"{sym}: {meaning}" for sym, meaning in sym_list)
-                cap_h = 1.48 if len(legend_text) > 84 else 1.08
-                img_h = max(1.15, h - cap_h - 0.18)
-                els.append(self._image_frame(image, x + 0.32, y + 0.08, w - 0.50, img_h))
-                els.append(self._rect(x + 0.28, y + h - cap_h - 0.06, w - 0.44, 0.02, PALETTE["border"]))
-                t_sym = self._make_text_style(9.6, accent, bold=True, mono=True)
-                t_desc = self._make_text_style(9.6, PALETTE["ink_secondary"])
-                t_sep = self._make_text_style(9.6, PALETTE["ink_muted"])
-                runs: List[Tuple[str, str]] = []
-                for i, (sym, meaning) in enumerate(sym_list):
-                    if i > 0:
-                        runs.append(("  ·  ", t_sep))
-                    runs.append((sym, t_sym))
-                    runs.append((f" = {meaning}", t_desc))
-                p_leg = self._make_para_style(space_after="0cm", line_height="116%")
-                els.append(
-                    self._frame_textbox(
-                        x + 0.28, y + h - cap_h, w - 0.42, cap_h - 0.04,
-                        self._p_mixed(runs, p_leg),
-                    )
-                )
+                image = render_annotated_formula_png(formula_tex, sym_list)
+                els.append(self._image_frame(image, x + 0.24, y + 0.10, w - 0.36, h - 0.20))
                 return els
+            image = render_formula_png(formula_tex)
             cap_h = 1.12 if caption else 0.0
             els.append(self._image_frame(image, x + 0.32, y + 0.10, w - 0.50, h - cap_h - 0.16))
             if caption:
@@ -432,7 +413,7 @@ class ODPDeck:
                 cur_y += sub_h + 0.08
 
             has_formula = bool(s.formula)
-            formula_h = 3.72 if (has_formula and s.formula_symbols) else 3.30
+            formula_h = 4.35 if (has_formula and s.formula_symbols) else 3.30
             formula_y = 17.55 - formula_h
             bullet_h = (formula_y - 0.28 - cur_y) if has_formula else (17.55 - cur_y)
             b_size = 15.2 if len(s.bullets) <= 4 else 14.2

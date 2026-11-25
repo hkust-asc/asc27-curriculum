@@ -162,49 +162,353 @@
   window.ASC27.renderFormulaBox = function (container, spec) {
     if (!container || !spec) return;
     const symbols = spec.symbols || [];
-    container.className = "formula-box";
-    container.innerHTML = `
-      <div class="formula-math"></div>
-      ${symbols.length ? `
-        <div class="sym-strip" role="list" aria-label="Formula symbols">
-          ${symbols.map((s, idx) => `
-            <button type="button" class="sym-chip ${idx === 0 ? "is-active" : ""}" data-idx="${idx}" title="${s.desc}">
-              <span class="sym-chip-key" data-sym-tex="${encodeURIComponent(s.tex || s.sym)}">${s.sym}</span>
-              <span class="sym-chip-short">${s.short}</span>
-            </button>
-          `).join("")}
-        </div>
-        <div class="sym-readout"></div>
-      ` : ""}
-    `;
+    const colorCount = 5;
+    const escHtml = (str) => String(str == null ? "" : str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
 
-    const mathEl = container.querySelector(".formula-math");
-    window.ASC27.renderMath(mathEl, spec.tex, true);
-
-    if (symbols.length) {
-      const readout = container.querySelector(".sym-readout");
-      const chips = Array.from(container.querySelectorAll(".sym-chip"));
-
-      chips.forEach((chip, idx) => {
-        const keyEl = chip.querySelector(".sym-chip-key");
-        const symTex = decodeURIComponent(keyEl.dataset.symTex || "");
-        if (window.katex && symTex) {
-          try {
-            window.katex.render(symTex, keyEl, { displayMode: false, throwOnError: false });
-          } catch (e) {}
-        }
-        const activate = () => {
-          chips.forEach(c => c.classList.remove("is-active"));
-          chip.classList.add("is-active");
-          const s = symbols[idx];
-          readout.innerHTML = `<strong>${s.short}:</strong> ${s.desc}`;
-        };
-        chip.addEventListener("mouseenter", activate);
-        chip.addEventListener("focus", activate);
-        chip.addEventListener("click", activate);
+    const wrapTexSymbols = (rawTex, syms) => {
+      let work = rawTex;
+      const placed = new Map();
+      const placeholders = [];
+      const indexed = syms.map((s, idx) => ({
+        idx,
+        candidates: [
+          s.match,
+          s.tex,
+          s.sym,
+        ].filter(Boolean)
+      }));
+      const ordered = indexed.sort((a, b) => {
+        const la = Math.max(...a.candidates.map(c => c.length));
+        const lb = Math.max(...b.candidates.map(c => c.length));
+        return lb - la;
       });
 
-      readout.innerHTML = `<strong>${symbols[0].short}:</strong> ${symbols[0].desc}`;
+      for (const item of ordered) {
+        let matched = false;
+        const variants = [];
+        for (const c of item.candidates) {
+          variants.push(c);
+          if (c.includes("\\mathrm{")) variants.push(c.replace(/\\mathrm\{/g, "\\text{"));
+          if (c.includes("\\text{")) variants.push(c.replace(/\\text\{/g, "\\mathrm{"));
+          if (c.includes(",")) {
+            variants.push(c.replace(/,\s*/g, " "));
+            variants.push(c.replace(/,\s*/g, "\\,"));
+          }
+        }
+        const seen = new Set();
+        for (const v of variants) {
+          if (!v || seen.has(v)) continue;
+          seen.add(v);
+          let start = 0;
+          while (true) {
+            const pos = work.indexOf(v, start);
+            if (pos === -1) break;
+            const prev = pos > 0 ? work[pos - 1] : "";
+            const next = pos + v.length < work.length ? work[pos + v.length] : "";
+            const inCmd = prev === "\\" && !v.startsWith("\\");
+            const isSingle = /^[A-Za-z0-9]$/.test(v);
+            const badSingle = isSingle && (/[A-Za-z_]/.test(prev) || /[A-Za-z0-9_]/.test(next));
+            const isSubOrSupBare = (prev === "^" || prev === "_") && !v.startsWith("{");
+            const prefixWin = work.slice(Math.max(0, pos - 12), pos);
+            const lastPh = prefixWin.lastIndexOf("@@SYM");
+            const insidePlaceholder = lastPh !== -1 && !prefixWin.slice(lastPh + 5).includes("@@");
+            if (!inCmd && !badSingle && !insidePlaceholder) {
+              const phId = placeholders.length;
+              const token = `@@SYM${phId}@@`;
+              const wrappedToken = isSubOrSupBare ? `{${token}}` : token;
+              work = work.slice(0, pos) + wrappedToken + work.slice(pos + v.length);
+              placeholders.push({ token, idx: item.idx, orig: v });
+              placed.set(item.idx, v);
+              matched = true;
+              start = pos + wrappedToken.length;
+              continue;
+            }
+            start = pos + 1;
+          }
+          if (matched) break;
+        }
+      }
+      for (const ph of placeholders) {
+        const c = ph.idx % colorCount;
+        const rep = `{\\htmlClass{ft-pill ft-c${c}}{\\htmlData{sym=${ph.idx}}{${ph.orig}}}}`;
+        work = work.replace(ph.token, rep);
+      }
+      return { tex: work, placed };
+    };
+
+    const wrapped = wrapTexSymbols(spec.tex, symbols);
+    container.className = "formula-box";
+    container.innerHTML = `
+      <div class="formula-stage">
+        <div class="formula-math"></div>
+        ${symbols.length ? `
+          <svg class="formula-arrows" aria-hidden="true"></svg>
+          <div class="sym-cards" role="list" aria-label="Formula symbols">
+            ${symbols.map((s, idx) => `
+              <button type="button" class="sym-card ft-c${idx % colorCount}" data-idx="${idx}" aria-expanded="false">
+                <span class="sym-card-key" data-sym-tex="${encodeURIComponent(s.tex || s.sym)}">${escHtml(s.sym)}</span>
+                <span class="sym-card-short">${escHtml(s.short)}</span>
+              </button>
+            `).join("")}
+          </div>
+          <div class="sym-popover" role="region" aria-live="polite" hidden>
+            <div class="sym-popover-caret"></div>
+            <div class="sym-popover-sym"></div>
+            <div class="sym-popover-title"></div>
+            <div class="sym-popover-desc"></div>
+          </div>
+        ` : ""}
+      </div>
+    `;
+
+    const stageEl = container.querySelector(".formula-stage");
+    const mathEl = container.querySelector(".formula-math");
+    if (window.katex) {
+      try {
+        window.katex.render(wrapped.tex, mathEl, {
+          displayMode: true,
+          throwOnError: false,
+          strict: false,
+          trust: (ctx) => ctx.command === "\\htmlClass" || ctx.command === "\\htmlData"
+        });
+      } catch (e) {
+        window.ASC27.renderMath(mathEl, spec.tex, true);
+      }
+    } else {
+      mathEl.textContent = spec.tex;
+    }
+
+    if (!symbols.length) return;
+
+    const svgEl = container.querySelector(".formula-arrows");
+    const cards = Array.from(container.querySelectorAll(".sym-card"));
+    const popover = container.querySelector(".sym-popover");
+    const popSym = popover.querySelector(".sym-popover-sym");
+    const popTitle = popover.querySelector(".sym-popover-title");
+    const popDesc = popover.querySelector(".sym-popover-desc");
+    const popCaret = popover.querySelector(".sym-popover-caret");
+    const pillGroups = new Map();
+
+    mathEl.querySelectorAll(".ft-pill").forEach((pill) => {
+      const inner = pill.querySelector("[data-sym]");
+      const idx = inner ? parseInt(inner.getAttribute("data-sym"), 10) : NaN;
+      if (!Number.isNaN(idx)) {
+        pill.dataset.idx = String(idx);
+        pill.setAttribute("tabindex", "0");
+        pill.setAttribute("role", "button");
+        pill.setAttribute("aria-label", `${symbols[idx].short}: ${symbols[idx].desc}`);
+        if (!pillGroups.has(idx)) pillGroups.set(idx, []);
+        pillGroups.get(idx).push(pill);
+      }
+    });
+
+    cards.forEach((card, idx) => {
+      const keyEl = card.querySelector(".sym-card-key");
+      const symTex = decodeURIComponent(keyEl.dataset.symTex || "");
+      if (window.katex && symTex) {
+        try {
+          window.katex.render(symTex, keyEl, { displayMode: false, throwOnError: false, strict: false });
+        } catch (e) {}
+      }
+    });
+
+    const colors = ["#2563EB", "#16A34A", "#7C3AED", "#EA580C", "#0D9488"];
+    let activeIdx = -1;
+    let pinnedIdx = -1;
+
+    const fitFormulaWidth = () => {
+      const katexEl = mathEl.querySelector(".katex");
+      if (!katexEl) return;
+      katexEl.style.fontSize = "";
+      const avail = mathEl.clientWidth - 8;
+      const actual = katexEl.scrollWidth;
+      if (avail > 40 && actual > avail) {
+        const ratio = Math.max(0.62, avail / actual);
+        katexEl.style.fontSize = `${(ratio * 100).toFixed(1)}%`;
+      }
+    };
+
+    const drawArrows = () => {
+      fitFormulaWidth();
+      const stageRect = stageEl.getBoundingClientRect();
+      if (stageRect.width < 10 || stageRect.height < 10) return;
+      svgEl.setAttribute("viewBox", `0 0 ${stageRect.width} ${stageRect.height}`);
+      svgEl.setAttribute("width", String(stageRect.width));
+      svgEl.setAttribute("height", String(stageRect.height));
+
+      const ns = "http://www.w3.org/2000/svg";
+      svgEl.innerHTML = "";
+      const defs = document.createElementNS(ns, "defs");
+      colors.forEach((col, ci) => {
+        const marker = document.createElementNS(ns, "marker");
+        marker.setAttribute("id", `ft-arr-${ci}`);
+        marker.setAttribute("viewBox", "0 0 10 10");
+        marker.setAttribute("refX", "7");
+        marker.setAttribute("refY", "5");
+        marker.setAttribute("markerWidth", "6");
+        marker.setAttribute("markerHeight", "6");
+        marker.setAttribute("orient", "auto-start-reverse");
+        const poly = document.createElementNS(ns, "path");
+        poly.setAttribute("d", "M 1 1.5 L 8.5 5 L 1 8.5 z");
+        poly.setAttribute("fill", col);
+        marker.appendChild(poly);
+        defs.appendChild(marker);
+      });
+      svgEl.appendChild(defs);
+
+      cards.forEach((card, idx) => {
+        const pills = pillGroups.get(idx);
+        if (!pills || !pills.length) return;
+        // Pick the occurrence closest to the card horizontally (preferring lower/non-numerator terms)
+        const cr = card.getBoundingClientRect();
+        if (cr.width === 0) return;
+        const cardCx = (cr.left + cr.right) / 2;
+        let pill = pills[0];
+        let bestScore = Infinity;
+        for (const p of pills) {
+          const r = p.getBoundingClientRect();
+          if (r.width === 0) continue;
+          const dx = Math.abs((r.left + r.right) / 2 - cardCx);
+          const inNum = Boolean(p.closest(".mfrac > .vlist-t > .vlist-r > .vlist > span:last-child"));
+          const score = dx + (inNum ? 160 : 0);
+          if (score < bestScore) {
+            bestScore = score;
+            pill = p;
+          }
+        }
+        const pr = pill.getBoundingClientRect();
+        if (pr.width === 0) return;
+
+        const sx = (cr.left + cr.right) / 2 - stageRect.left;
+        const sy = cr.top - stageRect.top;
+        const tx = (pr.left + pr.right) / 2 - stageRect.left;
+        const ty = pr.bottom - stageRect.top + 4;
+        if (sy <= ty + 4 || tx < 2 || tx > stageRect.width - 2) return;
+
+        const midY = (sy + ty) / 2;
+        const path = document.createElementNS(ns, "path");
+        path.setAttribute("d", `M ${sx.toFixed(1)} ${sy.toFixed(1)} C ${sx.toFixed(1)} ${midY.toFixed(1)}, ${tx.toFixed(1)} ${midY.toFixed(1)}, ${tx.toFixed(1)} ${ty.toFixed(1)}`);
+        path.setAttribute("fill", "none");
+        path.setAttribute("stroke", colors[idx % colorCount]);
+        path.setAttribute("stroke-width", activeIdx === idx ? "2.2" : "1.5");
+        path.setAttribute("stroke-linecap", "round");
+        path.setAttribute("opacity", activeIdx === -1 || activeIdx === idx ? "0.92" : "0.28");
+        path.setAttribute("marker-end", `url(#ft-arr-${idx % colorCount})`);
+        path.dataset.idx = String(idx);
+        svgEl.appendChild(path);
+      });
+    };
+
+    const showPopover = (idx) => {
+      const s = symbols[idx];
+      if (!s) return;
+      activeIdx = idx;
+      const c = idx % colorCount;
+      cards.forEach((card, i) => {
+        card.classList.toggle("is-active", i === idx);
+        card.classList.toggle("is-dim", i !== idx);
+        card.setAttribute("aria-expanded", String(i === idx));
+      });
+      pillGroups.forEach((pills, i) => {
+        pills.forEach((pill) => {
+          pill.classList.toggle("is-active", i === idx);
+          pill.classList.toggle("is-dim", i !== idx);
+        });
+      });
+      popover.className = `sym-popover ft-c${c}`;
+      if (window.katex && (s.tex || s.sym)) {
+        try {
+          window.katex.render(s.tex || s.sym, popSym, { displayMode: false, throwOnError: false, strict: false });
+        } catch (e) {
+          popSym.textContent = s.sym;
+        }
+      } else {
+        popSym.textContent = s.sym;
+      }
+      popTitle.textContent = s.short;
+      popDesc.textContent = s.desc;
+      popover.hidden = false;
+
+      const stageRect = stageEl.getBoundingClientRect();
+      const anchor = cards[idx];
+      const anchorRect = anchor.getBoundingClientRect();
+      const popW = Math.min(280, stageRect.width - 12);
+      const centerX = (anchorRect.left + anchorRect.right) / 2 - stageRect.left;
+      const left = Math.max(6, Math.min(stageRect.width - popW - 6, centerX - popW / 2));
+      const top = anchorRect.bottom - stageRect.top + 8;
+      popover.style.width = `${popW}px`;
+      popover.style.left = `${left}px`;
+      popover.style.top = `${top}px`;
+      const caretX = Math.max(18, Math.min(popW - 18, centerX - left));
+      popCaret.style.left = `${caretX}px`;
+      drawArrows();
+    };
+
+    const hidePopover = () => {
+      if (pinnedIdx !== -1) return;
+      activeIdx = -1;
+      popover.hidden = true;
+      cards.forEach((card) => {
+        card.classList.remove("is-active", "is-dim");
+        card.setAttribute("aria-expanded", "false");
+      });
+      pillGroups.forEach((pills) => {
+        pills.forEach((pill) => pill.classList.remove("is-active", "is-dim"));
+      });
+      drawArrows();
+    };
+
+    const bindTarget = (el, idx) => {
+      el.addEventListener("mouseenter", () => showPopover(idx));
+      el.addEventListener("focus", () => showPopover(idx));
+      el.addEventListener("click", (ev) => {
+        ev.stopPropagation();
+        if (pinnedIdx === idx) {
+          pinnedIdx = -1;
+          hidePopover();
+        } else {
+          pinnedIdx = idx;
+          showPopover(idx);
+        }
+      });
+      el.addEventListener("keydown", (ev) => {
+        if (ev.key === "Enter" || ev.key === " ") {
+          ev.preventDefault();
+          el.click();
+        } else if (ev.key === "Escape") {
+          pinnedIdx = -1;
+          hidePopover();
+        }
+      });
+    };
+
+    cards.forEach((card, idx) => bindTarget(card, idx));
+    pillGroups.forEach((pills, idx) => pills.forEach((pill) => bindTarget(pill, idx)));
+
+    stageEl.addEventListener("mouseleave", () => {
+      if (pinnedIdx === -1) hidePopover();
+    });
+    document.addEventListener("click", (ev) => {
+      if (pinnedIdx !== -1 && !stageEl.contains(ev.target)) {
+        pinnedIdx = -1;
+        hidePopover();
+      }
+    });
+
+    const scheduleArrows = () => window.requestAnimationFrame(drawArrows);
+    scheduleArrows();
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(scheduleArrows);
+    }
+    if (typeof ResizeObserver !== "undefined") {
+      const ro = new ResizeObserver(scheduleArrows);
+      ro.observe(stageEl);
+    } else {
+      window.addEventListener("resize", scheduleArrows);
     }
   };
 })();

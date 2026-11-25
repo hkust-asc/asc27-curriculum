@@ -9,8 +9,9 @@ Follow these rules on every change to `site/`, `scripts/`, `diagrams/`, `slides/
 - Present structure from first principles: use a **directed graph** for dependencies, a **visual roadmap track** for multi-week curricula, and a **proportional timeline** for schedules instead of flat HTML tables.
 
 ## Formulas & Symbol Clarity
-- **Webapp (`site/`)**: Render all formulas using vendored KaTeX (`site/assets/vendor/katex/`) via `window.ASC27.renderFormulaBox(...)` with interactive hover/click symbol chips. Never ship raw ASCII math in visible formula containers.
-- **Slides (`scripts/build_decks.py`)**: Every slide with `formula_tex` must also define `formula_symbols` (`List[Tuple[str, str]]`) so every symbol is explicitly explained on the slide.
+- **Color-Coded Annotated Formula Pattern (Webapp & Slides)**: Every core formula must wrap each explained variable in a color-coded rounded pill box (5-color cycle: blue `#2563EB`, green `#16A34A`, violet `#7C3AED`, orange `#EA580C`, teal `#0D9488`), connect it via a matching curved upward arrow to a color-matched legend card underneath, and color **every repeated occurrence** of the same variable consistently across the formula.
+- **Webapp (`site/`)**: Render all formulas using vendored KaTeX (`site/assets/vendor/katex/`) via `window.ASC27.renderFormulaBox(...)`, which auto-wraps all symbol occurrences in `.ft-pill` boxes, draws SVG Bezier arrows (`.formula-arrows`) from `.sym-card` callouts, and opens a color-matched `.sym-popover` on hover/click. Never ship raw ASCII math in visible formula containers.
+- **Slides (`scripts/build_decks.py`, `scripts/formula_render.py`)**: Every slide with `formula_tex` must also define `formula_symbols` (`List[Tuple[str, str]]`). `render_annotated_formula_png(...)` compiles TikZ-annotated `pdflatex` diagrams with color-coded term pills (all occurrences colored), curved arrows, and matching legend cards.
 
 ## Beginner Writing Style (ASD-STE100)
 - Keep slide bullets under 20 words and web prose sentences under 25 words.

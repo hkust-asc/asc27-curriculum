@@ -558,77 +558,175 @@ input[type="range"] {
 .takeaway.coral { border-left-color: var(--coral); background: var(--coral-soft); color: var(--ink); }
 .takeaway.teal { border-left-color: var(--teal); background: var(--teal-soft); color: var(--ink); }
 
-/* KaTeX Formula Box + Interactive Symbol Chips */
+/* KaTeX Color-Coded Annotated Formula Box */
 .formula-box {
   margin: 12px 0;
-  padding: 12px 14px;
+  padding: 14px 14px 12px;
   background: var(--ground);
   border: 1px solid var(--rule);
   border-radius: 10px;
+  position: relative;
+}
+
+.formula-stage {
+  position: relative;
+  padding-bottom: 2px;
 }
 
 .formula-math {
-  overflow-x: auto;
-  padding: 4px 0 8px;
+  overflow: visible;
+  padding: 6px 2px 4px;
   color: var(--ink);
-  font-size: 15px;
+  font-size: 16px;
+  position: relative;
+  z-index: 2;
 }
 
 .formula-math .katex-display {
   margin: 0.2em 0;
 }
 
-.sym-strip {
+.formula-arrows {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+}
+
+/* Term color tokens (5-color cycle: blue, green, violet, amber/orange, teal) */
+.ft-c0 { --ft-stroke: #2563EB; --ft-fill: #EFF6FF; --ft-glow: rgba(37, 99, 235, 0.24); }
+.ft-c1 { --ft-stroke: #16A34A; --ft-fill: #F0FDF4; --ft-glow: rgba(22, 163, 74, 0.24); }
+.ft-c2 { --ft-stroke: #7C3AED; --ft-fill: #F5F3FF; --ft-glow: rgba(124, 58, 237, 0.26); }
+.ft-c3 { --ft-stroke: #EA580C; --ft-fill: #FFF7ED; --ft-glow: rgba(234, 88, 12, 0.24); }
+.ft-c4 { --ft-stroke: #0D9488; --ft-fill: #F0FDFA; --ft-glow: rgba(13, 148, 136, 0.24); }
+
+/* Inline color-coded rounded boxes inside the KaTeX formula */
+.ft-pill {
+  display: inline-block;
+  padding: 1px 5px;
+  margin: 0 1px;
+  border-radius: 6px;
+  border: 1.5px solid var(--ft-stroke);
+  background: var(--ft-fill);
+  cursor: pointer;
+  transition: box-shadow 0.16s ease, transform 0.16s ease, opacity 0.16s ease;
+  vertical-align: baseline;
+}
+
+.ft-pill:hover,
+.ft-pill:focus-visible,
+.ft-pill.is-active {
+  box-shadow: 0 0 0 3px var(--ft-glow), 0 3px 10px -2px var(--ft-glow);
+  outline: none;
+}
+
+.ft-pill.is-dim {
+  opacity: 0.42;
+}
+
+/* Color-coded callout cards underneath the formula */
+.sym-cards {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  padding-top: 8px;
-  border-top: 1px solid var(--rule);
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
 }
 
-.sym-chip {
-  position: relative;
+.sym-card {
   display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 3px 8px;
-  border-radius: 6px;
-  border: 1px solid var(--border);
-  background: var(--surface);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1.5px solid var(--ft-stroke);
+  background: var(--ft-fill);
   color: var(--ink);
-  font-size: 12px;
+  text-align: left;
   cursor: pointer;
-  transition: border-color 0.15s ease, background 0.15s ease;
+  transition: box-shadow 0.16s ease, transform 0.16s ease, opacity 0.16s ease;
 }
 
-.sym-chip:hover, .sym-chip.is-active {
-  border-color: var(--blue);
-  background: var(--blue-soft);
+.sym-card:hover,
+.sym-card:focus-visible,
+.sym-card.is-active {
+  box-shadow: 0 0 0 3px var(--ft-glow), 0 4px 12px -2px var(--ft-glow);
+  transform: translateY(-1px);
+  outline: none;
 }
 
-.sym-chip-key {
-  font-family: var(--mono);
-  font-weight: 650;
-  color: var(--blue);
+.sym-card.is-dim {
+  opacity: 0.48;
 }
 
-.sym-chip-short {
+.sym-card-key {
+  font-size: 13.5px;
+  line-height: 1.2;
+  color: var(--ft-stroke);
+}
+
+.sym-card-key .katex {
+  font-size: 1em;
+  color: var(--ft-stroke);
+}
+
+.sym-card-short {
+  font-size: 11.5px;
+  font-weight: 550;
   color: var(--ink-2);
+  line-height: 1.25;
 }
 
-.sym-readout {
-  margin-top: 8px;
-  padding: 7px 10px;
-  border-radius: 7px;
+/* Hover/click explanation popover card */
+.sym-popover {
+  position: absolute;
+  z-index: 20;
+  padding: 11px 13px;
+  border-radius: 10px;
   background: var(--surface);
-  border: 1px solid var(--rule);
-  font-size: 12.5px;
+  border: 1.5px solid var(--ft-stroke);
+  box-shadow: 0 10px 28px -6px rgba(15, 23, 42, 0.16), 0 0 0 3px var(--ft-glow);
+  pointer-events: none;
+}
+
+.sym-popover-caret {
+  position: absolute;
+  top: -6px;
+  width: 10px;
+  height: 10px;
+  background: var(--surface);
+  border-left: 1.5px solid var(--ft-stroke);
+  border-top: 1.5px solid var(--ft-stroke);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.sym-popover-sym {
+  font-size: 16px;
+  color: var(--ft-stroke);
+  margin-bottom: 2px;
+}
+
+.sym-popover-sym .katex {
+  font-size: 1em;
+  color: var(--ft-stroke);
+}
+
+.sym-popover-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.sym-popover-desc {
+  font-size: 12px;
   color: var(--ink-2);
   line-height: 1.45;
-  min-height: 32px;
 }
-
-.sym-readout strong { color: var(--ink); }
 
 /* Step Timeline Strip */
 .step-timeline {

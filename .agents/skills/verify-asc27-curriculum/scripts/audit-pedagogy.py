@@ -270,6 +270,27 @@ def audit_slides(site_texts: list[str]) -> dict:
     }
 
 
+def audit_annotated_formula_system() -> list[str]:
+    """Verify that the color-coded annotated formula pattern is wired in both webapp and slides."""
+    issues: list[str] = []
+    common_js = (SITE_DIR / "assets" / "common.js").read_text(encoding="utf-8")
+    style_css = (SITE_DIR / "assets" / "style.css").read_text(encoding="utf-8")
+    formula_py = (ROOT / "scripts" / "formula_render.py").read_text(encoding="utf-8")
+    odp_py = (ROOT / "scripts" / "odp_builder.py").read_text(encoding="utf-8")
+
+    for token in ("ft-pill", "formula-arrows", "sym-card", "sym-popover", "\\\\htmlClass"):
+        if token not in common_js:
+            issues.append(f"site/assets/common.js missing annotated-formula primitive: {token}")
+    for token in (".ft-pill", ".sym-card", ".sym-popover", ".ft-c0", ".ft-c4"):
+        if token not in style_css:
+            issues.append(f"site/assets/style.css missing annotated-formula style: {token}")
+    if "def render_annotated_formula_png" not in formula_py:
+        issues.append("scripts/formula_render.py missing render_annotated_formula_png")
+    if "render_annotated_formula_png" not in odp_py:
+        issues.append("scripts/odp_builder.py not invoking render_annotated_formula_png")
+    return issues
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Audit asc27-curriculum clarity and visual-first metrics.")
     parser.add_argument("--out", help="Write JSON report to this path")
@@ -280,6 +301,7 @@ def main() -> int:
     site_texts = [strip_html((SITE_DIR / name).read_text(encoding="utf-8")) for name in SITE_PAGES]
     doc_reports = [audit_doc(p) for p in sorted(DOCS_DIR.glob("*.md"))]
     slide_report = audit_slides(site_texts)
+    annot_issues = audit_annotated_formula_system()
 
     broken_total = sum(len(r["broken_links"]) for r in site_reports)
     missing_slides = len(slide_report["missing_artifacts"])
@@ -293,6 +315,7 @@ def main() -> int:
         "missing_slide_artifacts": missing_slides,
         "katex_missing_pages": katex_missing,
         "slides_missing_formula_symbols": sym_missing,
+        "annotated_formula_issues": annot_issues,
     }
 
     if args.out:
@@ -333,7 +356,14 @@ def main() -> int:
     if slide_report["missing_artifacts"]:
         print(f"[FAIL] Missing slide artifacts: {', '.join(slide_report['missing_artifacts'])}")
 
-    if args.strict and (broken_total > 0 or missing_slides > 0 or katex_missing > 0 or sym_missing > 0):
+    print("\n== Color-Coded Annotated Formula System Audit ==")
+    if annot_issues:
+        for issue in annot_issues:
+            print(f"[FAIL] {issue}")
+    else:
+        print("[PASS] Webapp (KaTeX pills + SVG arrows + popovers) and Slides (TikZ annotated PNGs) verified.")
+
+    if args.strict and (broken_total > 0 or missing_slides > 0 or katex_missing > 0 or sym_missing > 0 or annot_issues):
         return 1
     return 0
 

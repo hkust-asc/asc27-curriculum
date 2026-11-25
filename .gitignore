@@ -5,3 +5,5 @@ __pycache__/
 /tmp/
 
 qa_renders/
+
+slides/.formula-cache/

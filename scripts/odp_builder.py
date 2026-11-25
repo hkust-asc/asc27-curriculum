@@ -18,6 +18,8 @@ from xml.sax.saxutils import escape as xml_escape
 
 from PIL import Image
 
+from formula_render import render_formula_png
+
 
 # Minimalist Academic HPC Palette (HKUST-inspired)
 PALETTE = {
@@ -52,6 +54,7 @@ class SlideSpec:
     section_tag: str = ""
     bullets: List[str] = field(default_factory=list)
     formula: str = ""
+    formula_tex: str = ""
     formula_caption: str = ""
     image_path: Optional[str] = None
     image_caption: str = ""
@@ -305,12 +308,22 @@ class ODPDeck:
         return [self._frame_textbox(1.5, 18.08, 30.85, 0.72, self._p(s.footnote, t_fn, p_fn))]
 
     def _build_formula_strip(
-        self, x: float, y: float, w: float, h: float, formula: str, caption: str, accent: str
+        self, x: float, y: float, w: float, h: float, formula: str, caption: str, accent: str,
+        formula_tex: str = "",
     ) -> List[str]:
         els: List[str] = []
         els.append(self._rect(x, y, w, h, PALETTE["surface"], PALETTE["border"], "0.025cm"))
         els.append(self._rect(x, y, 0.14, h, accent))
-        f_size = 13.0 if len(formula) > 46 else 14.5
+        if formula_tex:
+            image = render_formula_png(formula_tex)
+            cap_h = 1.12 if caption else 0.0
+            els.append(self._image_frame(image, x + 0.32, y + 0.10, w - 0.50, h - cap_h - 0.16))
+            if caption:
+                t_cap = self._make_text_style(10.4, PALETTE["ink_muted"])
+                p_cap = self._make_para_style(space_after="0cm", line_height="112%")
+                els.append(self._frame_textbox(x + 0.28, y + h - cap_h, w - 0.40, cap_h - 0.06, self._p(caption, t_cap, p_cap)))
+            return els
+        f_size = 12.2 if len(formula) > 58 else (13.2 if len(formula) > 44 else 14.5)
         t_form = self._make_text_style(f_size, PALETTE["ink"], bold=True, mono=True)
         p_form = self._make_para_style(space_after="0.08cm", line_height="118%")
         paras = self._p(formula, t_form, p_form)
@@ -320,6 +333,18 @@ class ODPDeck:
             paras += self._p(caption, t_cap, p_cap)
         gr_pad = self._make_rect_style(None, None, pad_lr="0.28cm", pad_tb="0.16cm", v_align="middle")
         els.append(self._frame_textbox(x + 0.18, y, w - 0.24, h, paras, gr_style=gr_pad))
+        return els
+
+    def _build_callout_strip(
+        self, x: float, y: float, w: float, h: float, text: str, accent: str
+    ) -> List[str]:
+        els: List[str] = []
+        els.append(self._rect(x, y, w, h, PALETTE["surface"], PALETTE["border"], "0.025cm"))
+        els.append(self._rect(x, y, 0.14, h, accent))
+        t_co = self._make_text_style(12.4, PALETTE["ink_secondary"], bold=False)
+        p_co = self._make_para_style(space_after="0cm", line_height="122%")
+        gr_pad = self._make_rect_style(None, None, pad_lr="0.30cm", pad_tb="0.14cm", v_align="middle")
+        els.append(self._frame_textbox(x + 0.18, y, w - 0.24, h, self._p(text, t_co, p_co), gr_style=gr_pad))
         return els
 
     def _render_slide(self, s: SlideSpec, idx: int, total: int) -> str:
@@ -395,7 +420,8 @@ class ODPDeck:
             if has_formula:
                 els.extend(
                     self._build_formula_strip(
-                        left_x, 14.25, left_w, 3.30, s.formula, s.formula_caption, s.accent_color
+                        left_x, 14.25, left_w, 3.30, s.formula, s.formula_caption, s.accent_color,
+                        formula_tex=s.formula_tex,
                     )
                 )
 
@@ -416,10 +442,11 @@ class ODPDeck:
             left_x, left_w = 1.5, 12.25
             cur_y = 3.25
             if s.problem_meta:
-                t_meta = self._make_text_style(11.5, PALETTE["ink_muted"], bold=True)
-                p_meta = self._make_para_style(space_after="0.1cm")
-                els.append(self._frame_textbox(left_x, cur_y, left_w, 0.65, self._p(s.problem_meta, t_meta, p_meta)))
-                cur_y += 0.72
+                meta_h = 1.02 if len(s.problem_meta) > 64 else 0.62
+                t_meta = self._make_text_style(10.8, PALETTE["ink_muted"], bold=True)
+                p_meta = self._make_para_style(space_after="0.06cm", line_height="118%")
+                els.append(self._frame_textbox(left_x, cur_y, left_w, meta_h, self._p(s.problem_meta, t_meta, p_meta)))
+                cur_y += meta_h + 0.08
 
             dim_colors = [PALETTE["accent"], PALETTE["coral"], PALETTE["teal"]]
             gap = 0.24
@@ -511,7 +538,7 @@ class ODPDeck:
                 els.append(self._frame_textbox(cx, top_y + 1.32, col_w, col_h - 1.35, b_xml))
 
             if s.callout:
-                els.extend(self._build_formula_strip(1.5, 16.05, 30.85, 1.72, s.callout, "", s.accent_color))
+                els.extend(self._build_callout_strip(1.5, 16.05, 30.85, 1.72, s.callout, s.accent_color))
 
             els.extend(self._build_footer(s))
 

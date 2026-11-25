@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stage 4: HPL, HPCG &amp; Power Wall | HKUST ASC27</title>
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+  <script src="assets/vendor/katex/katex.min.js"></script>
 </head>
 <body>
   <header id="site-header"></header>
@@ -12,18 +14,20 @@
     <section class="hero">
       <div class="eyebrow">Stage 4 · Weeks 14 to 24 · Modules M13 to M16</div>
       <h1>HPL Grids, the Power Wall, and Qubit Memory Scaling</h1>
-      <p class="lead">Balance matrix size, block size, and process grids in HPL, find the DVFS sweet spot under historical 3/4/5 kW caps, and check exact exponential qubit memory.</p>
+      <p class="lead">Tune HPL matrix size and grids, find the DVFS sweet spot under 3/4/5 kW caps, and verify exponential qubit memory.</p>
     </section>
 
     <!-- LAB 1: HPL TUNER -->
     <section class="lab-card" id="hpl">
       <div class="lab-header">
         <div>
-          <h2>1. HPL Parameter &amp; Process Grid Simulator</h2>
-          <p class="lab-subtitle">Adjust matrix order N, block size NB, and P×Q grid on 16 ranks (512 GB cluster RAM). Watch RAM usage, compute work, and estimated efficiency.</p>
+          <h2><span class="section-index">01</span>HPL Parameter &amp; Process Grid Simulator</h2>
+          <p class="lab-subtitle">Adjust matrix order N, block size NB, and P×Q grid on 16 ranks to balance RAM fill and efficiency.</p>
         </div>
         <span class="pill blue">M13 · HPL Benchmark</span>
       </div>
+
+      <div id="hpl-formula"></div>
 
       <div class="lab-grid">
         <div class="controls">
@@ -62,11 +66,13 @@
     <section class="lab-card" id="power">
       <div class="lab-header">
         <div>
-          <h2>2. Power Wall &amp; DVFS Sweet-Spot Explorer</h2>
-          <p class="lab-subtitle">Dynamic power scales as V²·f (roughly f³). Pick a historical practice cap (ASC27 cap is TBD), add GPUs, and lower clocks to maximize legal TFLOP/s.</p>
+          <h2><span class="section-index">02</span>Power Wall &amp; DVFS Sweet-Spot Explorer</h2>
+          <p class="lab-subtitle">Pick a historical practice cap (ASC27 cap is TBD), add GPUs, and lower clocks to maximize legal TFLOP/s.</p>
         </div>
         <span class="pill coral">M15 · Power Wall &amp; DVFS</span>
       </div>
+
+      <div id="pw-formula"></div>
 
       <div class="lab-grid">
         <div class="controls">
@@ -104,11 +110,13 @@
     <section class="lab-card" id="qubit">
       <div class="lab-header">
         <div>
-          <h2>3. Exponential Memory Wall: State-Vector Qubits</h2>
-          <p class="lab-subtitle">Each extra qubit doubles `complex128` memory (16 × 2^n bytes). Slide n from 10 to 44 to see why QiboTN switches to tensor-network contraction.</p>
+          <h2><span class="section-index">03</span>Exponential Memory Wall: State-Vector Qubits</h2>
+          <p class="lab-subtitle">Each extra qubit doubles complex128 memory. Slide n from 10 to 44 to see why QiboTN uses tensor networks.</p>
         </div>
         <span class="pill violet">A2 &amp; C08 · QiboTN Math</span>
       </div>
+
+      <div id="qb-formula"></div>
 
       <div class="lab-grid">
         <div class="controls">
@@ -122,10 +130,10 @@
             <button class="btn" data-q="40">40q = 16 TiB</button>
           </div>
           <div class="stat-strip" style="margin:0;">
-            <div class="stat"><div class="stat-k">Amplitudes (2^n)</div><div class="stat-v blue" id="qb-amp">1.05M</div></div>
+            <div class="stat"><div class="stat-k">Amplitudes (2ⁿ)</div><div class="stat-v blue" id="qb-amp">1.05M</div></div>
             <div class="stat"><div class="stat-k">Exact Memory</div><div class="stat-v violet" id="qb-mem">16.0 MiB</div></div>
           </div>
-          <div class="takeaway" id="qb-msg">Exact math: 16 × 2^20 bytes = 16 MiB (correcting the 1024× unit typo on ASC26 slide p.20).</div>
+          <div class="takeaway" id="qb-msg">Exact math: 16 × 2²⁰ bytes = 16 MiB (correcting the 1024× unit typo on ASC26 slide p.20).</div>
         </div>
 
         <div class="viz-box">
@@ -139,6 +147,36 @@
 
   <script src="assets/common.js"></script>
   <script>
+    // ---- KATEX FORMULA BOXES ----
+    window.ASC27.renderFormulaBox(document.getElementById("hpl-formula"), {
+      tex: "W_{\\mathrm{HPL}} = \\tfrac{2}{3}N^3 + 2N^2,\\quad M = 8N^2",
+      symbols: [
+        { sym: "W_HPL", tex: "W_{\\mathrm{HPL}}", short: "FP64 operations", desc: "Total double-precision floating-point operations required for LU factorization." },
+        { sym: "N", tex: "N", short: "Matrix order", desc: "Side length of the dense square N×N linear system." },
+        { sym: "M", tex: "M", short: "Matrix bytes", desc: "Cluster RAM used by the FP64 matrix at 8 bytes per entry." },
+        { sym: "NB", tex: "NB", short: "Block size", desc: "Panel width controlling trailing DGEMM efficiency and load balance." }
+      ]
+    });
+
+    window.ASC27.renderFormulaBox(document.getElementById("pw-formula"), {
+      tex: "P = P_{\\mathrm{static}} + C_{\\mathrm{eff}} V^2 f,\\quad \\eta = \\frac{R(f)}{P(f)}",
+      symbols: [
+        { sym: "P", tex: "P", short: "Total power", desc: "Measured cluster wall power in watts under the competition cap." },
+        { sym: "P_static", tex: "P_{\\mathrm{static}}", short: "Static power", desc: "Baseline power drawn by CPUs, fans, switches, and idle GPUs." },
+        { sym: "V,f", tex: "V, f", short: "Voltage & clock", desc: "GPU supply voltage and frequency; dynamic power scales roughly as f³." },
+        { sym: "eta", tex: "\\eta", short: "Energy efficiency", desc: "Sustained compute throughput R(f) divided by total power P(f) in GFLOP/W." }
+      ]
+    });
+
+    window.ASC27.renderFormulaBox(document.getElementById("qb-formula"), {
+      tex: "M_{\\mathrm{qubit}}(n) = 16 \\cdot 2^n\\;\\mathrm{bytes}",
+      symbols: [
+        { sym: "n", tex: "n", short: "Qubit count", desc: "Number of entangled qubits represented in a full state vector." },
+        { sym: "2^n", tex: "2^n", short: "Amplitudes", desc: "Total complex basis states; adding one qubit doubles storage." },
+        { sym: "16 bytes", tex: "16\\;\\mathrm{bytes}", short: "complex128", desc: "Two FP64 numbers (real and imaginary) stored per quantum amplitude." }
+      ]
+    });
+
     // ---- LAB 1: HPL SIMULATOR ----
     let pq = "4x4";
     const hplN = document.getElementById("hpl-n");
@@ -185,7 +223,7 @@
         msg.textContent = `Matrix uses ${ramPct.toFixed(0)}% of 512 GB RAM. OS swapping crashes HPL throughput.`;
       } else if (P > Q) {
         msg.className = "takeaway coral";
-        msg.textContent = `P (${P}) > Q (${Q}) increases panel broadcast hops. Keep P <= Q and nearly square.`;
+        msg.textContent = `P (${P}) exceeds Q (${Q}) and increases panel broadcast hops. Keep P ≤ Q and nearly square.`;
       } else if (NB < 128) {
         msg.className = "takeaway";
         msg.textContent = "Small NB hurts trailing DGEMM efficiency. Raise NB toward 192–384.";
@@ -197,26 +235,26 @@
       // Draw LU trailing matrix + grid + RAM meter
       const ramW = Math.min(280, (ramPct / 100) * 280);
       hplSvg.innerHTML = `
-        <text x="24" y="28" font-size="13" font-weight="700" fill="#0F172A">Blocked LU Matrix State</text>
-        <rect x="24" y="42" width="170" height="170" rx="4" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5"/>
-        <rect x="24" y="42" width="52" height="170" fill="#E2E8F0"/>
-        <rect x="24" y="42" width="170" height="52" fill="#E2E8F0"/>
+        <text x="24" y="28" font-size="13" font-weight="700" fill="#171717">Blocked LU Matrix State</text>
+        <rect x="24" y="42" width="170" height="170" rx="4" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="1.5"/>
+        <rect x="24" y="42" width="52" height="170" fill="#E5E5E5"/>
+        <rect x="24" y="42" width="170" height="52" fill="#E5E5E5"/>
         <rect x="76" y="94" width="20" height="118" fill="#C48A1A"/>
         <rect x="96" y="94" width="98" height="118" fill="#0B4F8A" opacity="0.88"/>
-        <text x="50" y="72" text-anchor="middle" font-size="10" font-weight="700" fill="#475569">Done</text>
+        <text x="50" y="72" text-anchor="middle" font-size="10" font-weight="700" fill="#737373">Done</text>
         <text x="86" y="156" text-anchor="middle" font-size="9" font-weight="700" fill="#FFFFFF" transform="rotate(-90 86 156)">Panel NB=${NB}</text>
         <text x="145" y="156" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">Trailing DGEMM</text>
 
-        <text x="234" y="48" font-size="13" font-weight="700" fill="#0F172A">Cluster Memory Fill (512 GB Node Pool)</text>
-        <rect x="234" y="60" width="280" height="24" rx="5" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="234" y="48" font-size="13" font-weight="700" fill="#171717">Cluster Memory Fill (512 GB Node Pool)</text>
+        <rect x="234" y="60" width="280" height="24" rx="5" fill="#FFFFFF" stroke="#E5E5E5"/>
         <rect x="234" y="60" width="${ramW}" height="24" rx="5" fill="${ramPct > 90 ? "#C2410C" : "#0B4F8A"}"/>
         <line x1="${234 + 280 * 0.9}" y1="54" x2="${234 + 280 * 0.9}" y2="90" stroke="#C2410C" stroke-dasharray="3 2" stroke-width="1.5"/>
         <text x="${234 + 280 * 0.9}" y="104" text-anchor="middle" font-size="10" font-weight="700" fill="#C2410C">90% Swap Limit</text>
 
-        <text x="234" y="138" font-size="13" font-weight="700" fill="#0F172A">Process Grid ${P} × ${Q} (16 Ranks)</text>
-        <text x="234" y="160" font-size="12" fill="#334155">Panel broadcasts span P = ${P} rows.</text>
-        <text x="234" y="180" font-size="12" fill="#334155">Estimated sustained efficiency: <strong>${eff.toFixed(0)}% of R_peak</strong></text>
-        <text x="24" y="242" font-size="12" fill="#475569">Rule: Report R_max only when HPL's backward residual check prints PASSED.</text>
+        <text x="234" y="138" font-size="13" font-weight="700" fill="#171717">Process Grid ${P} × ${Q} (16 Ranks)</text>
+        <text x="234" y="160" font-size="12" fill="#737373">Panel broadcasts span P = ${P} rows.</text>
+        <text x="234" y="180" font-size="12" fill="#171717">Estimated sustained efficiency: ${eff.toFixed(0)}% of R_peak</text>
+        <text x="24" y="242" font-size="12" fill="#737373">Rule: Report R_max only when HPL's backward residual check prints PASSED.</text>
       `;
     }
     hplN.oninput = drawHPL;
@@ -286,13 +324,13 @@
       let grid = "";
       [1000, 2000, 3000, 4000, 5000, 6000].forEach(w => {
         const x = xMap(w);
-        grid += `<line x1="${x}" y1="${padT}" x2="${x}" y2="${H - padB}" stroke="#E2E8F0"/>
-                 <text x="${x}" y="${H - 18}" text-anchor="middle" font-size="11" fill="#64748B">${w/1000} kW</text>`;
+        grid += `<line x1="${x}" y1="${padT}" x2="${x}" y2="${H - padB}" stroke="#E5E5E5"/>
+                 <text x="${x}" y="${H - 18}" text-anchor="middle" font-size="11" fill="#737373">${w/1000} kW</text>`;
       });
       [0, 100, 200, 300].forEach(tf => {
         const y = yMap(tf);
-        grid += `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#E2E8F0"/>
-                 <text x="${padL - 8}" y="${y + 4}" text-anchor="end" font-size="11" fill="#64748B">${tf}</text>`;
+        grid += `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#E5E5E5"/>
+                 <text x="${padL - 8}" y="${y + 4}" text-anchor="end" font-size="11" fill="#737373">${tf}</text>`;
       });
 
       const cx = xMap(cur.watts), cy = yMap(cur.tf), capX = xMap(capW);
@@ -304,8 +342,8 @@
         <path d="${curve}" fill="none" stroke="#0B4F8A" stroke-width="3"/>
         <circle cx="${cx}" cy="${cy}" r="7" fill="${valid ? "#0D9488" : "#C2410C"}" stroke="#FFFFFF" stroke-width="2"/>
         <text x="${cx}" y="${cy - 12}" text-anchor="middle" font-size="11" font-weight="700" fill="${valid ? "#0F766E" : "#C2410C"}">${Math.round(cur.watts)}W, ${cur.tf.toFixed(0)} TF/s</text>
-        <text x="${W / 2}" y="${H - 3}" text-anchor="middle" font-size="12" font-weight="600" fill="#334155">Total Cluster Power (Watts)</text>
-        <text x="16" y="${H / 2}" text-anchor="middle" font-size="12" font-weight="600" fill="#334155" transform="rotate(-90 16 ${H / 2})">FP64 TFLOP/s</text>
+        <text x="${W / 2}" y="${H - 3}" text-anchor="middle" font-size="12" font-weight="600" fill="#171717">Total Cluster Power (Watts)</text>
+        <text x="16" y="${H / 2}" text-anchor="middle" font-size="12" font-weight="600" fill="#171717" transform="rotate(-90 16 ${H / 2})">FP64 TFLOP/s</text>
       `;
     }
     pwG.oninput = drawPower;
@@ -343,13 +381,13 @@
       const msg = document.getElementById("qb-msg");
       if (n <= 26) {
         msg.className = "takeaway teal";
-        msg.textContent = `16 × 2^${n} = ${fmtBytes(bytes)}. Fits easily inside laptop RAM (20q = 16 MiB, not 16 GB).`;
+        msg.textContent = `At ${n} qubits, exact storage is ${fmtBytes(bytes)}. Fits easily inside laptop RAM (20q equals 16 MiB).`;
       } else if (n <= 35) {
         msg.className = "takeaway";
-        msg.textContent = `16 × 2^${n} = ${fmtBytes(bytes)}. Requires a high-memory server or multi-node cluster.`;
+        msg.textContent = `At ${n} qubits, exact storage is ${fmtBytes(bytes)}. Requires a high-memory server or multi-node cluster.`;
       } else {
         msg.className = "takeaway coral";
-        msg.textContent = `16 × 2^${n} = ${fmtBytes(bytes)} (40q = 16 TiB). State-vector hits the memory wall; QiboTN uses tensor networks instead.`;
+        msg.textContent = `At ${n} qubits, exact storage is ${fmtBytes(bytes)}. State-vector hits the memory wall, so QiboTN uses tensor networks.`;
       }
 
       const W = 640, H = 240, padL = 62, padR = 24, padT = 24, padB = 38;
@@ -367,20 +405,20 @@
       ];
       let refs = refLines.map(r => {
         const y = yMap(r.b);
-        return `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#CBD5E1" stroke-dasharray="4 3"/>
-                <text x="${W - padR - 4}" y="${y - 4}" text-anchor="end" font-size="10" fill="#64748B">${r.label}</text>`;
+        return `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#E5E5E5" stroke-dasharray="4 3"/>
+                <text x="${W - padR - 4}" y="${y - 4}" text-anchor="end" font-size="10" fill="#737373">${r.label}</text>`;
       }).join("");
 
       const cx = xMap(n), cy = yMap(n + 4);
       qbSvg.innerHTML = `
         ${refs}
-        <line x1="${padL}" y1="${H - padB}" x2="${W - padR}" y2="${H - padB}" stroke="#94A3B8"/>
-        <line x1="${padL}" y1="${padT}" x2="${padL}" y2="${H - padB}" stroke="#94A3B8"/>
+        <line x1="${padL}" y1="${H - padB}" x2="${W - padR}" y2="${H - padB}" stroke="#737373"/>
+        <line x1="${padL}" y1="${padT}" x2="${padL}" y2="${H - padB}" stroke="#737373"/>
         <path d="${line}" fill="none" stroke="#6D28D9" stroke-width="3"/>
         <circle cx="${cx}" cy="${cy}" r="6.5" fill="#6D28D9" stroke="#FFFFFF" stroke-width="2"/>
         <text x="${cx}" y="${cy - 11}" text-anchor="middle" font-size="11" font-weight="700" fill="#6D28D9">${n}q = ${fmtBytes(bytes)}</text>
-        <text x="${W / 2}" y="${H - 6}" text-anchor="middle" font-size="12" font-weight="600" fill="#334155">Qubits (n)</text>
-        <text x="16" y="${H / 2}" text-anchor="middle" font-size="12" font-weight="600" fill="#334155" transform="rotate(-90 16 ${H / 2})">Memory (log2 bytes)</text>
+        <text x="${W / 2}" y="${H - 6}" text-anchor="middle" font-size="12" font-weight="600" fill="#171717">Qubits (n)</text>
+        <text x="16" y="${H / 2}" text-anchor="middle" font-size="12" font-weight="600" fill="#171717" transform="rotate(-90 16 ${H / 2})">Memory (log2 bytes)</text>
       `;
     }
     qbN.oninput = () => {

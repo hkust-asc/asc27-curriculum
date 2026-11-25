@@ -1,81 +1,81 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="660" viewBox="0 0 960 660">
   <defs>
-    <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#475569"/></marker>
+    <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#525252"/></marker>
     <marker id="arr_blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0B4F8A"/></marker>
     <marker id="arr_teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0D9488"/></marker>
     <marker id="arr_coral" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C2410C"/></marker>
     <marker id="arr_gold" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C48A1A"/></marker>
     <marker id="arr_violet" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#6D28D9"/></marker>
-    <marker id="arr_muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#64748B"/></marker>
+    <marker id="arr_muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#737373"/></marker>
   </defs>
-  <rect width="960" height="660" fill="#FAFBFD"/>
+  <rect width="960" height="660" fill="#FAFAFA"/>
   <rect x="28.0" y="22.0" width="6.0" height="36.0" rx="2.0" fill="#6D28D9" stroke="none" stroke-width="1.5"/>
-  <text x="44.0" y="44.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#0F172A" text-anchor="start">ASC25 AlphaFold3: Inference Pipeline &amp; CPU-Only Tuning</text>
-  <text x="44.0" y="66.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="start">Prelim CPU/GPU (≥16-bit BF16) → Finals CPU-only 4 kW (≥3 nodes, ≤2 kW/node, dual Xeon 6760P)</text>
-  <rect x="28.0" y="92.0" width="904.0" height="218.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
-  <rect x="28.0" y="92.0" width="904.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
-  <rect x="28.0" y="118.0" width="904.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
-  <line x1="28.0" y1="126.0" x2="932.0" y2="126.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <text x="44.0" y="44.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#171717" text-anchor="start">ASC25 AlphaFold3: Inference Pipeline &amp; CPU-Only Tuning</text>
+  <text x="44.0" y="66.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#737373" text-anchor="start">Prelim CPU/GPU (≥16-bit BF16) → Finals CPU-only 4 kW (≥3 nodes, ≤2 kW/node, dual Xeon 6760P)</text>
+  <rect x="28.0" y="92.0" width="904.0" height="218.0" rx="8.0" fill="#FFFFFF" stroke="#EBEBEB" stroke-width="1.4"/>
+  <rect x="28.0" y="92.0" width="904.0" height="34.0" rx="8.0" fill="#F4F4F5" stroke="#EBEBEB" stroke-width="1.0"/>
+  <rect x="28.0" y="118.0" width="904.0" height="8.0" rx="0.0" fill="#F4F4F5" stroke="none" stroke-width="1.5"/>
+  <line x1="28.0" y1="126.0" x2="932.0" y2="126.0" stroke="#EBEBEB" stroke-width="1.0"/>
   <rect x="40.0" y="101.0" width="4.0" height="16.0" rx="2.0" fill="#6D28D9" stroke="none" stroke-width="1.5"/>
-  <text x="52.0" y="115.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">AlphaFold3 Core Inference Pipeline (Pairformer O(N³) Hotspot)</text>
-  <rect x="48.0" y="146.0" width="152.0" height="82.0" rx="6.0" fill="#F1F5F9" stroke="#475569" stroke-width="1.6"/>
-  <rect x="48.0" y="146.0" width="5.0" height="82.0" rx="2.0" fill="#475569" stroke="none" stroke-width="1.5"/>
-  <text x="124.0" y="181.3" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="middle">Input Features</text>
-  <text x="124.0" y="208.3" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">Seq / MSA / Templates</text>
-  <line x1="200.0" y1="187.0" x2="224.0" y2="187.0" stroke="#475569" stroke-width="2.0" marker-end="url(#arr)"/>
+  <text x="52.0" y="115.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="start">AlphaFold3 Core Inference Pipeline (Pairformer O(N³) Hotspot)</text>
+  <rect x="48.0" y="146.0" width="152.0" height="82.0" rx="6.0" fill="#F4F4F5" stroke="#525252" stroke-width="1.6"/>
+  <rect x="48.0" y="146.0" width="5.0" height="82.0" rx="2.0" fill="#525252" stroke="none" stroke-width="1.5"/>
+  <text x="124.0" y="181.3" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="middle">Input Features</text>
+  <text x="124.0" y="208.3" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="middle">Seq / MSA / Templates</text>
+  <line x1="200.0" y1="187.0" x2="224.0" y2="187.0" stroke="#525252" stroke-width="2.0" marker-end="url(#arr)"/>
   <rect x="228.0" y="146.0" width="154.0" height="82.0" rx="6.0" fill="#EFF6FF" stroke="#0B4F8A" stroke-width="1.6"/>
   <rect x="228.0" y="146.0" width="5.0" height="82.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="305.0" y="181.3" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="middle">MSA Module</text>
-  <text x="305.0" y="208.3" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">Row / col attention</text>
+  <text x="305.0" y="181.3" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="middle">MSA Module</text>
+  <text x="305.0" y="208.3" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="middle">Row / col attention</text>
   <line x1="382.0" y1="187.0" x2="406.0" y2="187.0" stroke="#0B4F8A" stroke-width="2.0" marker-end="url(#arr_blue)"/>
   <rect x="410.0" y="138.0" width="280.0" height="98.0" rx="8.0" fill="#FFF7ED" stroke="#C2410C" stroke-width="2.2"/>
-  <text x="550.0" y="162.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="16.5" font-weight="bold" fill="#C2410C" text-anchor="middle">Pairformer (48 Blocks)</text>
-  <text x="550.0" y="184.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="middle">Triangle Mult + Triangle Attention</text>
+  <text x="550.0" y="162.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="16.5" font-weight="bold" fill="#C2410C" text-anchor="middle">Pairformer (48 Blocks)</text>
+  <text x="550.0" y="184.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="middle">Triangle Mult + Triangle Attention</text>
   <rect x="450.0" y="200.0" width="200.0" height="28.0" rx="14.0" fill="#C2410C" stroke="#C2410C" stroke-width="1.4"/>
-  <text x="550.0" y="218.5" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">O(N³) Compute Bottleneck</text>
+  <text x="550.0" y="218.5" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">O(N³) Compute Bottleneck</text>
   <line x1="690.0" y1="187.0" x2="714.0" y2="187.0" stroke="#C2410C" stroke-width="2.0" marker-end="url(#arr_coral)"/>
   <rect x="718.0" y="146.0" width="194.0" height="82.0" rx="6.0" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.6"/>
   <rect x="718.0" y="146.0" width="5.0" height="82.0" rx="2.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
-  <text x="815.0" y="181.3" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="middle">Diffusion Module</text>
-  <text x="815.0" y="208.3" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">All-atom 3D denoising</text>
-  <rect x="48.0" y="250.0" width="864.0" height="44.0" rx="6.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.2"/>
-  <text x="480.0" y="277.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="normal" fill="#334155" text-anchor="middle">N×N×C pair tensors dominate long sequences; BF16 has 7-bit mantissa, requiring FP32 accumulation</text>
-  <rect x="28.0" y="330.0" width="412.0" height="300.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
-  <rect x="28.0" y="330.0" width="412.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
-  <rect x="28.0" y="356.0" width="412.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
-  <line x1="28.0" y1="364.0" x2="440.0" y2="364.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <text x="815.0" y="181.3" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="middle">Diffusion Module</text>
+  <text x="815.0" y="208.3" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="middle">All-atom 3D denoising</text>
+  <rect x="48.0" y="250.0" width="864.0" height="44.0" rx="6.0" fill="#F4F4F5" stroke="#EBEBEB" stroke-width="1.2"/>
+  <text x="480.0" y="277.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="normal" fill="#525252" text-anchor="middle">N×N×C pair tensors dominate long sequences; BF16 has 7-bit mantissa, requiring FP32 accumulation</text>
+  <rect x="28.0" y="330.0" width="412.0" height="300.0" rx="8.0" fill="#FFFFFF" stroke="#EBEBEB" stroke-width="1.4"/>
+  <rect x="28.0" y="330.0" width="412.0" height="34.0" rx="8.0" fill="#F4F4F5" stroke="#EBEBEB" stroke-width="1.0"/>
+  <rect x="28.0" y="356.0" width="412.0" height="8.0" rx="0.0" fill="#F4F4F5" stroke="none" stroke-width="1.5"/>
+  <line x1="28.0" y1="364.0" x2="440.0" y2="364.0" stroke="#EBEBEB" stroke-width="1.0"/>
   <rect x="40.0" y="339.0" width="4.0" height="16.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="52.0" y="353.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">Prelim vs Finals Platform Shift</text>
+  <text x="52.0" y="353.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="start">Prelim vs Finals Platform Shift</text>
   <rect x="48.0" y="382.0" width="372.0" height="102.0" rx="6.0" fill="#EFF6FF" stroke="#0B4F8A" stroke-width="1.4"/>
-  <text x="64.0" y="408.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="16.0" font-weight="bold" fill="#0B4F8A" text-anchor="start">Preliminary Round</text>
-  <text x="64.0" y="434.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="normal" fill="#334155" text-anchor="start">• CPU or GPU platforms allowed</text>
-  <text x="64.0" y="460.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="normal" fill="#334155" text-anchor="start">• Weight &amp; compute precision ≥ 16-bit (BF16)</text>
+  <text x="64.0" y="408.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="16.0" font-weight="bold" fill="#0B4F8A" text-anchor="start">Preliminary Round</text>
+  <text x="64.0" y="434.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="normal" fill="#525252" text-anchor="start">• CPU or GPU platforms allowed</text>
+  <text x="64.0" y="460.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="normal" fill="#525252" text-anchor="start">• Weight &amp; compute precision ≥ 16-bit (BF16)</text>
   <line x1="234.0" y1="486.0" x2="234.0" y2="512.0" stroke="#C2410C" stroke-width="2.4" marker-end="url(#arr_coral)"/>
-  <text x="248.0" y="504.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.0" font-weight="bold" fill="#C2410C" text-anchor="start">GPUs disallowed in finals</text>
+  <text x="248.0" y="504.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.0" font-weight="bold" fill="#C2410C" text-anchor="start">GPUs disallowed in finals</text>
   <rect x="48.0" y="516.0" width="372.0" height="98.0" rx="6.0" fill="#FFF7ED" stroke="#C2410C" stroke-width="1.6"/>
-  <text x="64.0" y="542.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="16.0" font-weight="bold" fill="#C2410C" text-anchor="start">Finals (Historical Baseline)</text>
-  <text x="64.0" y="568.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="normal" fill="#334155" text-anchor="start">• Mandatory CPU-only (dual Xeon 6760P)</text>
-  <text x="64.0" y="594.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="normal" fill="#334155" text-anchor="start">• Total ≤ 4 kW · ≥ 3 nodes · ≤ 2 kW/node</text>
-  <rect x="460.0" y="330.0" width="472.0" height="300.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
-  <rect x="460.0" y="330.0" width="472.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
-  <rect x="460.0" y="356.0" width="472.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
-  <line x1="460.0" y1="364.0" x2="932.0" y2="364.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <text x="64.0" y="542.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="16.0" font-weight="bold" fill="#C2410C" text-anchor="start">Finals (Historical Baseline)</text>
+  <text x="64.0" y="568.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="normal" fill="#525252" text-anchor="start">• Mandatory CPU-only (dual Xeon 6760P)</text>
+  <text x="64.0" y="594.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="normal" fill="#525252" text-anchor="start">• Total ≤ 4 kW · ≥ 3 nodes · ≤ 2 kW/node</text>
+  <rect x="460.0" y="330.0" width="472.0" height="300.0" rx="8.0" fill="#FFFFFF" stroke="#EBEBEB" stroke-width="1.4"/>
+  <rect x="460.0" y="330.0" width="472.0" height="34.0" rx="8.0" fill="#F4F4F5" stroke="#EBEBEB" stroke-width="1.0"/>
+  <rect x="460.0" y="356.0" width="472.0" height="8.0" rx="0.0" fill="#F4F4F5" stroke="none" stroke-width="1.5"/>
+  <line x1="460.0" y1="364.0" x2="932.0" y2="364.0" stroke="#EBEBEB" stroke-width="1.0"/>
   <rect x="472.0" y="339.0" width="4.0" height="16.0" rx="2.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
-  <text x="484.0" y="353.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">SJTU 30×+ CPU Inference Breakdown</text>
+  <text x="484.0" y="353.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="start">SJTU 30×+ CPU Inference Breakdown</text>
   <rect x="480.0" y="380.0" width="432.0" height="54.0" rx="6.0" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.6"/>
-  <text x="500.0" y="414.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="26" font-weight="bold" fill="#0D9488" text-anchor="start">30×+</text>
-  <text x="586.0" y="404.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">End-to-End CPU Inference Speedup</text>
-  <text x="586.0" y="424.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="start">Source: ASC26 overview talk retrospective</text>
+  <text x="500.0" y="414.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="26" font-weight="bold" fill="#0D9488" text-anchor="start">30×+</text>
+  <text x="586.0" y="404.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="start">End-to-End CPU Inference Speedup</text>
+  <text x="586.0" y="424.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="start">Source: ASC26 overview talk retrospective</text>
   <rect x="480.0" y="448.0" width="432.0" height="48.0" rx="6.0" fill="#EFF6FF" stroke="#0B4F8A" stroke-width="1.2"/>
   <rect x="480.0" y="448.0" width="5.0" height="48.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="496.0" y="468.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B4F8A" text-anchor="start">1. AMX BF16 + Native oneDNN</text>
-  <text x="496.0" y="488.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#334155" text-anchor="start">Enable Xeon 6760P AMX tiles over scalar/AVX paths</text>
+  <text x="496.0" y="468.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B4F8A" text-anchor="start">1. AMX BF16 + Native oneDNN</text>
+  <text x="496.0" y="488.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#525252" text-anchor="start">Enable Xeon 6760P AMX tiles over scalar/AVX paths</text>
   <rect x="480.0" y="504.0" width="432.0" height="48.0" rx="6.0" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.2"/>
   <rect x="480.0" y="504.0" width="5.0" height="48.0" rx="2.0" fill="#6D28D9" stroke="none" stroke-width="1.5"/>
-  <text x="496.0" y="524.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#6D28D9" text-anchor="start">2. Kernel &amp; Tensor Layout Fusion</text>
-  <text x="496.0" y="544.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#334155" text-anchor="start">Cut transposes and writebacks across Pairformer ops</text>
+  <text x="496.0" y="524.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#6D28D9" text-anchor="start">2. Kernel &amp; Tensor Layout Fusion</text>
+  <text x="496.0" y="544.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#525252" text-anchor="start">Cut transposes and writebacks across Pairformer ops</text>
   <rect x="480.0" y="560.0" width="432.0" height="48.0" rx="6.0" fill="#FEFCE8" stroke="#C48A1A" stroke-width="1.2"/>
   <rect x="480.0" y="560.0" width="5.0" height="48.0" rx="2.0" fill="#C48A1A" stroke="none" stroke-width="1.5"/>
-  <text x="496.0" y="580.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#C48A1A" text-anchor="start">3. NUMA Pinning &amp; Multi-Node Scheduling</text>
-  <text x="496.0" y="600.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#334155" text-anchor="start">Balance samples across ≥3 nodes; curb cross-socket traffic</text>
+  <text x="496.0" y="580.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#C48A1A" text-anchor="start">3. NUMA Pinning &amp; Multi-Node Scheduling</text>
+  <text x="496.0" y="600.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#525252" text-anchor="start">Balance samples across ≥3 nodes; curb cross-socket traffic</text>
 </svg>

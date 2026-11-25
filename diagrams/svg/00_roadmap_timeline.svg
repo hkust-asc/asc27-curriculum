@@ -1,91 +1,91 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="540" viewBox="0 0 1280 540">
   <defs>
-    <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#475569"/></marker>
+    <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#525252"/></marker>
     <marker id="arr_blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0B4F8A"/></marker>
     <marker id="arr_teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0D9488"/></marker>
     <marker id="arr_coral" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C2410C"/></marker>
     <marker id="arr_gold" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C48A1A"/></marker>
     <marker id="arr_violet" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#6D28D9"/></marker>
-    <marker id="arr_muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#64748B"/></marker>
+    <marker id="arr_muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#737373"/></marker>
   </defs>
-  <rect width="1280" height="540" fill="#FAFBFD"/>
+  <rect width="1280" height="540" fill="#FAFAFA"/>
   <rect x="28.0" y="22.0" width="6.0" height="36.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="44.0" y="44.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#0F172A" text-anchor="start">ASC27 24-Week Training Roadmap (2026-11-25 to 2027-05-11)</text>
-  <text x="44.0" y="66.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="start">Four progressive curriculum stages aligned with official ASC27 milestones and HKUST weekly cadence</text>
-  <rect x="256.0" y="148.0" width="984.0" height="282.0" rx="6.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.3"/>
+  <text x="44.0" y="44.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#171717" text-anchor="start">ASC27 24-Week Training Roadmap (2026-11-25 to 2027-05-11)</text>
+  <text x="44.0" y="66.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#737373" text-anchor="start">Four progressive curriculum stages aligned with official ASC27 milestones and HKUST weekly cadence</text>
+  <rect x="256.0" y="148.0" width="984.0" height="282.0" rx="6.0" fill="#FFFFFF" stroke="#EBEBEB" stroke-width="1.3"/>
   <rect x="520.3" y="148.0" width="269.9" height="282.0" rx="0.0" fill="#FEFCE8" stroke="none" stroke-width="1.5" opacity="0.75"/>
   <rect x="1138.8" y="148.0" width="78.7" height="282.0" rx="0.0" fill="#FFF7ED" stroke="none" stroke-width="1.5" opacity="0.75"/>
-  <line x1="289.7" y1="148.0" x2="289.7" y2="430.0" stroke="#E2E8F0" stroke-width="1.1"/>
-  <text x="289.7" y="452.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14" font-weight="normal" fill="#64748B" text-anchor="middle">2026/12</text>
-  <line x1="464.0" y1="148.0" x2="464.0" y2="430.0" stroke="#E2E8F0" stroke-width="1.1"/>
-  <text x="464.0" y="452.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14" font-weight="normal" fill="#64748B" text-anchor="middle">2027/01</text>
-  <line x1="638.4" y1="148.0" x2="638.4" y2="430.0" stroke="#E2E8F0" stroke-width="1.1"/>
-  <text x="638.4" y="452.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14" font-weight="normal" fill="#64748B" text-anchor="middle">2027/02</text>
-  <line x1="795.8" y1="148.0" x2="795.8" y2="430.0" stroke="#E2E8F0" stroke-width="1.1"/>
-  <text x="795.8" y="452.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14" font-weight="normal" fill="#64748B" text-anchor="middle">2027/03</text>
-  <line x1="970.1" y1="148.0" x2="970.1" y2="430.0" stroke="#E2E8F0" stroke-width="1.1"/>
-  <text x="970.1" y="452.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14" font-weight="normal" fill="#64748B" text-anchor="middle">2027/04</text>
-  <line x1="1138.8" y1="148.0" x2="1138.8" y2="430.0" stroke="#E2E8F0" stroke-width="1.1"/>
-  <text x="1138.8" y="452.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14" font-weight="normal" fill="#64748B" text-anchor="middle">2027/05</text>
-  <line x1="256.0" y1="142.0" x2="256.0" y2="148.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="256.0" y="137.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="bold" fill="#475569" text-anchor="middle">W1</text>
-  <line x1="374.1" y1="142.0" x2="374.1" y2="148.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="374.1" y="137.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="bold" fill="#475569" text-anchor="middle">W4</text>
-  <line x1="531.5" y1="142.0" x2="531.5" y2="148.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="531.5" y="137.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="bold" fill="#475569" text-anchor="middle">W8</text>
-  <line x1="689.0" y1="142.0" x2="689.0" y2="148.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="689.0" y="137.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="bold" fill="#475569" text-anchor="middle">W12</text>
-  <line x1="846.4" y1="142.0" x2="846.4" y2="148.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="846.4" y="137.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="bold" fill="#475569" text-anchor="middle">W16</text>
-  <line x1="1003.8" y1="142.0" x2="1003.8" y2="148.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="1003.8" y="137.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="bold" fill="#475569" text-anchor="middle">W20</text>
-  <line x1="1161.3" y1="142.0" x2="1161.3" y2="148.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="1161.3" y="137.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="bold" fill="#475569" text-anchor="middle">W24</text>
+  <line x1="289.7" y1="148.0" x2="289.7" y2="430.0" stroke="#EBEBEB" stroke-width="1.1"/>
+  <text x="289.7" y="452.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14" font-weight="normal" fill="#737373" text-anchor="middle">2026/12</text>
+  <line x1="464.0" y1="148.0" x2="464.0" y2="430.0" stroke="#EBEBEB" stroke-width="1.1"/>
+  <text x="464.0" y="452.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14" font-weight="normal" fill="#737373" text-anchor="middle">2027/01</text>
+  <line x1="638.4" y1="148.0" x2="638.4" y2="430.0" stroke="#EBEBEB" stroke-width="1.1"/>
+  <text x="638.4" y="452.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14" font-weight="normal" fill="#737373" text-anchor="middle">2027/02</text>
+  <line x1="795.8" y1="148.0" x2="795.8" y2="430.0" stroke="#EBEBEB" stroke-width="1.1"/>
+  <text x="795.8" y="452.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14" font-weight="normal" fill="#737373" text-anchor="middle">2027/03</text>
+  <line x1="970.1" y1="148.0" x2="970.1" y2="430.0" stroke="#EBEBEB" stroke-width="1.1"/>
+  <text x="970.1" y="452.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14" font-weight="normal" fill="#737373" text-anchor="middle">2027/04</text>
+  <line x1="1138.8" y1="148.0" x2="1138.8" y2="430.0" stroke="#EBEBEB" stroke-width="1.1"/>
+  <text x="1138.8" y="452.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14" font-weight="normal" fill="#737373" text-anchor="middle">2027/05</text>
+  <line x1="256.0" y1="142.0" x2="256.0" y2="148.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="256.0" y="137.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="bold" fill="#525252" text-anchor="middle">W1</text>
+  <line x1="374.1" y1="142.0" x2="374.1" y2="148.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="374.1" y="137.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="bold" fill="#525252" text-anchor="middle">W4</text>
+  <line x1="531.5" y1="142.0" x2="531.5" y2="148.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="531.5" y="137.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="bold" fill="#525252" text-anchor="middle">W8</text>
+  <line x1="689.0" y1="142.0" x2="689.0" y2="148.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="689.0" y="137.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="bold" fill="#525252" text-anchor="middle">W12</text>
+  <line x1="846.4" y1="142.0" x2="846.4" y2="148.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="846.4" y="137.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="bold" fill="#525252" text-anchor="middle">W16</text>
+  <line x1="1003.8" y1="142.0" x2="1003.8" y2="148.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="1003.8" y="137.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="bold" fill="#525252" text-anchor="middle">W20</text>
+  <line x1="1161.3" y1="142.0" x2="1161.3" y2="148.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="1161.3" y="137.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="bold" fill="#525252" text-anchor="middle">W24</text>
   <line x1="514.7" y1="114.0" x2="514.7" y2="434.0" stroke="#C2410C" stroke-width="2.0" stroke-dasharray="6,4"/>
   <rect x="306.7" y="84.0" width="216.0" height="30.0" rx="5.0" fill="#FFF7ED" stroke="#C2410C" stroke-width="1.2"/>
-  <text x="414.7" y="104.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#C2410C" text-anchor="middle">Reg. Deadline: 2027-01-10</text>
+  <text x="414.7" y="104.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#C2410C" text-anchor="middle">Reg. Deadline: 2027-01-10</text>
   <line x1="790.2" y1="114.0" x2="790.2" y2="434.0" stroke="#C48A1A" stroke-width="2.0" stroke-dasharray="6,4"/>
   <rect x="546.2" y="84.0" width="218.0" height="30.0" rx="5.0" fill="#FEFCE8" stroke="#C48A1A" stroke-width="1.2"/>
-  <text x="655.2" y="104.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#C48A1A" text-anchor="middle">Prelim Window: 01/11–02/28</text>
+  <text x="655.2" y="104.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#C48A1A" text-anchor="middle">Prelim Window: 01/11–02/28</text>
   <line x1="1138.8" y1="114.0" x2="1138.8" y2="434.0" stroke="#C2410C" stroke-width="2.0" stroke-dasharray="6,4"/>
   <rect x="1104.1" y="84.0" width="148.0" height="30.0" rx="5.0" fill="#FFF7ED" stroke="#C2410C" stroke-width="1.2"/>
-  <text x="1178.1" y="104.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#C2410C" text-anchor="middle">Finals: May 2027</text>
-  <rect x="34.0" y="164.0" width="206.0" height="46.0" rx="6.0" fill="#EFF6FF" stroke="#E2E8F0" stroke-width="1.1"/>
+  <text x="1178.1" y="104.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#C2410C" text-anchor="middle">Finals: May 2027</text>
+  <rect x="34.0" y="164.0" width="206.0" height="46.0" rx="6.0" fill="#EFF6FF" stroke="#EBEBEB" stroke-width="1.1"/>
   <rect x="34.0" y="164.0" width="6.0" height="46.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="50.0" y="182.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0B4F8A" text-anchor="start">Stage 1  W1–W3</text>
-  <text x="50.0" y="202.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="normal" fill="#0F172A" text-anchor="start">Hardware &amp; Modeling</text>
+  <text x="50.0" y="182.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0B4F8A" text-anchor="start">Stage 1  W1–W3</text>
+  <text x="50.0" y="202.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="normal" fill="#171717" text-anchor="start">Hardware &amp; Modeling</text>
   <rect x="256.0" y="166.0" width="118.1" height="42.0" rx="6.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="268.0" y="192.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="start">M01–M04</text>
+  <text x="268.0" y="192.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="start">M01–M04</text>
   <rect x="382.1" y="174.0" width="329.6" height="26.0" rx="4.0" fill="#FFFFFF" stroke="none" stroke-width="1.5" opacity="0.92"/>
-  <text x="390.1" y="192.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#334155" text-anchor="start">Precision · Memory Wall · Amdahl · Roofline</text>
-  <line x1="256.0" y1="222.0" x2="1240.0" y2="222.0" stroke="#E2E8F0" stroke-width="0.9"/>
-  <rect x="34.0" y="232.0" width="206.0" height="46.0" rx="6.0" fill="#F0FDFA" stroke="#E2E8F0" stroke-width="1.1"/>
+  <text x="390.1" y="192.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#525252" text-anchor="start">Precision · Memory Wall · Amdahl · Roofline</text>
+  <line x1="256.0" y1="222.0" x2="1240.0" y2="222.0" stroke="#EBEBEB" stroke-width="0.9"/>
+  <rect x="34.0" y="232.0" width="206.0" height="46.0" rx="6.0" fill="#F0FDFA" stroke="#EBEBEB" stroke-width="1.1"/>
   <rect x="34.0" y="232.0" width="6.0" height="46.0" rx="2.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
-  <text x="50.0" y="250.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="start">Stage 2  W4–W8</text>
-  <text x="50.0" y="270.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="normal" fill="#0F172A" text-anchor="start">Node-to-Cluster Parallel</text>
+  <text x="50.0" y="250.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="start">Stage 2  W4–W8</text>
+  <text x="50.0" y="270.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="normal" fill="#171717" text-anchor="start">Node-to-Cluster Parallel</text>
   <rect x="374.1" y="234.0" width="196.8" height="42.0" rx="6.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
-  <text x="386.1" y="260.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="start">M05–M08</text>
+  <text x="386.1" y="260.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="start">M05–M08</text>
   <rect x="578.9" y="242.0" width="344.0" height="26.0" rx="4.0" fill="#FFFFFF" stroke="none" stroke-width="1.5" opacity="0.92"/>
-  <text x="586.9" y="260.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#334155" text-anchor="start">SIMD/OpenMP · MPI/RDMA · CUDA/HIP · Baselines</text>
-  <line x1="256.0" y1="290.0" x2="1240.0" y2="290.0" stroke="#E2E8F0" stroke-width="0.9"/>
-  <rect x="34.0" y="300.0" width="206.0" height="46.0" rx="6.0" fill="#F5F3FF" stroke="#E2E8F0" stroke-width="1.1"/>
+  <text x="586.9" y="260.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#525252" text-anchor="start">SIMD/OpenMP · MPI/RDMA · CUDA/HIP · Baselines</text>
+  <line x1="256.0" y1="290.0" x2="1240.0" y2="290.0" stroke="#EBEBEB" stroke-width="0.9"/>
+  <rect x="34.0" y="300.0" width="206.0" height="46.0" rx="6.0" fill="#F5F3FF" stroke="#EBEBEB" stroke-width="1.1"/>
   <rect x="34.0" y="300.0" width="6.0" height="46.0" rx="2.0" fill="#6D28D9" stroke="none" stroke-width="1.5"/>
-  <text x="50.0" y="318.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#6D28D9" text-anchor="start">Stage 3  W9–W13</text>
-  <text x="50.0" y="338.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="normal" fill="#0F172A" text-anchor="start">AI Systems &amp; Prelims</text>
+  <text x="50.0" y="318.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#6D28D9" text-anchor="start">Stage 3  W9–W13</text>
+  <text x="50.0" y="338.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="normal" fill="#171717" text-anchor="start">AI Systems &amp; Prelims</text>
   <rect x="570.9" y="302.0" width="196.8" height="42.0" rx="6.0" fill="#6D28D9" stroke="none" stroke-width="1.5"/>
-  <text x="582.9" y="328.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="start">M09–M12</text>
+  <text x="582.9" y="328.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="start">M09–M12</text>
   <rect x="775.7" y="310.0" width="358.4" height="26.0" rx="4.0" fill="#FFFFFF" stroke="none" stroke-width="1.5" opacity="0.92"/>
-  <text x="783.7" y="328.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#334155" text-anchor="start">BF16/VRAM · FSDP/TP/NCCL · Inference · Proposal</text>
-  <line x1="256.0" y1="358.0" x2="1240.0" y2="358.0" stroke="#E2E8F0" stroke-width="0.9"/>
-  <rect x="34.0" y="368.0" width="206.0" height="46.0" rx="6.0" fill="#FFF7ED" stroke="#E2E8F0" stroke-width="1.1"/>
+  <text x="783.7" y="328.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#525252" text-anchor="start">BF16/VRAM · FSDP/TP/NCCL · Inference · Proposal</text>
+  <line x1="256.0" y1="358.0" x2="1240.0" y2="358.0" stroke="#EBEBEB" stroke-width="0.9"/>
+  <rect x="34.0" y="368.0" width="206.0" height="46.0" rx="6.0" fill="#FFF7ED" stroke="#EBEBEB" stroke-width="1.1"/>
   <rect x="34.0" y="368.0" width="6.0" height="46.0" rx="2.0" fill="#C2410C" stroke="none" stroke-width="1.5"/>
-  <text x="50.0" y="386.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C2410C" text-anchor="start">Stage 4  W14–W24</text>
-  <text x="50.0" y="406.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="normal" fill="#0F172A" text-anchor="start">Finals Stress &amp; Mystery</text>
+  <text x="50.0" y="386.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C2410C" text-anchor="start">Stage 4  W14–W24</text>
+  <text x="50.0" y="406.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="normal" fill="#171717" text-anchor="start">Finals Stress &amp; Mystery</text>
   <rect x="767.7" y="370.0" width="433.0" height="42.0" rx="6.0" fill="#C2410C" stroke="none" stroke-width="1.5"/>
-  <text x="779.7" y="396.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="start">M13–M16</text>
-  <text x="863.7" y="396.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#FFFFFF" text-anchor="start">Power-Capped HPL/HPCG · SciComp · Mystery · Defense</text>
-  <rect x="34.0" y="468.0" width="1206.0" height="48.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.2"/>
+  <text x="779.7" y="396.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="start">M13–M16</text>
+  <text x="863.7" y="396.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#FFFFFF" text-anchor="start">Power-Capped HPL/HPCG · SciComp · Mystery · Defense</text>
+  <rect x="34.0" y="468.0" width="1206.0" height="48.0" rx="8.0" fill="#F4F4F5" stroke="#EBEBEB" stroke-width="1.2"/>
   <rect x="34.0" y="468.0" width="6.0" height="48.0" rx="2.0" fill="#C48A1A" stroke="none" stroke-width="1.5"/>
-  <text x="54.0" y="497.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0F172A" text-anchor="start">HKUST Cadence</text>
-  <text x="188.0" y="497.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Wednesdays 18:30–20:00 in-person seminar &amp; lab review  ·  Official ASC27 deadlines are midnight UTC+8</text>
+  <text x="54.0" y="497.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#171717" text-anchor="start">HKUST Cadence</text>
+  <text x="188.0" y="497.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="start">Wednesdays 18:30–20:00 in-person seminar &amp; lab review  ·  Official ASC27 deadlines are midnight UTC+8</text>
 </svg>

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stage 2: Parallelism &amp; GPUs | HKUST ASC27</title>
+  <link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -19,7 +20,7 @@
     <section class="lab-card" id="false-sharing">
       <div class="lab-header">
         <div>
-          <h2>1. CPU False Sharing vs. 64-Byte Padding</h2>
+          <h2><span class="section-index">01</span>CPU False Sharing vs. 64-Byte Padding</h2>
           <p class="lab-subtitle">Four CPU cores update their own sum slot. Toggle padding to watch MESI cache-line bounces disappear.</p>
         </div>
         <span class="pill teal">M05 · OpenMP &amp; Cache Coherence</span>
@@ -27,6 +28,7 @@
 
       <div class="lab-grid">
         <div class="controls">
+          <div id="false-sharing-formula"></div>
           <div class="control-row">
             <div class="control-label"><span>Array Layout</span></div>
             <div class="btn-group">
@@ -58,7 +60,7 @@
     <section class="lab-card" id="mpi-halo">
       <div class="lab-header">
         <div>
-          <h2>2. MPI 2D Halo Exchange &amp; Hockney Cost</h2>
+          <h2><span class="section-index">02</span>MPI 2D Halo Exchange &amp; Hockney Cost</h2>
           <p class="lab-subtitle">Grow the local grid edge L or toggle non-blocking overlap. Watch surface-to-volume halo overhead shrink as L grows.</p>
         </div>
         <span class="pill blue">M06 · MPI &amp; RDMA</span>
@@ -66,6 +68,7 @@
 
       <div class="lab-grid">
         <div class="controls">
+          <div id="mpi-halo-formula"></div>
           <div class="control-row">
             <div class="control-label"><span>Subdomain Edge (L)</span><span class="control-val" id="mpi-l-val">64</span></div>
             <input type="range" id="mpi-l" min="8" max="256" step="8" value="64">
@@ -85,7 +88,7 @@
             <div class="stat"><div class="stat-k">Halo / Interior</div><div class="stat-v blue" id="mpi-ratio">6.3%</div></div>
             <div class="stat"><div class="stat-k">Comm Share</div><div class="stat-v coral" id="mpi-share">18%</div></div>
           </div>
-          <div class="takeaway" id="mpi-msg">Surface scales as 4L while compute scales as L^2. Larger subdomains amortize network latency.</div>
+          <div class="takeaway" id="mpi-msg">Surface scales as 4L while compute scales as L². Larger subdomains amortize network latency.</div>
         </div>
 
         <div class="viz-box">
@@ -98,7 +101,7 @@
     <section class="lab-card" id="cuda-tile">
       <div class="lab-header">
         <div>
-          <h2>3. CUDA Shared-Memory GEMM Tiling</h2>
+          <h2><span class="section-index">03</span>CUDA Shared-Memory GEMM Tiling</h2>
           <p class="lab-subtitle">Pick a tile size b. Each b×b block loads 2b² numbers from slow HBM and reuses them for 2b³ FLOPs in fast shared memory.</p>
         </div>
         <span class="pill violet">M07 · GPU SIMT</span>
@@ -106,6 +109,7 @@
 
       <div class="lab-grid">
         <div class="controls">
+          <div id="cuda-tile-formula"></div>
           <div class="control-row">
             <div class="control-label"><span>Tile Edge (b)</span></div>
             <div class="btn-group">
@@ -132,8 +136,42 @@
     <footer id="site-footer"></footer>
   </main>
 
+  <script src="assets/vendor/katex/katex.min.js"></script>
   <script src="assets/common.js"></script>
   <script>
+    // ---- KATEX FORMULAS & INTERACTIVE SYMBOLS ----
+    window.ASC27.renderFormulaBox(document.getElementById("false-sharing-formula"), {
+      tex: "P_{\\mathrm{CPU}} = N_{\\mathrm{cores}} \\cdot f_{\\mathrm{clk}} \\cdot W_{\\mathrm{SIMD}} \\cdot 2",
+      symbols: [
+        { sym: "PCPU", tex: "P_{\\mathrm{CPU}}", short: "Peak CPU FLOP/s", desc: "Theoretical floating-point peak across all CPU cores." },
+        { sym: "Ncores", tex: "N_{\\mathrm{cores}}", short: "Core count", desc: "Active physical CPU cores running parallel threads." },
+        { sym: "fclk", tex: "f_{\\mathrm{clk}}", short: "Clock rate", desc: "Sustained core frequency in GHz under AVX load." },
+        { sym: "WSIMD", tex: "W_{\\mathrm{SIMD}}", short: "SIMD width", desc: "Vector lanes per instruction (8 FP64 lanes in AVX-512)." },
+        { sym: "2", tex: "2", short: "FMA factor", desc: "Two operations per fused multiply-add (multiply plus add)." }
+      ]
+    });
+
+    window.ASC27.renderFormulaBox(document.getElementById("mpi-halo-formula"), {
+      tex: "T(m) = \\alpha + \\frac{m}{B},\\quad m_{1/2} = \\alpha B",
+      symbols: [
+        { sym: "T(m)", tex: "T(m)", short: "Transfer time", desc: "Total point-to-point MPI message time in microseconds." },
+        { sym: "alpha", tex: "\\alpha", short: "Latency", desc: "Fixed startup overhead per message over the network (us)." },
+        { sym: "m", tex: "m", short: "Message size", desc: "Halo payload transferred in bytes per boundary." },
+        { sym: "B", tex: "B", short: "Link bandwidth", desc: "Sustained network throughput in GB/s." },
+        { sym: "m1/2", tex: "m_{1/2}", short: "Half-peak size", desc: "Payload where bandwidth time equals startup latency." }
+      ]
+    });
+
+    window.ASC27.renderFormulaBox(document.getElementById("cuda-tile-formula"), {
+      tex: "I_{\\mathrm{tile}} \\approx \\frac{2}{(1/B_M + 1/B_N) \\cdot b}",
+      symbols: [
+        { sym: "Itile", tex: "I_{\\mathrm{tile}}", short: "Tile intensity", desc: "Floating-point operations per byte loaded from global HBM." },
+        { sym: "BM", tex: "B_M", short: "Tile rows", desc: "Rows of matrix A cached in shared memory per block." },
+        { sym: "BN", tex: "B_N", short: "Tile columns", desc: "Columns of matrix B cached in shared memory per block." },
+        { sym: "b", tex: "b", short: "Element bytes", desc: "Bytes per matrix element (4 B for FP32, 2 B for FP16)." }
+      ]
+    });
+
     // ---- LAB 1: FALSE SHARING ----
     let fsMode = "packed", fsInv = 0, fsTimer = null, fsTick = 0, activeCore = -1;
     const fsSvg = document.getElementById("fs-svg");
@@ -145,33 +183,33 @@
       cores.forEach(c => {
         const x = 40 + c * 150;
         const hit = activeCore === c;
-        html += `<rect x="${x}" y="18" width="110" height="46" rx="8" fill="${hit ? colors[c] : "#F8FAFC"}" stroke="${colors[c]}" stroke-width="2"/>
-                 <text x="${x + 55}" y="46" text-anchor="middle" font-size="13" font-weight="700" fill="${hit ? "#FFFFFF" : "#0F172A"}">Core ${c}</text>`;
+        html += `<rect x="${x}" y="18" width="110" height="46" rx="8" fill="${hit ? colors[c] : "#FAFAFA"}" stroke="${colors[c]}" stroke-width="2"/>
+                 <text x="${x + 55}" y="46" text-anchor="middle" font-size="13" font-weight="700" fill="${hit ? "#FFFFFF" : "#171717"}">Core ${c}</text>`;
       });
 
       if (fsMode === "packed") {
         // Single 64-byte cache line holding all 4 sums
         const flash = activeCore >= 0;
-        html += `<rect x="130" y="150" width="380" height="72" rx="8" fill="${flash ? "#FFF7ED" : "#F8FAFC"}" stroke="#C2410C" stroke-width="2.5"/>
+        html += `<rect x="130" y="150" width="380" height="72" rx="8" fill="${flash ? "#FFF7ED" : "#FAFAFA"}" stroke="#C2410C" stroke-width="2.5"/>
                  <text x="320" y="172" text-anchor="middle" font-size="12" font-weight="700" fill="#C2410C">ONE 64-byte Cache Line (MESI Bounce!)</text>`;
         cores.forEach(c => {
           const sx = 152 + c * 88;
           const cx = 95 + c * 150;
           const isAct = activeCore === c;
           html += `<rect x="${sx}" y="182" width="76" height="28" rx="4" fill="${isAct ? colors[c] : "#FFFFFF"}" stroke="${colors[c]}" stroke-width="1.5"/>
-                   <text x="${sx + 38}" y="200" text-anchor="middle" font-size="11" font-weight="600" fill="${isAct ? "#FFFFFF" : "#334155"}">sum[${c}]</text>
-                   <line x1="${cx}" y1="64" x2="${sx + 38}" y2="182" stroke="${isAct ? "#C2410C" : "#CBD5E1"}" stroke-width="${isAct ? 2.5 : 1.2}" stroke-dasharray="${isAct ? "0" : "4 3"}"/>`;
+                   <text x="${sx + 38}" y="200" text-anchor="middle" font-size="11" font-weight="600" fill="${isAct ? "#FFFFFF" : "#171717"}">sum[${c}]</text>
+                   <line x1="${cx}" y1="64" x2="${sx + 38}" y2="182" stroke="${isAct ? "#C2410C" : "#E5E5E5"}" stroke-width="${isAct ? 2.5 : 1.2}" stroke-dasharray="${isAct ? "0" : "4 3"}"/>`;
         });
       } else {
         // 4 separate 64-byte cache lines
         cores.forEach(c => {
           const x = 40 + c * 150;
           const isAct = activeCore === c;
-          html += `<rect x="${x}" y="150" width="110" height="72" rx="8" fill="${isAct ? "#F0FDFA" : "#F8FAFC"}" stroke="#0D9488" stroke-width="2"/>
-                   <text x="${x + 55}" y="170" text-anchor="middle" font-size="11" font-weight="700" fill="#0F766E">Line ${c} (64B)</text>
+          html += `<rect x="${x}" y="150" width="110" height="72" rx="8" fill="${isAct ? "#F0FDFA" : "#FAFAFA"}" stroke="#0D9488" stroke-width="2"/>
+                   <text x="${x + 55}" y="170" text-anchor="middle" font-size="11" font-weight="700" fill="#0D9488">Line ${c} (64B)</text>
                    <rect x="${x + 17}" y="182" width="76" height="28" rx="4" fill="${isAct ? colors[c] : "#FFFFFF"}" stroke="${colors[c]}" stroke-width="1.5"/>
-                   <text x="${x + 55}" y="200" text-anchor="middle" font-size="11" font-weight="600" fill="${isAct ? "#FFFFFF" : "#334155"}">sum[${c}]</text>
-                   <line x1="${x + 55}" y1="64" x2="${x + 55}" y2="150" stroke="${isAct ? "#0D9488" : "#CBD5E1"}" stroke-width="${isAct ? 2.5 : 1.5}"/>`;
+                   <text x="${x + 55}" y="200" text-anchor="middle" font-size="11" font-weight="600" fill="${isAct ? "#FFFFFF" : "#171717"}">sum[${c}]</text>
+                   <line x1="${x + 55}" y1="64" x2="${x + 55}" y2="150" stroke="${isAct ? "#0D9488" : "#E5E5E5"}" stroke-width="${isAct ? 2.5 : 1.5}"/>`;
         });
       }
       fsSvg.innerHTML = html;
@@ -248,7 +286,7 @@
         msg.textContent = "Small subdomain or high latency makes communication dominate wall time.";
       } else {
         msg.className = "takeaway";
-        msg.textContent = "Surface grows as 4L while interior compute grows as L^2. Larger L cuts relative halo cost.";
+        msg.textContent = "Surface grows as 4L while interior compute grows as L². Larger L cuts relative halo cost.";
       }
 
       // Draw 2x2 ranks with halo strips + timeline bar at bottom
@@ -258,8 +296,8 @@
         for (let c = 0; c < 2; c++) {
           const x = ox + c * (box + gap);
           const y = oy + r * (box + gap);
-          html += `<rect x="${x}" y="${y}" width="${box}" height="${box}" rx="6" fill="#E0F2FE" stroke="#0B4F8A" stroke-width="2"/>
-                   <rect x="${x + 8}" y="${y + 8}" width="${box - 16}" height="${box - 16}" rx="3" fill="#FFFFFF" stroke="#94A3B8" stroke-dasharray="3 2"/>
+          html += `<rect x="${x}" y="${y}" width="${box}" height="${box}" rx="6" fill="#EFF6FF" stroke="#0B4F8A" stroke-width="2"/>
+                   <rect x="${x + 8}" y="${y + 8}" width="${box - 16}" height="${box - 16}" rx="3" fill="#FFFFFF" stroke="#E5E5E5" stroke-dasharray="3 2"/>
                    <text x="${x + box / 2}" y="${y + box / 2 + 4}" text-anchor="middle" font-size="12" font-weight="700" fill="#0B4F8A">Rank ${r * 2 + c}</text>`;
         }
       }
@@ -274,18 +312,18 @@
       const tot = tComp + exposedComm;
       const compW = Math.max(12, (tComp / tot) * tw);
       const commW = Math.max(0, tw - compW);
-      html += `<text x="${tx}" y="46" font-size="13" font-weight="700" fill="#0F172A">Single-Step Wall Time Breakdown</text>
-               <text x="${tx}" y="66" font-size="12" fill="#475569">Mode: ${mpiOverlap ? "Isend/Irecv (Overlapped)" : "Blocking Send/Recv"}</text>
+      html += `<text x="${tx}" y="46" font-size="13" font-weight="700" fill="#171717">Single-Step Wall Time Breakdown</text>
+               <text x="${tx}" y="66" font-size="12" fill="#737373">Mode: ${mpiOverlap ? "Isend/Irecv (Overlapped)" : "Blocking Send/Recv"}</text>
                <rect x="${tx}" y="84" width="${compW}" height="38" rx="4" fill="#0D9488"/>
                <text x="${tx + compW / 2}" y="108" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">Compute</text>`;
       if (commW > 4) {
         html += `<rect x="${tx + compW}" y="84" width="${commW}" height="38" rx="4" fill="#C2410C"/>
                  ${commW > 44 ? `<text x="${tx + compW + commW / 2}" y="108" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">Halo Wait</text>` : ""}`;
       }
-      html += `<text x="${tx}" y="152" font-size="12" fill="#334155">Halo payload: ${haloBytes} bytes / step</text>
-               <text x="${tx}" y="172" font-size="12" fill="#334155">T_comm = 4*alpha + m/B = ${tComm.toFixed(1)} us</text>
-               <text x="${tx}" y="192" font-size="12" fill="#334155">Exposed wait: ${exposedComm.toFixed(1)} us</text>
-               <text x="${ox}" y="236" font-size="12" fill="#92400E" font-weight="600">Gold bars = ghost halo strips swapped each step</text>`;
+      html += `<text x="${tx}" y="152" font-size="12" fill="#171717">Halo payload: ${haloBytes} bytes / step</text>
+               <text x="${tx}" y="172" font-size="12" fill="#737373">Comm time (4α + m/B): ${tComm.toFixed(1)} us</text>
+               <text x="${tx}" y="192" font-size="12" fill="#737373">Exposed wait: ${exposedComm.toFixed(1)} us</text>
+               <text x="${ox}" y="236" font-size="12" fill="#C48A1A" font-weight="600">Gold bars = ghost halo strips swapped each step</text>`;
 
       mpiSvg.innerHTML = html;
     }
@@ -330,12 +368,12 @@
       const reusePct = Math.min(100, (b / 32) * 100);
 
       cuSvg.innerHTML = `
-        <text x="24" y="30" font-size="13" font-weight="700" fill="#0F172A">Data Reuse Inside One ${b}×${b} Block</text>
-        <rect x="24" y="48" width="140" height="140" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
-        <text x="94" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Global HBM</text>
-        <rect x="44" y="84" width="100" height="36" rx="4" fill="#E0F2FE" stroke="#0B4F8A"/>
+        <text x="24" y="30" font-size="13" font-weight="700" fill="#171717">Data Reuse Inside One ${b}×${b} Block</text>
+        <rect x="24" y="48" width="140" height="140" rx="8" fill="#FAFAFA" stroke="#E5E5E5" stroke-width="1.5"/>
+        <text x="94" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="#737373">Global HBM</text>
+        <rect x="44" y="84" width="100" height="36" rx="4" fill="#EFF6FF" stroke="#0B4F8A"/>
         <text x="94" y="106" text-anchor="middle" font-size="11" font-weight="600" fill="#0B4F8A">Tile A (${b}×${b})</text>
-        <rect x="44" y="130" width="100" height="36" rx="4" fill="#EDE9FE" stroke="#6D28D9"/>
+        <rect x="44" y="130" width="100" height="36" rx="4" fill="#F5F3FF" stroke="#6D28D9"/>
         <text x="94" y="152" text-anchor="middle" font-size="11" font-weight="600" fill="#6D28D9">Tile B (${b}×${b})</text>
 
         <line x1="168" y1="118" x2="226" y2="118" stroke="#0D9488" stroke-width="3"/>
@@ -343,17 +381,17 @@
         <text x="198" y="106" text-anchor="middle" font-size="10" font-weight="700" fill="#0D9488">Load 1x</text>
 
         <rect x="244" y="48" width="160" height="140" rx="8" fill="#F0FDFA" stroke="#0D9488" stroke-width="2"/>
-        <text x="324" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="#0F766E">On-Chip Shared Mem</text>
-        <text x="324" y="104" text-anchor="middle" font-size="22" font-weight="800" fill="#0F766E">${b}× Reuse</text>
-        <text x="324" y="128" text-anchor="middle" font-size="11" fill="#334155">${(2*b*b*b).toLocaleString()} FLOPs / tile</text>
-        <text x="324" y="148" text-anchor="middle" font-size="11" fill="#334155">${(2*b*b*4).toLocaleString()} B from HBM</text>
+        <text x="324" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="#0D9488">On-Chip Shared Mem</text>
+        <text x="324" y="104" text-anchor="middle" font-size="22" font-weight="800" fill="#0D9488">${b}× Reuse</text>
+        <text x="324" y="128" text-anchor="middle" font-size="11" fill="#171717">${(2*b*b*b).toLocaleString()} FLOPs / tile</text>
+        <text x="324" y="148" text-anchor="middle" font-size="11" fill="#737373">${(2*b*b*4).toLocaleString()} B from HBM</text>
 
-        <text x="434" y="68" font-size="12" font-weight="700" fill="#0F172A">Relative HBM Traffic</text>
-        <text x="434" y="92" font-size="11" fill="#64748B">Naive (b=1)</text>
+        <text x="434" y="68" font-size="12" font-weight="700" fill="#171717">Relative HBM Traffic</text>
+        <text x="434" y="92" font-size="11" fill="#737373">Naive (b=1)</text>
         <rect x="434" y="98" width="180" height="20" rx="4" fill="#C2410C"/>
-        <text x="434" y="142" font-size="11" fill="#64748B">Tiled (b=${b})</text>
+        <text x="434" y="142" font-size="11" fill="#737373">Tiled (b=${b})</text>
         <rect x="434" y="148" width="${Math.max(6, 180 / b)}" height="20" rx="4" fill="#0D9488"/>
-        <text x="24" y="226" font-size="12" fill="#475569">Next step: add register micro-tiling to cut shared-memory traffic and approach cuBLAS.</text>
+        <text x="24" y="226" font-size="12" fill="#737373">Next step: add register micro-tiling to cut shared-memory traffic and approach cuBLAS.</text>
       `;
     }
 

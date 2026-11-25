@@ -21,24 +21,24 @@ from PIL import Image
 from formula_render import render_formula_png
 
 
-# Minimalist Academic HPC Palette (HKUST-inspired)
+# Minimalist Editorial Palette (Anatomy x Designed-to-Scale)
 PALETTE = {
-    "bg": "#FFFFFF",
-    "bg_cover": "#0B2545",
-    "bg_divider": "#0F172A",
-    "surface": "#F8FAFC",
-    "surface_alt": "#F1F5F9",
-    "border": "#E2E8F0",
-    "ink": "#0F172A",
-    "ink_secondary": "#334155",
-    "ink_muted": "#64748B",
+    "bg": "#FAFAFA",
+    "bg_cover": "#171717",
+    "bg_divider": "#171717",
+    "surface": "#FFFFFF",
+    "surface_alt": "#F4F4F5",
+    "border": "#E5E5E5",
+    "ink": "#171717",
+    "ink_secondary": "#525252",
+    "ink_muted": "#737373",
     "accent": "#0B4F8A",       # Deep HPC Blue
     "gold": "#C48A1A",         # HKUST Gold
     "teal": "#0D9488",         # Compute / Optimal
     "coral": "#C2410C",        # Bottleneck / Alert
     "violet": "#6D28D9",       # AI / Quantum
     "white": "#FFFFFF",
-    "light_text": "#CBD5E1",
+    "light_text": "#D4D4D4",
 }
 
 
@@ -55,6 +55,7 @@ class SlideSpec:
     bullets: List[str] = field(default_factory=list)
     formula: str = ""
     formula_tex: str = ""
+    formula_symbols: List[Tuple[str, str]] = field(default_factory=list)
     formula_caption: str = ""
     image_path: Optional[str] = None
     image_caption: str = ""
@@ -309,13 +310,37 @@ class ODPDeck:
 
     def _build_formula_strip(
         self, x: float, y: float, w: float, h: float, formula: str, caption: str, accent: str,
-        formula_tex: str = "",
+        formula_tex: str = "", formula_symbols: Optional[List[Tuple[str, str]]] = None,
     ) -> List[str]:
         els: List[str] = []
         els.append(self._rect(x, y, w, h, PALETTE["surface"], PALETTE["border"], "0.025cm"))
         els.append(self._rect(x, y, 0.14, h, accent))
         if formula_tex:
             image = render_formula_png(formula_tex)
+            sym_list = formula_symbols or []
+            if sym_list:
+                legend_text = "  ·  ".join(f"{sym}: {meaning}" for sym, meaning in sym_list)
+                cap_h = 1.48 if len(legend_text) > 84 else 1.08
+                img_h = max(1.15, h - cap_h - 0.18)
+                els.append(self._image_frame(image, x + 0.32, y + 0.08, w - 0.50, img_h))
+                els.append(self._rect(x + 0.28, y + h - cap_h - 0.06, w - 0.44, 0.02, PALETTE["border"]))
+                t_sym = self._make_text_style(9.6, accent, bold=True, mono=True)
+                t_desc = self._make_text_style(9.6, PALETTE["ink_secondary"])
+                t_sep = self._make_text_style(9.6, PALETTE["ink_muted"])
+                runs: List[Tuple[str, str]] = []
+                for i, (sym, meaning) in enumerate(sym_list):
+                    if i > 0:
+                        runs.append(("  ·  ", t_sep))
+                    runs.append((sym, t_sym))
+                    runs.append((f" = {meaning}", t_desc))
+                p_leg = self._make_para_style(space_after="0cm", line_height="116%")
+                els.append(
+                    self._frame_textbox(
+                        x + 0.28, y + h - cap_h, w - 0.42, cap_h - 0.04,
+                        self._p_mixed(runs, p_leg),
+                    )
+                )
+                return els
             cap_h = 1.12 if caption else 0.0
             els.append(self._image_frame(image, x + 0.32, y + 0.10, w - 0.50, h - cap_h - 0.16))
             if caption:
@@ -407,7 +432,9 @@ class ODPDeck:
                 cur_y += sub_h + 0.08
 
             has_formula = bool(s.formula)
-            bullet_h = (13.95 - cur_y) if has_formula else (17.55 - cur_y)
+            formula_h = 3.72 if (has_formula and s.formula_symbols) else 3.30
+            formula_y = 17.55 - formula_h
+            bullet_h = (formula_y - 0.28 - cur_y) if has_formula else (17.55 - cur_y)
             b_size = 15.2 if len(s.bullets) <= 4 else 14.2
             t_dot = self._make_text_style(b_size, s.accent_color, bold=True)
             t_b = self._make_text_style(b_size, PALETTE["ink_secondary"])
@@ -420,8 +447,8 @@ class ODPDeck:
             if has_formula:
                 els.extend(
                     self._build_formula_strip(
-                        left_x, 14.25, left_w, 3.30, s.formula, s.formula_caption, s.accent_color,
-                        formula_tex=s.formula_tex,
+                        left_x, formula_y, left_w, formula_h, s.formula, s.formula_caption, s.accent_color,
+                        formula_tex=s.formula_tex, formula_symbols=s.formula_symbols,
                     )
                 )
 

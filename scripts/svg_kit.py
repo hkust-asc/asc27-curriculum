@@ -16,30 +16,30 @@ SVG_DIR = ROOT / "diagrams" / "svg"
 PNG_DIR = ROOT / "diagrams" / "png"
 
 C = {
-    "bg": "#FAFBFD",
+    "bg": "#FAFAFA",
     "white": "#FFFFFF",
-    "surface": "#F1F5F9",
+    "surface": "#F4F4F5",
     "surface_blue": "#EFF6FF",
     "surface_teal": "#F0FDFA",
     "surface_coral": "#FFF7ED",
     "surface_gold": "#FEFCE8",
     "surface_violet": "#F5F3FF",
-    "ink": "#0F172A",
-    "ink2": "#334155",
-    "muted": "#64748B",
-    "grid": "#E2E8F0",
-    "axis": "#94A3B8",
+    "ink": "#171717",
+    "ink2": "#525252",
+    "muted": "#737373",
+    "grid": "#EBEBEB",
+    "axis": "#A3A3A3",
     "blue": "#0B4F8A",
     "blue_l": "#3B82F6",
     "gold": "#C48A1A",
     "teal": "#0D9488",
     "coral": "#C2410C",
     "violet": "#6D28D9",
-    "slate": "#475569",
+    "slate": "#525252",
 }
 
-FONT_SANS = "Helvetica Neue, Arial, sans-serif"
-FONT_MONO = "Menlo, DejaVu Sans Mono, monospace"
+FONT_SANS = "Inter, Helvetica Neue, Arial, sans-serif"
+FONT_MONO = "SF Mono, Menlo, DejaVu Sans Mono, monospace"
 
 
 def esc(s: str) -> str:

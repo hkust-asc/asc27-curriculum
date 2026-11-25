@@ -1,79 +1,79 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="660" viewBox="0 0 960 660">
   <defs>
-    <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#475569"/></marker>
+    <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#525252"/></marker>
     <marker id="arr_blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0B4F8A"/></marker>
     <marker id="arr_teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0D9488"/></marker>
     <marker id="arr_coral" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C2410C"/></marker>
     <marker id="arr_gold" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C48A1A"/></marker>
     <marker id="arr_violet" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#6D28D9"/></marker>
-    <marker id="arr_muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#64748B"/></marker>
+    <marker id="arr_muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#737373"/></marker>
   </defs>
-  <rect width="960" height="660" fill="#FAFBFD"/>
+  <rect width="960" height="660" fill="#FAFAFA"/>
   <rect x="28.0" y="22.0" width="6.0" height="36.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="44.0" y="44.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#0F172A" text-anchor="start">MPI Communication Cost Model &amp; 3D Halo Overlap</text>
-  <text x="44.0" y="66.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="start">Hockney T(m) = α + m/B separates latency vs. bandwidth regimes; non-blocking MPI hides halo transfers</text>
-  <rect x="32.0" y="88.0" width="468.0" height="542.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
-  <rect x="32.0" y="88.0" width="468.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
-  <rect x="32.0" y="114.0" width="468.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
-  <line x1="32.0" y1="122.0" x2="500.0" y2="122.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <text x="44.0" y="44.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#171717" text-anchor="start">MPI Communication Cost Model &amp; 3D Halo Overlap</text>
+  <text x="44.0" y="66.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#737373" text-anchor="start">Hockney T(m) = α + m/B separates latency vs. bandwidth regimes; non-blocking MPI hides halo transfers</text>
+  <rect x="32.0" y="88.0" width="468.0" height="542.0" rx="8.0" fill="#FFFFFF" stroke="#EBEBEB" stroke-width="1.4"/>
+  <rect x="32.0" y="88.0" width="468.0" height="34.0" rx="8.0" fill="#F4F4F5" stroke="#EBEBEB" stroke-width="1.0"/>
+  <rect x="32.0" y="114.0" width="468.0" height="8.0" rx="0.0" fill="#F4F4F5" stroke="none" stroke-width="1.5"/>
+  <line x1="32.0" y1="122.0" x2="500.0" y2="122.0" stroke="#EBEBEB" stroke-width="1.0"/>
   <rect x="44.0" y="97.0" width="4.0" height="16.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="56.0" y="111.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">Hockney Model (NDR400 IB: α=1.8 μs, B=50 GB/s)</text>
+  <text x="56.0" y="111.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="start">Hockney Model (NDR400 IB: α=1.8 μs, B=50 GB/s)</text>
   <rect x="108.0" y="152.0" width="207.2" height="344.0" rx="0.0" fill="#FFF7ED" stroke="none" stroke-width="1.5" opacity="0.55"/>
   <rect x="315.2" y="152.0" width="158.8" height="344.0" rx="0.0" fill="#F0FDFA" stroke="none" stroke-width="1.5" opacity="0.55"/>
-  <line x1="141.3" y1="152.0" x2="141.3" y2="496.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="141.3" y1="496.0" x2="141.3" y2="501.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="141.3" y="518.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="12.5" font-weight="normal" fill="#64748B" text-anchor="middle">64B</text>
-  <line x1="207.8" y1="152.0" x2="207.8" y2="496.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="207.8" y1="496.0" x2="207.8" y2="501.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="207.8" y="518.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="12.5" font-weight="normal" fill="#64748B" text-anchor="middle">1KB</text>
-  <line x1="274.4" y1="152.0" x2="274.4" y2="496.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="274.4" y1="496.0" x2="274.4" y2="501.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="274.4" y="518.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="12.5" font-weight="normal" fill="#64748B" text-anchor="middle">16KB</text>
-  <line x1="340.9" y1="152.0" x2="340.9" y2="496.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="340.9" y1="496.0" x2="340.9" y2="501.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="340.9" y="518.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="12.5" font-weight="normal" fill="#64748B" text-anchor="middle">256KB</text>
-  <line x1="407.5" y1="152.0" x2="407.5" y2="496.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="407.5" y1="496.0" x2="407.5" y2="501.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="407.5" y="518.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="12.5" font-weight="normal" fill="#64748B" text-anchor="middle">4MB</text>
-  <line x1="474.0" y1="152.0" x2="474.0" y2="496.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="474.0" y1="496.0" x2="474.0" y2="501.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="474.0" y="518.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="12.5" font-weight="normal" fill="#64748B" text-anchor="middle">64MB</text>
-  <line x1="108.0" y1="496.0" x2="474.0" y2="496.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="103.0" y1="496.0" x2="108.0" y2="496.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="98.0" y="501.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="normal" fill="#64748B" text-anchor="end">1</text>
-  <line x1="108.0" y1="391.8" x2="474.0" y2="391.8" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="103.0" y1="391.8" x2="108.0" y2="391.8" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="98.0" y="396.8" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="normal" fill="#64748B" text-anchor="end">10</text>
-  <line x1="108.0" y1="287.6" x2="474.0" y2="287.6" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="103.0" y1="287.6" x2="108.0" y2="287.6" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="98.0" y="292.6" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="normal" fill="#64748B" text-anchor="end">100</text>
-  <line x1="108.0" y1="183.4" x2="474.0" y2="183.4" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="103.0" y1="183.4" x2="108.0" y2="183.4" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="98.0" y="188.4" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="normal" fill="#64748B" text-anchor="end">1000</text>
-  <line x1="108.0" y1="496.0" x2="474.0" y2="496.0" stroke="#475569" stroke-width="1.8"/>
-  <line x1="108.0" y1="152.0" x2="108.0" y2="496.0" stroke="#475569" stroke-width="1.8"/>
-  <text x="291.0" y="542.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#334155" text-anchor="middle">Message Size m (Bytes, log scale)</text>
-  <text x="56.0" y="324.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#334155" text-anchor="middle" transform="rotate(-90.0 56.0 324.0)">Transfer Time T(m) (μs)</text>
-  <text x="206.0" y="176.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#C2410C" text-anchor="middle">Latency-Dominated</text>
-  <text x="206.0" y="194.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#C2410C" text-anchor="middle">T ≈ α (coalesce msgs)</text>
-  <text x="403.1" y="176.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0D9488" text-anchor="middle">Bandwidth-Dominated</text>
-  <text x="403.1" y="194.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#0D9488" text-anchor="middle">T ≈ m / B</text>
+  <line x1="141.3" y1="152.0" x2="141.3" y2="496.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="141.3" y1="496.0" x2="141.3" y2="501.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="141.3" y="518.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="12.5" font-weight="normal" fill="#737373" text-anchor="middle">64B</text>
+  <line x1="207.8" y1="152.0" x2="207.8" y2="496.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="207.8" y1="496.0" x2="207.8" y2="501.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="207.8" y="518.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="12.5" font-weight="normal" fill="#737373" text-anchor="middle">1KB</text>
+  <line x1="274.4" y1="152.0" x2="274.4" y2="496.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="274.4" y1="496.0" x2="274.4" y2="501.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="274.4" y="518.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="12.5" font-weight="normal" fill="#737373" text-anchor="middle">16KB</text>
+  <line x1="340.9" y1="152.0" x2="340.9" y2="496.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="340.9" y1="496.0" x2="340.9" y2="501.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="340.9" y="518.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="12.5" font-weight="normal" fill="#737373" text-anchor="middle">256KB</text>
+  <line x1="407.5" y1="152.0" x2="407.5" y2="496.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="407.5" y1="496.0" x2="407.5" y2="501.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="407.5" y="518.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="12.5" font-weight="normal" fill="#737373" text-anchor="middle">4MB</text>
+  <line x1="474.0" y1="152.0" x2="474.0" y2="496.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="474.0" y1="496.0" x2="474.0" y2="501.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="474.0" y="518.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="12.5" font-weight="normal" fill="#737373" text-anchor="middle">64MB</text>
+  <line x1="108.0" y1="496.0" x2="474.0" y2="496.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="103.0" y1="496.0" x2="108.0" y2="496.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="98.0" y="501.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="normal" fill="#737373" text-anchor="end">1</text>
+  <line x1="108.0" y1="391.8" x2="474.0" y2="391.8" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="103.0" y1="391.8" x2="108.0" y2="391.8" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="98.0" y="396.8" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="normal" fill="#737373" text-anchor="end">10</text>
+  <line x1="108.0" y1="287.6" x2="474.0" y2="287.6" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="103.0" y1="287.6" x2="108.0" y2="287.6" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="98.0" y="292.6" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="normal" fill="#737373" text-anchor="end">100</text>
+  <line x1="108.0" y1="183.4" x2="474.0" y2="183.4" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="103.0" y1="183.4" x2="108.0" y2="183.4" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="98.0" y="188.4" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="normal" fill="#737373" text-anchor="end">1000</text>
+  <line x1="108.0" y1="496.0" x2="474.0" y2="496.0" stroke="#525252" stroke-width="1.8"/>
+  <line x1="108.0" y1="152.0" x2="108.0" y2="496.0" stroke="#525252" stroke-width="1.8"/>
+  <text x="291.0" y="542.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#525252" text-anchor="middle">Message Size m (Bytes, log scale)</text>
+  <text x="56.0" y="324.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#525252" text-anchor="middle" transform="rotate(-90.0 56.0 324.0)">Transfer Time T(m) (μs)</text>
+  <text x="206.0" y="176.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#C2410C" text-anchor="middle">Latency-Dominated</text>
+  <text x="206.0" y="194.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#C2410C" text-anchor="middle">T ≈ α (coalesce msgs)</text>
+  <text x="403.1" y="176.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0D9488" text-anchor="middle">Bandwidth-Dominated</text>
+  <text x="403.1" y="194.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#0D9488" text-anchor="middle">T ≈ m / B</text>
   <polyline points="108.0,469.4 109.2,469.4 110.4,469.4 111.7,469.4 112.9,469.4 114.1,469.4 115.3,469.4 116.6,469.4 117.8,469.4 119.0,469.4 120.2,469.4 121.5,469.4 122.7,469.4 123.9,469.4 125.1,469.4 126.4,469.4 127.6,469.4 128.8,469.4 130.0,469.4 131.3,469.4 132.5,469.4 133.7,469.4 134.9,469.4 136.2,469.4 137.4,469.4 138.6,469.4 139.8,469.4 141.1,469.4 142.3,469.4 143.5,469.4 144.7,469.4 145.9,469.4 147.2,469.4 148.4,469.4 149.6,469.4 150.8,469.4 152.1,469.3 153.3,469.3 154.5,469.3 155.7,469.3 157.0,469.3 158.2,469.3 159.4,469.3 160.6,469.3 161.9,469.3 163.1,469.3 164.3,469.3 165.5,469.3 166.8,469.3 168.0,469.3 169.2,469.3 170.4,469.3 171.7,469.3 172.9,469.3 174.1,469.3 175.3,469.3 176.5,469.3 177.8,469.3 179.0,469.2 180.2,469.2 181.4,469.2 182.7,469.2 183.9,469.2 185.1,469.2 186.3,469.2 187.6,469.2 188.8,469.2 190.0,469.2 191.2,469.1 192.5,469.1 193.7,469.1 194.9,469.1 196.1,469.1 197.4,469.1 198.6,469.0 199.8,469.0 201.0,469.0 202.3,469.0 203.5,469.0 204.7,468.9 205.9,468.9 207.2,468.9 208.4,468.9 209.6,468.8 210.8,468.8 212.0,468.8 213.3,468.8 214.5,468.7 215.7,468.7 216.9,468.7 218.2,468.6 219.4,468.6 220.6,468.5 221.8,468.5 223.1,468.4 224.3,468.4 225.5,468.3 226.7,468.3 228.0,468.2 229.2,468.2 230.4,468.1 231.6,468.0 232.9,468.0 234.1,467.9 235.3,467.8 236.5,467.7 237.8,467.6 239.0,467.6 240.2,467.5 241.4,467.4 242.6,467.3 243.9,467.1 245.1,467.0 246.3,466.9 247.5,466.8 248.8,466.6 250.0,466.5 251.2,466.4 252.4,466.2 253.7,466.0 254.9,465.9 256.1,465.7 257.3,465.5 258.6,465.3 259.8,465.1 261.0,464.9 262.2,464.7 263.5,464.4 264.7,464.2 265.9,463.9 267.1,463.7 268.4,463.4 269.6,463.1 270.8,462.8 272.0,462.5 273.3,462.1 274.5,461.8 275.7,461.4 276.9,461.1 278.1,460.7 279.4,460.2 280.6,459.8 281.8,459.4 283.0,458.9 284.3,458.4 285.5,457.9 286.7,457.4 287.9,456.8 289.2,456.2 290.4,455.7 291.6,455.0 292.8,454.4 294.1,453.7 295.3,453.0 296.5,452.3 297.7,451.6 299.0,450.8 300.2,450.0 301.4,449.2 302.6,448.4 303.9,447.5 305.1,446.6 306.3,445.7 307.5,444.7 308.7,443.7 310.0,442.7 311.2,441.7 312.4,440.6 313.6,439.5 314.9,438.4 316.1,437.2 317.3,436.0 318.5,434.8 319.8,433.6 321.0,432.3 322.2,431.0 323.4,429.7 324.7,428.3 325.9,426.9 327.1,425.5 328.3,424.0 329.6,422.6 330.8,421.1 332.0,419.5 333.2,418.0 334.5,416.4 335.7,414.8 336.9,413.2 338.1,411.5 339.4,409.8 340.6,408.1 341.8,406.4 343.0,404.7 344.2,402.9 345.5,401.1 346.7,399.3 347.9,397.5 349.1,395.6 350.4,393.8 351.6,391.9 352.8,390.0 354.0,388.1 355.3,386.1 356.5,384.2 357.7,382.2 358.9,380.2 360.2,378.2 361.4,376.2 362.6,374.2 363.8,372.2 365.1,370.1 366.3,368.1 367.5,366.0 368.7,363.9 370.0,361.8 371.2,359.7 372.4,357.6 373.6,355.5 374.8,353.4 376.1,351.3 377.3,349.1 378.5,347.0 379.7,344.8 381.0,342.6 382.2,340.5 383.4,338.3 384.6,336.1 385.9,333.9 387.1,331.7 388.3,329.5 389.5,327.3 390.8,325.1 392.0,322.9 393.2,320.7 394.4,318.4 395.7,316.2 396.9,314.0 398.1,311.7 399.3,309.5 400.6,307.3 401.8,305.0 403.0,302.8 404.2,300.5 405.5,298.3 406.7,296.0 407.9,293.7 409.1,291.5 410.3,289.2 411.6,287.0 412.8,284.7 414.0,282.4 415.2,280.1 416.5,277.9 417.7,275.6 418.9,273.3 420.1,271.0 421.4,268.8 422.6,266.5 423.8,264.2 425.0,261.9 426.3,259.6 427.5,257.3 428.7,255.1 429.9,252.8 431.2,250.5 432.4,248.2 433.6,245.9 434.8,243.6 436.1,241.3 437.3,239.0 438.5,236.7 439.7,234.4 440.9,232.1 442.2,229.8 443.4,227.5 444.6,225.2 445.8,222.9 447.1,220.6 448.3,218.3 449.5,216.0 450.7,213.7 452.0,211.4 453.2,209.1 454.4,206.8 455.6,204.5 456.9,202.2 458.1,199.9 459.3,197.6 460.5,195.3 461.8,193.0 463.0,190.7 464.2,188.4 465.4,186.1 466.7,183.8 467.9,181.5 469.1,179.2 470.3,176.9 471.6,174.6 472.8,172.3 474.0,170.0" fill="none" stroke="#0B4F8A" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
   <line x1="108.0" y1="469.4" x2="315.2" y2="469.4" stroke="#C2410C" stroke-width="1.4" stroke-dasharray="4,4"/>
-  <text x="132.8" y="461.4" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="bold" fill="#C2410C" text-anchor="start">α = 1.8 μs</text>
+  <text x="132.8" y="461.4" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="bold" fill="#C2410C" text-anchor="start">α = 1.8 μs</text>
   <line x1="315.2" y1="204.0" x2="315.2" y2="496.0" stroke="#C48A1A" stroke-width="1.8" stroke-dasharray="5,4"/>
   <circle cx="315.2" cy="438.0" r="6.0" fill="#C48A1A" stroke="#FFFFFF" stroke-width="1.8"/>
   <rect x="239.2" y="394.0" width="156.0" height="30.0" rx="4.0" fill="#FFFFFF" stroke="#C48A1A" stroke-width="1.2"/>
-  <text x="317.2" y="414.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="bold" fill="#C48A1A" text-anchor="middle">m₁/₂ = α·B = 90 KB</text>
+  <text x="317.2" y="414.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="bold" fill="#C48A1A" text-anchor="middle">m₁/₂ = α·B = 90 KB</text>
   <rect x="52.0" y="558.0" width="428.0" height="54.0" rx="6.0" fill="#EFF6FF" stroke="#0B4F8A" stroke-width="1.1"/>
-  <text x="64.0" y="580.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0B4F8A" text-anchor="start">Takeaway: below 90 KB, link utilization stays under 50%;</text>
-  <text x="64.0" y="600.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#334155" text-anchor="start">pack small buffers to amortize per-message latency α.</text>
-  <rect x="516.0" y="88.0" width="412.0" height="268.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
-  <rect x="516.0" y="88.0" width="412.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
-  <rect x="516.0" y="114.0" width="412.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
-  <line x1="516.0" y1="122.0" x2="928.0" y2="122.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <text x="64.0" y="580.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0B4F8A" text-anchor="start">Takeaway: below 90 KB, link utilization stays under 50%;</text>
+  <text x="64.0" y="600.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#525252" text-anchor="start">pack small buffers to amortize per-message latency α.</text>
+  <rect x="516.0" y="88.0" width="412.0" height="268.0" rx="8.0" fill="#FFFFFF" stroke="#EBEBEB" stroke-width="1.4"/>
+  <rect x="516.0" y="88.0" width="412.0" height="34.0" rx="8.0" fill="#F4F4F5" stroke="#EBEBEB" stroke-width="1.0"/>
+  <rect x="516.0" y="114.0" width="412.0" height="8.0" rx="0.0" fill="#F4F4F5" stroke="none" stroke-width="1.5"/>
+  <line x1="516.0" y1="122.0" x2="928.0" y2="122.0" stroke="#EBEBEB" stroke-width="1.0"/>
   <rect x="528.0" y="97.0" width="4.0" height="16.0" rx="2.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
-  <text x="540.0" y="111.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">3D Domain Decomposition: O(L³) vs. O(6L²)</text>
+  <text x="540.0" y="111.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="start">3D Domain Decomposition: O(L³) vs. O(6L²)</text>
   <polygon points="626.0,146.0 684.0,176.0 626.0,206.0 568.0,176.0" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.8"/>
   <polygon points="568.0,176.0 626.0,206.0 626.0,284.0 568.0,254.0" fill="#EFF6FF" stroke="#0B4F8A" stroke-width="1.8"/>
   <polygon points="626.0,206.0 684.0,176.0 684.0,254.0 626.0,284.0" fill="#FFF7ED" stroke="#C2410C" stroke-width="1.8"/>
@@ -81,38 +81,38 @@
   <line x1="655.0" y1="161.0" x2="597.0" y2="191.0" stroke="#0D9488" stroke-width="1.0" stroke-dasharray="3,3"/>
   <line x1="568.0" y1="215.0" x2="626.0" y2="245.0" stroke="#0B4F8A" stroke-width="1.0" stroke-dasharray="3,3"/>
   <line x1="626.0" y1="245.0" x2="684.0" y2="215.0" stroke="#C2410C" stroke-width="1.0" stroke-dasharray="3,3"/>
-  <text x="556.0" y="214.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="end">L</text>
-  <text x="626.0" y="308.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#334155" text-anchor="middle">L³ subdomain (6 halo faces)</text>
-  <rect x="710.0" y="144.0" width="202.0" height="188.0" rx="6.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.1"/>
-  <text x="722.0" y="170.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="start">Surface / Volume Ratio</text>
-  <text x="722.0" y="198.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13.5" font-weight="bold" fill="#C2410C" text-anchor="start">Comm / Comp</text>
-  <text x="722.0" y="220.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14" font-weight="bold" fill="#C2410C" text-anchor="start">∝ 6L² / L³ = 6/L</text>
-  <line x1="722.0" y1="234.0" x2="900.0" y2="234.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <text x="722.0" y="258.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="normal" fill="#334155" text-anchor="start">• 3D cuts beat 1D slabs</text>
-  <text x="722.0" y="280.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="normal" fill="#334155" text-anchor="start">• Larger L lowers comm %</text>
-  <text x="722.0" y="302.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="normal" fill="#334155" text-anchor="start">• Small L hits strong wall</text>
-  <rect x="516.0" y="372.0" width="412.0" height="258.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
-  <rect x="516.0" y="372.0" width="412.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
-  <rect x="516.0" y="398.0" width="412.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
-  <line x1="516.0" y1="406.0" x2="928.0" y2="406.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <text x="556.0" y="214.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="end">L</text>
+  <text x="626.0" y="308.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#525252" text-anchor="middle">L³ subdomain (6 halo faces)</text>
+  <rect x="710.0" y="144.0" width="202.0" height="188.0" rx="6.0" fill="#F4F4F5" stroke="#EBEBEB" stroke-width="1.1"/>
+  <text x="722.0" y="170.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" fill="#171717" text-anchor="start">Surface / Volume Ratio</text>
+  <text x="722.0" y="198.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13.5" font-weight="bold" fill="#C2410C" text-anchor="start">Comm / Comp</text>
+  <text x="722.0" y="220.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14" font-weight="bold" fill="#C2410C" text-anchor="start">∝ 6L² / L³ = 6/L</text>
+  <line x1="722.0" y1="234.0" x2="900.0" y2="234.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <text x="722.0" y="258.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="normal" fill="#525252" text-anchor="start">• 3D cuts beat 1D slabs</text>
+  <text x="722.0" y="280.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="normal" fill="#525252" text-anchor="start">• Larger L lowers comm %</text>
+  <text x="722.0" y="302.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="normal" fill="#525252" text-anchor="start">• Small L hits strong wall</text>
+  <rect x="516.0" y="372.0" width="412.0" height="258.0" rx="8.0" fill="#FFFFFF" stroke="#EBEBEB" stroke-width="1.4"/>
+  <rect x="516.0" y="372.0" width="412.0" height="34.0" rx="8.0" fill="#F4F4F5" stroke="#EBEBEB" stroke-width="1.0"/>
+  <rect x="516.0" y="398.0" width="412.0" height="8.0" rx="0.0" fill="#F4F4F5" stroke="none" stroke-width="1.5"/>
+  <line x1="516.0" y1="406.0" x2="928.0" y2="406.0" stroke="#EBEBEB" stroke-width="1.0"/>
   <rect x="528.0" y="381.0" width="4.0" height="16.0" rx="2.0" fill="#6D28D9" stroke="none" stroke-width="1.5"/>
-  <text x="540.0" y="395.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">Non-Blocking MPI_Isend/Irecv Overlap</text>
-  <text x="534.0" y="430.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#C2410C" text-anchor="start">Blocking: Halo exchange serialized with compute</text>
+  <text x="540.0" y="395.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="start">Non-Blocking MPI_Isend/Irecv Overlap</text>
+  <text x="534.0" y="430.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#C2410C" text-anchor="start">Blocking: Halo exchange serialized with compute</text>
   <rect x="534.0" y="440.0" width="126.0" height="32.0" rx="4.0" fill="#C2410C" stroke="none" stroke-width="1.5"/>
-  <text x="597.0" y="461.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Halo Comm</text>
+  <text x="597.0" y="461.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Halo Comm</text>
   <rect x="664.0" y="440.0" width="184.0" height="32.0" rx="4.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="756.0" y="461.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Interior Compute</text>
+  <text x="756.0" y="461.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Interior Compute</text>
   <rect x="852.0" y="440.0" width="58.0" height="32.0" rx="4.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
-  <text x="881.0" y="461.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Bdry</text>
-  <text x="534.0" y="502.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0D9488" text-anchor="start">Non-blocking: Isend/Irecv overlapped with interior</text>
+  <text x="881.0" y="461.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Bdry</text>
+  <text x="534.0" y="502.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0D9488" text-anchor="start">Non-blocking: Isend/Irecv overlapped with interior</text>
   <rect x="534.0" y="512.0" width="184.0" height="28.0" rx="4.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="626.0" y="531.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Interior Compute (no halo)</text>
+  <text x="626.0" y="531.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Interior Compute (no halo)</text>
   <rect x="534.0" y="546.0" width="126.0" height="26.0" rx="4.0" fill="#6D28D9" stroke="none" stroke-width="1.5"/>
-  <text x="597.0" y="563.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Async RDMA Transfer</text>
+  <text x="597.0" y="563.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Async RDMA Transfer</text>
   <rect x="722.0" y="512.0" width="62.0" height="60.0" rx="4.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
-  <text x="753.0" y="539.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="11.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Waitall</text>
-  <text x="753.0" y="558.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">+ Bdry</text>
+  <text x="753.0" y="539.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="11.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Waitall</text>
+  <text x="753.0" y="558.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">+ Bdry</text>
   <line x1="788.0" y1="542.0" x2="908.0" y2="542.0" stroke="#0D9488" stroke-width="2.0" marker-start="url(#arr_teal)" marker-end="url(#arr_teal)"/>
-  <text x="848.0" y="532.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#0D9488" text-anchor="middle">Hidden halo time</text>
-  <text x="534.0" y="608.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="normal" fill="#64748B" text-anchor="start">Requirement: interior compute time ≥ halo transfer time.</text>
+  <text x="848.0" y="532.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#0D9488" text-anchor="middle">Hidden halo time</text>
+  <text x="534.0" y="608.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="normal" fill="#737373" text-anchor="start">Requirement: interior compute time ≥ halo transfer time.</text>
 </svg>

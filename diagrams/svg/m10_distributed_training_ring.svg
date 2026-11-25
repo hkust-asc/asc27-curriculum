@@ -1,94 +1,94 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="660" viewBox="0 0 960 660">
   <defs>
-    <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#475569"/></marker>
+    <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#525252"/></marker>
     <marker id="arr_blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0B4F8A"/></marker>
     <marker id="arr_teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0D9488"/></marker>
     <marker id="arr_coral" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C2410C"/></marker>
     <marker id="arr_gold" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C48A1A"/></marker>
     <marker id="arr_violet" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#6D28D9"/></marker>
-    <marker id="arr_muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#64748B"/></marker>
+    <marker id="arr_muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#737373"/></marker>
   </defs>
-  <rect width="960" height="660" fill="#FAFBFD"/>
+  <rect width="960" height="660" fill="#FAFAFA"/>
   <rect x="28.0" y="22.0" width="6.0" height="36.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="44.0" y="44.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#0F172A" text-anchor="start">3D Parallelism Hardware Mapping &amp; Ring All-Reduce</text>
-  <text x="44.0" y="66.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="start">Hierarchy-aware TP / PP / FSDP placement and bandwidth-optimal 4-GPU circular All-Reduce</text>
-  <rect x="28.0" y="86.0" width="456.0" height="546.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
-  <rect x="28.0" y="86.0" width="456.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
-  <rect x="28.0" y="112.0" width="456.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
-  <line x1="28.0" y1="120.0" x2="484.0" y2="120.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <text x="44.0" y="44.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#171717" text-anchor="start">3D Parallelism Hardware Mapping &amp; Ring All-Reduce</text>
+  <text x="44.0" y="66.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#737373" text-anchor="start">Hierarchy-aware TP / PP / FSDP placement and bandwidth-optimal 4-GPU circular All-Reduce</text>
+  <rect x="28.0" y="86.0" width="456.0" height="546.0" rx="8.0" fill="#FFFFFF" stroke="#EBEBEB" stroke-width="1.4"/>
+  <rect x="28.0" y="86.0" width="456.0" height="34.0" rx="8.0" fill="#F4F4F5" stroke="#EBEBEB" stroke-width="1.0"/>
+  <rect x="28.0" y="112.0" width="456.0" height="8.0" rx="0.0" fill="#F4F4F5" stroke="none" stroke-width="1.5"/>
+  <line x1="28.0" y1="120.0" x2="484.0" y2="120.0" stroke="#EBEBEB" stroke-width="1.0"/>
   <rect x="40.0" y="95.0" width="4.0" height="16.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="52.0" y="109.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">3D Parallelism Topology (2 Nodes x 4 GPUs)</text>
+  <text x="52.0" y="109.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="start">3D Parallelism Topology (2 Nodes x 4 GPUs)</text>
   <rect x="48.0" y="134.0" width="416.0" height="148.0" rx="8.0" fill="#EFF6FF" stroke="#0B4F8A" stroke-width="1.5" stroke-dasharray="6,3"/>
-  <text x="62.0" y="156.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B4F8A" text-anchor="start">Node 0</text>
+  <text x="62.0" y="156.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B4F8A" text-anchor="start">Node 0</text>
   <rect x="220.0" y="140.0" width="232.0" height="22.0" rx="4.0" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.0"/>
-  <text x="336.0" y="155.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">Intra-Node NVLink ~900 GB/s</text>
+  <text x="336.0" y="155.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">Intra-Node NVLink ~900 GB/s</text>
   <rect x="68.0" y="218.0" width="376.0" height="12.0" rx="4.0" fill="#0D9488" stroke="none" stroke-width="1.5" opacity="0.25"/>
   <line x1="74.0" y1="224.0" x2="438.0" y2="224.0" stroke="#0D9488" stroke-width="3.2"/>
   <rect x="64.0" y="172.0" width="82.0" height="46.0" rx="6.0" fill="#FFFFFF" stroke="#0B4F8A" stroke-width="1.6"/>
-  <text x="105.0" y="192.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="middle">GPU 0</text>
-  <text x="105.0" y="210.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">TP r0</text>
+  <text x="105.0" y="192.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="middle">GPU 0</text>
+  <text x="105.0" y="210.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">TP r0</text>
   <line x1="105.0" y1="218.0" x2="105.0" y2="228.0" stroke="#0D9488" stroke-width="2.4"/>
   <rect x="162.0" y="172.0" width="82.0" height="46.0" rx="6.0" fill="#FFFFFF" stroke="#0B4F8A" stroke-width="1.6"/>
-  <text x="203.0" y="192.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="middle">GPU 1</text>
-  <text x="203.0" y="210.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">TP r1</text>
+  <text x="203.0" y="192.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="middle">GPU 1</text>
+  <text x="203.0" y="210.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">TP r1</text>
   <line x1="203.0" y1="218.0" x2="203.0" y2="228.0" stroke="#0D9488" stroke-width="2.4"/>
   <rect x="260.0" y="172.0" width="82.0" height="46.0" rx="6.0" fill="#FFFFFF" stroke="#0B4F8A" stroke-width="1.6"/>
-  <text x="301.0" y="192.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="middle">GPU 2</text>
-  <text x="301.0" y="210.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">TP r2</text>
+  <text x="301.0" y="192.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="middle">GPU 2</text>
+  <text x="301.0" y="210.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">TP r2</text>
   <line x1="301.0" y1="218.0" x2="301.0" y2="228.0" stroke="#0D9488" stroke-width="2.4"/>
   <rect x="358.0" y="172.0" width="82.0" height="46.0" rx="6.0" fill="#FFFFFF" stroke="#0B4F8A" stroke-width="1.6"/>
-  <text x="399.0" y="192.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="middle">GPU 3</text>
-  <text x="399.0" y="210.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">TP r3</text>
+  <text x="399.0" y="192.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="middle">GPU 3</text>
+  <text x="399.0" y="210.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">TP r3</text>
   <line x1="399.0" y1="218.0" x2="399.0" y2="228.0" stroke="#0D9488" stroke-width="2.4"/>
-  <text x="256.0" y="250.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#334155" text-anchor="middle">Tensor Parallel Group 0 (Intra-Node)</text>
-  <text x="256.0" y="270.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="middle">2 All-Reduces per layer stay inside high-BW NVLink domain</text>
+  <text x="256.0" y="250.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#525252" text-anchor="middle">Tensor Parallel Group 0 (Intra-Node)</text>
+  <text x="256.0" y="270.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#737373" text-anchor="middle">2 All-Reduces per layer stay inside high-BW NVLink domain</text>
   <rect x="58.0" y="326.0" width="396.0" height="44.0" rx="6.0" fill="#FFF7ED" stroke="#C2410C" stroke-width="1.6"/>
-  <text x="256.0" y="346.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#C2410C" text-anchor="middle">Inter-Node InfiniBand NDR / RoCE (~50 GB/s)</text>
-  <text x="256.0" y="364.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="middle">~18x slower than NVLink: assign P2P &amp; overlapped collectives</text>
+  <text x="256.0" y="346.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#C2410C" text-anchor="middle">Inter-Node InfiniBand NDR / RoCE (~50 GB/s)</text>
+  <text x="256.0" y="364.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="middle">~18x slower than NVLink: assign P2P &amp; overlapped collectives</text>
   <line x1="134.0" y1="282.0" x2="134.0" y2="324.0" stroke="#6D28D9" stroke-width="2.6" marker-end="url(#arr_violet)"/>
   <line x1="134.0" y1="370.0" x2="134.0" y2="412.0" stroke="#6D28D9" stroke-width="2.6" marker-end="url(#arr_violet)"/>
   <rect x="52.0" y="290.0" width="166.0" height="26.0" rx="4.0" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.1"/>
-  <text x="135.0" y="308.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#6D28D9" text-anchor="middle">Pipeline (PP P2P)</text>
+  <text x="135.0" y="308.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#6D28D9" text-anchor="middle">Pipeline (PP P2P)</text>
   <line x1="378.0" y1="282.0" x2="378.0" y2="324.0" stroke="#C48A1A" stroke-width="2.6" marker-start="url(#arr_gold)" marker-end="url(#arr_gold)"/>
   <line x1="378.0" y1="370.0" x2="378.0" y2="412.0" stroke="#C48A1A" stroke-width="2.6" marker-start="url(#arr_gold)" marker-end="url(#arr_gold)"/>
   <rect x="236.0" y="290.0" width="228.0" height="26.0" rx="4.0" fill="#FEFCE8" stroke="#C48A1A" stroke-width="1.1"/>
-  <text x="350.0" y="308.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C48A1A" text-anchor="middle">FSDP / DP (RS + All-Gather)</text>
+  <text x="350.0" y="308.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C48A1A" text-anchor="middle">FSDP / DP (RS + All-Gather)</text>
   <rect x="48.0" y="414.0" width="416.0" height="148.0" rx="8.0" fill="#EFF6FF" stroke="#0B4F8A" stroke-width="1.5" stroke-dasharray="6,3"/>
-  <text x="62.0" y="436.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B4F8A" text-anchor="start">Node 1</text>
+  <text x="62.0" y="436.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B4F8A" text-anchor="start">Node 1</text>
   <rect x="220.0" y="420.0" width="232.0" height="22.0" rx="4.0" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.0"/>
-  <text x="336.0" y="435.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">Intra-Node NVLink ~900 GB/s</text>
+  <text x="336.0" y="435.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">Intra-Node NVLink ~900 GB/s</text>
   <rect x="68.0" y="498.0" width="376.0" height="12.0" rx="4.0" fill="#0D9488" stroke="none" stroke-width="1.5" opacity="0.25"/>
   <line x1="74.0" y1="504.0" x2="438.0" y2="504.0" stroke="#0D9488" stroke-width="3.2"/>
   <rect x="64.0" y="452.0" width="82.0" height="46.0" rx="6.0" fill="#FFFFFF" stroke="#0B4F8A" stroke-width="1.6"/>
-  <text x="105.0" y="472.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="middle">GPU 4</text>
-  <text x="105.0" y="490.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">TP r0</text>
+  <text x="105.0" y="472.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="middle">GPU 4</text>
+  <text x="105.0" y="490.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">TP r0</text>
   <line x1="105.0" y1="498.0" x2="105.0" y2="508.0" stroke="#0D9488" stroke-width="2.4"/>
   <rect x="162.0" y="452.0" width="82.0" height="46.0" rx="6.0" fill="#FFFFFF" stroke="#0B4F8A" stroke-width="1.6"/>
-  <text x="203.0" y="472.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="middle">GPU 5</text>
-  <text x="203.0" y="490.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">TP r1</text>
+  <text x="203.0" y="472.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="middle">GPU 5</text>
+  <text x="203.0" y="490.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">TP r1</text>
   <line x1="203.0" y1="498.0" x2="203.0" y2="508.0" stroke="#0D9488" stroke-width="2.4"/>
   <rect x="260.0" y="452.0" width="82.0" height="46.0" rx="6.0" fill="#FFFFFF" stroke="#0B4F8A" stroke-width="1.6"/>
-  <text x="301.0" y="472.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="middle">GPU 6</text>
-  <text x="301.0" y="490.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">TP r2</text>
+  <text x="301.0" y="472.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="middle">GPU 6</text>
+  <text x="301.0" y="490.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">TP r2</text>
   <line x1="301.0" y1="498.0" x2="301.0" y2="508.0" stroke="#0D9488" stroke-width="2.4"/>
   <rect x="358.0" y="452.0" width="82.0" height="46.0" rx="6.0" fill="#FFFFFF" stroke="#0B4F8A" stroke-width="1.6"/>
-  <text x="399.0" y="472.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="middle">GPU 7</text>
-  <text x="399.0" y="490.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">TP r3</text>
+  <text x="399.0" y="472.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="middle">GPU 7</text>
+  <text x="399.0" y="490.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">TP r3</text>
   <line x1="399.0" y1="498.0" x2="399.0" y2="508.0" stroke="#0D9488" stroke-width="2.4"/>
-  <text x="256.0" y="530.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#334155" text-anchor="middle">Tensor Parallel Group 1 (Intra-Node)</text>
-  <text x="256.0" y="550.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="middle">2 All-Reduces per layer stay inside high-BW NVLink domain</text>
+  <text x="256.0" y="530.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#525252" text-anchor="middle">Tensor Parallel Group 1 (Intra-Node)</text>
+  <text x="256.0" y="550.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#737373" text-anchor="middle">2 All-Reduces per layer stay inside high-BW NVLink domain</text>
   <rect x="48.0" y="578.0" width="128.0" height="36.0" rx="6.0" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.3"/>
-  <text x="112.0" y="601.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">TP -&gt; NVLink</text>
+  <text x="112.0" y="601.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">TP -&gt; NVLink</text>
   <rect x="186.0" y="578.0" width="126.0" height="36.0" rx="6.0" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.3"/>
-  <text x="249.0" y="601.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#6D28D9" text-anchor="middle">PP -&gt; IB P2P</text>
+  <text x="249.0" y="601.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#6D28D9" text-anchor="middle">PP -&gt; IB P2P</text>
   <rect x="322.0" y="578.0" width="142.0" height="36.0" rx="6.0" fill="#FEFCE8" stroke="#C48A1A" stroke-width="1.3"/>
-  <text x="393.0" y="601.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C48A1A" text-anchor="middle">FSDP -&gt; IB Overlap</text>
-  <rect x="500.0" y="86.0" width="432.0" height="546.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
-  <rect x="500.0" y="86.0" width="432.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
-  <rect x="500.0" y="112.0" width="432.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
-  <line x1="500.0" y1="120.0" x2="932.0" y2="120.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <text x="393.0" y="601.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C48A1A" text-anchor="middle">FSDP -&gt; IB Overlap</text>
+  <rect x="500.0" y="86.0" width="432.0" height="546.0" rx="8.0" fill="#FFFFFF" stroke="#EBEBEB" stroke-width="1.4"/>
+  <rect x="500.0" y="86.0" width="432.0" height="34.0" rx="8.0" fill="#F4F4F5" stroke="#EBEBEB" stroke-width="1.0"/>
+  <rect x="500.0" y="112.0" width="432.0" height="8.0" rx="0.0" fill="#F4F4F5" stroke="none" stroke-width="1.5"/>
+  <line x1="500.0" y1="120.0" x2="932.0" y2="120.0" stroke="#EBEBEB" stroke-width="1.0"/>
   <rect x="512.0" y="95.0" width="4.0" height="16.0" rx="2.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
-  <text x="524.0" y="109.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">4-GPU Ring All-Reduce Two-Phase Topology</text>
+  <text x="524.0" y="109.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="start">4-GPU Ring All-Reduce Two-Phase Topology</text>
   <path d="M 769.5 177.3 A 114.0 114.0 0 0 1 816.7 224.5" fill="none" stroke="#0B4F8A" stroke-width="2.8" marker-end="url(#arr_blue)"/>
   <path d="M 759.2 196.8 A 92.0 92.0 0 0 1 797.2 234.8" fill="none" stroke="#0D9488" stroke-width="2.2" stroke-dasharray="5,3" marker-end="url(#arr_teal)"/>
   <path d="M 816.7 331.5 A 114.0 114.0 0 0 1 769.5 378.7" fill="none" stroke="#0B4F8A" stroke-width="2.8" marker-end="url(#arr_blue)"/>
@@ -97,65 +97,65 @@
   <path d="M 672.8 359.2 A 92.0 92.0 0 0 1 634.8 321.2" fill="none" stroke="#0D9488" stroke-width="2.2" stroke-dasharray="5,3" marker-end="url(#arr_teal)"/>
   <path d="M 615.3 224.5 A 114.0 114.0 0 0 1 662.5 177.3" fill="none" stroke="#0B4F8A" stroke-width="2.8" marker-end="url(#arr_blue)"/>
   <path d="M 634.8 234.8 A 92.0 92.0 0 0 1 672.8 196.8" fill="none" stroke="#0D9488" stroke-width="2.2" stroke-dasharray="5,3" marker-end="url(#arr_teal)"/>
-  <circle cx="716.0" cy="278.0" r="56.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.6"/>
-  <text x="716.0" y="264.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="middle">p = 4 Ranks</text>
-  <text x="716.0" y="284.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="middle">Send G/p / step</text>
-  <text x="716.0" y="304.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="middle">No bottleneck</text>
+  <circle cx="716.0" cy="278.0" r="56.0" fill="#FFFFFF" stroke="#EBEBEB" stroke-width="1.6"/>
+  <text x="716.0" y="264.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="middle">p = 4 Ranks</text>
+  <text x="716.0" y="284.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="middle">Send G/p / step</text>
+  <text x="716.0" y="304.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="middle">No bottleneck</text>
   <rect x="669.0" y="140.0" width="94.0" height="56.0" rx="7.0" fill="#FFFFFF" stroke="#0B4F8A" stroke-width="1.8"/>
-  <text x="716.0" y="162.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0F172A" text-anchor="middle">GPU 0</text>
+  <text x="716.0" y="162.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#171717" text-anchor="middle">GPU 0</text>
   <rect x="678.0" y="172.0" width="17.0" height="16.0" rx="2.0" fill="#0B4F8A" stroke="#0B4F8A" stroke-width="0.9"/>
-  <text x="686.5" y="184.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">c0</text>
-  <rect x="697.5" y="172.0" width="17.0" height="16.0" rx="2.0" fill="#F1F5F9" stroke="#0D9488" stroke-width="0.9"/>
-  <text x="706.0" y="184.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#64748B" text-anchor="middle">c1</text>
-  <rect x="717.0" y="172.0" width="17.0" height="16.0" rx="2.0" fill="#F1F5F9" stroke="#6D28D9" stroke-width="0.9"/>
-  <text x="725.5" y="184.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#64748B" text-anchor="middle">c2</text>
-  <rect x="736.5" y="172.0" width="17.0" height="16.0" rx="2.0" fill="#F1F5F9" stroke="#C48A1A" stroke-width="0.9"/>
-  <text x="745.0" y="184.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#64748B" text-anchor="middle">c3</text>
+  <text x="686.5" y="184.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">c0</text>
+  <rect x="697.5" y="172.0" width="17.0" height="16.0" rx="2.0" fill="#F4F4F5" stroke="#0D9488" stroke-width="0.9"/>
+  <text x="706.0" y="184.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#737373" text-anchor="middle">c1</text>
+  <rect x="717.0" y="172.0" width="17.0" height="16.0" rx="2.0" fill="#F4F4F5" stroke="#6D28D9" stroke-width="0.9"/>
+  <text x="725.5" y="184.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#737373" text-anchor="middle">c2</text>
+  <rect x="736.5" y="172.0" width="17.0" height="16.0" rx="2.0" fill="#F4F4F5" stroke="#C48A1A" stroke-width="0.9"/>
+  <text x="745.0" y="184.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#737373" text-anchor="middle">c3</text>
   <rect x="779.0" y="250.0" width="94.0" height="56.0" rx="7.0" fill="#FFFFFF" stroke="#0D9488" stroke-width="1.8"/>
-  <text x="826.0" y="272.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0F172A" text-anchor="middle">GPU 1</text>
-  <rect x="788.0" y="282.0" width="17.0" height="16.0" rx="2.0" fill="#F1F5F9" stroke="#0B4F8A" stroke-width="0.9"/>
-  <text x="796.5" y="294.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#64748B" text-anchor="middle">c0</text>
+  <text x="826.0" y="272.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#171717" text-anchor="middle">GPU 1</text>
+  <rect x="788.0" y="282.0" width="17.0" height="16.0" rx="2.0" fill="#F4F4F5" stroke="#0B4F8A" stroke-width="0.9"/>
+  <text x="796.5" y="294.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#737373" text-anchor="middle">c0</text>
   <rect x="807.5" y="282.0" width="17.0" height="16.0" rx="2.0" fill="#0D9488" stroke="#0D9488" stroke-width="0.9"/>
-  <text x="816.0" y="294.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">c1</text>
-  <rect x="827.0" y="282.0" width="17.0" height="16.0" rx="2.0" fill="#F1F5F9" stroke="#6D28D9" stroke-width="0.9"/>
-  <text x="835.5" y="294.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#64748B" text-anchor="middle">c2</text>
-  <rect x="846.5" y="282.0" width="17.0" height="16.0" rx="2.0" fill="#F1F5F9" stroke="#C48A1A" stroke-width="0.9"/>
-  <text x="855.0" y="294.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#64748B" text-anchor="middle">c3</text>
+  <text x="816.0" y="294.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">c1</text>
+  <rect x="827.0" y="282.0" width="17.0" height="16.0" rx="2.0" fill="#F4F4F5" stroke="#6D28D9" stroke-width="0.9"/>
+  <text x="835.5" y="294.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#737373" text-anchor="middle">c2</text>
+  <rect x="846.5" y="282.0" width="17.0" height="16.0" rx="2.0" fill="#F4F4F5" stroke="#C48A1A" stroke-width="0.9"/>
+  <text x="855.0" y="294.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#737373" text-anchor="middle">c3</text>
   <rect x="669.0" y="360.0" width="94.0" height="56.0" rx="7.0" fill="#FFFFFF" stroke="#6D28D9" stroke-width="1.8"/>
-  <text x="716.0" y="382.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0F172A" text-anchor="middle">GPU 2</text>
-  <rect x="678.0" y="392.0" width="17.0" height="16.0" rx="2.0" fill="#F1F5F9" stroke="#0B4F8A" stroke-width="0.9"/>
-  <text x="686.5" y="404.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#64748B" text-anchor="middle">c0</text>
-  <rect x="697.5" y="392.0" width="17.0" height="16.0" rx="2.0" fill="#F1F5F9" stroke="#0D9488" stroke-width="0.9"/>
-  <text x="706.0" y="404.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#64748B" text-anchor="middle">c1</text>
+  <text x="716.0" y="382.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#171717" text-anchor="middle">GPU 2</text>
+  <rect x="678.0" y="392.0" width="17.0" height="16.0" rx="2.0" fill="#F4F4F5" stroke="#0B4F8A" stroke-width="0.9"/>
+  <text x="686.5" y="404.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#737373" text-anchor="middle">c0</text>
+  <rect x="697.5" y="392.0" width="17.0" height="16.0" rx="2.0" fill="#F4F4F5" stroke="#0D9488" stroke-width="0.9"/>
+  <text x="706.0" y="404.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#737373" text-anchor="middle">c1</text>
   <rect x="717.0" y="392.0" width="17.0" height="16.0" rx="2.0" fill="#6D28D9" stroke="#6D28D9" stroke-width="0.9"/>
-  <text x="725.5" y="404.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">c2</text>
-  <rect x="736.5" y="392.0" width="17.0" height="16.0" rx="2.0" fill="#F1F5F9" stroke="#C48A1A" stroke-width="0.9"/>
-  <text x="745.0" y="404.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#64748B" text-anchor="middle">c3</text>
+  <text x="725.5" y="404.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">c2</text>
+  <rect x="736.5" y="392.0" width="17.0" height="16.0" rx="2.0" fill="#F4F4F5" stroke="#C48A1A" stroke-width="0.9"/>
+  <text x="745.0" y="404.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#737373" text-anchor="middle">c3</text>
   <rect x="559.0" y="250.0" width="94.0" height="56.0" rx="7.0" fill="#FFFFFF" stroke="#C48A1A" stroke-width="1.8"/>
-  <text x="606.0" y="272.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0F172A" text-anchor="middle">GPU 3</text>
-  <rect x="568.0" y="282.0" width="17.0" height="16.0" rx="2.0" fill="#F1F5F9" stroke="#0B4F8A" stroke-width="0.9"/>
-  <text x="576.5" y="294.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#64748B" text-anchor="middle">c0</text>
-  <rect x="587.5" y="282.0" width="17.0" height="16.0" rx="2.0" fill="#F1F5F9" stroke="#0D9488" stroke-width="0.9"/>
-  <text x="596.0" y="294.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#64748B" text-anchor="middle">c1</text>
-  <rect x="607.0" y="282.0" width="17.0" height="16.0" rx="2.0" fill="#F1F5F9" stroke="#6D28D9" stroke-width="0.9"/>
-  <text x="615.5" y="294.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#64748B" text-anchor="middle">c2</text>
+  <text x="606.0" y="272.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#171717" text-anchor="middle">GPU 3</text>
+  <rect x="568.0" y="282.0" width="17.0" height="16.0" rx="2.0" fill="#F4F4F5" stroke="#0B4F8A" stroke-width="0.9"/>
+  <text x="576.5" y="294.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#737373" text-anchor="middle">c0</text>
+  <rect x="587.5" y="282.0" width="17.0" height="16.0" rx="2.0" fill="#F4F4F5" stroke="#0D9488" stroke-width="0.9"/>
+  <text x="596.0" y="294.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#737373" text-anchor="middle">c1</text>
+  <rect x="607.0" y="282.0" width="17.0" height="16.0" rx="2.0" fill="#F4F4F5" stroke="#6D28D9" stroke-width="0.9"/>
+  <text x="615.5" y="294.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#737373" text-anchor="middle">c2</text>
   <rect x="626.5" y="282.0" width="17.0" height="16.0" rx="2.0" fill="#C48A1A" stroke="#C48A1A" stroke-width="0.9"/>
-  <text x="635.0" y="294.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">c3</text>
+  <text x="635.0" y="294.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">c3</text>
   <line x1="518.0" y1="146.0" x2="548.0" y2="146.0" stroke="#0B4F8A" stroke-width="2.6" marker-end="url(#arr_blue)"/>
-  <text x="554.0" y="151.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0B4F8A" text-anchor="start">Scatter-Reduce</text>
+  <text x="554.0" y="151.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0B4F8A" text-anchor="start">Scatter-Reduce</text>
   <line x1="774.0" y1="146.0" x2="804.0" y2="146.0" stroke="#0D9488" stroke-width="2.2" stroke-dasharray="5,3" marker-end="url(#arr_teal)"/>
-  <text x="810.0" y="151.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="start">All-Gather</text>
+  <text x="810.0" y="151.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="start">All-Gather</text>
   <rect x="518.0" y="434.0" width="192.0" height="82.0" rx="6.0" fill="#EFF6FF" stroke="#0B4F8A" stroke-width="1.3"/>
-  <text x="614.0" y="456.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0B4F8A" text-anchor="middle">Phase 1: Scatter-Reduce</text>
-  <text x="614.0" y="478.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="middle">p - 1 = 3 ring hops</text>
-  <text x="614.0" y="498.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="middle">1 reduced shard / rank</text>
+  <text x="614.0" y="456.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0B4F8A" text-anchor="middle">Phase 1: Scatter-Reduce</text>
+  <text x="614.0" y="478.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="middle">p - 1 = 3 ring hops</text>
+  <text x="614.0" y="498.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="middle">1 reduced shard / rank</text>
   <rect x="722.0" y="434.0" width="192.0" height="82.0" rx="6.0" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.3"/>
-  <text x="818.0" y="456.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">Phase 2: All-Gather</text>
-  <text x="818.0" y="478.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="middle">p - 1 = 3 ring hops</text>
-  <text x="818.0" y="498.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="middle">Full gradient on all ranks</text>
+  <text x="818.0" y="456.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">Phase 2: All-Gather</text>
+  <text x="818.0" y="478.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="middle">p - 1 = 3 ring hops</text>
+  <text x="818.0" y="498.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="middle">Full gradient on all ranks</text>
   <rect x="518.0" y="528.0" width="396.0" height="88.0" rx="7.0" fill="#FFFFFF" stroke="#0D9488" stroke-width="1.8"/>
   <rect x="518.0" y="528.0" width="6.0" height="88.0" rx="2.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
-  <text x="538.0" y="552.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">Per-Rank Traffic (Bandwidth-Optimal)</text>
-  <text x="538.0" y="580.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="15.5" font-weight="bold" fill="#0D9488" text-anchor="start">Bytes / rank = 2(p - 1)G / p  -&gt;  2G</text>
-  <text x="538.0" y="604.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="start">Independent of rank count p as p grows; limited only by min link BW</text>
+  <text x="538.0" y="552.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="start">Per-Rank Traffic (Bandwidth-Optimal)</text>
+  <text x="538.0" y="580.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="15.5" font-weight="bold" fill="#0D9488" text-anchor="start">Bytes / rank = 2(p - 1)G / p  -&gt;  2G</text>
+  <text x="538.0" y="604.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#737373" text-anchor="start">Independent of rank count p as p grows; limited only by min link BW</text>
 </svg>

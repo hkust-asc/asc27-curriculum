@@ -1,99 +1,99 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="660" viewBox="0 0 960 660">
   <defs>
-    <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#475569"/></marker>
+    <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#525252"/></marker>
     <marker id="arr_blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0B4F8A"/></marker>
     <marker id="arr_teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0D9488"/></marker>
     <marker id="arr_coral" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C2410C"/></marker>
     <marker id="arr_gold" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C48A1A"/></marker>
     <marker id="arr_violet" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#6D28D9"/></marker>
-    <marker id="arr_muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#64748B"/></marker>
+    <marker id="arr_muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#737373"/></marker>
   </defs>
-  <rect width="960" height="660" fill="#FAFBFD"/>
+  <rect width="960" height="660" fill="#FAFAFA"/>
   <rect x="28.0" y="22.0" width="6.0" height="36.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="44.0" y="44.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#0F172A" text-anchor="start">AMSS-NCKU Step Latency &amp; Bottleneck Shift Case Study</text>
-  <text x="44.0" y="66.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="start">Verified Tsinghua ASC26 talk data · Numerical relativity step cut from 4.50s to 0.85s (5.3x)</text>
-  <rect x="28.0" y="86.0" width="904.0" height="286.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
-  <rect x="28.0" y="86.0" width="904.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
-  <rect x="28.0" y="112.0" width="904.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
-  <line x1="28.0" y1="120.0" x2="932.0" y2="120.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <text x="44.0" y="44.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#171717" text-anchor="start">AMSS-NCKU Step Latency &amp; Bottleneck Shift Case Study</text>
+  <text x="44.0" y="66.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#737373" text-anchor="start">Verified Tsinghua ASC26 talk data · Numerical relativity step cut from 4.50s to 0.85s (5.3x)</text>
+  <rect x="28.0" y="86.0" width="904.0" height="286.0" rx="8.0" fill="#FFFFFF" stroke="#EBEBEB" stroke-width="1.4"/>
+  <rect x="28.0" y="86.0" width="904.0" height="34.0" rx="8.0" fill="#F4F4F5" stroke="#EBEBEB" stroke-width="1.0"/>
+  <rect x="28.0" y="112.0" width="904.0" height="8.0" rx="0.0" fill="#F4F4F5" stroke="none" stroke-width="1.5"/>
+  <line x1="28.0" y1="120.0" x2="932.0" y2="120.0" stroke="#EBEBEB" stroke-width="1.0"/>
   <rect x="40.0" y="95.0" width="4.0" height="16.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="52.0" y="109.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">Step Latency Progression (Seconds / Step, Lower Is Better)</text>
-  <line x1="232.0" y1="134.0" x2="232.0" y2="336.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <text x="232.0" y="355.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="middle">0.0 s</text>
-  <line x1="308.0" y1="134.0" x2="308.0" y2="336.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <text x="308.0" y="355.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="middle">1.0 s</text>
-  <line x1="384.0" y1="134.0" x2="384.0" y2="336.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <text x="384.0" y="355.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="middle">2.0 s</text>
-  <line x1="460.0" y1="134.0" x2="460.0" y2="336.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <text x="460.0" y="355.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="middle">3.0 s</text>
-  <line x1="536.0" y1="134.0" x2="536.0" y2="336.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <text x="536.0" y="355.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="middle">4.0 s</text>
-  <line x1="612.0" y1="134.0" x2="612.0" y2="336.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <text x="612.0" y="355.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="middle">5.0 s</text>
-  <line x1="232.0" y1="134.0" x2="232.0" y2="338.0" stroke="#475569" stroke-width="1.6"/>
-  <text x="220.0" y="161.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="end">Original CPU</text>
-  <rect x="232.0" y="142.0" width="342.0" height="26.0" rx="4.0" fill="#475569" stroke="none" stroke-width="1.5"/>
-  <text x="584.0" y="161.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#475569" text-anchor="start">4.50 s (1.0x)</text>
-  <text x="914.0" y="161.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="end">Compute-bound BSSN RHS</text>
-  <text x="220.0" y="200.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="end">GPU v1 (RHS only)</text>
+  <text x="52.0" y="109.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="start">Step Latency Progression (Seconds / Step, Lower Is Better)</text>
+  <line x1="232.0" y1="134.0" x2="232.0" y2="336.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <text x="232.0" y="355.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#737373" text-anchor="middle">0.0 s</text>
+  <line x1="308.0" y1="134.0" x2="308.0" y2="336.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <text x="308.0" y="355.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#737373" text-anchor="middle">1.0 s</text>
+  <line x1="384.0" y1="134.0" x2="384.0" y2="336.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <text x="384.0" y="355.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#737373" text-anchor="middle">2.0 s</text>
+  <line x1="460.0" y1="134.0" x2="460.0" y2="336.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <text x="460.0" y="355.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#737373" text-anchor="middle">3.0 s</text>
+  <line x1="536.0" y1="134.0" x2="536.0" y2="336.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <text x="536.0" y="355.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#737373" text-anchor="middle">4.0 s</text>
+  <line x1="612.0" y1="134.0" x2="612.0" y2="336.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <text x="612.0" y="355.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#737373" text-anchor="middle">5.0 s</text>
+  <line x1="232.0" y1="134.0" x2="232.0" y2="338.0" stroke="#525252" stroke-width="1.6"/>
+  <text x="220.0" y="161.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="end">Original CPU</text>
+  <rect x="232.0" y="142.0" width="342.0" height="26.0" rx="4.0" fill="#525252" stroke="none" stroke-width="1.5"/>
+  <text x="584.0" y="161.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#525252" text-anchor="start">4.50 s (1.0x)</text>
+  <text x="914.0" y="161.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="end">Compute-bound BSSN RHS</text>
+  <text x="220.0" y="200.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="end">GPU v1 (RHS only)</text>
   <rect x="232.0" y="181.0" width="357.2" height="26.0" rx="4.0" fill="#C2410C" stroke="none" stroke-width="1.5"/>
-  <text x="599.2" y="200.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C2410C" text-anchor="start">4.70 s (4% slower)</text>
-  <text x="914.0" y="200.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="end">122 H2D/D2H roundtrips</text>
-  <text x="220.0" y="239.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="end">GPU-Resident</text>
+  <text x="599.2" y="200.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C2410C" text-anchor="start">4.70 s (4% slower)</text>
+  <text x="914.0" y="200.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="end">122 H2D/D2H roundtrips</text>
+  <text x="220.0" y="239.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="end">GPU-Resident</text>
   <rect x="232.0" y="220.0" width="106.4" height="26.0" rx="4.0" fill="#C48A1A" stroke="none" stroke-width="1.5"/>
-  <text x="348.4" y="239.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C48A1A" text-anchor="start">1.40 s (3.2x)</text>
-  <text x="914.0" y="239.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="end">Zero PCIe transfers</text>
-  <text x="220.0" y="278.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="end">2+62 Core Split</text>
+  <text x="348.4" y="239.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C48A1A" text-anchor="start">1.40 s (3.2x)</text>
+  <text x="914.0" y="239.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="end">Zero PCIe transfers</text>
+  <text x="220.0" y="278.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="end">2+62 Core Split</text>
   <rect x="232.0" y="259.0" width="76.0" height="26.0" rx="4.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="318.0" y="278.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0B4F8A" text-anchor="start">1.00 s (4.5x)</text>
-  <text x="914.0" y="278.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="end">2 GPU drivers + 62 CPU interp</text>
-  <text x="220.0" y="317.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="end">3-Stage Async Relay</text>
+  <text x="318.0" y="278.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0B4F8A" text-anchor="start">1.00 s (4.5x)</text>
+  <text x="914.0" y="278.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="end">2 GPU drivers + 62 CPU interp</text>
+  <text x="220.0" y="317.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="end">3-Stage Async Relay</text>
   <rect x="232.0" y="298.0" width="64.6" height="26.0" rx="4.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
-  <text x="306.6" y="317.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="start">0.85 s (5.3x)</text>
-  <text x="914.0" y="317.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="end">Compute / comm / BC overlap</text>
-  <rect x="28.0" y="386.0" width="904.0" height="246.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
-  <rect x="28.0" y="386.0" width="904.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
-  <rect x="28.0" y="412.0" width="904.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
-  <line x1="28.0" y1="420.0" x2="932.0" y2="420.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <text x="306.6" y="317.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="start">0.85 s (5.3x)</text>
+  <text x="914.0" y="317.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="end">Compute / comm / BC overlap</text>
+  <rect x="28.0" y="386.0" width="904.0" height="246.0" rx="8.0" fill="#FFFFFF" stroke="#EBEBEB" stroke-width="1.4"/>
+  <rect x="28.0" y="386.0" width="904.0" height="34.0" rx="8.0" fill="#F4F4F5" stroke="#EBEBEB" stroke-width="1.0"/>
+  <rect x="28.0" y="412.0" width="904.0" height="8.0" rx="0.0" fill="#F4F4F5" stroke="none" stroke-width="1.5"/>
+  <line x1="28.0" y1="420.0" x2="932.0" y2="420.0" stroke="#EBEBEB" stroke-width="1.0"/>
   <rect x="40.0" y="395.0" width="4.0" height="16.0" rx="2.0" fill="#C2410C" stroke="none" stroke-width="1.5"/>
-  <text x="52.0" y="409.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">GPU v1 Time Breakdown (4.70 s) &amp; Bottleneck Migration</text>
+  <text x="52.0" y="409.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="start">GPU v1 Time Breakdown (4.70 s) &amp; Bottleneck Migration</text>
   <rect x="52.0" y="456.0" width="282.5" height="42.0" rx="3.0" fill="#C2410C" stroke="#FFFFFF" stroke-width="1.4"/>
-  <text x="193.2" y="482.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">33% Pack / Unpack</text>
+  <text x="193.2" y="482.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">33% Pack / Unpack</text>
   <rect x="334.5" y="456.0" width="273.9" height="42.0" rx="3.0" fill="#C48A1A" stroke="#FFFFFF" stroke-width="1.4"/>
-  <text x="471.4" y="482.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">32% CPU Interp / Regrid</text>
+  <text x="471.4" y="482.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">32% CPU Interp / Regrid</text>
   <rect x="608.4" y="456.0" width="179.8" height="42.0" rx="3.0" fill="#6D28D9" stroke="#FFFFFF" stroke-width="1.4"/>
-  <text x="698.3" y="482.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">21% Copy &amp; Wait</text>
-  <rect x="788.2" y="456.0" width="119.8" height="42.0" rx="3.0" fill="#475569" stroke="#FFFFFF" stroke-width="1.4"/>
-  <text x="848.1" y="482.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">14% Other</text>
+  <text x="698.3" y="482.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">21% Copy &amp; Wait</text>
+  <rect x="788.2" y="456.0" width="119.8" height="42.0" rx="3.0" fill="#525252" stroke="#FFFFFF" stroke-width="1.4"/>
+  <text x="848.1" y="482.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">14% Other</text>
   <line x1="54.0" y1="446.0" x2="606.4" y2="446.0" stroke="#C2410C" stroke-width="1.8"/>
   <line x1="54.0" y1="446.0" x2="54.0" y2="453.0" stroke="#C2410C" stroke-width="1.8"/>
   <line x1="606.4" y1="446.0" x2="606.4" y2="453.0" stroke="#C2410C" stroke-width="1.8"/>
-  <text x="330.2" y="438.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C2410C" text-anchor="middle">65% (~2/3) Non-RHS Host &amp; Grid Overhead</text>
+  <text x="330.2" y="438.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C2410C" text-anchor="middle">65% (~2/3) Non-RHS Host &amp; Grid Overhead</text>
   <line x1="610.4" y1="446.0" x2="786.2" y2="446.0" stroke="#6D28D9" stroke-width="1.6"/>
   <line x1="610.4" y1="446.0" x2="610.4" y2="453.0" stroke="#6D28D9" stroke-width="1.6"/>
   <line x1="786.2" y1="446.0" x2="786.2" y2="453.0" stroke="#6D28D9" stroke-width="1.6"/>
-  <text x="698.3" y="438.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#6D28D9" text-anchor="middle">122 H2D/D2H Trips</text>
-  <rect x="52.0" y="530.0" width="188.0" height="82.0" rx="7.0" fill="#F1F5F9" stroke="#475569" stroke-width="1.6"/>
-  <rect x="52.0" y="530.0" width="188.0" height="6.0" rx="3.0" fill="#475569" stroke="none" stroke-width="1.5"/>
-  <text x="146.0" y="560.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#475569" text-anchor="middle">1. Compute-Bound</text>
-  <text x="146.0" y="582.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="middle">Original CPU (4.5s)</text>
-  <text x="146.0" y="601.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="middle">Slow BSSN RHS kernel</text>
-  <line x1="244.0" y1="571.0" x2="270.6" y2="571.0" stroke="#475569" stroke-width="2.4" marker-end="url(#arr)"/>
+  <text x="698.3" y="438.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#6D28D9" text-anchor="middle">122 H2D/D2H Trips</text>
+  <rect x="52.0" y="530.0" width="188.0" height="82.0" rx="7.0" fill="#F4F4F5" stroke="#525252" stroke-width="1.6"/>
+  <rect x="52.0" y="530.0" width="188.0" height="6.0" rx="3.0" fill="#525252" stroke="none" stroke-width="1.5"/>
+  <text x="146.0" y="560.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#525252" text-anchor="middle">1. Compute-Bound</text>
+  <text x="146.0" y="582.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="middle">Original CPU (4.5s)</text>
+  <text x="146.0" y="601.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="middle">Slow BSSN RHS kernel</text>
+  <line x1="244.0" y1="571.0" x2="270.6" y2="571.0" stroke="#525252" stroke-width="2.4" marker-end="url(#arr)"/>
   <rect x="274.6" y="530.0" width="188.0" height="82.0" rx="7.0" fill="#FFF7ED" stroke="#C2410C" stroke-width="1.6"/>
   <rect x="274.6" y="530.0" width="188.0" height="6.0" rx="3.0" fill="#C2410C" stroke="none" stroke-width="1.5"/>
-  <text x="368.6" y="560.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#C2410C" text-anchor="middle">2. Transfer-Bound</text>
-  <text x="368.6" y="582.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="middle">GPU v1 (4.7s)</text>
-  <text x="368.6" y="601.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="middle">122 copies + pack/unpack</text>
-  <line x1="466.6" y1="571.0" x2="493.2" y2="571.0" stroke="#475569" stroke-width="2.4" marker-end="url(#arr)"/>
+  <text x="368.6" y="560.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#C2410C" text-anchor="middle">2. Transfer-Bound</text>
+  <text x="368.6" y="582.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="middle">GPU v1 (4.7s)</text>
+  <text x="368.6" y="601.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="middle">122 copies + pack/unpack</text>
+  <line x1="466.6" y1="571.0" x2="493.2" y2="571.0" stroke="#525252" stroke-width="2.4" marker-end="url(#arr)"/>
   <rect x="497.2" y="530.0" width="188.0" height="82.0" rx="7.0" fill="#FEFCE8" stroke="#C48A1A" stroke-width="1.6"/>
   <rect x="497.2" y="530.0" width="188.0" height="6.0" rx="3.0" fill="#C48A1A" stroke="none" stroke-width="1.5"/>
-  <text x="591.2" y="560.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#C48A1A" text-anchor="middle">3. Analysis-Bound</text>
-  <text x="591.2" y="582.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="middle">GPU-Resident (1.4s)</text>
-  <text x="591.2" y="601.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="middle">CPU interp stalls GPU</text>
-  <line x1="689.2" y1="571.0" x2="715.8" y2="571.0" stroke="#475569" stroke-width="2.4" marker-end="url(#arr)"/>
+  <text x="591.2" y="560.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#C48A1A" text-anchor="middle">3. Analysis-Bound</text>
+  <text x="591.2" y="582.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="middle">GPU-Resident (1.4s)</text>
+  <text x="591.2" y="601.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="middle">CPU interp stalls GPU</text>
+  <line x1="689.2" y1="571.0" x2="715.8" y2="571.0" stroke="#525252" stroke-width="2.4" marker-end="url(#arr)"/>
   <rect x="719.8" y="530.0" width="188.0" height="82.0" rx="7.0" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.6"/>
   <rect x="719.8" y="530.0" width="188.0" height="6.0" rx="3.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
-  <text x="813.8" y="560.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0D9488" text-anchor="middle">4. Balanced Relay</text>
-  <text x="813.8" y="582.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="middle">Split + Async (0.85s)</text>
-  <text x="813.8" y="601.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="middle">5.3x pipelined speedup</text>
+  <text x="813.8" y="560.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0D9488" text-anchor="middle">4. Balanced Relay</text>
+  <text x="813.8" y="582.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="middle">Split + Async (0.85s)</text>
+  <text x="813.8" y="601.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="middle">5.3x pipelined speedup</text>
 </svg>

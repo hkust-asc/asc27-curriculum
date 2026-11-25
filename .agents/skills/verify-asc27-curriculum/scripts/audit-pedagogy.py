@@ -72,6 +72,9 @@ def audit_site_page(path: Path) -> dict:
     visual_widgets = svgs + canvas_or_bars
     controls = len(re.findall(r"<(?:input|button|select)\b", raw))
     lab_cards = len(re.findall(r'<section[^>]*class="lab-card"', raw))
+    has_katex = ("katex.min.js" in raw) and ("katex.min.css" in raw)
+    formula_boxes = len(re.findall(r"renderFormulaBox\s*\(", raw))
+    has_html_table = "<table" in raw
 
     # Check internal relative hrefs and hash targets
     broken_links: list[str] = []
@@ -102,6 +105,12 @@ def audit_site_page(path: Path) -> dict:
     words_per_lab = round(len(words) / max(1, lab_cards), 1)
 
     warnings: list[str] = []
+    if not has_katex:
+        warnings.append("missing vendored KaTeX assets (katex.min.css / katex.min.js)")
+    if formula_boxes == 0:
+        warnings.append("no KaTeX renderFormulaBox with symbol annotations found")
+    if path.name == "index.html" and has_html_table:
+        warnings.append("index.html uses a flat HTML table instead of a visual timeline/roadmap")
     if path.name.startswith("stage") and visual_widgets < lab_cards:
         warnings.append(f"fewer visual widgets ({visual_widgets}) than lab cards ({lab_cards})")
     if path.name.startswith("stage") and controls < lab_cards * 2:
@@ -121,6 +130,8 @@ def audit_site_page(path: Path) -> dict:
         "words_per_lab": words_per_lab,
         "visual_widgets": visual_widgets,
         "controls": controls,
+        "has_katex": has_katex,
+        "formula_boxes": formula_boxes,
         "long_sentences_over_25w": len(long_sents),
         "broken_links": broken_links,
         "style_hits": style_hits,
@@ -191,6 +202,7 @@ def audit_slides(site_texts: list[str]) -> dict:
         slide_words: list[int] = []
         long_bullets: list[str] = []
         raw_ascii_hits: list[str] = []
+        missing_formula_symbols = 0
         style_hits = {name: 0 for name, _ in STYLE_BANS}
         copied_in_site = 0
 
@@ -198,9 +210,11 @@ def audit_slides(site_texts: list[str]) -> dict:
             if not (isinstance(node, ast.Call) and getattr(node.func, "id", "") == "SlideSpec"):
                 continue
             kw = {k.arg: k.value for k in node.keywords}
+            if "formula_tex" in kw and "formula_symbols" not in kw:
+                missing_formula_symbols += 1
             visible_parts: list[str] = []
             for field, val in kw.items():
-                if field in ("kind", "section_tag", "image_path", "footnote", "speaker_notes", "table_col_widths_cm", "accent_color", "formula_tex"):
+                if field in ("kind", "section_tag", "image_path", "footnote", "speaker_notes", "table_col_widths_cm", "accent_color", "formula_tex", "formula_symbols"):
                     continue
                 strs = _extract_ast_strings(val)
                 visible_parts.extend(strs)
@@ -227,6 +241,8 @@ def audit_slides(site_texts: list[str]) -> dict:
             warnings.append(f"{len(long_bullets)} slide bullets exceed 20 words")
         if raw_ascii_hits:
             warnings.append(f"{len(raw_ascii_hits)} visible fields contain raw ASCII arrows/inequalities")
+        if missing_formula_symbols:
+            warnings.append(f"{missing_formula_symbols} formula_tex slides lack formula_symbols legend")
         if copied_in_site:
             warnings.append(f"{copied_in_site} slide bullets repeated verbatim in site/*.html")
         for bname, count in style_hits.items():
@@ -241,6 +257,7 @@ def audit_slides(site_texts: list[str]) -> dict:
                 "max_words": max(slide_words) if slide_words else 0,
                 "long_bullets_over_20w": len(long_bullets),
                 "raw_ascii_hits": len(raw_ascii_hits),
+                "missing_formula_symbols": missing_formula_symbols,
                 "verbatim_in_site": copied_in_site,
                 "style_hits": style_hits,
                 "warnings": warnings,
@@ -266,12 +283,16 @@ def main() -> int:
 
     broken_total = sum(len(r["broken_links"]) for r in site_reports)
     missing_slides = len(slide_report["missing_artifacts"])
+    katex_missing = sum(1 for r in site_reports if not r["has_katex"] or r["formula_boxes"] == 0)
+    sym_missing = sum(d["missing_formula_symbols"] for d in slide_report["decks"])
     report = {
         "site": site_reports,
         "docs": doc_reports,
         "slides": slide_report,
         "broken_link_count": broken_total,
         "missing_slide_artifacts": missing_slides,
+        "katex_missing_pages": katex_missing,
+        "slides_missing_formula_symbols": sym_missing,
     }
 
     if args.out:
@@ -312,7 +333,7 @@ def main() -> int:
     if slide_report["missing_artifacts"]:
         print(f"[FAIL] Missing slide artifacts: {', '.join(slide_report['missing_artifacts'])}")
 
-    if args.strict and (broken_total > 0 or missing_slides > 0):
+    if args.strict and (broken_total > 0 or missing_slides > 0 or katex_missing > 0 or sym_missing > 0):
         return 1
     return 0
 

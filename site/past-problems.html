@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Past ASC Problems (C01 to C10) | HKUST ASC27</title>
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+  <script src="assets/vendor/katex/katex.min.js"></script>
 </head>
 <body>
   <header id="site-header"></header>
@@ -15,11 +17,24 @@
       <p class="lead">Filter by hardware rule or bottleneck type. Click any card to inspect its math, accuracy gate, and winning team speedup.</p>
     </section>
 
+    <section class="lab-card" id="landscape">
+      <div class="lab-header">
+        <div>
+          <h2><span class="section-index">01</span>Competition Landscape: Bottleneck × Year &amp; Power Cap</h2>
+          <p class="lab-subtitle">Click any dot to inspect that problem. Compare how CPU-only rules and rising power caps shape each bottleneck.</p>
+        </div>
+        <span class="pill blue">ASC22–ASC26 · 3 kW to 5 kW</span>
+      </div>
+      <div class="viz-box">
+        <svg id="pp-landscape-svg" viewBox="0 0 760 280" role="img" aria-label="Competition landscape of past ASC problems by bottleneck and year"></svg>
+      </div>
+    </section>
+
     <section class="lab-card">
       <div class="lab-header">
         <div>
-          <h2>Filter Problems</h2>
-          <p class="lab-subtitle">Each entry links directly to the Stage 1–4 interactive lab that teaches its core bottleneck.</p>
+          <h2><span class="section-index">02</span>Filter Problems</h2>
+          <p class="lab-subtitle">Each card links directly to the Stage 1–4 interactive lab that teaches its core bottleneck.</p>
         </div>
         <div class="btn-group" id="pp-filters">
           <button class="btn active" data-f="all">All (10)</button>
@@ -34,6 +49,12 @@
     </section>
 
     <section class="lab-card" id="pp-detail-card">
+      <div class="lab-header" style="margin-bottom:12px;">
+        <div>
+          <h2><span class="section-index">03</span>Problem Inspector &amp; Core Math</h2>
+          <p class="lab-subtitle">Hover or click any formula symbol to read its physical meaning and competition constraint.</p>
+        </div>
+      </div>
       <div id="pp-detail"></div>
     </section>
 
@@ -43,63 +64,147 @@
   <script src="assets/common.js"></script>
   <script>
     const problems = [
-      { id: "C01", year: "ASC22", name: "Yuan 4.7B LLM", tags: ["gpu", "ai"], cap: "3 kW",
+      { id: "C01", year: "ASC22", col: 0, row: 0, dx: 0, dy: -16, name: "Yuan 4.7B LLM", tags: ["gpu", "ai"], cap: "3 kW",
         what: "Pretrain a 4.7B Chinese Transformer on 1B tokens in PyTorch.",
-        math: "Dense GEMMs O(6*Params*Tokens); ~75 GB static state overflows 40 GB A100.",
-        gate: "Loss < 7.0 + full logs",
+        math: "Dense GEMMs scale as 6ΦT FLOPs. Static state (~75 GB) overflows a 40 GB A100.",
+        formula: {
+          tex: "C_{\\mathrm{train}} \\approx 6\\Phi T,\\quad M_{\\mathrm{static}} \\approx 16\\Phi",
+          symbols: [
+            { sym: "C_train", tex: "C_{\\mathrm{train}}", short: "Training FLOPs", desc: "Total forward and backward floating-point work across all training tokens." },
+            { sym: "Phi", tex: "\\Phi", short: "Parameters", desc: "Model parameter count (4.7B for Yuan), driving both FLOPs and memory." },
+            { sym: "T", tex: "T", short: "Tokens", desc: "Total training tokens processed (1B tokens in ASC22)." },
+            { sym: "16 Phi", tex: "16\\Phi", short: "Static VRAM", desc: "BF16 weights, gradients, and FP32 Adam state totaling ~75 GB." }
+          ]
+        },
+        gate: "Loss < 7.0 with full logs",
         win: "Mixed precision + ZeRO/FSDP + checkpointing + backward All-Reduce overlap.",
         stage: "Stage 3 (M09–M10)", lab: "stage3-ai-systems.html#vram" },
-      { id: "C02", year: "ASC22", name: "DeePMD-kit", tags: ["gpu", "sci"], cap: "3 kW",
+      { id: "C02", year: "ASC22", col: 0, row: 3, dx: 0, dy: 0, name: "DeePMD-kit", tags: ["gpu", "sci"], cap: "3 kW",
         what: "Train deep molecular dynamics potentials for Water, Cu, and Al-Cu-Mg.",
-        math: "Irregular neighbor-list descriptors + small MLP GEMMs; FP64 force sensitivity.",
+        math: "Irregular neighbor-list descriptors feed small MLP GEMMs with strict FP64 force accuracy.",
+        formula: {
+          tex: "E = \\sum_{i=1}^{N_{\\mathrm{at}}} \\mathcal{N}\\big(\\mathcal{D}(\\mathbf{R}_i)\\big),\\quad \\mathbf{F}_i = -\\nabla_{\\mathbf{r}_i} E",
+          symbols: [
+            { sym: "E", tex: "E", short: "Total energy", desc: "System potential energy summed across all atoms." },
+            { sym: "D(R_i)", tex: "\\mathcal{D}(\\mathbf{R}_i)", short: "Descriptor", desc: "Local atomic environment descriptor built from irregular neighbor lists." },
+            { sym: "F_i", tex: "\\mathbf{F}_i", short: "Atomic force", desc: "Negative energy gradient requiring careful FP64 or verified mixed precision." }
+          ]
+        },
         gate: "dp test consistency; 3 JSON knobs",
         win: "Enable type_one_side, verified mixed precision, fused CUDA descriptor ops.",
         stage: "Stage 1–2 (M02, M07)", lab: "stage2-parallelism.html#cuda-tile" },
-      { id: "C03", year: "ASC24", name: "GoMars Atmosphere", tags: ["cpu", "sci"], cap: "3 kW",
+      { id: "C03", year: "ASC24", col: 1, row: 2, dx: 0, dy: 0, name: "GoMars Atmosphere", tags: ["cpu", "sci"], cap: "3 kW",
         what: "Simulate global Martian wind, temperature, and dust on a lat-lon grid.",
-        math: "Polar grid bunching shrinks dx ~ cos(phi), overloading polar MPI ranks.",
+        math: "Polar grid bunching shrinks longitudinal spacing Δx ~ cos φ, overloading polar MPI ranks.",
+        formula: {
+          tex: "\\Delta x(\\phi) = R\\cos(\\phi)\\,\\Delta\\lambda,\\quad \\Delta t \\le \\frac{\\Delta x}{c_{\\max}}",
+          symbols: [
+            { sym: "Delta x", tex: "\\Delta x(\\phi)", short: "Grid spacing", desc: "East-west cell width that collapses near the poles as cos φ shrinks." },
+            { sym: "phi", tex: "\\phi", short: "Latitude", desc: "Planetary latitude where polar ranks face tight CFL stability limits." },
+            { sym: "Delta t", tex: "\\Delta t", short: "Time step", desc: "Explicit integration step bounded by the smallest cell width." }
+          ]
+        },
         gate: "Physical consistency",
         win: "SJTU Application Innovation: polar load balancing, halo overlap, hybrid MPI+OpenMP.",
         stage: "Stage 2 (M06) & M03", lab: "stage2-parallelism.html#mpi-halo" },
-      { id: "C04", year: "ASC25", name: "AlphaFold3", tags: ["cpu", "ai"], cap: "4 kW CPU-only",
+      { id: "C04", year: "ASC25", col: 2, row: 3, dx: 0, dy: 0, name: "AlphaFold3", tags: ["cpu", "ai"], cap: "4 kW CPU-only",
         what: "Predict 3D biomolecular structures without GPUs in finals.",
-        math: "O(N^3) triangle attention and O(N^2) pair tensors thrashing CPU caches.",
-        gate: "BF16 >= 16-bit precision floor",
-        win: "SJTU e Prize: 30x+ CPU speedup via vector/BLAS tuning and memory layout changes.",
+        math: "Cubic triangle attention and quadratic pair tensors thrash CPU caches without layout tuning.",
+        formula: {
+          tex: "W_{\\mathrm{tri}} = O(N_{\\mathrm{res}}^3 d),\\quad M_{\\mathrm{pair}} = O(N_{\\mathrm{res}}^2 d)",
+          symbols: [
+            { sym: "W_tri", tex: "W_{\\mathrm{tri}}", short: "Triangle FLOPs", desc: "Cubic compute cost of triangular attention across residue triples." },
+            { sym: "N_res", tex: "N_{\\mathrm{res}}", short: "Residues", desc: "Biomolecular token count driving cubic compute and quadratic memory." },
+            { sym: "M_pair", tex: "M_{\\mathrm{pair}}", short: "Pair tensor", desc: "Pairwise representation matrix that overflows CPU L2 and L3 caches." }
+          ]
+        },
+        gate: "BF16 (≥ 16-bit precision floor)",
+        win: "SJTU e Prize: 30×+ CPU speedup via vector/BLAS tuning and memory layout changes.",
         stage: "Stage 1–2 (M04, M05)", lab: "stage1-foundations.html#roofline" },
-      { id: "C05", year: "ASC25", name: "DeepSeek R1-Distill 32B", tags: ["cpu", "ai"], cap: "4 kW CPU-only",
-        what: "Run 32B LLM inference on CPUs with >= 4-bit weights.",
-        math: "Streams 16–18 GiB weights + KV cache per token (I ~ 1 FLOP/byte).",
-        gate: ">= 4-bit, no pruning, no cross-run KV",
+      { id: "C05", year: "ASC25", col: 2, row: 0, dx: 0, dy: 0, name: "DeepSeek R1-Distill 32B", tags: ["cpu", "ai"], cap: "4 kW CPU-only",
+        what: "Run 32B LLM inference on CPUs with 4-bit or wider weights.",
+        math: "Streams 16–18 GiB weights plus KV cache per token at ~1 FLOP/byte arithmetic intensity.",
+        formula: {
+          tex: "R_{\\mathrm{dec}} \\le \\frac{B_{\\mathrm{mem}}}{W_{\\mathrm{INT4}} + M_{\\mathrm{KV}}}",
+          symbols: [
+            { sym: "R_dec", tex: "R_{\\mathrm{dec}}", short: "Decode rate", desc: "Maximum tokens per second bounded by memory bandwidth." },
+            { sym: "B_mem", tex: "B_{\\mathrm{mem}}", short: "DRAM bandwidth", desc: "Sustained CPU memory bandwidth in bytes per second." },
+            { sym: "W_INT4", tex: "W_{\\mathrm{INT4}}", short: "4-bit weights", desc: "Quantized 32B model weights (~16 GiB) streamed every token." },
+            { sym: "M_KV", tex: "M_{\\mathrm{KV}}", short: "KV cache", desc: "Active attention key-value cache growing linearly with context length." }
+          ]
+        },
+        gate: "≥ 4-bit, no pruning, no cross-run KV",
         win: "ZJU 14.9 tok/s single-thread via compact 4-bit layouts and fused SIMD GEMV.",
         stage: "Stage 3 (M11) & M05", lab: "stage3-ai-systems.html#kv" },
-      { id: "C06", year: "ASC26", name: "UnifoLM-WMA-0", tags: ["gpu", "ai"], cap: "5 kW",
+      { id: "C06", year: "ASC26", col: 3, row: 1, dx: -34, dy: -16, name: "UnifoLM-WMA-0", tags: ["gpu", "ai"], cap: "5 kW",
         what: "Accelerate Unitree's embodied robot video world model.",
-        math: "Iterative UNet diffusion denoising + VAE decode + video I/O.",
-        gate: "PSNR >= 25 dB (prelim >= 16-bit)",
-        win: "PKU 26 s & BUPT 30 s (>20x) via resident serving, TeaCache, fusion, async FFmpeg.",
+        math: "Iterative UNet diffusion denoising, VAE decoding, and video I/O stack end-to-end latency.",
+        formula: {
+          tex: "T_{\\mathrm{vid}} = N_{\\mathrm{denoise}} T_{\\mathrm{UNet}} + T_{\\mathrm{VAE}} + T_{\\mathrm{IO}}",
+          symbols: [
+            { sym: "T_vid", tex: "T_{\\mathrm{vid}}", short: "Total time", desc: "End-to-end wall time per generated robot video rollout." },
+            { sym: "N_denoise", tex: "N_{\\mathrm{denoise}}", short: "Denoise steps", desc: "Number of diffusion steps reduced or cached via TeaCache." },
+            { sym: "T_VAE", tex: "T_{\\mathrm{VAE}}", short: "VAE decode", desc: "Latent-to-pixel decoding latency on GPU." },
+            { sym: "T_IO", tex: "T_{\\mathrm{IO}}", short: "Video I/O", desc: "FFmpeg encoding time hidden via asynchronous host threads." }
+          ]
+        },
+        gate: "PSNR ≥ 25 dB (prelim ≥ 16-bit)",
+        win: "PKU 26 s & BUPT 30 s (>20×) via resident serving, TeaCache, fusion, async FFmpeg.",
         stage: "Stage 3 (M11) & M07", lab: "stage3-ai-systems.html#kv" },
-      { id: "C07", year: "ASC26", name: "AMSS-NCKU Black Holes", tags: ["gpu", "sci"], cap: "5 kW",
+      { id: "C07", year: "ASC26", col: 3, row: 2, dx: -34, dy: -14, name: "AMSS-NCKU Black Holes", tags: ["gpu", "sci"], cap: "5 kW",
         what: "Solve Einstein's equations on 9-level AMR grids for binary black holes.",
-        math: "RK4 3D stencils + 122 PCIe copies -> CPU waveform backpressure.",
+        math: "RK4 3D stencils hit 122 PCIe copies first, then shift to CPU waveform backpressure.",
+        formula: {
+          tex: "T_{\\mathrm{step}} = T_{\\mathrm{GPU}} + N_{\\mathrm{copy}} T_{\\mathrm{PCIe}} + T_{\\mathrm{CPU}}",
+          symbols: [
+            { sym: "T_step", tex: "T_{\\mathrm{step}}", short: "Step time", desc: "Wall-clock duration per coarse RK4 step (4.5 s down to 0.85 s)." },
+            { sym: "T_GPU", tex: "T_{\\mathrm{GPU}}", short: "GPU compute", desc: "RHS and 65 AMR interpolation kernels kept resident on H100." },
+            { sym: "N_copy T_PCIe", tex: "N_{\\mathrm{copy}} T_{\\mathrm{PCIe}}", short: "PCIe copies", desc: "122 host-device roundtrips eliminated by full GPU residency." },
+            { sym: "T_CPU", tex: "T_{\\mathrm{CPU}}", short: "CPU analysis", desc: "Waveform extraction overlapped via 2+62 core split and 3-stage relay." }
+          ]
+        },
         gate: "Trajectory RMS < 1%, ADM < 2",
-        win: "Tsinghua 4.5s -> 0.85s (resident GPU + 2+62 split + 3-stage relay); ZJU 30x finals.",
+        win: "Tsinghua cut 4.5 s to 0.85 s (resident GPU, 2+62 split, 3-stage relay); ZJU hit 30× in finals.",
         stage: "Stage 3 (M12)", lab: "stage3-ai-systems.html#amss" },
-      { id: "C08", year: "ASC26", name: "QiboTN Quantum", tags: ["cpu", "sci"], cap: "5 kW CPU-only",
+      { id: "C08", year: "ASC26", col: 3, row: 0, dx: 0, dy: 0, name: "QiboTN Quantum", tags: ["cpu", "sci"], cap: "5 kW CPU-only",
         what: "Simulate QFT, QAOA, and Supremacy circuits via tensor networks.",
-        math: "State vector needs 16*2^n B (20q = 16 MiB, 40q = 16 TiB). Tensor contraction avoids 2^n.",
+        math: "Full state vectors need 16 × 2ⁿ bytes (40q = 16 TiB). Tensor contraction avoids exponential RAM.",
+        formula: {
+          tex: "M_{\\mathrm{sv}}(n) = 16 \\cdot 2^n\\;\\mathrm{bytes},\\quad C_{\\mathrm{TN}} = O(\\chi^k)",
+          symbols: [
+            { sym: "M_sv", tex: "M_{\\mathrm{sv}}(n)", short: "State vector", desc: "Exponential complex128 memory wall (20q = 16 MiB, 40q = 16 TiB)." },
+            { sym: "n", tex: "n", short: "Qubits", desc: "Circuit qubit count where each extra qubit doubles state-vector size." },
+            { sym: "chi", tex: "\\chi", short: "Bond dimension", desc: "Tensor-network contraction width controlling polynomial compute cost." }
+          ]
+        },
         gate: "Exact mean expectation values; 0 pts if GPU used",
         win: "Fudan rewrote core Python contraction loops into native C for tens-of-times speedup.",
         stage: "Stage 4 (Qubit) & M05", lab: "stage4-asc-sprint.html#qubit" },
-      { id: "C09", year: "ASC26", name: "LeWorldModel (Mystery)", tags: ["gpu", "ai"], cap: "5 kW AMD W7900D",
+      { id: "C09", year: "ASC26", col: 3, row: 1, dx: 34, dy: 16, name: "LeWorldModel (Mystery)", tags: ["gpu", "ai"], cap: "5 kW AMD W7900D",
         what: "Run 200 PushT latent JEPA + CEM planning cases on AMD W7900D.",
         math: "Small-batch iterative CEM loops make GPU launch-bound; video I/O stalls CPU.",
-        gate: "PushT success rate >= 90% on ROCm",
-        win: "BUPT 14 s, Tsinghua 16 s, PKU 17 s (>100x) via HIP graphs, BF16, early stop.",
+        formula: {
+          tex: "T_{\\mathrm{plan}} = N_{\\mathrm{iter}}\\big(K T_{\\mathrm{launch}} + T_{\\mathrm{eval}}\\big)",
+          symbols: [
+            { sym: "T_plan", tex: "T_{\\mathrm{plan}}", short: "Planning time", desc: "Wall time across 200 PushT control episodes on ROCm." },
+            { sym: "N_iter", tex: "N_{\\mathrm{iter}}", short: "CEM iterations", desc: "Iterative planning rounds shortened via early stopping." },
+            { sym: "K T_launch", tex: "K T_{\\mathrm{launch}}", short: "Launch overhead", desc: "Small-kernel dispatch tax removed by capturing HIP graphs." }
+          ]
+        },
+        gate: "PushT success rate ≥ 90% on ROCm",
+        win: "BUPT 14 s, Tsinghua 16 s, PKU 17 s (>100×) via HIP graphs, BF16, early stop.",
         stage: "Stage 3 (M11) & M16", lab: "stage3-ai-systems.html#kv" },
-      { id: "C10", year: "ASC26", name: "ICON Climate (Group)", tags: ["cpu", "sci"], cap: "5 kW CPU-only",
+      { id: "C10", year: "ASC26", col: 3, row: 2, dx: 34, dy: 14, name: "ICON Climate (Group)", tags: ["cpu", "sci"], cap: "5 kW CPU-only",
         what: "5-university alliance optimizing Gordon Bell ICON climate model.",
         math: "Uniform icosahedral mesh removes GoMars poles; CPU SIMD + halo sync dominate.",
+        formula: {
+          tex: "T_{\\mathrm{step}} = \\frac{W_{\\mathrm{mesh}}}{P_{\\mathrm{SIMD}}} + T_{\\mathrm{halo}}",
+          symbols: [
+            { sym: "W_mesh", tex: "W_{\\mathrm{mesh}}", short: "Mesh work", desc: "Stencil updates across uniform icosahedral atmospheric cells." },
+            { sym: "P_SIMD", tex: "P_{\\mathrm{SIMD}}", short: "SIMD rate", desc: "Vectorized CPU throughput improved by OpenMP and explicit SIMD." },
+            { sym: "T_halo", tex: "T_{\\mathrm{halo}}", short: "Halo exchange", desc: "MPI boundary sync latency cut by halo trimming." }
+          ]
+        },
         gate: "CPU-only, independent cluster runs",
         win: "QHU + SJTU + BUAA + BNU + EAFIT: OpenMP tuning, halo trim, explicit SIMD, -5% MPI.",
         stage: "Stage 2 (M05–M06)", lab: "stage2-parallelism.html#mpi-halo" }
@@ -109,21 +214,96 @@
     let selectedId = "C07";
     const grid = document.getElementById("pp-grid");
     const detail = document.getElementById("pp-detail");
+    const landscapeSvg = document.getElementById("pp-landscape-svg");
+
+    function renderLandscape() {
+      const cols = [
+        { label: "ASC22", sub: "3 kW Cap", x: 245 },
+        { label: "ASC24", sub: "3 kW Cap", x: 390 },
+        { label: "ASC25", sub: "4 kW Cap", x: 535 },
+        { label: "ASC26", sub: "5 kW Cap", x: 675 }
+      ];
+      const rows = [
+        { label: "Memory / VRAM Wall", y: 66 },
+        { label: "Launch / Pipeline Latency", y: 122 },
+        { label: "MPI / PCIe Comm", y: 178 },
+        { label: "Compute / Cache Layout", y: 234 }
+      ];
+
+      let html = `<rect x="180" y="34" width="560" height="226" rx="8" fill="#FFFFFF" stroke="#E5E5E5"/>`;
+
+      rows.forEach((r, idx) => {
+        if (idx > 0) {
+          html += `<line x1="180" y1="${r.y - 28}" x2="740" y2="${r.y - 28}" stroke="#E5E5E5" stroke-dasharray="3 3"/>`;
+        }
+        html += `<text x="168" y="${r.y + 4}" text-anchor="end" font-size="11.5" font-weight="600" fill="#171717">${r.label}</text>`;
+      });
+
+      cols.forEach((c, idx) => {
+        if (idx > 0) {
+          html += `<line x1="${c.x - 72}" y1="34" x2="${c.x - 72}" y2="260" stroke="#E5E5E5"/>`;
+        }
+        html += `<text x="${c.x}" y="16" text-anchor="middle" font-size="12" font-weight="700" fill="#171717">${c.label}</text>
+                 <text x="${c.x}" y="29" text-anchor="middle" font-size="10.5" fill="#737373">${c.sub}</text>`;
+      });
+
+      const visibleIds = new Set((curFilter === "all" ? problems : problems.filter(p => p.tags.includes(curFilter))).map(p => p.id));
+
+      problems.forEach(p => {
+        const cx = cols[p.col].x + p.dx;
+        const cy = rows[p.row].y + p.dy;
+        const isSelected = p.id === selectedId;
+        const isVisible = visibleIds.has(p.id);
+        const fill = p.tags.includes("cpu") ? "#0D9488" : "#6D28D9";
+        const op = isVisible ? 1 : 0.22;
+        html += `
+          <g class="pp-dot" data-id="${p.id}" style="cursor:pointer;" opacity="${op}">
+            ${isSelected ? `<circle cx="${cx}" cy="${cy}" r="14" fill="none" stroke="#171717" stroke-width="2"/>` : ""}
+            <circle cx="${cx}" cy="${cy}" r="9" fill="${fill}" stroke="#FFFFFF" stroke-width="2"/>
+            <text x="${cx}" y="${cy + 3.5}" text-anchor="middle" font-size="8.5" font-weight="700" fill="#FFFFFF">${p.id}</text>
+            <text x="${cx}" y="${cy + 20}" text-anchor="middle" font-size="9.5" font-weight="${isSelected ? "700" : "500"}" fill="#171717">${p.name.split(" ")[0]}</text>
+          </g>`;
+      });
+
+      html += `
+        <circle cx="192" cy="272" r="5" fill="#6D28D9"/>
+        <text x="202" y="275.5" font-size="11" fill="#737373">GPU Allowed</text>
+        <circle cx="290" cy="272" r="5" fill="#0D9488"/>
+        <text x="300" y="275.5" font-size="11" fill="#737373">CPU-Only Rule</text>
+        <circle cx="408" cy="272" r="5" fill="none" stroke="#171717" stroke-width="2"/>
+        <text x="418" y="275.5" font-size="11" fill="#737373">Selected Problem</text>
+      `;
+
+      landscapeSvg.innerHTML = html;
+      landscapeSvg.querySelectorAll(".pp-dot").forEach(el => {
+        el.onclick = () => {
+          selectedId = el.dataset.id;
+          renderLandscape();
+          renderList();
+          renderDetail();
+        };
+      });
+    }
 
     function renderList() {
       const list = curFilter === "all" ? problems : problems.filter(p => p.tags.includes(curFilter));
       grid.innerHTML = list.map(p => `
-        <div class="nav-card" style="cursor:pointer; border-color:${p.id === selectedId ? "#0B4F8A" : ""}; background:${p.id === selectedId ? "#F8FAFC" : ""}" data-id="${p.id}">
+        <div class="nav-card" style="cursor:pointer; border-color:${p.id === selectedId ? "#171717" : ""}; background:${p.id === selectedId ? "#FAFAFA" : ""}" data-id="${p.id}">
           <div style="display:flex; justify-content:space-between; align-items:center;">
             <span class="pill ${p.tags.includes("cpu") ? "teal" : "violet"}">${p.id} · ${p.year}</span>
-            <span style="font-size:12px; color:#64748B; font-family:var(--mono);">${p.cap}</span>
+            <span style="font-size:12px; color:#737373; font-family:var(--mono);">${p.cap}</span>
           </div>
           <h3>${p.name}</h3>
           <p>${p.what}</p>
         </div>`).join("");
 
       grid.querySelectorAll("[data-id]").forEach(el => {
-        el.onclick = () => { selectedId = el.dataset.id; renderList(); renderDetail(); };
+        el.onclick = () => {
+          selectedId = el.dataset.id;
+          renderLandscape();
+          renderList();
+          renderDetail();
+        };
       });
     }
 
@@ -137,6 +317,7 @@
           </div>
           <a class="btn primary" href="${p.lab}">Open Related Interactive Lab (${p.stage}) &rarr;</a>
         </div>
+        <div id="pp-formula"></div>
         <div class="stat-strip">
           <div class="stat"><div class="stat-k">What It Does</div><div style="font-size:14px; margin-top:4px;">${p.what}</div></div>
           <div class="stat"><div class="stat-k">Math &amp; Bottleneck</div><div style="font-size:14px; margin-top:4px;">${p.math}</div></div>
@@ -144,6 +325,7 @@
         </div>
         <div class="takeaway teal"><strong>Winning Team Method:</strong> ${p.win}</div>
       `;
+      window.ASC27.renderFormulaBox(document.getElementById("pp-formula"), p.formula);
     }
 
     document.querySelectorAll("#pp-filters button").forEach(btn => {
@@ -151,10 +333,12 @@
         document.querySelectorAll("#pp-filters button").forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
         curFilter = btn.dataset.f;
+        renderLandscape();
         renderList();
       };
     });
 
+    renderLandscape();
     renderList();
     renderDetail();
   </script>

@@ -1,124 +1,124 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="660" viewBox="0 0 960 660">
   <defs>
-    <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#475569"/></marker>
+    <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#525252"/></marker>
     <marker id="arr_blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0B4F8A"/></marker>
     <marker id="arr_teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0D9488"/></marker>
     <marker id="arr_coral" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C2410C"/></marker>
     <marker id="arr_gold" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C48A1A"/></marker>
     <marker id="arr_violet" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#6D28D9"/></marker>
-    <marker id="arr_muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#64748B"/></marker>
+    <marker id="arr_muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#737373"/></marker>
   </defs>
-  <rect width="960" height="660" fill="#FAFBFD"/>
+  <rect width="960" height="660" fill="#FAFAFA"/>
   <rect x="28.0" y="22.0" width="6.0" height="36.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="44.0" y="44.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#0F172A" text-anchor="start">ASC22 Yuan 4.7B LLM: Training Layout &amp; Convergence Gate</text>
-  <text x="44.0" y="66.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="start">40 layers · d=3072 · 24 heads · Seq 2048 · 1B tokens · PyTorch · Historical 3 kW cap</text>
-  <rect x="28.0" y="92.0" width="436.0" height="536.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
-  <rect x="28.0" y="92.0" width="436.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
-  <rect x="28.0" y="118.0" width="436.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
-  <line x1="28.0" y1="126.0" x2="464.0" y2="126.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <text x="44.0" y="44.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#171717" text-anchor="start">ASC22 Yuan 4.7B LLM: Training Layout &amp; Convergence Gate</text>
+  <text x="44.0" y="66.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#737373" text-anchor="start">40 layers · d=3072 · 24 heads · Seq 2048 · 1B tokens · PyTorch · Historical 3 kW cap</text>
+  <rect x="28.0" y="92.0" width="436.0" height="536.0" rx="8.0" fill="#FFFFFF" stroke="#EBEBEB" stroke-width="1.4"/>
+  <rect x="28.0" y="92.0" width="436.0" height="34.0" rx="8.0" fill="#F4F4F5" stroke="#EBEBEB" stroke-width="1.0"/>
+  <rect x="28.0" y="118.0" width="436.0" height="8.0" rx="0.0" fill="#F4F4F5" stroke="none" stroke-width="1.5"/>
+  <line x1="28.0" y1="126.0" x2="464.0" y2="126.0" stroke="#EBEBEB" stroke-width="1.0"/>
   <rect x="40.0" y="101.0" width="4.0" height="16.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="52.0" y="115.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">Transformer FLOPs &amp; 3D Parallel Placement</text>
+  <text x="52.0" y="115.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="start">Transformer FLOPs &amp; 3D Parallel Placement</text>
   <rect x="46.0" y="140.0" width="400.0" height="68.0" rx="6.0" fill="#EFF6FF" stroke="#0B4F8A" stroke-width="1.3"/>
-  <text x="62.0" y="165.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="16.0" font-weight="bold" fill="#0B4F8A" text-anchor="start">Training compute  C ≈ 6 · Φ · D</text>
-  <text x="62.0" y="193.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">6 × 4.7×10⁹ × 10⁹ ≈ 2.82 × 10¹⁹ FLOPs</text>
-  <text x="48.0" y="232.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.0" font-weight="bold" fill="#0F172A" text-anchor="start">Single Layer (×40 layers, ~4.7B total params)</text>
-  <rect x="48.0" y="244.0" width="396.0" height="134.0" rx="6.0" fill="#FAFBFD" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="5,4"/>
+  <text x="62.0" y="165.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="16.0" font-weight="bold" fill="#0B4F8A" text-anchor="start">Training compute  C ≈ 6 · Φ · D</text>
+  <text x="62.0" y="193.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="start">6 × 4.7×10⁹ × 10⁹ ≈ 2.82 × 10¹⁹ FLOPs</text>
+  <text x="48.0" y="232.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.0" font-weight="bold" fill="#171717" text-anchor="start">Single Layer (×40 layers, ~4.7B total params)</text>
+  <rect x="48.0" y="244.0" width="396.0" height="134.0" rx="6.0" fill="#FAFAFA" stroke="#A3A3A3" stroke-width="1.3" stroke-dasharray="5,4"/>
   <rect x="64.0" y="258.0" width="168.0" height="54.0" rx="6.0" fill="#FFFFFF" stroke="#0B4F8A" stroke-width="1.6"/>
   <rect x="64.0" y="258.0" width="5.0" height="54.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="148.0" y="281.2" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="middle">MHA (24 heads)</text>
-  <text x="148.0" y="299.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">d=3072, QKV+O</text>
+  <text x="148.0" y="281.2" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="middle">MHA (24 heads)</text>
+  <text x="148.0" y="299.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="middle">d=3072, QKV+O</text>
   <line x1="232.0" y1="285.0" x2="258.0" y2="285.0" stroke="#0B4F8A" stroke-width="2.0" marker-end="url(#arr_blue)"/>
   <rect x="262.0" y="258.0" width="168.0" height="54.0" rx="6.0" fill="#FFFFFF" stroke="#0D9488" stroke-width="1.6"/>
   <rect x="262.0" y="258.0" width="5.0" height="54.0" rx="2.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
-  <text x="346.0" y="281.2" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="middle">FFN (4d = 12288)</text>
-  <text x="346.0" y="299.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">W₁: d×4d, W₂: 4d×d</text>
-  <text x="246.0" y="336.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="normal" fill="#334155" text-anchor="middle">Params / layer ≈ 12d² ≈ 113M · Seq L = 2048</text>
-  <text x="246.0" y="362.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="bold" fill="#C2410C" text-anchor="middle">Training state (weights+grads+Adam) &gt; 1 GPU</text>
-  <text x="48.0" y="404.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.0" font-weight="bold" fill="#0F172A" text-anchor="start">3D Parallel Partitioning under 3 kW Cap</text>
-  <rect x="48.0" y="416.0" width="396.0" height="196.0" rx="6.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.2"/>
+  <text x="346.0" y="281.2" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="middle">FFN (4d = 12288)</text>
+  <text x="346.0" y="299.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="middle">W₁: d×4d, W₂: 4d×d</text>
+  <text x="246.0" y="336.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="normal" fill="#525252" text-anchor="middle">Params / layer ≈ 12d² ≈ 113M · Seq L = 2048</text>
+  <text x="246.0" y="362.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="bold" fill="#C2410C" text-anchor="middle">Training state (weights+grads+Adam) &gt; 1 GPU</text>
+  <text x="48.0" y="404.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.0" font-weight="bold" fill="#171717" text-anchor="start">3D Parallel Partitioning under 3 kW Cap</text>
+  <rect x="48.0" y="416.0" width="396.0" height="196.0" rx="6.0" fill="#F4F4F5" stroke="#EBEBEB" stroke-width="1.2"/>
   <rect x="64.0" y="434.0" width="172.0" height="92.0" rx="6.0" fill="#EFF6FF" stroke="#0B4F8A" stroke-width="1.4"/>
-  <text x="150.0" y="456.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0B4F8A" text-anchor="middle">PP Stage 0 (L1–L20)</text>
+  <text x="150.0" y="456.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0B4F8A" text-anchor="middle">PP Stage 0 (L1–L20)</text>
   <rect x="76.0" y="466.0" width="68.0" height="44.0" rx="4.0" fill="#FFFFFF" stroke="#0B4F8A" stroke-width="1.2"/>
-  <text x="110.0" y="486.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="middle">GPU 0</text>
-  <text x="110.0" y="503.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="normal" fill="#64748B" text-anchor="middle">TP 0</text>
+  <text x="110.0" y="486.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" fill="#171717" text-anchor="middle">GPU 0</text>
+  <text x="110.0" y="503.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="normal" fill="#737373" text-anchor="middle">TP 0</text>
   <rect x="156.0" y="466.0" width="68.0" height="44.0" rx="4.0" fill="#FFFFFF" stroke="#0B4F8A" stroke-width="1.2"/>
-  <text x="190.0" y="486.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="middle">GPU 1</text>
-  <text x="190.0" y="503.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="normal" fill="#64748B" text-anchor="middle">TP 1</text>
+  <text x="190.0" y="486.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" fill="#171717" text-anchor="middle">GPU 1</text>
+  <text x="190.0" y="503.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="normal" fill="#737373" text-anchor="middle">TP 1</text>
   <line x1="144.0" y1="488.0" x2="156.0" y2="488.0" stroke="#0B4F8A" stroke-width="1.8"/>
   <rect x="256.0" y="434.0" width="172.0" height="92.0" rx="6.0" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.4"/>
-  <text x="342.0" y="456.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#6D28D9" text-anchor="middle">PP Stage 1 (L21–L40)</text>
+  <text x="342.0" y="456.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#6D28D9" text-anchor="middle">PP Stage 1 (L21–L40)</text>
   <rect x="268.0" y="466.0" width="68.0" height="44.0" rx="4.0" fill="#FFFFFF" stroke="#6D28D9" stroke-width="1.2"/>
-  <text x="302.0" y="486.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="middle">GPU 0</text>
-  <text x="302.0" y="503.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="normal" fill="#64748B" text-anchor="middle">TP 0</text>
+  <text x="302.0" y="486.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" fill="#171717" text-anchor="middle">GPU 0</text>
+  <text x="302.0" y="503.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="normal" fill="#737373" text-anchor="middle">TP 0</text>
   <rect x="348.0" y="466.0" width="68.0" height="44.0" rx="4.0" fill="#FFFFFF" stroke="#6D28D9" stroke-width="1.2"/>
-  <text x="382.0" y="486.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="middle">GPU 1</text>
-  <text x="382.0" y="503.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="normal" fill="#64748B" text-anchor="middle">TP 1</text>
+  <text x="382.0" y="486.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" fill="#171717" text-anchor="middle">GPU 1</text>
+  <text x="382.0" y="503.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="normal" fill="#737373" text-anchor="middle">TP 1</text>
   <line x1="336.0" y1="488.0" x2="348.0" y2="488.0" stroke="#6D28D9" stroke-width="1.8"/>
   <line x1="236.0" y1="480.0" x2="254.0" y2="480.0" stroke="#6D28D9" stroke-width="2.0" marker-end="url(#arr_violet)"/>
-  <text x="64.0" y="550.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="bold" fill="#0B4F8A" text-anchor="start">TP: Intra-node NVLink All-Reduce (high BW)</text>
-  <text x="64.0" y="574.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="bold" fill="#6D28D9" text-anchor="start">PP: P2P activations (minimize bubbles)</text>
-  <text x="64.0" y="598.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="bold" fill="#C48A1A" text-anchor="start">DP/ZeRO: Ring grad sync · Cluster ≤ 3 kW</text>
-  <rect x="484.0" y="92.0" width="448.0" height="536.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
-  <rect x="484.0" y="92.0" width="448.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
-  <rect x="484.0" y="118.0" width="448.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
-  <line x1="484.0" y1="126.0" x2="932.0" y2="126.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <text x="64.0" y="550.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="bold" fill="#0B4F8A" text-anchor="start">TP: Intra-node NVLink All-Reduce (high BW)</text>
+  <text x="64.0" y="574.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="bold" fill="#6D28D9" text-anchor="start">PP: P2P activations (minimize bubbles)</text>
+  <text x="64.0" y="598.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="bold" fill="#C48A1A" text-anchor="start">DP/ZeRO: Ring grad sync · Cluster ≤ 3 kW</text>
+  <rect x="484.0" y="92.0" width="448.0" height="536.0" rx="8.0" fill="#FFFFFF" stroke="#EBEBEB" stroke-width="1.4"/>
+  <rect x="484.0" y="92.0" width="448.0" height="34.0" rx="8.0" fill="#F4F4F5" stroke="#EBEBEB" stroke-width="1.0"/>
+  <rect x="484.0" y="118.0" width="448.0" height="8.0" rx="0.0" fill="#F4F4F5" stroke="none" stroke-width="1.5"/>
+  <line x1="484.0" y1="126.0" x2="932.0" y2="126.0" stroke="#EBEBEB" stroke-width="1.0"/>
   <rect x="496.0" y="101.0" width="4.0" height="16.0" rx="2.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
-  <text x="508.0" y="115.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">Schematic Convergence &amp; Acceptance Gate</text>
+  <text x="508.0" y="115.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="start">Schematic Convergence &amp; Acceptance Gate</text>
   <rect x="560.0" y="152.0" width="344.0" height="300.0" rx="0.0" fill="#FFFFFF" stroke="none" stroke-width="1.5"/>
-  <line x1="560.0" y1="152.0" x2="560.0" y2="452.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="560.0" y1="452.0" x2="560.0" y2="457.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="560.0" y="474.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">0</text>
-  <line x1="641.9" y1="152.0" x2="641.9" y2="452.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="641.9" y1="452.0" x2="641.9" y2="457.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="641.9" y="474.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">0.25B</text>
-  <line x1="723.8" y1="152.0" x2="723.8" y2="452.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="723.8" y1="452.0" x2="723.8" y2="457.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="723.8" y="474.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">0.5B</text>
-  <line x1="805.7" y1="152.0" x2="805.7" y2="452.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="805.7" y1="452.0" x2="805.7" y2="457.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="805.7" y="474.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">0.75B</text>
-  <line x1="887.6" y1="152.0" x2="887.6" y2="452.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="887.6" y1="452.0" x2="887.6" y2="457.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="887.6" y="474.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">1.0B</text>
-  <line x1="560.0" y1="452.0" x2="904.0" y2="452.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="555.0" y1="452.0" x2="560.0" y2="452.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="550.0" y="457.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">5.0</text>
-  <line x1="560.0" y1="402.0" x2="904.0" y2="402.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="555.0" y1="402.0" x2="560.0" y2="402.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="550.0" y="407.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">6.0</text>
-  <line x1="560.0" y1="352.0" x2="904.0" y2="352.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="555.0" y1="352.0" x2="560.0" y2="352.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="550.0" y="357.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">7.0</text>
-  <line x1="560.0" y1="302.0" x2="904.0" y2="302.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="555.0" y1="302.0" x2="560.0" y2="302.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="550.0" y="307.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">8.0</text>
-  <line x1="560.0" y1="252.0" x2="904.0" y2="252.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="555.0" y1="252.0" x2="560.0" y2="252.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="550.0" y="257.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">9.0</text>
-  <line x1="560.0" y1="202.0" x2="904.0" y2="202.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="555.0" y1="202.0" x2="560.0" y2="202.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="550.0" y="207.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">10.0</text>
-  <line x1="560.0" y1="152.0" x2="904.0" y2="152.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="555.0" y1="152.0" x2="560.0" y2="152.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="550.0" y="157.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">11.0</text>
-  <line x1="560.0" y1="452.0" x2="904.0" y2="452.0" stroke="#475569" stroke-width="1.8"/>
-  <line x1="560.0" y1="152.0" x2="560.0" y2="452.0" stroke="#475569" stroke-width="1.8"/>
-  <text x="732.0" y="498.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#334155" text-anchor="middle">Trained Tokens (Schematic)</text>
-  <text x="506.0" y="302.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#334155" text-anchor="middle" transform="rotate(-90.0 506.0 302.0)">NLL Training Loss</text>
+  <line x1="560.0" y1="152.0" x2="560.0" y2="452.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="560.0" y1="452.0" x2="560.0" y2="457.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="560.0" y="474.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="middle">0</text>
+  <line x1="641.9" y1="152.0" x2="641.9" y2="452.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="641.9" y1="452.0" x2="641.9" y2="457.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="641.9" y="474.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="middle">0.25B</text>
+  <line x1="723.8" y1="152.0" x2="723.8" y2="452.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="723.8" y1="452.0" x2="723.8" y2="457.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="723.8" y="474.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="middle">0.5B</text>
+  <line x1="805.7" y1="152.0" x2="805.7" y2="452.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="805.7" y1="452.0" x2="805.7" y2="457.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="805.7" y="474.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="middle">0.75B</text>
+  <line x1="887.6" y1="152.0" x2="887.6" y2="452.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="887.6" y1="452.0" x2="887.6" y2="457.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="887.6" y="474.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="middle">1.0B</text>
+  <line x1="560.0" y1="452.0" x2="904.0" y2="452.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="555.0" y1="452.0" x2="560.0" y2="452.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="550.0" y="457.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="end">5.0</text>
+  <line x1="560.0" y1="402.0" x2="904.0" y2="402.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="555.0" y1="402.0" x2="560.0" y2="402.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="550.0" y="407.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="end">6.0</text>
+  <line x1="560.0" y1="352.0" x2="904.0" y2="352.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="555.0" y1="352.0" x2="560.0" y2="352.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="550.0" y="357.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="end">7.0</text>
+  <line x1="560.0" y1="302.0" x2="904.0" y2="302.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="555.0" y1="302.0" x2="560.0" y2="302.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="550.0" y="307.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="end">8.0</text>
+  <line x1="560.0" y1="252.0" x2="904.0" y2="252.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="555.0" y1="252.0" x2="560.0" y2="252.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="550.0" y="257.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="end">9.0</text>
+  <line x1="560.0" y1="202.0" x2="904.0" y2="202.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="555.0" y1="202.0" x2="560.0" y2="202.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="550.0" y="207.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="end">10.0</text>
+  <line x1="560.0" y1="152.0" x2="904.0" y2="152.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="555.0" y1="152.0" x2="560.0" y2="152.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="550.0" y="157.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="end">11.0</text>
+  <line x1="560.0" y1="452.0" x2="904.0" y2="452.0" stroke="#525252" stroke-width="1.8"/>
+  <line x1="560.0" y1="152.0" x2="560.0" y2="452.0" stroke="#525252" stroke-width="1.8"/>
+  <text x="732.0" y="498.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#525252" text-anchor="middle">Trained Tokens (Schematic)</text>
+  <text x="506.0" y="302.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#525252" text-anchor="middle" transform="rotate(-90.0 506.0 302.0)">NLL Training Loss</text>
   <rect x="560.0" y="352.0" width="344.0" height="100.0" rx="0.0" fill="#F0FDFA" stroke="none" stroke-width="1.5" opacity="0.7"/>
   <line x1="560.0" y1="352.0" x2="904.0" y2="352.0" stroke="#C2410C" stroke-width="2.2" stroke-dasharray="7,5"/>
-  <text x="898.0" y="342.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C2410C" text-anchor="end">Hard gate: Loss &lt; 7.0</text>
-  <text x="898.0" y="374.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="end">Pass region</text>
+  <text x="898.0" y="342.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C2410C" text-anchor="end">Hard gate: Loss &lt; 7.0</text>
+  <text x="898.0" y="374.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="end">Pass region</text>
   <line x1="887.6" y1="152.0" x2="887.6" y2="452.0" stroke="#C48A1A" stroke-width="1.8" stroke-dasharray="4,4"/>
-  <text x="881.6" y="170.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C48A1A" text-anchor="end">1B tokens</text>
+  <text x="881.6" y="170.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C48A1A" text-anchor="end">1B tokens</text>
   <polyline points="567.2,152.6 569.6,160.7 571.9,168.4 574.2,175.9 576.5,183.2 578.8,190.2 581.2,197.1 583.5,203.8 585.8,210.3 588.1,216.5 590.5,222.6 592.8,228.3 595.1,233.8 597.4,238.9 599.7,243.8 602.1,248.3 604.4,252.5 606.7,256.4 609.0,260.0 611.3,263.4 613.7,266.6 616.0,269.6 618.3,272.6 620.6,275.4 623.0,278.2 625.3,281.0 627.6,283.9 629.9,286.8 632.2,289.7 634.6,292.7 636.9,295.8 639.2,298.8 641.5,301.9 643.8,305.0 646.2,308.1 648.5,311.0 650.8,313.8 653.1,316.5 655.5,319.1 657.8,321.5 660.1,323.7 662.4,325.7 664.7,327.5 667.1,329.2 669.4,330.8 671.7,332.3 674.0,333.7 676.4,335.1 678.7,336.4 681.0,337.8 683.3,339.2 685.6,340.7 688.0,342.2 690.3,343.8 692.6,345.5 694.9,347.2 697.2,349.0 699.6,350.8 701.9,352.5 704.2,354.3 706.5,356.0 708.9,357.6 711.2,359.1 713.5,360.5 715.8,361.8 718.1,363.0 720.5,364.0 722.8,365.0 725.1,365.8 727.4,366.6 729.7,367.3 732.1,367.9 734.4,368.6 736.7,369.2 739.0,369.9 741.4,370.7 743.7,371.5 746.0,372.3 748.3,373.2 750.6,374.2 753.0,375.2 755.3,376.3 757.6,377.3 759.9,378.4 762.3,379.4 764.6,380.4 766.9,381.4 769.2,382.2 771.5,383.0 773.9,383.7 776.2,384.3 778.5,384.9 780.8,385.3 783.1,385.7 785.5,386.0 787.8,386.3 790.1,386.6 792.4,386.9 794.8,387.2 797.1,387.6 799.4,387.9 801.7,388.4 804.0,388.9 806.4,389.4 808.7,390.0 811.0,390.6 813.3,391.2 815.6,391.9 818.0,392.5 820.3,393.2 822.6,393.8 824.9,394.3 827.3,394.8 829.6,395.3 831.9,395.6 834.2,395.9 836.5,396.2 838.9,396.4 841.2,396.5 843.5,396.7 845.8,396.8 848.2,396.9 850.5,397.0 852.8,397.1 855.1,397.3 857.4,397.5 859.8,397.7 862.1,398.0 864.4,398.3 866.7,398.7 869.0,399.1 871.4,399.5 873.7,399.9 876.0,400.3 878.3,400.7 880.7,401.1 883.0,401.4 885.3,401.7 887.6,401.9" fill="none" stroke="#0B4F8A" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
   <circle cx="701.9" cy="352.5" r="6.0" fill="#0D9488" stroke="#FFFFFF" stroke-width="2.0"/>
   <line x1="701.9" y1="344.5" x2="735.9" y2="300.5" stroke="#0D9488" stroke-width="1.5"/>
-  <text x="739.9" y="296.5" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.0" font-weight="bold" fill="#0D9488" text-anchor="start">Crosses 7.0 (~0.43B)</text>
+  <text x="739.9" y="296.5" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.0" font-weight="bold" fill="#0D9488" text-anchor="start">Crosses 7.0 (~0.43B)</text>
   <circle cx="887.6" cy="401.9" r="5.5" fill="#0B4F8A" stroke="#FFFFFF" stroke-width="2.0"/>
-  <text x="875.6" y="423.9" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.0" font-weight="bold" fill="#0B4F8A" text-anchor="end">End ~6.00 (schematic)</text>
-  <rect x="504.0" y="514.0" width="408.0" height="96.0" rx="6.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.2"/>
-  <text x="520.0" y="538.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">ASC22 Acceptance &amp; Scoring Rules</text>
-  <text x="520.0" y="562.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.0" font-weight="normal" fill="#334155" text-anchor="start">• PyTorch only (Megatron-LM / DeepSpeed allowed)</text>
-  <text x="520.0" y="586.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.0" font-weight="normal" fill="#334155" text-anchor="start">• Loss ≥ 7.0 or missing logs / TensorBoard → 0 pts</text>
+  <text x="875.6" y="423.9" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.0" font-weight="bold" fill="#0B4F8A" text-anchor="end">End ~6.00 (schematic)</text>
+  <rect x="504.0" y="514.0" width="408.0" height="96.0" rx="6.0" fill="#F4F4F5" stroke="#EBEBEB" stroke-width="1.2"/>
+  <text x="520.0" y="538.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="start">ASC22 Acceptance &amp; Scoring Rules</text>
+  <text x="520.0" y="562.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.0" font-weight="normal" fill="#525252" text-anchor="start">• PyTorch only (Megatron-LM / DeepSpeed allowed)</text>
+  <text x="520.0" y="586.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.0" font-weight="normal" fill="#525252" text-anchor="start">• Loss ≥ 7.0 or missing logs / TensorBoard → 0 pts</text>
 </svg>

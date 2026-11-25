@@ -1,143 +1,143 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="660" viewBox="0 0 960 660">
   <defs>
-    <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#475569"/></marker>
+    <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#525252"/></marker>
     <marker id="arr_blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0B4F8A"/></marker>
     <marker id="arr_teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0D9488"/></marker>
     <marker id="arr_coral" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C2410C"/></marker>
     <marker id="arr_gold" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C48A1A"/></marker>
     <marker id="arr_violet" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#6D28D9"/></marker>
-    <marker id="arr_muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#64748B"/></marker>
+    <marker id="arr_muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#737373"/></marker>
   </defs>
-  <rect width="960" height="660" fill="#FAFBFD"/>
+  <rect width="960" height="660" fill="#FAFAFA"/>
   <rect x="28.0" y="22.0" width="6.0" height="36.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="44.0" y="44.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#0F172A" text-anchor="start">ASC Finals 48h Workflow &amp; Historical Scoring Weights</text>
-  <text x="44.0" y="66.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="start">Five-stage regression loop &amp; ASC26 100-point split (historical reference; ASC27 rules TBD)</text>
-  <rect x="28.0" y="86.0" width="904.0" height="246.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
-  <rect x="28.0" y="86.0" width="904.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
-  <rect x="28.0" y="112.0" width="904.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
-  <line x1="28.0" y1="120.0" x2="932.0" y2="120.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <text x="44.0" y="44.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#171717" text-anchor="start">ASC Finals 48h Workflow &amp; Historical Scoring Weights</text>
+  <text x="44.0" y="66.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#737373" text-anchor="start">Five-stage regression loop &amp; ASC26 100-point split (historical reference; ASC27 rules TBD)</text>
+  <rect x="28.0" y="86.0" width="904.0" height="246.0" rx="8.0" fill="#FFFFFF" stroke="#EBEBEB" stroke-width="1.4"/>
+  <rect x="28.0" y="86.0" width="904.0" height="34.0" rx="8.0" fill="#F4F4F5" stroke="#EBEBEB" stroke-width="1.0"/>
+  <rect x="28.0" y="112.0" width="904.0" height="8.0" rx="0.0" fill="#F4F4F5" stroke="none" stroke-width="1.5"/>
+  <line x1="28.0" y1="120.0" x2="932.0" y2="120.0" stroke="#EBEBEB" stroke-width="1.0"/>
   <rect x="40.0" y="95.0" width="4.0" height="16.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="52.0" y="109.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">ASC Finals 48-Hour Execution &amp; Regression Loop</text>
-  <rect x="44.0" y="136.0" width="154.0" height="142.0" rx="7.0" fill="#F1F5F9" stroke="#475569" stroke-width="1.6"/>
-  <rect x="44.0" y="136.0" width="154.0" height="28.0" rx="6.0" fill="#475569" stroke="none" stroke-width="1.5"/>
-  <rect x="44.0" y="156.0" width="154.0" height="8.0" rx="0.0" fill="#475569" stroke="none" stroke-width="1.5"/>
-  <text x="54.0" y="156.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="start">01</text>
-  <text x="188.0" y="155.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="normal" fill="#FFFFFF" text-anchor="end">0-4h</text>
-  <text x="121.0" y="186.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0F172A" text-anchor="middle">CPU Reference</text>
-  <text x="55.0" y="210.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Lock reference output</text>
-  <text x="55.0" y="231.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Measure baseline time</text>
-  <text x="55.0" y="252.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Build auto-diff script</text>
-  <line x1="201.0" y1="207.0" x2="220.0" y2="207.0" stroke="#475569" stroke-width="2.2" marker-end="url(#arr)"/>
+  <text x="52.0" y="109.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="start">ASC Finals 48-Hour Execution &amp; Regression Loop</text>
+  <rect x="44.0" y="136.0" width="154.0" height="142.0" rx="7.0" fill="#F4F4F5" stroke="#525252" stroke-width="1.6"/>
+  <rect x="44.0" y="136.0" width="154.0" height="28.0" rx="6.0" fill="#525252" stroke="none" stroke-width="1.5"/>
+  <rect x="44.0" y="156.0" width="154.0" height="8.0" rx="0.0" fill="#525252" stroke="none" stroke-width="1.5"/>
+  <text x="54.0" y="156.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="start">01</text>
+  <text x="188.0" y="155.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="normal" fill="#FFFFFF" text-anchor="end">0-4h</text>
+  <text x="121.0" y="186.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#171717" text-anchor="middle">CPU Reference</text>
+  <text x="55.0" y="210.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="start">Lock reference output</text>
+  <text x="55.0" y="231.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="start">Measure baseline time</text>
+  <text x="55.0" y="252.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="start">Build auto-diff script</text>
+  <line x1="201.0" y1="207.0" x2="220.0" y2="207.0" stroke="#525252" stroke-width="2.2" marker-end="url(#arr)"/>
   <rect x="223.0" y="136.0" width="154.0" height="142.0" rx="7.0" fill="#EFF6FF" stroke="#0B4F8A" stroke-width="1.6"/>
   <rect x="223.0" y="136.0" width="154.0" height="28.0" rx="6.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
   <rect x="223.0" y="156.0" width="154.0" height="8.0" rx="0.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="233.0" y="156.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="start">02</text>
-  <text x="367.0" y="155.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="normal" fill="#FFFFFF" text-anchor="end">4-10h</text>
-  <text x="300.0" y="186.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0F172A" text-anchor="middle">Profile</text>
-  <text x="234.0" y="210.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Nsight / Score-P trace</text>
-  <text x="234.0" y="231.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Split compute vs. copy</text>
-  <text x="234.0" y="252.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Pinpoint real hotspot</text>
-  <line x1="380.0" y1="207.0" x2="399.0" y2="207.0" stroke="#475569" stroke-width="2.2" marker-end="url(#arr)"/>
+  <text x="233.0" y="156.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="start">02</text>
+  <text x="367.0" y="155.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="normal" fill="#FFFFFF" text-anchor="end">4-10h</text>
+  <text x="300.0" y="186.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#171717" text-anchor="middle">Profile</text>
+  <text x="234.0" y="210.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="start">Nsight / Score-P trace</text>
+  <text x="234.0" y="231.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="start">Split compute vs. copy</text>
+  <text x="234.0" y="252.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="start">Pinpoint real hotspot</text>
+  <line x1="380.0" y1="207.0" x2="399.0" y2="207.0" stroke="#525252" stroke-width="2.2" marker-end="url(#arr)"/>
   <rect x="402.0" y="136.0" width="154.0" height="142.0" rx="7.0" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.6"/>
   <rect x="402.0" y="136.0" width="154.0" height="28.0" rx="6.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
   <rect x="402.0" y="156.0" width="154.0" height="8.0" rx="0.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
-  <text x="412.0" y="156.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="start">03</text>
-  <text x="546.0" y="155.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="normal" fill="#FFFFFF" text-anchor="end">10-32h</text>
-  <text x="479.0" y="186.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0F172A" text-anchor="middle">Optimize</text>
-  <text x="413.0" y="210.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">GPU-resident + async</text>
-  <text x="413.0" y="231.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Kernel &amp; MPI tuning</text>
-  <text x="413.0" y="252.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Small verified commits</text>
-  <line x1="559.0" y1="207.0" x2="578.0" y2="207.0" stroke="#475569" stroke-width="2.2" marker-end="url(#arr)"/>
+  <text x="412.0" y="156.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="start">03</text>
+  <text x="546.0" y="155.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="normal" fill="#FFFFFF" text-anchor="end">10-32h</text>
+  <text x="479.0" y="186.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#171717" text-anchor="middle">Optimize</text>
+  <text x="413.0" y="210.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="start">GPU-resident + async</text>
+  <text x="413.0" y="231.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="start">Kernel &amp; MPI tuning</text>
+  <text x="413.0" y="252.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="start">Small verified commits</text>
+  <line x1="559.0" y1="207.0" x2="578.0" y2="207.0" stroke="#525252" stroke-width="2.2" marker-end="url(#arr)"/>
   <rect x="581.0" y="136.0" width="154.0" height="142.0" rx="7.0" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.6"/>
   <rect x="581.0" y="136.0" width="154.0" height="28.0" rx="6.0" fill="#6D28D9" stroke="none" stroke-width="1.5"/>
   <rect x="581.0" y="156.0" width="154.0" height="8.0" rx="0.0" fill="#6D28D9" stroke="none" stroke-width="1.5"/>
-  <text x="591.0" y="156.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="start">04</text>
-  <text x="725.0" y="155.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="normal" fill="#FFFFFF" text-anchor="end">32-42h</text>
-  <text x="658.0" y="186.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0F172A" text-anchor="middle">Accuracy Gate</text>
-  <text x="592.0" y="210.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Full long-step runs</text>
-  <text x="592.0" y="231.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Check conservation</text>
-  <text x="592.0" y="252.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Zero tolerance pass</text>
-  <line x1="738.0" y1="207.0" x2="757.0" y2="207.0" stroke="#475569" stroke-width="2.2" marker-end="url(#arr)"/>
+  <text x="591.0" y="156.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="start">04</text>
+  <text x="725.0" y="155.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="normal" fill="#FFFFFF" text-anchor="end">32-42h</text>
+  <text x="658.0" y="186.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#171717" text-anchor="middle">Accuracy Gate</text>
+  <text x="592.0" y="210.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="start">Full long-step runs</text>
+  <text x="592.0" y="231.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="start">Check conservation</text>
+  <text x="592.0" y="252.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="start">Zero tolerance pass</text>
+  <line x1="738.0" y1="207.0" x2="757.0" y2="207.0" stroke="#525252" stroke-width="2.2" marker-end="url(#arr)"/>
   <rect x="760.0" y="136.0" width="154.0" height="142.0" rx="7.0" fill="#FEFCE8" stroke="#C48A1A" stroke-width="1.6"/>
   <rect x="760.0" y="136.0" width="154.0" height="28.0" rx="6.0" fill="#C48A1A" stroke="none" stroke-width="1.5"/>
   <rect x="760.0" y="156.0" width="154.0" height="8.0" rx="0.0" fill="#C48A1A" stroke="none" stroke-width="1.5"/>
-  <text x="770.0" y="156.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="start">05</text>
-  <text x="904.0" y="155.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="normal" fill="#FFFFFF" text-anchor="end">42-48h</text>
-  <text x="837.0" y="186.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0F172A" text-anchor="middle">Power &amp; Q&amp;A</text>
-  <text x="771.0" y="210.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Live meter peak soak</text>
-  <text x="771.0" y="231.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Lock safety headroom</text>
-  <text x="771.0" y="252.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Poster &amp; jury Q&amp;A</text>
+  <text x="770.0" y="156.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="start">05</text>
+  <text x="904.0" y="155.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="normal" fill="#FFFFFF" text-anchor="end">42-48h</text>
+  <text x="837.0" y="186.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#171717" text-anchor="middle">Power &amp; Q&amp;A</text>
+  <text x="771.0" y="210.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="start">Live meter peak soak</text>
+  <text x="771.0" y="231.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="start">Lock safety headroom</text>
+  <text x="771.0" y="252.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="start">Poster &amp; jury Q&amp;A</text>
   <line x1="837.0" y1="278.0" x2="837.0" y2="308.0" stroke="#C2410C" stroke-width="1.8" stroke-dasharray="5,3"/>
   <line x1="658.0" y1="278.0" x2="658.0" y2="308.0" stroke="#C2410C" stroke-width="1.8" stroke-dasharray="5,3"/>
   <line x1="837.0" y1="308.0" x2="479.0" y2="308.0" stroke="#C2410C" stroke-width="1.8" stroke-dasharray="5,3"/>
   <line x1="479.0" y1="308.0" x2="479.0" y2="281.0" stroke="#C2410C" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arr_coral)"/>
   <rect x="539.0" y="296.0" width="316.0" height="22.0" rx="4.0" fill="#FFFFFF" stroke="#C2410C" stroke-width="1.1"/>
-  <text x="697.0" y="312.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C2410C" text-anchor="middle">Failed Accuracy or Power Cap -&gt; Roll Back &amp; Retune</text>
-  <rect x="28.0" y="346.0" width="904.0" height="286.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
-  <rect x="28.0" y="346.0" width="904.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
-  <rect x="28.0" y="372.0" width="904.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
-  <line x1="28.0" y1="380.0" x2="932.0" y2="380.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <text x="697.0" y="312.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C2410C" text-anchor="middle">Failed Accuracy or Power Cap -&gt; Roll Back &amp; Retune</text>
+  <rect x="28.0" y="346.0" width="904.0" height="286.0" rx="8.0" fill="#FFFFFF" stroke="#EBEBEB" stroke-width="1.4"/>
+  <rect x="28.0" y="346.0" width="904.0" height="34.0" rx="8.0" fill="#F4F4F5" stroke="#EBEBEB" stroke-width="1.0"/>
+  <rect x="28.0" y="372.0" width="904.0" height="8.0" rx="0.0" fill="#F4F4F5" stroke="none" stroke-width="1.5"/>
+  <line x1="28.0" y1="380.0" x2="932.0" y2="380.0" stroke="#EBEBEB" stroke-width="1.0"/>
   <rect x="40.0" y="355.0" width="4.0" height="16.0" rx="2.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
-  <text x="52.0" y="369.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">ASC26 Finals 100-Point Distribution (Historical Baseline)</text>
+  <text x="52.0" y="369.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="start">ASC26 Finals 100-Point Distribution (Historical Baseline)</text>
   <rect x="52.0" y="424.0" width="68.5" height="56.0" rx="3.0" fill="#3B82F6" stroke="#FFFFFF" stroke-width="1.4"/>
-  <text x="86.2" y="449.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.0" font-weight="bold" fill="#FFFFFF" text-anchor="middle">ICON</text>
-  <text x="86.2" y="469.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">8 pts</text>
-  <rect x="120.5" y="424.0" width="42.8" height="56.0" rx="3.0" fill="#475569" stroke="#FFFFFF" stroke-width="1.4"/>
-  <text x="141.9" y="449.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="12.2" font-weight="bold" fill="#FFFFFF" text-anchor="middle">HPL</text>
-  <text x="141.9" y="469.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">5</text>
+  <text x="86.2" y="449.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.0" font-weight="bold" fill="#FFFFFF" text-anchor="middle">ICON</text>
+  <text x="86.2" y="469.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">8 pts</text>
+  <rect x="120.5" y="424.0" width="42.8" height="56.0" rx="3.0" fill="#525252" stroke="#FFFFFF" stroke-width="1.4"/>
+  <text x="141.9" y="449.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12.2" font-weight="bold" fill="#FFFFFF" text-anchor="middle">HPL</text>
+  <text x="141.9" y="469.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">5</text>
   <rect x="163.3" y="424.0" width="42.8" height="56.0" rx="3.0" fill="#64748B" stroke="#FFFFFF" stroke-width="1.4"/>
-  <text x="184.7" y="449.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="12.2" font-weight="bold" fill="#FFFFFF" text-anchor="middle">HPCG</text>
-  <text x="184.7" y="469.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">5</text>
+  <text x="184.7" y="449.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12.2" font-weight="bold" fill="#FFFFFF" text-anchor="middle">HPCG</text>
+  <text x="184.7" y="469.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">5</text>
   <rect x="206.1" y="424.0" width="154.1" height="56.0" rx="3.0" fill="#6D28D9" stroke="#FFFFFF" stroke-width="1.4"/>
-  <text x="283.1" y="449.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.0" font-weight="bold" fill="#FFFFFF" text-anchor="middle">UnifoLM</text>
-  <text x="283.1" y="469.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">18 pts</text>
+  <text x="283.1" y="449.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.0" font-weight="bold" fill="#FFFFFF" text-anchor="middle">UnifoLM</text>
+  <text x="283.1" y="469.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">18 pts</text>
   <rect x="360.2" y="424.0" width="154.1" height="56.0" rx="3.0" fill="#0B4F8A" stroke="#FFFFFF" stroke-width="1.4"/>
-  <text x="437.2" y="449.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.0" font-weight="bold" fill="#FFFFFF" text-anchor="middle">AMSS-NCKU</text>
-  <text x="437.2" y="469.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">18 pts</text>
+  <text x="437.2" y="449.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.0" font-weight="bold" fill="#FFFFFF" text-anchor="middle">AMSS-NCKU</text>
+  <text x="437.2" y="469.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">18 pts</text>
   <rect x="514.2" y="424.0" width="154.1" height="56.0" rx="3.0" fill="#0D9488" stroke="#FFFFFF" stroke-width="1.4"/>
-  <text x="591.3" y="449.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.0" font-weight="bold" fill="#FFFFFF" text-anchor="middle">QiboTN</text>
-  <text x="591.3" y="469.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">18 pts</text>
+  <text x="591.3" y="449.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.0" font-weight="bold" fill="#FFFFFF" text-anchor="middle">QiboTN</text>
+  <text x="591.3" y="469.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">18 pts</text>
   <rect x="668.3" y="424.0" width="154.1" height="56.0" rx="3.0" fill="#C2410C" stroke="#FFFFFF" stroke-width="1.4"/>
-  <text x="745.4" y="449.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.0" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Mystery LeWM</text>
-  <text x="745.4" y="469.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">18 pts</text>
+  <text x="745.4" y="449.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.0" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Mystery LeWM</text>
+  <text x="745.4" y="469.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">18 pts</text>
   <rect x="822.4" y="424.0" width="85.6" height="56.0" rx="3.0" fill="#C48A1A" stroke="#FFFFFF" stroke-width="1.4"/>
-  <text x="865.2" y="449.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.0" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Pres.</text>
-  <text x="865.2" y="469.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">10 pts</text>
-  <line x1="54.0" y1="414.0" x2="204.1" y2="414.0" stroke="#475569" stroke-width="1.6"/>
-  <line x1="54.0" y1="414.0" x2="54.0" y2="421.0" stroke="#475569" stroke-width="1.6"/>
-  <line x1="204.1" y1="414.0" x2="204.1" y2="421.0" stroke="#475569" stroke-width="1.6"/>
-  <text x="129.0" y="406.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#475569" text-anchor="middle">Group + Bench (18)</text>
+  <text x="865.2" y="449.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.0" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Pres.</text>
+  <text x="865.2" y="469.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">10 pts</text>
+  <line x1="54.0" y1="414.0" x2="204.1" y2="414.0" stroke="#525252" stroke-width="1.6"/>
+  <line x1="54.0" y1="414.0" x2="54.0" y2="421.0" stroke="#525252" stroke-width="1.6"/>
+  <line x1="204.1" y1="414.0" x2="204.1" y2="421.0" stroke="#525252" stroke-width="1.6"/>
+  <text x="129.0" y="406.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#525252" text-anchor="middle">Group + Bench (18)</text>
   <line x1="208.1" y1="414.0" x2="820.4" y2="414.0" stroke="#0B4F8A" stroke-width="2.0"/>
   <line x1="208.1" y1="414.0" x2="208.1" y2="421.0" stroke="#0B4F8A" stroke-width="2.0"/>
   <line x1="820.4" y1="414.0" x2="820.4" y2="421.0" stroke="#0B4F8A" stroke-width="2.0"/>
-  <text x="514.2" y="406.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.8" font-weight="bold" fill="#0B4F8A" text-anchor="middle">Four Core Applications (72 pts total · 18 pts each)</text>
+  <text x="514.2" y="406.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.8" font-weight="bold" fill="#0B4F8A" text-anchor="middle">Four Core Applications (72 pts total · 18 pts each)</text>
   <line x1="824.4" y1="414.0" x2="906.0" y2="414.0" stroke="#C48A1A" stroke-width="1.6"/>
   <line x1="824.4" y1="414.0" x2="824.4" y2="421.0" stroke="#C48A1A" stroke-width="1.6"/>
   <line x1="906.0" y1="414.0" x2="906.0" y2="421.0" stroke="#C48A1A" stroke-width="1.6"/>
-  <text x="865.2" y="406.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C48A1A" text-anchor="middle">Q&amp;A (10)</text>
-  <line x1="52.0" y1="480.0" x2="52.0" y2="486.0" stroke="#94A3B8" stroke-width="1.2"/>
-  <text x="52.0" y="501.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="middle">0</text>
-  <line x1="120.5" y1="480.0" x2="120.5" y2="486.0" stroke="#94A3B8" stroke-width="1.2"/>
-  <text x="120.5" y="501.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="middle">8</text>
-  <line x1="206.1" y1="480.0" x2="206.1" y2="486.0" stroke="#94A3B8" stroke-width="1.2"/>
-  <text x="206.1" y="501.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="middle">18</text>
-  <line x1="360.2" y1="480.0" x2="360.2" y2="486.0" stroke="#94A3B8" stroke-width="1.2"/>
-  <text x="360.2" y="501.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="middle">36</text>
-  <line x1="514.2" y1="480.0" x2="514.2" y2="486.0" stroke="#94A3B8" stroke-width="1.2"/>
-  <text x="514.2" y="501.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="middle">54</text>
-  <line x1="668.3" y1="480.0" x2="668.3" y2="486.0" stroke="#94A3B8" stroke-width="1.2"/>
-  <text x="668.3" y="501.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="middle">72</text>
-  <line x1="822.4" y1="480.0" x2="822.4" y2="486.0" stroke="#94A3B8" stroke-width="1.2"/>
-  <text x="822.4" y="501.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="middle">90</text>
-  <line x1="908.0" y1="480.0" x2="908.0" y2="486.0" stroke="#94A3B8" stroke-width="1.2"/>
-  <text x="908.0" y="501.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="middle">100</text>
+  <text x="865.2" y="406.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#C48A1A" text-anchor="middle">Q&amp;A (10)</text>
+  <line x1="52.0" y1="480.0" x2="52.0" y2="486.0" stroke="#A3A3A3" stroke-width="1.2"/>
+  <text x="52.0" y="501.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#737373" text-anchor="middle">0</text>
+  <line x1="120.5" y1="480.0" x2="120.5" y2="486.0" stroke="#A3A3A3" stroke-width="1.2"/>
+  <text x="120.5" y="501.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#737373" text-anchor="middle">8</text>
+  <line x1="206.1" y1="480.0" x2="206.1" y2="486.0" stroke="#A3A3A3" stroke-width="1.2"/>
+  <text x="206.1" y="501.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#737373" text-anchor="middle">18</text>
+  <line x1="360.2" y1="480.0" x2="360.2" y2="486.0" stroke="#A3A3A3" stroke-width="1.2"/>
+  <text x="360.2" y="501.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#737373" text-anchor="middle">36</text>
+  <line x1="514.2" y1="480.0" x2="514.2" y2="486.0" stroke="#A3A3A3" stroke-width="1.2"/>
+  <text x="514.2" y="501.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#737373" text-anchor="middle">54</text>
+  <line x1="668.3" y1="480.0" x2="668.3" y2="486.0" stroke="#A3A3A3" stroke-width="1.2"/>
+  <text x="668.3" y="501.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#737373" text-anchor="middle">72</text>
+  <line x1="822.4" y1="480.0" x2="822.4" y2="486.0" stroke="#A3A3A3" stroke-width="1.2"/>
+  <text x="822.4" y="501.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#737373" text-anchor="middle">90</text>
+  <line x1="908.0" y1="480.0" x2="908.0" y2="486.0" stroke="#A3A3A3" stroke-width="1.2"/>
+  <text x="908.0" y="501.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#737373" text-anchor="middle">100</text>
   <rect x="52.0" y="514.0" width="476.0" height="100.0" rx="6.0" fill="#EFF6FF" stroke="#0B4F8A" stroke-width="1.5"/>
-  <text x="68.0" y="538.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.8" font-weight="bold" fill="#0B4F8A" text-anchor="start">Normalized Relative Scoring Formula (ASC Convention)</text>
-  <text x="68.0" y="566.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">Total = Sum w_i * (Perf_team,i / Perf_best,i) + S_pres</text>
-  <text x="68.0" y="594.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">Missing an accuracy gate or exceeding power voids that task score</text>
+  <text x="68.0" y="538.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.8" font-weight="bold" fill="#0B4F8A" text-anchor="start">Normalized Relative Scoring Formula (ASC Convention)</text>
+  <text x="68.0" y="566.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="start">Total = Sum w_i * (Perf_team,i / Perf_best,i) + S_pres</text>
+  <text x="68.0" y="594.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="start">Missing an accuracy gate or exceeding power voids that task score</text>
   <rect x="544.0" y="514.0" width="364.0" height="100.0" rx="6.0" fill="#FEFCE8" stroke="#C48A1A" stroke-width="1.5"/>
-  <text x="560.0" y="538.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.8" font-weight="bold" fill="#C48A1A" text-anchor="start">ASC27 Preparation Takeaways</text>
-  <text x="560.0" y="562.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">1. Core apps carry 72%: balanced passes beat one hero run</text>
-  <text x="560.0" y="582.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">2. HPL/HPCG (10 pts) rapidly validate cluster stability</text>
-  <text x="560.0" y="602.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#334155" text-anchor="start">3. Note: Official ASC27 tasks &amp; weights are TBD</text>
+  <text x="560.0" y="538.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.8" font-weight="bold" fill="#C48A1A" text-anchor="start">ASC27 Preparation Takeaways</text>
+  <text x="560.0" y="562.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="start">1. Core apps carry 72%: balanced passes beat one hero run</text>
+  <text x="560.0" y="582.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="start">2. HPL/HPCG (10 pts) rapidly validate cluster stability</text>
+  <text x="560.0" y="602.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#525252" text-anchor="start">3. Note: Official ASC27 tasks &amp; weights are TBD</text>
 </svg>

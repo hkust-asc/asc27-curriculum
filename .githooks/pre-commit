@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(git rev-parse --show-toplevel)"
+cd "$ROOT"
+
+echo "[pre-commit] Running ASC27 pedagogy, KaTeX, and slide symbol lint..."
+python3 .agents/skills/verify-asc27-curriculum/scripts/audit-pedagogy.py --strict
+
+if [ -f .agents/skills/verify-formal-ring-allreduce/scripts/verify-ring.py ]; then
+  echo "[pre-commit] Running formal Ring All-Reduce verifier..."
+  python3 .agents/skills/verify-formal-ring-allreduce/scripts/verify-ring.py
+fi
+
+echo "[pre-commit] All ASC27 quality gates passed."

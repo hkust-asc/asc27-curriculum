@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stage 1: Hardware Physics &amp; Roofline | HKUST ASC27</title>
+  <link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -19,7 +20,7 @@
     <section class="lab-card" id="cache">
       <div class="lab-header">
         <div>
-          <h2>1. Cache Locality: Row-Major vs. Column-Major</h2>
+          <h2><span class="section-index">01</span>Cache Locality: Row-Major vs. Column-Major</h2>
           <p class="lab-subtitle">Each cache miss fetches 4 contiguous numbers in one 64-byte line. Press Play to watch row walks reuse that line while column walks miss every time.</p>
         </div>
         <span class="pill blue">M02 · Memory Wall</span>
@@ -27,6 +28,7 @@
 
       <div class="lab-grid">
         <div class="controls">
+          <div id="cache-formula"></div>
           <div class="control-row">
             <div class="control-label"><span>Loop Order</span></div>
             <div class="btn-group">
@@ -51,7 +53,7 @@
         </div>
 
         <div class="viz-box">
-          <div style="display:flex; justify-content:space-between; font-size:12px; color:#475569; margin-bottom:8px;">
+          <div style="display:flex; justify-content:space-between; font-size:12px; color:#737373; margin-bottom:8px;">
             <span>8×8 Matrix in Row-Major Memory (4 elements = 1 cache line)</span>
             <span><strong style="color:#0D9488;">Teal</strong> = Hit · <strong style="color:#C2410C;">Coral</strong> = Miss</span>
           </div>
@@ -64,7 +66,7 @@
     <section class="lab-card" id="amdahl">
       <div class="lab-header">
         <div>
-          <h2>2. Amdahl's Law vs. Gustafson's Law</h2>
+          <h2><span class="section-index">02</span>Amdahl's Law vs. Gustafson's Law</h2>
           <p class="lab-subtitle">Slide the parallel fraction and core count. Notice how even a 5% serial section caps strong scaling at 20× forever.</p>
         </div>
         <span class="pill gold">M03 · Scaling Ceilings</span>
@@ -72,6 +74,7 @@
 
       <div class="lab-grid">
         <div class="controls">
+          <div id="amdahl-formula"></div>
           <div class="control-row">
             <div class="control-label"><span>Parallel Fraction (f)</span><span class="control-val" id="am-f-val">95%</span></div>
             <input type="range" id="am-f" min="50" max="99.5" step="0.5" value="95">
@@ -98,7 +101,7 @@
     <section class="lab-card" id="roofline">
       <div class="lab-header">
         <div>
-          <h2>3. Interactive Roofline Explorer</h2>
+          <h2><span class="section-index">03</span>Interactive Roofline Explorer</h2>
           <p class="lab-subtitle">Adjust hardware peak FLOP/s, memory bandwidth, and your kernel's arithmetic intensity. Click presets to see where real ASC workloads land.</p>
         </div>
         <span class="pill teal">M04 · Roofline Model</span>
@@ -106,6 +109,7 @@
 
       <div class="lab-grid">
         <div class="controls">
+          <div id="roofline-formula"></div>
           <div class="control-row">
             <div class="control-label"><span>Workload Presets</span></div>
             <div class="btn-group">
@@ -116,7 +120,7 @@
             </div>
           </div>
           <div class="control-row">
-            <div class="control-label"><span>Peak Compute (P_peak)</span><span class="control-val" id="rf-p-val">30 TFLOP/s</span></div>
+            <div class="control-label"><span>Peak Compute (P<sub>peak</sub>)</span><span class="control-val" id="rf-p-val">30 TFLOP/s</span></div>
             <input type="range" id="rf-p" min="2" max="100" step="1" value="30">
           </div>
           <div class="control-row">
@@ -128,7 +132,7 @@
             <input type="range" id="rf-i" min="-1" max="2.2" step="0.02" value="1.08">
           </div>
           <div class="stat-strip" style="margin:0;">
-            <div class="stat"><div class="stat-k">Ridge Point I_b</div><div class="stat-v blue" id="rf-ib">15.0</div></div>
+            <div class="stat"><div class="stat-k">Ridge Point I*</div><div class="stat-v blue" id="rf-ib">15.0</div></div>
             <div class="stat"><div class="stat-k">Max Speed R</div><div class="stat-v teal" id="rf-r">24.0 TF/s</div></div>
             <div class="stat"><div class="stat-k">Regime</div><div class="stat-v coral" id="rf-reg">Memory</div></div>
           </div>
@@ -144,8 +148,42 @@
     <footer id="site-footer"></footer>
   </main>
 
+  <script src="assets/vendor/katex/katex.min.js"></script>
   <script src="assets/common.js"></script>
   <script>
+    // ---- KATEX FORMULAS & INTERACTIVE SYMBOLS ----
+    window.ASC27.renderFormulaBox(document.getElementById("cache-formula"), {
+      tex: "T_{\\mathrm{eff}} = T_{\\mathrm{hit}} + \\mathrm{MissRate} \\cdot T_{\\mathrm{miss}}",
+      symbols: [
+        { sym: "Teff", tex: "T_{\\mathrm{eff}}", short: "Effective latency", desc: "Average time in nanoseconds per memory access." },
+        { sym: "Thit", tex: "T_{\\mathrm{hit}}", short: "Hit latency", desc: "Time to serve data already in L1 cache (about 1 ns)." },
+        { sym: "MissRate", tex: "\\mathrm{MissRate}", short: "Miss fraction", desc: "Share of accesses that miss cache (0 to 1)." },
+        { sym: "Tmiss", tex: "T_{\\mathrm{miss}}", short: "Miss penalty", desc: "Extra time to fetch a 64-byte line from DRAM (about 60 ns)." }
+      ]
+    });
+
+    window.ASC27.renderFormulaBox(document.getElementById("amdahl-formula"), {
+      tex: "S(k) = \\frac{1}{(1-f) + f/k},\\quad S_w(k) = (1-s) + sk",
+      symbols: [
+        { sym: "S(k)", tex: "S(k)", short: "Strong speedup", desc: "Fixed-problem speedup on k workers under Amdahl's law." },
+        { sym: "f", tex: "f", short: "Parallel fraction", desc: "Share of single-core runtime that can run in parallel." },
+        { sym: "k", tex: "k", short: "Workers", desc: "Number of parallel CPU cores or accelerators." },
+        { sym: "Sw(k)", tex: "S_w(k)", short: "Weak speedup", desc: "Scaled-problem speedup on k workers under Gustafson's law." },
+        { sym: "s", tex: "s", short: "Parallel share", desc: "Fraction of scaled runtime spent in parallel work." }
+      ]
+    });
+
+    window.ASC27.renderFormulaBox(document.getElementById("roofline-formula"), {
+      tex: "R \\le \\min(P_{\\mathrm{peak}},\\, B \\cdot I),\\quad I^* = \\frac{P_{\\mathrm{peak}}}{B}",
+      symbols: [
+        { sym: "R", tex: "R", short: "Attainable rate", desc: "Maximum sustained kernel throughput in TFLOP/s." },
+        { sym: "Ppeak", tex: "P_{\\mathrm{peak}}", short: "Peak compute", desc: "Hardware floating-point ceiling in TFLOP/s." },
+        { sym: "B", tex: "B", short: "Memory bandwidth", desc: "Sustained DRAM or HBM bandwidth in TB/s." },
+        { sym: "I", tex: "I", short: "Intensity", desc: "Kernel floating-point operations per byte moved (FLOP/B)." },
+        { sym: "I*", tex: "I^*", short: "Ridge point", desc: "Intensity where memory and compute ceilings meet (FLOP/B)." }
+      ]
+    });
+
     // ---- LAB 1: CACHE LOCALITY ----
     const gridEl = document.getElementById("cache-grid");
     const cells = [];
@@ -278,32 +316,33 @@
       let grid = "";
       [1, 32, 64, 96, 128].forEach(tick => {
         const x = xMap(tick);
-        grid += `<line x1="${x}" y1="${padT}" x2="${x}" y2="${H - padB}" stroke="#E2E8F0"/>
-                 <text x="${x}" y="${H - 18}" text-anchor="middle" font-size="11" fill="#64748B">${tick}</text>`;
+        grid += `<line x1="${x}" y1="${padT}" x2="${x}" y2="${H - padB}" stroke="#E5E5E5"/>
+                 <text x="${x}" y="${H - 18}" text-anchor="middle" font-size="11" fill="#737373">${tick}</text>`;
       });
       for (let i = 0; i <= 4; i++) {
         const val = (maxY / 4) * i;
         const y = yMap(val);
-        grid += `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#E2E8F0"/>
-                 <text x="${padL - 8}" y="${y + 4}" text-anchor="end" font-size="11" fill="#64748B">${val.toFixed(0)}x</text>`;
+        grid += `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#E5E5E5"/>
+                 <text x="${padL - 8}" y="${y + 4}" text-anchor="end" font-size="11" fill="#737373">${val.toFixed(0)}x</text>`;
       }
 
       const ceilY = yMap(sMax);
       amSvg.innerHTML = `
+        <rect x="${padL}" y="${padT}" width="${W - padL - padR}" height="${H - padT - padB}" fill="#FAFAFA"/>
         ${grid}
-        <line x1="${padL}" y1="${H - padB}" x2="${W - padR}" y2="${H - padB}" stroke="#94A3B8"/>
-        <line x1="${padL}" y1="${padT}" x2="${padL}" y2="${H - padB}" stroke="#94A3B8"/>
+        <line x1="${padL}" y1="${H - padB}" x2="${W - padR}" y2="${H - padB}" stroke="#A3A3A3"/>
+        <line x1="${padL}" y1="${padT}" x2="${padL}" y2="${H - padB}" stroke="#A3A3A3"/>
         <line x1="${padL}" y1="${ceilY}" x2="${W - padR}" y2="${ceilY}" stroke="#C2410C" stroke-dasharray="6 4" stroke-width="1.5"/>
         <text x="${W - padR - 4}" y="${ceilY - 6}" text-anchor="end" font-size="11" font-weight="700" fill="#C2410C">Ceiling 1/(1-f) = ${sMax.toFixed(1)}x</text>
         <path d="${pathG}" fill="none" stroke="#0D9488" stroke-width="2.2" stroke-dasharray="4 3"/>
         <path d="${pathA}" fill="none" stroke="#0B4F8A" stroke-width="3"/>
         <circle cx="${xMap(k)}" cy="${yMap(sAmdahl)}" r="6" fill="#0B4F8A" stroke="#FFFFFF" stroke-width="2"/>
-        <text x="${W / 2}" y="${H - 3}" text-anchor="middle" font-size="12" font-weight="600" fill="#334155">Number of Cores (k)</text>
-        <text x="16" y="${H / 2}" text-anchor="middle" font-size="12" font-weight="600" fill="#334155" transform="rotate(-90 16 ${H / 2})">Speedup</text>
+        <text x="${W / 2}" y="${H - 3}" text-anchor="middle" font-size="12" font-weight="600" fill="#171717">Number of Cores (k)</text>
+        <text x="16" y="${H / 2}" text-anchor="middle" font-size="12" font-weight="600" fill="#171717" transform="rotate(-90 16 ${H / 2})">Speedup</text>
         <rect x="${padL + 10}" y="${padT + 4}" width="12" height="3" fill="#0B4F8A"/>
-        <text x="${padL + 28}" y="${padT + 9}" font-size="11" fill="#334155">Amdahl (Strong)</text>
+        <text x="${padL + 28}" y="${padT + 9}" font-size="11" fill="#171717">Amdahl (Strong)</text>
         <rect x="${padL + 140}" y="${padT + 4}" width="12" height="3" fill="#0D9488"/>
-        <text x="${padL + 158}" y="${padT + 9}" font-size="11" fill="#334155">Gustafson (Weak)</text>
+        <text x="${padL + 158}" y="${padT + 9}" font-size="11" fill="#171717">Gustafson (Weak)</text>
       `;
     }
     amF.oninput = drawAmdahl;
@@ -348,7 +387,7 @@
         msg.textContent = `Memory-bound (I < ${Ib.toFixed(1)}). Cut DRAM/HBM traffic via cache tiling or fusion before tuning math instructions.`;
       } else {
         msg.className = "takeaway teal";
-        msg.textContent = `Compute-bound (I >= ${Ib.toFixed(1)}). Use SIMD, Tensor Cores, or lower FLOP count to beat ${P.toFixed(0)} TFLOP/s.`;
+        msg.textContent = `Compute-bound (I ≥ ${Ib.toFixed(1)}). Use SIMD, Tensor Cores, or lower FLOP count to beat ${P.toFixed(0)} TFLOP/s.`;
       }
 
       const W = 640, H = 330, padL = 62, padR = 24, padT = 26, padB = 46;
@@ -360,13 +399,13 @@
       let grid = "";
       [0.1, 1, 10, 100].forEach(v => {
         const x = xMap(v);
-        grid += `<line x1="${x}" y1="${padT}" x2="${x}" y2="${H - padB}" stroke="#E2E8F0"/>
-                 <text x="${x}" y="${H - 20}" text-anchor="middle" font-size="11" fill="#64748B">${v}</text>`;
+        grid += `<line x1="${x}" y1="${padT}" x2="${x}" y2="${H - padB}" stroke="#E5E5E5"/>
+                 <text x="${x}" y="${H - 20}" text-anchor="middle" font-size="11" fill="#737373">${v}</text>`;
       });
       [0.1, 1, 10, 100].forEach(v => {
         const y = yMap(v);
-        grid += `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#E2E8F0"/>
-                 <text x="${padL - 8}" y="${y + 4}" text-anchor="end" font-size="11" fill="#64748B">${v}</text>`;
+        grid += `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#E5E5E5"/>
+                 <text x="${padL - 8}" y="${y + 4}" text-anchor="end" font-size="11" fill="#737373">${v}</text>`;
       });
 
       const x0 = Math.pow(10, minLogI), xEnd = Math.pow(10, maxLogI);
@@ -378,14 +417,16 @@
         <rect x="${padL}" y="${padT}" width="${Math.max(0, xMap(Ib) - padL)}" height="${H - padT - padB}" fill="#FFF7ED" opacity="0.65"/>
         <rect x="${xMap(Ib)}" y="${padT}" width="${Math.max(0, W - padR - xMap(Ib))}" height="${H - padT - padB}" fill="#F0FDFA" opacity="0.65"/>
         ${grid}
-        <line x1="${xMap(Ib)}" y1="${padT}" x2="${xMap(Ib)}" y2="${H - padB}" stroke="#94A3B8" stroke-dasharray="5 4"/>
-        <text x="${xMap(Ib)}" y="${padT + 14}" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Ridge I_b = ${Ib.toFixed(1)}</text>
+        <line x1="${padL}" y1="${H - padB}" x2="${W - padR}" y2="${H - padB}" stroke="#A3A3A3"/>
+        <line x1="${padL}" y1="${padT}" x2="${padL}" y2="${H - padB}" stroke="#A3A3A3"/>
+        <line x1="${xMap(Ib)}" y1="${padT}" x2="${xMap(Ib)}" y2="${H - padB}" stroke="#737373" stroke-dasharray="5 4"/>
+        <text x="${xMap(Ib)}" y="${padT + 14}" text-anchor="middle" font-size="11" font-weight="700" fill="#171717">Ridge I* = ${Ib.toFixed(1)}</text>
         <path d="${roofPath}" fill="none" stroke="#0B4F8A" stroke-width="3.2"/>
         <line x1="${kx}" y1="${ky}" x2="${kx}" y2="${H - padB}" stroke="${isMem ? "#C2410C" : "#0D9488"}" stroke-dasharray="3 3"/>
         <circle cx="${kx}" cy="${ky}" r="7" fill="${isMem ? "#C2410C" : "#0D9488"}" stroke="#FFFFFF" stroke-width="2"/>
         <text x="${kx}" y="${ky - 12}" text-anchor="middle" font-size="12" font-weight="700" fill="${isMem ? "#C2410C" : "#0D9488"}">(${I.toFixed(2)}, ${R.toFixed(1)} TF/s)</text>
-        <text x="${W / 2}" y="${H - 4}" text-anchor="middle" font-size="12" font-weight="600" fill="#334155">Arithmetic Intensity I (FLOP / Byte, log scale)</text>
-        <text x="16" y="${H / 2}" text-anchor="middle" font-size="12" font-weight="600" fill="#334155" transform="rotate(-90 16 ${H / 2})">Throughput (TFLOP/s, log)</text>
+        <text x="${W / 2}" y="${H - 4}" text-anchor="middle" font-size="12" font-weight="600" fill="#171717">Arithmetic Intensity I (FLOP / Byte, log scale)</text>
+        <text x="16" y="${H / 2}" text-anchor="middle" font-size="12" font-weight="600" fill="#171717" transform="rotate(-90 16 ${H / 2})">Throughput (TFLOP/s, log)</text>
       `;
     }
     rfP.oninput = drawRoofline;

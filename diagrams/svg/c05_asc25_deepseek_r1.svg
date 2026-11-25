@@ -1,115 +1,115 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="660" viewBox="0 0 960 660">
   <defs>
-    <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#475569"/></marker>
+    <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#525252"/></marker>
     <marker id="arr_blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0B4F8A"/></marker>
     <marker id="arr_teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0D9488"/></marker>
     <marker id="arr_coral" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C2410C"/></marker>
     <marker id="arr_gold" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C48A1A"/></marker>
     <marker id="arr_violet" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#6D28D9"/></marker>
-    <marker id="arr_muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#64748B"/></marker>
+    <marker id="arr_muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#737373"/></marker>
   </defs>
-  <rect width="960" height="660" fill="#FAFBFD"/>
+  <rect width="960" height="660" fill="#FAFAFA"/>
   <rect x="28.0" y="22.0" width="6.0" height="36.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="44.0" y="44.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#0F172A" text-anchor="start">ASC25 DeepSeek R1-Distill 32B: CPU Bandwidth Ceiling</text>
-  <text x="44.0" y="66.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="start">CPU-only · Historical 4 kW cap · ≥4-bit quant allowed · No pruning or cross-run KV reuse</text>
-  <rect x="28.0" y="92.0" width="434.0" height="416.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
-  <rect x="28.0" y="92.0" width="434.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
-  <rect x="28.0" y="118.0" width="434.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
-  <line x1="28.0" y1="126.0" x2="462.0" y2="126.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <text x="44.0" y="44.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#171717" text-anchor="start">ASC25 DeepSeek R1-Distill 32B: CPU Bandwidth Ceiling</text>
+  <text x="44.0" y="66.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#737373" text-anchor="start">CPU-only · Historical 4 kW cap · ≥4-bit quant allowed · No pruning or cross-run KV reuse</text>
+  <rect x="28.0" y="92.0" width="434.0" height="416.0" rx="8.0" fill="#FFFFFF" stroke="#EBEBEB" stroke-width="1.4"/>
+  <rect x="28.0" y="92.0" width="434.0" height="34.0" rx="8.0" fill="#F4F4F5" stroke="#EBEBEB" stroke-width="1.0"/>
+  <rect x="28.0" y="118.0" width="434.0" height="8.0" rx="0.0" fill="#F4F4F5" stroke="none" stroke-width="1.5"/>
+  <line x1="28.0" y1="126.0" x2="462.0" y2="126.0" stroke="#EBEBEB" stroke-width="1.0"/>
   <rect x="40.0" y="101.0" width="4.0" height="16.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="52.0" y="115.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">32B Weight Footprint (GB)</text>
+  <text x="52.0" y="115.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="start">32B Weight Footprint (GB)</text>
   <rect x="98.0" y="156.0" width="336.0" height="294.0" rx="0.0" fill="#FFFFFF" stroke="none" stroke-width="1.5"/>
-  <line x1="98.0" y1="450.0" x2="434.0" y2="450.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="93.0" y1="450.0" x2="98.0" y2="450.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="88.0" y="455.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">0</text>
-  <line x1="98.0" y1="387.3" x2="434.0" y2="387.3" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="93.0" y1="387.3" x2="98.0" y2="387.3" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="88.0" y="392.3" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">16</text>
-  <line x1="98.0" y1="324.6" x2="434.0" y2="324.6" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="93.0" y1="324.6" x2="98.0" y2="324.6" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="88.0" y="329.6" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">32</text>
-  <line x1="98.0" y1="261.8" x2="434.0" y2="261.8" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="93.0" y1="261.8" x2="98.0" y2="261.8" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="88.0" y="266.8" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">48</text>
-  <line x1="98.0" y1="199.1" x2="434.0" y2="199.1" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="93.0" y1="199.1" x2="98.0" y2="199.1" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="88.0" y="204.1" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">64</text>
-  <line x1="98.0" y1="450.0" x2="434.0" y2="450.0" stroke="#475569" stroke-width="1.8"/>
-  <line x1="98.0" y1="156.0" x2="98.0" y2="450.0" stroke="#475569" stroke-width="1.8"/>
-  <text x="44.0" y="303.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#334155" text-anchor="middle" transform="rotate(-90.0 44.0 303.0)">Weight Footprint (GB)</text>
+  <line x1="98.0" y1="450.0" x2="434.0" y2="450.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="93.0" y1="450.0" x2="98.0" y2="450.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="88.0" y="455.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="end">0</text>
+  <line x1="98.0" y1="387.3" x2="434.0" y2="387.3" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="93.0" y1="387.3" x2="98.0" y2="387.3" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="88.0" y="392.3" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="end">16</text>
+  <line x1="98.0" y1="324.6" x2="434.0" y2="324.6" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="93.0" y1="324.6" x2="98.0" y2="324.6" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="88.0" y="329.6" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="end">32</text>
+  <line x1="98.0" y1="261.8" x2="434.0" y2="261.8" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="93.0" y1="261.8" x2="98.0" y2="261.8" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="88.0" y="266.8" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="end">48</text>
+  <line x1="98.0" y1="199.1" x2="434.0" y2="199.1" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="93.0" y1="199.1" x2="98.0" y2="199.1" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="88.0" y="204.1" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="end">64</text>
+  <line x1="98.0" y1="450.0" x2="434.0" y2="450.0" stroke="#525252" stroke-width="1.8"/>
+  <line x1="98.0" y1="156.0" x2="98.0" y2="450.0" stroke="#525252" stroke-width="1.8"/>
+  <text x="44.0" y="303.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#525252" text-anchor="middle" transform="rotate(-90.0 44.0 303.0)">Weight Footprint (GB)</text>
   <rect x="122.0" y="199.1" width="64.0" height="250.9" rx="5.0" fill="#C2410C" stroke="none" stroke-width="1.5"/>
-  <text x="154.0" y="189.1" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="16.5" font-weight="bold" fill="#C2410C" text-anchor="middle">64 GB</text>
-  <text x="154.0" y="472.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="middle">BF16</text>
-  <text x="154.0" y="491.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">16-bit</text>
+  <text x="154.0" y="189.1" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="16.5" font-weight="bold" fill="#C2410C" text-anchor="middle">64 GB</text>
+  <text x="154.0" y="472.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="middle">BF16</text>
+  <text x="154.0" y="491.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="middle">16-bit</text>
   <rect x="234.0" y="324.6" width="64.0" height="125.4" rx="5.0" fill="#C48A1A" stroke="none" stroke-width="1.5"/>
-  <text x="266.0" y="314.6" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="16.5" font-weight="bold" fill="#C48A1A" text-anchor="middle">32 GB</text>
-  <text x="266.0" y="472.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="middle">INT8</text>
-  <text x="266.0" y="491.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">8-bit</text>
+  <text x="266.0" y="314.6" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="16.5" font-weight="bold" fill="#C48A1A" text-anchor="middle">32 GB</text>
+  <text x="266.0" y="472.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="middle">INT8</text>
+  <text x="266.0" y="491.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="middle">8-bit</text>
   <rect x="346.0" y="387.3" width="64.0" height="62.7" rx="5.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
-  <text x="378.0" y="377.3" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="16.5" font-weight="bold" fill="#0D9488" text-anchor="middle">16 GB</text>
-  <text x="378.0" y="472.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="middle">INT4</text>
-  <text x="378.0" y="491.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">4-bit</text>
+  <text x="378.0" y="377.3" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="16.5" font-weight="bold" fill="#0D9488" text-anchor="middle">16 GB</text>
+  <text x="378.0" y="472.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="middle">INT4</text>
+  <text x="378.0" y="491.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="middle">4-bit</text>
   <path d="M 188.0 211.1 Q 277.2 183.4 372.0 340.2" fill="none" stroke="#0D9488" stroke-width="2.0" stroke-dasharray="5,4" marker-end="url(#arr_teal)"/>
-  <text x="305.2" y="238.3" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0D9488" text-anchor="middle">4× less I/O</text>
-  <rect x="482.0" y="92.0" width="450.0" height="416.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
-  <rect x="482.0" y="92.0" width="450.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
-  <rect x="482.0" y="118.0" width="450.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
-  <line x1="482.0" y1="126.0" x2="932.0" y2="126.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <text x="305.2" y="238.3" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0D9488" text-anchor="middle">4× less I/O</text>
+  <rect x="482.0" y="92.0" width="450.0" height="416.0" rx="8.0" fill="#FFFFFF" stroke="#EBEBEB" stroke-width="1.4"/>
+  <rect x="482.0" y="92.0" width="450.0" height="34.0" rx="8.0" fill="#F4F4F5" stroke="#EBEBEB" stroke-width="1.0"/>
+  <rect x="482.0" y="118.0" width="450.0" height="8.0" rx="0.0" fill="#F4F4F5" stroke="none" stroke-width="1.5"/>
+  <line x1="482.0" y1="126.0" x2="932.0" y2="126.0" stroke="#EBEBEB" stroke-width="1.0"/>
   <rect x="494.0" y="101.0" width="4.0" height="16.0" rx="2.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
-  <text x="506.0" y="115.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">Decode Ceiling (Dual DDR5 = 400 GB/s)</text>
+  <text x="506.0" y="115.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="start">Decode Ceiling (Dual DDR5 = 400 GB/s)</text>
   <rect x="554.0" y="156.0" width="352.0" height="294.0" rx="0.0" fill="#FFFFFF" stroke="none" stroke-width="1.5"/>
-  <line x1="554.0" y1="450.0" x2="906.0" y2="450.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="549.0" y1="450.0" x2="554.0" y2="450.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="544.0" y="455.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">0</text>
-  <line x1="554.0" y1="401.0" x2="906.0" y2="401.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="549.0" y1="401.0" x2="554.0" y2="401.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="544.0" y="406.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">5</text>
-  <line x1="554.0" y1="352.0" x2="906.0" y2="352.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="549.0" y1="352.0" x2="554.0" y2="352.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="544.0" y="357.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">10</text>
-  <line x1="554.0" y1="303.0" x2="906.0" y2="303.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="549.0" y1="303.0" x2="554.0" y2="303.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="544.0" y="308.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">15</text>
-  <line x1="554.0" y1="254.0" x2="906.0" y2="254.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="549.0" y1="254.0" x2="554.0" y2="254.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="544.0" y="259.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">20</text>
-  <line x1="554.0" y1="205.0" x2="906.0" y2="205.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="549.0" y1="205.0" x2="554.0" y2="205.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="544.0" y="210.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">25</text>
-  <line x1="554.0" y1="156.0" x2="906.0" y2="156.0" stroke="#E2E8F0" stroke-width="1.0"/>
-  <line x1="549.0" y1="156.0" x2="554.0" y2="156.0" stroke="#94A3B8" stroke-width="1.4"/>
-  <text x="544.0" y="161.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="end">30</text>
-  <line x1="554.0" y1="450.0" x2="906.0" y2="450.0" stroke="#475569" stroke-width="1.8"/>
-  <line x1="554.0" y1="156.0" x2="554.0" y2="450.0" stroke="#475569" stroke-width="1.8"/>
-  <text x="500.0" y="303.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#334155" text-anchor="middle" transform="rotate(-90.0 500.0 303.0)">Throughput Ceiling (tok/s)</text>
+  <line x1="554.0" y1="450.0" x2="906.0" y2="450.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="549.0" y1="450.0" x2="554.0" y2="450.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="544.0" y="455.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="end">0</text>
+  <line x1="554.0" y1="401.0" x2="906.0" y2="401.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="549.0" y1="401.0" x2="554.0" y2="401.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="544.0" y="406.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="end">5</text>
+  <line x1="554.0" y1="352.0" x2="906.0" y2="352.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="549.0" y1="352.0" x2="554.0" y2="352.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="544.0" y="357.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="end">10</text>
+  <line x1="554.0" y1="303.0" x2="906.0" y2="303.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="549.0" y1="303.0" x2="554.0" y2="303.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="544.0" y="308.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="end">15</text>
+  <line x1="554.0" y1="254.0" x2="906.0" y2="254.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="549.0" y1="254.0" x2="554.0" y2="254.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="544.0" y="259.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="end">20</text>
+  <line x1="554.0" y1="205.0" x2="906.0" y2="205.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="549.0" y1="205.0" x2="554.0" y2="205.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="544.0" y="210.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="end">25</text>
+  <line x1="554.0" y1="156.0" x2="906.0" y2="156.0" stroke="#EBEBEB" stroke-width="1.0"/>
+  <line x1="549.0" y1="156.0" x2="554.0" y2="156.0" stroke="#A3A3A3" stroke-width="1.4"/>
+  <text x="544.0" y="161.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="end">30</text>
+  <line x1="554.0" y1="450.0" x2="906.0" y2="450.0" stroke="#525252" stroke-width="1.8"/>
+  <line x1="554.0" y1="156.0" x2="554.0" y2="450.0" stroke="#525252" stroke-width="1.8"/>
+  <text x="500.0" y="303.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#525252" text-anchor="middle" transform="rotate(-90.0 500.0 303.0)">Throughput Ceiling (tok/s)</text>
   <rect x="580.7" y="388.8" width="64.0" height="61.2" rx="5.0" fill="#C2410C" stroke="none" stroke-width="1.5"/>
-  <text x="612.7" y="378.8" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="15.5" font-weight="bold" fill="#C2410C" text-anchor="middle">6.2 tok/s</text>
-  <text x="612.7" y="472.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="middle">BF16</text>
-  <text x="612.7" y="491.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">400 / GB</text>
+  <text x="612.7" y="378.8" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="15.5" font-weight="bold" fill="#C2410C" text-anchor="middle">6.2 tok/s</text>
+  <text x="612.7" y="472.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="middle">BF16</text>
+  <text x="612.7" y="491.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="middle">400 / GB</text>
   <rect x="698.0" y="327.5" width="64.0" height="122.5" rx="5.0" fill="#C48A1A" stroke="none" stroke-width="1.5"/>
-  <text x="730.0" y="347.5" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="15.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">12.5</text>
-  <text x="730.0" y="365.5" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">tok/s</text>
-  <text x="730.0" y="472.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="middle">INT8</text>
-  <text x="730.0" y="491.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">400 / GB</text>
+  <text x="730.0" y="347.5" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="15.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">12.5</text>
+  <text x="730.0" y="365.5" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">tok/s</text>
+  <text x="730.0" y="472.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="middle">INT8</text>
+  <text x="730.0" y="491.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="middle">400 / GB</text>
   <rect x="815.3" y="205.0" width="64.0" height="245.0" rx="5.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
-  <text x="847.3" y="195.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="15.5" font-weight="bold" fill="#0D9488" text-anchor="middle">25.0 tok/s</text>
-  <text x="847.3" y="472.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="middle">INT4</text>
-  <text x="847.3" y="491.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13.5" font-weight="normal" fill="#64748B" text-anchor="middle">400 / GB</text>
+  <text x="847.3" y="195.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="15.5" font-weight="bold" fill="#0D9488" text-anchor="middle">25.0 tok/s</text>
+  <text x="847.3" y="472.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="middle">INT4</text>
+  <text x="847.3" y="491.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13.5" font-weight="normal" fill="#737373" text-anchor="middle">400 / GB</text>
   <line x1="554.0" y1="304.0" x2="906.0" y2="304.0" stroke="#6D28D9" stroke-width="2.4" stroke-dasharray="7,4"/>
   <circle cx="861.4" cy="304.0" r="6.0" fill="#6D28D9" stroke="#FFFFFF" stroke-width="2.0"/>
   <rect x="560.0" y="162.0" width="214.0" height="38.0" rx="6.0" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.4"/>
-  <text x="570.0" y="178.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="bold" fill="#6D28D9" text-anchor="start">ZJU measured: 14.9 tok/s</text>
-  <text x="570.0" y="194.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="12.6" font-weight="normal" fill="#334155" text-anchor="start">Single-stream (~60% INT4 BW)</text>
-  <rect x="28.0" y="526.0" width="904.0" height="106.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
+  <text x="570.0" y="178.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="bold" fill="#6D28D9" text-anchor="start">ZJU measured: 14.9 tok/s</text>
+  <text x="570.0" y="194.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12.6" font-weight="normal" fill="#525252" text-anchor="start">Single-stream (~60% INT4 BW)</text>
+  <rect x="28.0" y="526.0" width="904.0" height="106.0" rx="8.0" fill="#FFFFFF" stroke="#EBEBEB" stroke-width="1.4"/>
   <rect x="28.0" y="526.0" width="6.0" height="106.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="50.0" y="554.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="15.5" font-weight="bold" fill="#0B4F8A" text-anchor="start">Decode BW bound: tok/s ≤ B_DDR5 / (Bytes_weights + Bytes_KV)</text>
-  <text x="50.0" y="581.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="normal" fill="#334155" text-anchor="start">Each generated token streams all weights + KV cache; low arithmetic intensity pins CPU decode to DRAM BW.</text>
+  <text x="50.0" y="554.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="15.5" font-weight="bold" fill="#0B4F8A" text-anchor="start">Decode BW bound: tok/s ≤ B_DDR5 / (Bytes_weights + Bytes_KV)</text>
+  <text x="50.0" y="581.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.2" font-weight="normal" fill="#525252" text-anchor="start">Each generated token streams all weights + KV cache; low arithmetic intensity pins CPU decode to DRAM BW.</text>
   <rect x="50.0" y="594.0" width="192.0" height="28.0" rx="14.0" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.4"/>
-  <text x="146.0" y="612.5" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0D9488" text-anchor="middle">✓ ≥4-bit quant allowed</text>
+  <text x="146.0" y="612.5" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0D9488" text-anchor="middle">✓ ≥4-bit quant allowed</text>
   <rect x="254.0" y="594.0" width="184.0" height="28.0" rx="14.0" fill="#FFF7ED" stroke="#C2410C" stroke-width="1.4"/>
-  <text x="346.0" y="612.5" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#C2410C" text-anchor="middle">✕ No model pruning</text>
+  <text x="346.0" y="612.5" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#C2410C" text-anchor="middle">✕ No model pruning</text>
   <rect x="450.0" y="594.0" width="228.0" height="28.0" rx="14.0" fill="#FFF7ED" stroke="#C2410C" stroke-width="1.4"/>
-  <text x="564.0" y="612.5" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#C2410C" text-anchor="middle">✕ No cross-run KV reuse</text>
+  <text x="564.0" y="612.5" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#C2410C" text-anchor="middle">✕ No cross-run KV reuse</text>
   <rect x="690.0" y="594.0" width="222.0" height="28.0" rx="14.0" fill="#FEFCE8" stroke="#C48A1A" stroke-width="1.4"/>
-  <text x="801.0" y="612.5" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#C48A1A" text-anchor="middle">Baseline: CPU-only 4 kW</text>
+  <text x="801.0" y="612.5" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#C48A1A" text-anchor="middle">Baseline: CPU-only 4 kW</text>
 </svg>

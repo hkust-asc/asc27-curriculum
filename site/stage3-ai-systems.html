@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stage 3: AI Systems &amp; GPU Porting | HKUST ASC27</title>
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+  <script src="assets/vendor/katex/katex.min.js"></script>
 </head>
 <body>
   <header id="site-header"></header>
@@ -12,18 +14,20 @@
     <section class="hero">
       <div class="eyebrow">Stage 3 · Weeks 9 to 13 · Modules M09 to M12</div>
       <h1>AI Memory Budgets, Ring All-Reduce, KV Cache, and Bottleneck Shifts</h1>
-      <p class="lead">Test why 4.7B models overflow 40 GB GPUs, watch Ring All-Reduce pass gradient chunks, and step through Tsinghua's ASC26 AMSS-NCKU GPU port.</p>
+      <p class="lead">Test why 4.7B models overflow 40 GB GPUs, trace Ring All-Reduce chunks, and step through Tsinghua's ASC26 AMSS-NCKU GPU port.</p>
     </section>
 
     <!-- LAB 1: TRANSFORMER VRAM -->
     <section class="lab-card" id="vram">
       <div class="lab-header">
         <div>
-          <h2>1. Transformer Training VRAM Calculator</h2>
-          <p class="lab-subtitle">Slide model size and toggle activation checkpointing or FSDP sharding to fit inside a 40 GB or 80 GB GPU.</p>
+          <h2><span class="section-index">01</span>Transformer Training VRAM Calculator</h2>
+          <p class="lab-subtitle">Slide model size and toggle checkpointing or FSDP sharding to fit inside a 40 GB or 80 GB GPU.</p>
         </div>
         <span class="pill violet">M09 · VRAM &amp; Mixed Precision</span>
       </div>
+
+      <div id="vr-formula"></div>
 
       <div class="lab-grid">
         <div class="controls">
@@ -64,11 +68,13 @@
     <section class="lab-card" id="ring">
       <div class="lab-header">
         <div>
-          <h2>2. Ring All-Reduce Step Animator</h2>
-          <p class="lab-subtitle">Watch 4 GPUs sum 4 gradient chunks in 3 Reduce-Scatter steps and 3 All-Gather steps. Total traffic per GPU is 2(p-1)G/p.</p>
+          <h2><span class="section-index">02</span>Ring All-Reduce Step Animator</h2>
+          <p class="lab-subtitle">Watch 4 GPUs sum 4 gradient chunks across 3 Reduce-Scatter steps and 3 All-Gather steps.</p>
         </div>
         <span class="pill blue">M10 · Distributed Training</span>
       </div>
+
+      <div id="rg-formula"></div>
 
       <div class="lab-grid">
         <div class="controls">
@@ -89,6 +95,9 @@
 
         <div class="viz-box">
           <svg id="rg-svg" viewBox="0 0 640 280" role="img" aria-label="Ring All-Reduce animation across 4 GPUs"></svg>
+          <div class="step-timeline" id="rg-timeline" aria-label="Ring All-Reduce step timeline">
+            <div class="step-timeline-track" id="rg-timeline-track"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -97,11 +106,13 @@
     <section class="lab-card" id="kv">
       <div class="lab-header">
         <div>
-          <h2>3. LLM KV Cache Growth &amp; Decode Bottleneck</h2>
-          <p class="lab-subtitle">Slide sequence length and batch size on a 32B-class model (BF16). Watch KV cache grow linearly and slow down token-by-token decode.</p>
+          <h2><span class="section-index">03</span>LLM KV Cache Growth &amp; Decode Bottleneck</h2>
+          <p class="lab-subtitle">Slide sequence length and batch size on a 32B-class model. Watch KV cache grow and slow down decode.</p>
         </div>
         <span class="pill teal">M11 · LLM Inference</span>
       </div>
+
+      <div id="kv-formula"></div>
 
       <div class="lab-grid">
         <div class="controls">
@@ -137,11 +148,13 @@
     <section class="lab-card" id="amss">
       <div class="lab-header">
         <div>
-          <h2>4. ASC26 AMSS-NCKU: Watch the Bottleneck Move</h2>
-          <p class="lab-subtitle">Click each stage from Song Jiaxing's Tsinghua talk (4× H100 without NVLink + 256-core EPYC 9755). Moving only compute onto a GPU made step time worse first.</p>
+          <h2><span class="section-index">04</span>ASC26 AMSS-NCKU: Watch the Bottleneck Move</h2>
+          <p class="lab-subtitle">Click each stage from Tsinghua's ASC26 port. Offloading only compute onto a GPU made step time worse first.</p>
         </div>
         <span class="pill coral">M12 · Scientific Porting</span>
       </div>
+
+      <div id="amss-formula"></div>
 
       <div class="btn-group" id="amss-btns" style="margin-bottom:14px;"></div>
       <div class="viz-box">
@@ -155,6 +168,47 @@
 
   <script src="assets/common.js"></script>
   <script>
+    // ---- KATEX FORMULA BOXES ----
+    window.ASC27.renderFormulaBox(document.getElementById("vr-formula"), {
+      tex: "M_{\\mathrm{train}} \\approx 16\\Phi + O(B S L H)",
+      symbols: [
+        { sym: "M_train", tex: "M_{\\mathrm{train}}", short: "Training VRAM", desc: "Total per-GPU memory needed for mixed-precision Adam training in bytes." },
+        { sym: "Phi", tex: "\\Phi", short: "Parameters", desc: "Total trainable model parameters, counted in billions." },
+        { sym: "16", tex: "16", short: "16 B / param", desc: "Static state per parameter: 2 B BF16 weights, 2 B grads, and 12 B FP32 Adam." },
+        { sym: "B,S,L,H", tex: "B, S, L, H", short: "Activation terms", desc: "Batch size B, sequence length S, layer count L, and hidden width H." }
+      ]
+    });
+
+    window.ASC27.renderFormulaBox(document.getElementById("rg-formula"), {
+      tex: "V_{\\mathrm{ring}} = \\frac{2(p-1)}{p}G \\to 2G",
+      symbols: [
+        { sym: "V_ring", tex: "V_{\\mathrm{ring}}", short: "Traffic / GPU", desc: "Total gradient bytes each GPU transmits across Reduce-Scatter and All-Gather." },
+        { sym: "p", tex: "p", short: "Ring GPUs", desc: "Number of GPUs participating in the logical ring." },
+        { sym: "G", tex: "G", short: "Gradient size", desc: "Total size in bytes of one full gradient tensor." }
+      ]
+    });
+
+    window.ASC27.renderFormulaBox(document.getElementById("kv-formula"), {
+      tex: "M_{\\mathrm{KV}} = 2 L B n_{\\mathrm{kv}} d_h t b,\\quad R_{\\mathrm{dec}} \\le \\frac{B_{\\mathrm{mem}}}{W + M_{\\mathrm{KV}}}",
+      symbols: [
+        { sym: "M_KV", tex: "M_{\\mathrm{KV}}", short: "KV cache bytes", desc: "Memory holding cached Key and Value states for all active tokens." },
+        { sym: "L,n_kv,d_h", tex: "L, n_{\\mathrm{kv}}, d_h", short: "Attention shape", desc: "Layer count L, key-value head count n_kv, and head dimension d_h." },
+        { sym: "t", tex: "t", short: "Sequence length", desc: "Cached token count per sequence, scaling KV memory linearly." },
+        { sym: "B_mem", tex: "B_{\\mathrm{mem}}", short: "HBM bandwidth", desc: "Sustained GPU memory bandwidth in bytes per second." },
+        { sym: "W", tex: "W", short: "Weight bytes", desc: "Total model weight bytes streamed from HBM for every decoded token." }
+      ]
+    });
+
+    window.ASC27.renderFormulaBox(document.getElementById("amss-formula"), {
+      tex: "T_{\\mathrm{step}} = T_{\\mathrm{GPU}} + N_{\\mathrm{copy}} T_{\\mathrm{PCIe}} + T_{\\mathrm{CPU}}",
+      symbols: [
+        { sym: "T_step", tex: "T_{\\mathrm{step}}", short: "Step wall time", desc: "Total wall-clock duration of one coarse RK4 simulation step." },
+        { sym: "T_GPU", tex: "T_{\\mathrm{GPU}}", short: "GPU compute", desc: "Time spent running RHS and AMR interpolation kernels on the H100." },
+        { sym: "N_copy T_PCIe", tex: "N_{\\mathrm{copy}} T_{\\mathrm{PCIe}}", short: "PCIe transfers", desc: "Host-device copy count multiplied by per-transfer PCIe latency." },
+        { sym: "T_CPU", tex: "T_{\\mathrm{CPU}}", short: "CPU analysis", desc: "Host time spent on spherical waveform extraction and snapshot I/O." }
+      ]
+    });
+
     // ---- LAB 1: VRAM CALCULATOR ----
     let ckpt = false;
     const vrP = document.getElementById("vr-p");
@@ -203,7 +257,7 @@
             </div>
           </div>
         </div>`).join("") + `
-        <div style="font-size:12px; color:#475569; margin-top:6px;">
+        <div style="font-size:12px; color:#737373; margin-top:6px;">
           Static state = 16 × ${P.toFixed(1)}B / ${gpus} = ${(16 * P / gpus).toFixed(1)} GB · Activations = ${acts.toFixed(1)} GB
         </div>`;
 
@@ -240,6 +294,8 @@
     // ---- LAB 2: RING ALL-REDUCE ----
     let rgStep = 0, rgTimer = null;
     const rgSvg = document.getElementById("rg-svg");
+    const rgTimelineTrack = document.getElementById("rg-timeline-track");
+    const rgStepLabels = ["Init", "RS 1", "RS 2", "RS 3", "AG 1", "AG 2", "Done"];
 
     function getRingState(step) {
       // 4 GPUs, 4 chunks each. State values: 1 = local, 2..3 = partial sum, 4 = full sum
@@ -275,26 +331,45 @@
       let html = `<defs><marker id="rarr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#0B4F8A"/></marker></defs>`;
       // Ring edges 0->1->2->3->0
       const activeArrow = rgStep > 0;
-      const stroke = activeArrow ? "#0B4F8A" : "#CBD5E1";
+      const stroke = activeArrow ? "#0B4F8A" : "#E5E5E5";
       html += `<line x1="250" y1="68" x2="404" y2="68" stroke="${stroke}" stroke-width="2.5" marker-end="url(#rarr)"/>
                <line x1="490" y1="106" x2="490" y2="164" stroke="${stroke}" stroke-width="2.5" marker-end="url(#rarr)"/>
                <line x1="410" y1="208" x2="256" y2="208" stroke="${stroke}" stroke-width="2.5" marker-end="url(#rarr)"/>
                <line x1="170" y1="170" x2="170" y2="112" stroke="${stroke}" stroke-width="2.5" marker-end="url(#rarr)"/>`;
 
-      const fillMap = { 1: "#E2E8F0", 2: "#BAE6FD", 3: "#7DD3FC", 4: "#0D9488" };
-      const textMap = { 1: "#334155", 2: "#0B4F8A", 3: "#0B4F8A", 4: "#FFFFFF" };
+      const fillMap = { 1: "#F1F1F1", 2: "#DBEAFE", 3: "#93C5FD", 4: "#0D9488" };
+      const textMap = { 1: "#525252", 2: "#0B4F8A", 3: "#0B4F8A", 4: "#FFFFFF" };
 
       pos.forEach((p, g) => {
-        html += `<rect x="${p.x}" y="${p.y}" width="160" height="76" rx="8" fill="#FFFFFF" stroke="#0B4F8A" stroke-width="2"/>
-                 <text x="${p.x + 12}" y="${p.y + 22}" font-size="12" font-weight="700" fill="#0F172A">${p.name}</text>`;
+        html += `<rect x="${p.x}" y="${p.y}" width="160" height="76" rx="8" fill="#FFFFFF" stroke="#171717" stroke-width="1.5"/>
+                 <text x="${p.x + 12}" y="${p.y + 22}" font-size="12" font-weight="700" fill="#171717">${p.name}</text>`;
         for (let c = 0; c < 4; c++) {
           const val = st[g][c];
           const cx = p.x + 12 + c * 35;
-          html += `<rect x="${cx}" y="${p.y + 34}" width="30" height="30" rx="4" fill="${fillMap[val]}" stroke="#94A3B8"/>
+          html += `<rect x="${cx}" y="${p.y + 34}" width="30" height="30" rx="4" fill="${fillMap[val]}" stroke="#E5E5E5"/>
                    <text x="${cx + 15}" y="${p.y + 53}" text-anchor="middle" font-size="11" font-weight="700" fill="${textMap[val]}">${val === 4 ? "ALL" : "c" + c}</text>`;
         }
       });
       rgSvg.innerHTML = html;
+
+      rgTimelineTrack.innerHTML = rgStepLabels.map((lbl, idx) => {
+        const cls = idx === rgStep ? "is-current" : idx < rgStep ? "is-done" : "";
+        return `<button type="button" class="step-btn ${cls}" data-rg-step="${idx}">
+          <span class="step-dot">${idx}</span>
+          <span>${lbl}</span>
+        </button>`;
+      }).join("");
+      rgTimelineTrack.querySelectorAll("[data-rg-step]").forEach(btn => {
+        btn.onclick = () => {
+          if (rgTimer) {
+            clearInterval(rgTimer);
+            rgTimer = null;
+            document.getElementById("rg-play").textContent = "Play";
+          }
+          rgStep = parseInt(btn.dataset.rgStep, 10);
+          drawRing();
+        };
+      });
 
       document.getElementById("rg-step-val").textContent = `Step ${rgStep} / 6`;
       document.getElementById("rg-vol").textContent = (rgStep * 0.25).toFixed(2) + " G";
@@ -305,13 +380,13 @@
         msg.textContent = "Each GPU holds 4 local gradient chunks. Click Next Step or Play.";
       } else if (rgStep <= 3) {
         phaseEl.textContent = "Reduce-Scatter";
-        msg.textContent = `Step ${rgStep}: Each GPU sends 1/4 chunk clockwise and adds the incoming chunk. At step 3, every GPU holds 1 complete sum.`;
+        msg.textContent = `Step ${rgStep}: Each GPU sends 1/4 chunk clockwise and adds incoming data. At step 3, every GPU holds 1 complete sum.`;
       } else if (rgStep < 6) {
         phaseEl.textContent = "All-Gather";
         msg.textContent = `Step ${rgStep}: GPUs forward their completed chunk around the ring without extra math.`;
       } else {
         phaseEl.textContent = "Complete";
-        msg.textContent = "Done in 6 steps. Each GPU sent 2(4-1)/4 = 1.5 G bytes total, independent of cluster size.";
+        msg.textContent = "Done in 6 steps. Each GPU sent 1.5 G bytes total, staying bounded as cluster size grows.";
       }
     }
 
@@ -357,14 +432,14 @@
       const kvPx = (kvGB / maxBar) * 540;
 
       kvSvg.innerHTML = `
-        <text x="20" y="30" font-size="13" font-weight="700" fill="#0F172A">Bytes Streamed From HBM to Generate ONE Token</text>
+        <text x="20" y="30" font-size="13" font-weight="700" fill="#171717">Bytes Streamed From HBM to Generate ONE Token</text>
         <rect x="20" y="48" width="${wPx}" height="44" rx="5" fill="#0B4F8A"/>
         <text x="${20 + wPx / 2}" y="75" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">Weights ${wGB} GB</text>
         <rect x="${20 + wPx + 4}" y="48" width="${Math.max(4, kvPx)}" height="44" rx="5" fill="#6D28D9"/>
         ${kvPx > 60 ? `<text x="${20 + wPx + 4 + kvPx / 2}" y="75" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">KV ${kvGB.toFixed(1)} GB</text>` : ""}
-        <text x="20" y="124" font-size="13" fill="#334155">Total read per decode step: <strong>${tot.toFixed(1)} GB</strong> at 2 TB/s HBM -> <strong>${tpotMs.toFixed(1)} ms/token</strong></text>
-        <text x="20" y="152" font-size="12" fill="#475569">Prefill processes all ${t} prompt tokens in parallel GEMMs (compute-bound).</text>
-        <text x="20" y="172" font-size="12" fill="#475569">Decode streams weights + KV cache for each single token (memory-bound, I ~ 1 FLOP/byte).</text>
+        <text x="20" y="124" font-size="13" fill="#171717">Total read per decode step: ${tot.toFixed(1)} GB at 2 TB/s HBM gives ${tpotMs.toFixed(1)} ms/token.</text>
+        <text x="20" y="152" font-size="12" fill="#737373">Prefill processes all ${t} prompt tokens in parallel GEMMs (compute-bound).</text>
+        <text x="20" y="172" font-size="12" fill="#737373">Decode streams weights and KV cache for each token (memory-bound, ~1 FLOP/byte).</text>
         <text x="20" y="200" font-size="12" font-weight="600" fill="#0D9488">Try switching BF16 to INT4 weights or raising batch size to amortize weight reads.</text>
       `;
     }
@@ -387,16 +462,16 @@
 
     // ---- LAB 4: AMSS-NCKU BOTTLENECK SHIFT ----
     const amssStages = [
-      { name: "1. CPU Baseline", time: 4.5, color: "#64748B", bottleneck: "Compute-bound on 64 CPU cores",
+      { name: "1. CPU Baseline", time: 4.5, color: "#737373", bottleneck: "Compute-bound on 64 CPU cores",
         note: "64-core CPU runs RK4 evolution in ~4.5 s per coarse step. The RHS kernel takes most of the time." },
       { name: "2. GPU v1 (RHS Only)", time: 4.7, color: "#C2410C", bottleneck: "PCIe transfer-bound (122 roundtrips!)",
         note: "Offloading only RHS slowed the step from 4.5 s to 4.7 s. 122 host-device pack/copy/unpack cycles dominated wall time." },
       { name: "3. GPU Resident", time: 1.4, color: "#0B4F8A", bottleneck: "CPU waveform analysis backpressure",
-        note: "Moving all 65 AMR interpolations and arrays onto 1 H100 removed PCIe copies (3.3x faster). Stale copies had to be caught with 200-step checks." },
+        note: "Moving all 65 AMR interpolations onto 1 H100 removed PCIe copies for a 3.3× speedup. 200-step checks caught stale copies." },
       { name: "4. 2+62 Core Split", time: 1.0, color: "#6D28D9", bottleneck: "Synchronous snapshot handoff",
         note: "Assigning 2 host cores to drive the GPU and 62 OpenMP threads to spherical waveform extraction dropped step time to 1.0 s." },
-      { name: "5. 3-Stage Relay", time: 0.85, color: "#0D9488", bottleneck: "Balanced pipeline (5.3x vs CPU)",
-        note: "Triple-buffered async GPU-snapshot / D2H / CPU-analysis ring buffers overlapped remaining stalls, reaching 0.85 s/step." }
+      { name: "5. 3-Stage Relay", time: 0.85, color: "#0D9488", bottleneck: "Balanced pipeline (5.3× vs CPU)",
+        note: "Triple-buffered async ring buffers overlapped snapshot, D2H copy, and CPU analysis stalls down to 0.85 s/step." }
     ];
 
     const amssBtns = document.getElementById("amss-btns");
@@ -413,7 +488,7 @@
         const y = 20 + i * 40;
         const w = (s.time / 5.0) * 390;
         const op = i === activeIdx ? 1 : 0.35;
-        html += `<text x="16" y="${y + 18}" font-size="12" font-weight="${i === activeIdx ? "700" : "500"}" fill="#0F172A">${s.name}</text>
+        html += `<text x="16" y="${y + 18}" font-size="12" font-weight="${i === activeIdx ? "700" : "500"}" fill="#171717">${s.name}</text>
                  <rect x="175" y="${y + 2}" width="${w}" height="24" rx="4" fill="${s.color}" opacity="${op}"/>
                  <text x="${183 + w}" y="${y + 18}" font-size="12" font-weight="700" fill="${s.color}">${s.time.toFixed(2)} s</text>`;
       });

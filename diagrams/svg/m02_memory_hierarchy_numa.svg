@@ -1,115 +1,115 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="660" viewBox="0 0 960 660">
   <defs>
-    <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#475569"/></marker>
+    <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#525252"/></marker>
     <marker id="arr_blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0B4F8A"/></marker>
     <marker id="arr_teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#0D9488"/></marker>
     <marker id="arr_coral" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C2410C"/></marker>
     <marker id="arr_gold" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#C48A1A"/></marker>
     <marker id="arr_violet" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#6D28D9"/></marker>
-    <marker id="arr_muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#64748B"/></marker>
+    <marker id="arr_muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#737373"/></marker>
   </defs>
-  <rect width="960" height="660" fill="#FAFBFD"/>
+  <rect width="960" height="660" fill="#FAFAFA"/>
   <rect x="28.0" y="22.0" width="6.0" height="36.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="44.0" y="44.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#0F172A" text-anchor="start">Memory Hierarchy Latency Wall &amp; Dual-Socket NUMA Topology</text>
-  <text x="44.0" y="66.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#64748B" text-anchor="start">Access latency spans 3 orders of magnitude; cross-socket traffic and poor First-Touch degrade bandwidth</text>
-  <rect x="32.0" y="88.0" width="456.0" height="540.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
-  <rect x="32.0" y="88.0" width="456.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
-  <rect x="32.0" y="114.0" width="456.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
-  <line x1="32.0" y1="122.0" x2="488.0" y2="122.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <text x="44.0" y="44.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="bold" fill="#171717" text-anchor="start">Memory Hierarchy Latency Wall &amp; Dual-Socket NUMA Topology</text>
+  <text x="44.0" y="66.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#737373" text-anchor="start">Access latency spans 3 orders of magnitude; cross-socket traffic and poor First-Touch degrade bandwidth</text>
+  <rect x="32.0" y="88.0" width="456.0" height="540.0" rx="8.0" fill="#FFFFFF" stroke="#EBEBEB" stroke-width="1.4"/>
+  <rect x="32.0" y="88.0" width="456.0" height="34.0" rx="8.0" fill="#F4F4F5" stroke="#EBEBEB" stroke-width="1.0"/>
+  <rect x="32.0" y="114.0" width="456.0" height="8.0" rx="0.0" fill="#F4F4F5" stroke="none" stroke-width="1.5"/>
+  <line x1="32.0" y1="122.0" x2="488.0" y2="122.0" stroke="#EBEBEB" stroke-width="1.0"/>
   <rect x="44.0" y="97.0" width="4.0" height="16.0" rx="2.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="56.0" y="111.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">Memory Latency (log₁₀ scale) &amp; Peak Bandwidth</text>
-  <line x1="148.0" y1="142.0" x2="148.0" y2="526.0" stroke="#E2E8F0" stroke-width="1.1"/>
-  <text x="148.0" y="546.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="normal" fill="#64748B" text-anchor="middle">0.1</text>
-  <line x1="218.0" y1="142.0" x2="218.0" y2="526.0" stroke="#E2E8F0" stroke-width="1.1"/>
-  <text x="218.0" y="546.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="normal" fill="#64748B" text-anchor="middle">1</text>
-  <line x1="288.1" y1="142.0" x2="288.1" y2="526.0" stroke="#E2E8F0" stroke-width="1.1"/>
-  <text x="288.1" y="546.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="normal" fill="#64748B" text-anchor="middle">10</text>
-  <line x1="358.1" y1="142.0" x2="358.1" y2="526.0" stroke="#E2E8F0" stroke-width="1.1"/>
-  <text x="358.1" y="546.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="normal" fill="#64748B" text-anchor="middle">100 ns</text>
-  <line x1="148.0" y1="526.0" x2="386.0" y2="526.0" stroke="#475569" stroke-width="1.6"/>
-  <line x1="148.0" y1="142.0" x2="148.0" y2="526.0" stroke="#475569" stroke-width="1.6"/>
-  <text x="136.0" y="184.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="end">Register</text>
+  <text x="56.0" y="111.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="start">Memory Latency (log₁₀ scale) &amp; Peak Bandwidth</text>
+  <line x1="148.0" y1="142.0" x2="148.0" y2="526.0" stroke="#EBEBEB" stroke-width="1.1"/>
+  <text x="148.0" y="546.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="normal" fill="#737373" text-anchor="middle">0.1</text>
+  <line x1="218.0" y1="142.0" x2="218.0" y2="526.0" stroke="#EBEBEB" stroke-width="1.1"/>
+  <text x="218.0" y="546.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="normal" fill="#737373" text-anchor="middle">1</text>
+  <line x1="288.1" y1="142.0" x2="288.1" y2="526.0" stroke="#EBEBEB" stroke-width="1.1"/>
+  <text x="288.1" y="546.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="normal" fill="#737373" text-anchor="middle">10</text>
+  <line x1="358.1" y1="142.0" x2="358.1" y2="526.0" stroke="#EBEBEB" stroke-width="1.1"/>
+  <text x="358.1" y="546.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="normal" fill="#737373" text-anchor="middle">100 ns</text>
+  <line x1="148.0" y1="526.0" x2="386.0" y2="526.0" stroke="#525252" stroke-width="1.6"/>
+  <line x1="148.0" y1="142.0" x2="148.0" y2="526.0" stroke="#525252" stroke-width="1.6"/>
+  <text x="136.0" y="184.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="end">Register</text>
   <rect x="148.0" y="162.0" width="33.4" height="34.0" rx="4.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
-  <text x="189.4" y="184.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="normal" fill="#334155" text-anchor="start">~0.3 ns · &gt;10 TB/s</text>
-  <text x="136.0" y="244.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="end">L1 Cache</text>
+  <text x="189.4" y="184.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="normal" fill="#525252" text-anchor="start">~0.3 ns · &gt;10 TB/s</text>
+  <text x="136.0" y="244.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="end">L1 Cache</text>
   <rect x="148.0" y="222.0" width="70.0" height="34.0" rx="4.0" fill="#0D9488" stroke="none" stroke-width="1.5"/>
-  <text x="210.0" y="244.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13.5" font-weight="bold" fill="#FFFFFF" text-anchor="end">~1 ns</text>
-  <text x="226.0" y="244.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#334155" text-anchor="start">Multi-TB/s</text>
-  <text x="136.0" y="304.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="end">L2 Cache</text>
+  <text x="210.0" y="244.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13.5" font-weight="bold" fill="#FFFFFF" text-anchor="end">~1 ns</text>
+  <text x="226.0" y="244.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#525252" text-anchor="start">Multi-TB/s</text>
+  <text x="136.0" y="304.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="end">L2 Cache</text>
   <rect x="148.0" y="282.0" width="112.2" height="34.0" rx="4.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="252.2" y="304.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13.5" font-weight="bold" fill="#FFFFFF" text-anchor="end">~4 ns</text>
-  <text x="268.2" y="304.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#334155" text-anchor="start">~1–2 TB/s</text>
-  <text x="136.0" y="364.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="end">L3 Cache</text>
+  <text x="252.2" y="304.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13.5" font-weight="bold" fill="#FFFFFF" text-anchor="end">~4 ns</text>
+  <text x="268.2" y="304.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#525252" text-anchor="start">~1–2 TB/s</text>
+  <text x="136.0" y="364.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="end">L3 Cache</text>
   <rect x="148.0" y="342.0" width="152.4" height="34.0" rx="4.0" fill="#0B4F8A" stroke="none" stroke-width="1.5"/>
-  <text x="292.4" y="364.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13.5" font-weight="bold" fill="#FFFFFF" text-anchor="end">~15 ns</text>
-  <text x="308.4" y="364.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#334155" text-anchor="start">~0.5–1 TB/s</text>
-  <text x="136.0" y="424.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="end">DDR5 DRAM</text>
+  <text x="292.4" y="364.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13.5" font-weight="bold" fill="#FFFFFF" text-anchor="end">~15 ns</text>
+  <text x="308.4" y="364.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#525252" text-anchor="start">~0.5–1 TB/s</text>
+  <text x="136.0" y="424.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="end">DDR5 DRAM</text>
   <rect x="148.0" y="402.0" width="203.3" height="34.0" rx="4.0" fill="#C2410C" stroke="none" stroke-width="1.5"/>
-  <text x="343.3" y="424.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13.5" font-weight="bold" fill="#FFFFFF" text-anchor="end">~80 ns</text>
-  <text x="359.3" y="424.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#334155" text-anchor="start">~0.3 TB/s</text>
-  <text x="136.0" y="484.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="end">HBM3 (GPU)</text>
+  <text x="343.3" y="424.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13.5" font-weight="bold" fill="#FFFFFF" text-anchor="end">~80 ns</text>
+  <text x="359.3" y="424.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#525252" text-anchor="start">~0.3 TB/s</text>
+  <text x="136.0" y="484.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#171717" text-anchor="end">HBM3 (GPU)</text>
   <rect x="148.0" y="462.0" width="210.1" height="34.0" rx="4.0" fill="#6D28D9" stroke="none" stroke-width="1.5"/>
-  <text x="350.1" y="484.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13.5" font-weight="bold" fill="#FFFFFF" text-anchor="end">~100 ns</text>
-  <text x="366.1" y="484.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#334155" text-anchor="start">~3.35 TB/s</text>
+  <text x="350.1" y="484.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13.5" font-weight="bold" fill="#FFFFFF" text-anchor="end">~100 ns</text>
+  <text x="366.1" y="484.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#525252" text-anchor="start">~3.35 TB/s</text>
   <rect x="48.0" y="562.0" width="424.0" height="52.0" rx="6.0" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.1"/>
-  <text x="60.0" y="583.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#6D28D9" text-anchor="start">Key contrast: HBM3 latency exceeds DDR5, yet wide buses</text>
-  <text x="60.0" y="603.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#334155" text-anchor="start">deliver &gt;10× bandwidth via massive thread concurrency.</text>
-  <rect x="504.0" y="88.0" width="424.0" height="540.0" rx="8.0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.4"/>
-  <rect x="504.0" y="88.0" width="424.0" height="34.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.0"/>
-  <rect x="504.0" y="114.0" width="424.0" height="8.0" rx="0.0" fill="#F1F5F9" stroke="none" stroke-width="1.5"/>
-  <line x1="504.0" y1="122.0" x2="928.0" y2="122.0" stroke="#E2E8F0" stroke-width="1.0"/>
+  <text x="60.0" y="583.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#6D28D9" text-anchor="start">Key contrast: HBM3 latency exceeds DDR5, yet wide buses</text>
+  <text x="60.0" y="603.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#525252" text-anchor="start">deliver &gt;10× bandwidth via massive thread concurrency.</text>
+  <rect x="504.0" y="88.0" width="424.0" height="540.0" rx="8.0" fill="#FFFFFF" stroke="#EBEBEB" stroke-width="1.4"/>
+  <rect x="504.0" y="88.0" width="424.0" height="34.0" rx="8.0" fill="#F4F4F5" stroke="#EBEBEB" stroke-width="1.0"/>
+  <rect x="504.0" y="114.0" width="424.0" height="8.0" rx="0.0" fill="#F4F4F5" stroke="none" stroke-width="1.5"/>
+  <line x1="504.0" y1="122.0" x2="928.0" y2="122.0" stroke="#EBEBEB" stroke-width="1.0"/>
   <rect x="516.0" y="97.0" width="4.0" height="16.0" rx="2.0" fill="#C2410C" stroke="none" stroke-width="1.5"/>
-  <text x="528.0" y="111.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">Dual-Socket NUMA Topology &amp; First-Touch Rule</text>
+  <text x="528.0" y="111.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#171717" text-anchor="start">Dual-Socket NUMA Topology &amp; First-Touch Rule</text>
   <rect x="528.0" y="148.0" width="162.0" height="118.0" rx="8.0" fill="#EFF6FF" stroke="#0B4F8A" stroke-width="1.8"/>
-  <text x="609.0" y="172.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B4F8A" text-anchor="middle">Socket 0 (NUMA 0)</text>
+  <text x="609.0" y="172.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B4F8A" text-anchor="middle">Socket 0 (NUMA 0)</text>
   <rect x="542.0" y="184.0" width="28.0" height="26.0" rx="4.0" fill="#FFFFFF" stroke="#0B4F8A" stroke-width="1.2"/>
-  <text x="556.0" y="201.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="11.5" font-weight="normal" fill="#334155" text-anchor="middle">C0</text>
+  <text x="556.0" y="201.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="11.5" font-weight="normal" fill="#525252" text-anchor="middle">C0</text>
   <rect x="577.0" y="184.0" width="28.0" height="26.0" rx="4.0" fill="#FFFFFF" stroke="#0B4F8A" stroke-width="1.2"/>
-  <text x="591.0" y="201.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="11.5" font-weight="normal" fill="#334155" text-anchor="middle">C1</text>
+  <text x="591.0" y="201.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="11.5" font-weight="normal" fill="#525252" text-anchor="middle">C1</text>
   <rect x="612.0" y="184.0" width="28.0" height="26.0" rx="4.0" fill="#FFFFFF" stroke="#0B4F8A" stroke-width="1.2"/>
-  <text x="626.0" y="201.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="11.5" font-weight="normal" fill="#334155" text-anchor="middle">C2</text>
+  <text x="626.0" y="201.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="11.5" font-weight="normal" fill="#525252" text-anchor="middle">C2</text>
   <rect x="647.0" y="184.0" width="28.0" height="26.0" rx="4.0" fill="#FFFFFF" stroke="#0B4F8A" stroke-width="1.2"/>
-  <text x="661.0" y="201.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="11.5" font-weight="normal" fill="#334155" text-anchor="middle">C3</text>
+  <text x="661.0" y="201.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="11.5" font-weight="normal" fill="#525252" text-anchor="middle">C3</text>
   <rect x="542.0" y="220.0" width="134.0" height="30.0" rx="4.0" fill="#FFFFFF" stroke="#0B4F8A" stroke-width="1.2"/>
-  <text x="609.0" y="240.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="bold" fill="#334155" text-anchor="middle">Shared L3 Cache</text>
+  <text x="609.0" y="240.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="bold" fill="#525252" text-anchor="middle">Shared L3 Cache</text>
   <rect x="742.0" y="148.0" width="162.0" height="118.0" rx="8.0" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.8"/>
-  <text x="823.0" y="172.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" fill="#0D9488" text-anchor="middle">Socket 1 (NUMA 1)</text>
+  <text x="823.0" y="172.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" fill="#0D9488" text-anchor="middle">Socket 1 (NUMA 1)</text>
   <rect x="756.0" y="184.0" width="28.0" height="26.0" rx="4.0" fill="#FFFFFF" stroke="#0D9488" stroke-width="1.2"/>
-  <text x="770.0" y="201.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="11.5" font-weight="normal" fill="#334155" text-anchor="middle">C0</text>
+  <text x="770.0" y="201.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="11.5" font-weight="normal" fill="#525252" text-anchor="middle">C0</text>
   <rect x="791.0" y="184.0" width="28.0" height="26.0" rx="4.0" fill="#FFFFFF" stroke="#0D9488" stroke-width="1.2"/>
-  <text x="805.0" y="201.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="11.5" font-weight="normal" fill="#334155" text-anchor="middle">C1</text>
+  <text x="805.0" y="201.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="11.5" font-weight="normal" fill="#525252" text-anchor="middle">C1</text>
   <rect x="826.0" y="184.0" width="28.0" height="26.0" rx="4.0" fill="#FFFFFF" stroke="#0D9488" stroke-width="1.2"/>
-  <text x="840.0" y="201.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="11.5" font-weight="normal" fill="#334155" text-anchor="middle">C2</text>
+  <text x="840.0" y="201.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="11.5" font-weight="normal" fill="#525252" text-anchor="middle">C2</text>
   <rect x="861.0" y="184.0" width="28.0" height="26.0" rx="4.0" fill="#FFFFFF" stroke="#0D9488" stroke-width="1.2"/>
-  <text x="875.0" y="201.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="11.5" font-weight="normal" fill="#334155" text-anchor="middle">C3</text>
+  <text x="875.0" y="201.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="11.5" font-weight="normal" fill="#525252" text-anchor="middle">C3</text>
   <rect x="756.0" y="220.0" width="134.0" height="30.0" rx="4.0" fill="#FFFFFF" stroke="#0D9488" stroke-width="1.2"/>
-  <text x="823.0" y="240.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="bold" fill="#334155" text-anchor="middle">Shared L3 Cache</text>
+  <text x="823.0" y="240.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="bold" fill="#525252" text-anchor="middle">Shared L3 Cache</text>
   <line x1="692.0" y1="206.0" x2="740.0" y2="206.0" stroke="#C2410C" stroke-width="2.6" marker-start="url(#arr_coral)" marker-end="url(#arr_coral)"/>
   <rect x="682.0" y="166.0" width="68.0" height="26.0" rx="4.0" fill="#FFF7ED" stroke="#C2410C" stroke-width="1.1"/>
-  <text x="716.0" y="184.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="11.5" font-weight="bold" fill="#C2410C" text-anchor="middle">UPI/xGMI</text>
+  <text x="716.0" y="184.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="11.5" font-weight="bold" fill="#C2410C" text-anchor="middle">UPI/xGMI</text>
   <rect x="528.0" y="338.0" width="162.0" height="66.0" rx="6.0" fill="#FFFFFF" stroke="#0B4F8A" stroke-width="1.8"/>
-  <text x="609.0" y="366.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0B4F8A" text-anchor="middle">Local DDR5 #0</text>
-  <text x="609.0" y="388.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="normal" fill="#64748B" text-anchor="middle">~80 ns · full BW</text>
+  <text x="609.0" y="366.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0B4F8A" text-anchor="middle">Local DDR5 #0</text>
+  <text x="609.0" y="388.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="normal" fill="#737373" text-anchor="middle">~80 ns · full BW</text>
   <rect x="742.0" y="338.0" width="162.0" height="66.0" rx="6.0" fill="#FFFFFF" stroke="#0D9488" stroke-width="1.8"/>
-  <text x="823.0" y="366.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">Local DDR5 #1</text>
-  <text x="823.0" y="388.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="normal" fill="#64748B" text-anchor="middle">~80 ns · full BW</text>
+  <text x="823.0" y="366.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0D9488" text-anchor="middle">Local DDR5 #1</text>
+  <text x="823.0" y="388.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="normal" fill="#737373" text-anchor="middle">~80 ns · full BW</text>
   <line x1="554.0" y1="268.0" x2="554.0" y2="335.0" stroke="#0B4F8A" stroke-width="2.4" marker-start="url(#arr_blue)" marker-end="url(#arr_blue)"/>
-  <text x="566.0" y="300.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="bold" fill="#0B4F8A" text-anchor="start">Local</text>
-  <text x="566.0" y="317.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#0B4F8A" text-anchor="start">1× lat.</text>
+  <text x="566.0" y="300.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="bold" fill="#0B4F8A" text-anchor="start">Local</text>
+  <text x="566.0" y="317.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#0B4F8A" text-anchor="start">1× lat.</text>
   <line x1="878.0" y1="268.0" x2="878.0" y2="335.0" stroke="#0D9488" stroke-width="2.4" marker-start="url(#arr_teal)" marker-end="url(#arr_teal)"/>
-  <text x="866.0" y="300.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="bold" fill="#0D9488" text-anchor="end">Local</text>
-  <text x="866.0" y="317.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#0D9488" text-anchor="end">full BW</text>
+  <text x="866.0" y="300.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="bold" fill="#0D9488" text-anchor="end">Local</text>
+  <text x="866.0" y="317.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#0D9488" text-anchor="end">full BW</text>
   <line x1="666.0" y1="270.0" x2="770.0" y2="334.0" stroke="#C2410C" stroke-width="2.3" stroke-dasharray="6,4" marker-end="url(#arr_coral)"/>
   <rect x="646.0" y="286.0" width="144.0" height="40.0" rx="5.0" fill="#FFF7ED" stroke="#C2410C" stroke-width="1.2"/>
-  <text x="718.0" y="303.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#C2410C" text-anchor="middle">Remote NUMA Hop</text>
-  <text x="718.0" y="320.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#C2410C" text-anchor="middle">1.5–2× lat. · link contention</text>
-  <rect x="524.0" y="428.0" width="384.0" height="186.0" rx="8.0" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.2"/>
+  <text x="718.0" y="303.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#C2410C" text-anchor="middle">Remote NUMA Hop</text>
+  <text x="718.0" y="320.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#C2410C" text-anchor="middle">1.5–2× lat. · link contention</text>
+  <rect x="524.0" y="428.0" width="384.0" height="186.0" rx="8.0" fill="#F4F4F5" stroke="#EBEBEB" stroke-width="1.2"/>
   <rect x="524.0" y="428.0" width="6.0" height="186.0" rx="2.0" fill="#C48A1A" stroke="none" stroke-width="1.5"/>
-  <text x="544.0" y="454.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0F172A" text-anchor="start">Linux First-Touch Page Placement Rule</text>
-  <text x="544.0" y="480.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#334155" text-anchor="start">• Physical pages map on first write (not malloc)</text>
-  <text x="544.0" y="504.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#334155" text-anchor="start">• Bug: serial init pins entire array to Node 0</text>
-  <text x="544.0" y="528.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#334155" text-anchor="start">• Fix: parallel OpenMP init matching compute schedule</text>
-  <text x="544.0" y="552.0" font-family="Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#334155" text-anchor="start">• Pair with OMP_PROC_BIND=close + numactl</text>
+  <text x="544.0" y="454.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold" fill="#171717" text-anchor="start">Linux First-Touch Page Placement Rule</text>
+  <text x="544.0" y="480.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#525252" text-anchor="start">• Physical pages map on first write (not malloc)</text>
+  <text x="544.0" y="504.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#525252" text-anchor="start">• Bug: serial init pins entire array to Node 0</text>
+  <text x="544.0" y="528.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#525252" text-anchor="start">• Fix: parallel OpenMP init matching compute schedule</text>
+  <text x="544.0" y="552.0" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13.8" font-weight="normal" fill="#525252" text-anchor="start">• Pair with OMP_PROC_BIND=close + numactl</text>
   <rect x="544.0" y="574.0" width="348.0" height="28.0" rx="4.0" fill="#FFFFFF" stroke="#C48A1A" stroke-width="1.1"/>
-  <text x="718.0" y="593.0" font-family="Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="bold" fill="#C48A1A" text-anchor="middle">#pragma omp parallel for schedule(static)</text>
+  <text x="718.0" y="593.0" font-family="SF Mono, Menlo, DejaVu Sans Mono, monospace" font-size="13" font-weight="bold" fill="#C48A1A" text-anchor="middle">#pragma omp parallel for schedule(static)</text>
 </svg>
